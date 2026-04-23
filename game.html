@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Optimization -->
+    <title>Wordle - Professional 5-Letter Word Finder Game</title>
+    <meta name="description"
+        content="Play Wordle, the ultimate 5-letter word puzzle. Daily challenges, free play mode, hints, and advanced statistics. A minimalist, polished, and mobile-responsive word game.">
+    <meta name="keywords"
+        content="wordle, word game, 5 letter word finder, puzzle, daily challenge, word puzzle, offline game, browser game">
+    <meta name="author" content="Antigravity">
+    <link rel="canonical" href="./index.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Wordle - Professional 5-Letter Word Finder">
+    <meta property="og:description" content="Test your vocabulary with 6 attempts. Features Daily and Free Play modes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="./index.html">
+    <meta property="og:image"
+        content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wordle_1_logo.svg/1024px-Wordle_1_logo.svg.png">
+
+    <!-- Styles & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="game_style.css">
+</head>
+
+<body class="theme-dark">
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- Side Navigation Panel -->
+    <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
+        <div class="nav-container">
+            <div class="nav-header">
+                <h2>Menu</h2>
+                <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link"
+                    style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Word Finder Tool
+                </a>
+                <div class="nav-divider"></div>
+                <button class="nav-link active" id="menuDailyBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2v-2"></path>
+                        <path d="M16 2v4M8 2v4M3 10h18"></path>
+                    </svg>
+                    Daily Challenge
+                </button>
+                <button class="nav-link" id="menuFreeBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                    Free Play
+                </button>
+                <div class="nav-divider"></div>
+                <button class="nav-link" id="menuHowToBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"></path>
+                    </svg>
+                    How to Play
+                </button>
+                <button class="nav-link" id="menuStatsBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 20V10M12 20V4M6 20v-6"></path>
+                    </svg>
+                    Statistics
+                </button>
+                <div class="nav-divider"></div>
+                <p class="nav-section-label">Information</p>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+                <a href="privacy.html" class="nav-link">Privacy Policy</a>
+                <div class="nav-divider"></div>
+                <div class="nav-setting">
+                    <span class="setting-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                        </svg></span>
+                    <span class="setting-text">Dark Mode</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="darkModeToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="nav-setting">
+                    <span class="setting-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07">
+                            </path>
+                        </svg></span>
+                    <span class="setting-text">Sound Effects</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="soundToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </nav>
+
+            <div class="nav-footer">
+                <button class="btn-nav-reset" id="menuResetBtn">Reset Current Game</button>
+                <button class="btn-nav-reset" id="resetStatsBtn"
+                    style="margin-top: 0.5rem; background: rgba(220, 38, 38, 0.1); color: #ef4444; border: 1px solid rgba(220, 38, 38, 0.2);">Reset
+                    Statistics</button>
+            </div>
+        </div>
+    </aside>
+
+    <main class="container">
+        <header class="header">
+            <div class="header-content">
+                <button class="btn-menu" id="menuBtn" aria-label="Open menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <h1 class="title">Wordle</h1>
+                <div class="header-actions">
+                    <button class="btn-icon" id="settingsBtn" aria-label="Game Settings">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="mode-badge-container">
+                <span class="active-mode-tag" id="activeModeTag">Daily Challenge</span>
+            </div>
+        </header>
+
+        <!-- Dynamic Statistics Panel Directly in Game Window -->
+        <section class="game-stats" id="gameStats" aria-label="Statistics">
+            <div class="stat-box">
+                <span class="stat-count" id="statPlayed">0</span>
+                <span class="stat-desc">Played</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-count" id="statWinRate">0%</span>
+                <span class="stat-desc">Win %</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-count" id="statStreak">0</span>
+                <span class="stat-desc">Streak</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-count" id="statBestStreak">0</span>
+                <span class="stat-desc">Best</span>
+            </div>
+        </section>
+
+        <section class="game-board" id="gameBoard" aria-label="Game board">
+            <!-- Rows will be generated by JavaScript -->
+        </section>
+
+        <div class="hint-container" id="hintContainer">
+            <button class="btn-hint" id="hintBtn" aria-label="Get a hint (costs 1 attempt)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Hint
+            </button>
+        </div>
+
+        <section class="keyboard" id="keyboard" aria-label="On-screen keyboard">
+            <!-- Keyboard will be generated by JavaScript -->
+        </section>
+
+        <div class="message-container">
+            <div class="message" id="message" role="alert" aria-live="polite"></div>
+        </div>
+
+        <section class="seo-content" aria-labelledby="about-title">
+            <h2 id="about-title" class="sr-only">About Wordle</h2>
+            <p>Wordle is a minimalist, daily word puzzle game where players have six attempts to guess a secret
+                five-letter word. Each guess provides colored feedback: green for the correct letter in the right spot,
+                yellow for the right letter in the wrong spot, and gray for letters not in the word.</p>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">5 Letter Word Finder</h3>
+                    <p class="footer-tagline">Your ultimate word game companion</p>
+                </div>
+                <div class="footer-links">
+                <a href="game.html" class="footer-link">Play Wordle</a>
+                <a href="index.html" class="footer-link">5 letters</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="privacy.html" class="footer-link">Privacy</a>
+            </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2026 5 Letter Word Finder. All Rights Reserved.</p>
+                    <p class="footer-description">Free tool for Wordle, Scrabble, and word puzzles</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="settingsModal" role="dialog" aria-labelledby="settingsTitle" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="settingsTitle">Game Options</h2>
+                <button class="btn-close" id="closeSettingsBtn" aria-label="Close settings">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-label">Hard Mode</div>
+                        <div class="setting-desc">Must use all revealed hints</div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" id="hardModeToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-label">Reduced Motion</div>
+                        <div class="setting-desc">Simplify animations</div>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" id="animationsToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to Play Modal -->
+    <div class="modal" id="howToModal" role="dialog" aria-labelledby="howToTitle" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="howToTitle">How To Play</h2>
+                <button class="btn-close" id="closeHowToBtn" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body instruction-panel">
+                <p>Guess the word in 6 tries.</p>
+                <ul class="instructions">
+                    <li>Each guess must be a valid 5-letter word.</li>
+                    <li>The color of the tiles will change to show how close your guess was to the word.</li>
+                </ul>
+                <div class="demo-section">
+                    <div class="tile-demo">
+                        <div class="tile correct">W</div>
+                        <p><strong>W</strong> is in the right spot.</p>
+                    </div>
+                    <div class="tile-demo">
+                        <div class="tile present">I</div>
+                        <p><strong>I</strong> is in the wrong spot.</p>
+                    </div>
+                    <div class="tile-demo">
+                        <div class="tile absent">U</div>
+                        <p><strong>U</strong> is not in the word.</p>
+                    </div>
+                </div>
+                <p class="reduced-text">Hints cost one attempt. Use them wisely!</p>
+                <button class="btn-primary" id="onboardDoneBtn" style="margin-top: 1rem;">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Modal (Used when clicking Statistics in menu) -->
+    <div class="modal" id="statsModal" role="dialog" aria-labelledby="statsModalTitle" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="statsModalTitle">Your Statistics</h2>
+                <button class="btn-close" id="closeStatsBtn" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="stats-overview">
+                    <div class="stat-box">
+                        <span class="stat-count" id="modalStatPlayed">0</span>
+                        <span class="stat-desc">Played</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-count" id="modalStatWinRate">0%</span>
+                        <span class="stat-desc">Win %</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-count" id="modalStatStreak">0</span>
+                        <span class="stat-desc">Streak</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-count" id="modalStatBestStreak">0</span>
+                        <span class="stat-desc">Best</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="gameOverModal" role="dialog" aria-labelledby="gameOverTitle" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="gameOverTitle">Result</h2>
+                <button class="btn-close" id="closeGameOverBtn" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="game-result" id="gameResult"></div>
+                <div class="word-reveal" id="wordReveal"></div>
+                <div class="share-container">
+                    <div class="share-grid" id="shareGrid"></div>
+                    <button class="btn-share" id="shareBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy Results
+                    </button>
+                </div>
+                <button class="btn-primary" id="playAgainBtn" style="margin-top: 1rem; display: none;">Play
+                    Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game_script.js"></script>
+</body>
+
+</html>
+
