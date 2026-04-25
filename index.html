@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 Letter Word Finder — Wordle Solver, Scrabble Scores & Unscrambler</title>
-    <meta name="description" content="Filter 8,000+ five-letter words like Wordle: greens, yellows, grays, repeat-aware logic, must-include letters, Scrabble values, and instant sorting. Free, private, works offline.">
-    <meta name="keywords" content="5 letter word finder, wordle solver, scrabble word finder, five letter words, word unscrambler">
+    <meta name="description"
+        content="Filter 8,000+ five-letter words like Wordle: greens, yellows, grays, repeat-aware logic, must-include letters, Scrabble values, and instant sorting. Free, private, works offline.">
+    <meta name="keywords"
+        content="5 letter word finder, wordle solver, scrabble word finder, five letter words, word unscrambler">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,7 +30,8 @@
         <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
             <button class="modal-close" id="closeModalBtn" aria-label="Close help">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
@@ -35,14 +40,16 @@
             <section class="showcase-section">
                 <div class="section-badge">How to Use</div>
                 <h2 class="showcase-title">Powerful Filtering Modes</h2>
-                <p class="showcase-subtitle">Master the word finder with these three search constraints — the same logic Wordle uses.</p>
+                <p class="showcase-subtitle">Master the word finder with these three search constraints — the same logic
+                    Wordle uses.</p>
 
                 <div class="showcase-grid">
                     <!-- Correct Position -->
                     <div class="showcase-card">
                         <div class="card-status-bar green"></div>
                         <div class="showcase-icon green">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                         </div>
@@ -54,14 +61,16 @@
                             <div class="mini-box empty"></div>
                         </div>
                         <h3>Correct Position</h3>
-                        <p>Enter letters where you know their <strong>exact position</strong>. Filters for words that match this pattern perfectly.</p>
+                        <p>Enter letters where you know their <strong>exact position</strong>. Filters for words that
+                            match this pattern perfectly.</p>
                     </div>
 
                     <!-- Wrong Position -->
                     <div class="showcase-card">
                         <div class="card-status-bar yellow"></div>
                         <div class="showcase-icon yellow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="12" y1="8" x2="12" y2="12"></line>
                                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -75,14 +84,16 @@
                             <div class="mini-box empty"></div>
                         </div>
                         <h3>Wrong Position</h3>
-                        <p>Letters that are in the word but <strong>not in this spot</strong>. Ensures the letter exists elsewhere.</p>
+                        <p>Letters that are in the word but <strong>not in this spot</strong>. Ensures the letter exists
+                            elsewhere.</p>
                     </div>
 
                     <!-- Excluded Letters -->
                     <div class="showcase-card">
                         <div class="card-status-bar gray"></div>
                         <div class="showcase-icon gray">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="15" y1="9" x2="9" y2="15"></line>
                                 <line x1="9" y1="9" x2="15" y2="15"></line>
@@ -94,7 +105,8 @@
                             <span class="bad-letter">Z</span>
                         </div>
                         <h3>Excluded Letters</h3>
-                        <p>Instantly remove any words containing <strong>these characters</strong>. Prunes your search space dramatically.</p>
+                        <p>Instantly remove any words containing <strong>these characters</strong>. Prunes your search
+                            space dramatically.</p>
                     </div>
                 </div>
             </section>
@@ -107,15 +119,18 @@
             <div class="nav-header">
                 <h2>Menu</h2>
                 <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
                 </button>
             </div>
             <nav class="nav-links">
-                <a href="game.html" class="nav-link" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <a href="game.html" class="nav-link"
+                    style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                         <text x="7" y="16" font-family="sans-serif" font-weight="bold" font-size="10">W</text>
                     </svg>
@@ -137,7 +152,8 @@
                 <div class="nav-divider"></div>
                 <div class="nav-setting">
                     <span class="setting-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
                         </svg>
                     </span>
@@ -156,16 +172,18 @@
         <!-- ======================== HEADER ======================== -->
         <header class="header">
             <button class="btn-menu" id="menuBtn" aria-label="Open menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
                     <line x1="3" y1="18" x2="21" y2="18"></line>
                 </svg>
             </button>
             <div class="title-row">
-                <h1 class="title">5 Letter Word Finder</h1>
+                <h1 class="title">5 Letter Word Finder – Find Words for Wordle & Puzzles</h1>
                 <button class="btn-help" id="helpBtn" title="How to use">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                         <line x1="12" y1="17" x2="12.01" y2="17"></line>
@@ -173,7 +191,7 @@
                     How It Works
                 </button>
             </div>
-            <p class="subtitle">Wordle-accurate filters, Scrabble letter values, and sorting—faster than a static word list.</p>
+            <p class="subtitle">Use our free tool to find 5 letter words instantly for Wordle, Scrabble, and puzzles.</p>
 
             <!-- Quick stats bar -->
             <div class="hero-stats" id="heroStats">
@@ -202,11 +220,16 @@
                     Correct Position
                 </span>
                 <div class="pattern-grid" id="patternGrid">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" autofocus id="pos0" aria-label="Letter position 1">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos1" aria-label="Letter position 2">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos2" aria-label="Letter position 3">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos3" aria-label="Letter position 4">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos4" aria-label="Letter position 5">
+                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" autofocus
+                        id="pos0" aria-label="Letter position 1">
+                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos1"
+                        aria-label="Letter position 2">
+                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos2"
+                        aria-label="Letter position 3">
+                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos3"
+                        aria-label="Letter position 4">
+                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos4"
+                        aria-label="Letter position 5">
                 </div>
             </div>
 
@@ -216,11 +239,16 @@
                     Wrong position (yellow)
                 </span>
                 <div class="wrong-pos-grid" id="wrongPosGrid">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w0" aria-label="Wrong position letters for slot 1">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w1" aria-label="Wrong position letters for slot 2">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w2" aria-label="Wrong position letters for slot 3">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w3" aria-label="Wrong position letters for slot 4">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w4" aria-label="Wrong position letters for slot 5">
+                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w0"
+                        aria-label="Wrong position letters for slot 1">
+                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w1"
+                        aria-label="Wrong position letters for slot 2">
+                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w2"
+                        aria-label="Wrong position letters for slot 3">
+                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w3"
+                        aria-label="Wrong position letters for slot 4">
+                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w4"
+                        aria-label="Wrong position letters for slot 5">
                 </div>
                 <p class="row-hint">Letters here are in the answer but not in that column—same as Wordle yellow.</p>
             </div>
@@ -230,15 +258,20 @@
                     <span class="row-label-dot teal-dot"></span>
                     Must include (any position)
                 </span>
-                <input type="text" id="mustInclude" class="text-input must-include-input hero-excludes" placeholder="Extra letters that must appear (EE = need two E’s)" autocomplete="off" spellcheck="false" aria-label="Letters that must appear anywhere, with repeats counting">
-                <p class="row-hint">Use this for “unknown position” letters: repeats count, e.g. <strong>ABBC</strong> needs two B’s.</p>
+                <input type="text" id="mustInclude" class="text-input must-include-input hero-excludes"
+                    placeholder="Extra letters that must appear (EE = need two E’s)" autocomplete="off"
+                    spellcheck="false" aria-label="Letters that must appear anywhere, with repeats counting">
+                <p class="row-hint">Use this for “unknown position” letters: repeats count, e.g. <strong>ABBC</strong>
+                    needs two B’s.</p>
             </div>
 
             <div class="hero-row hero-row--toggle">
-                <label class="repeat-toggle" title="When on, yellow slots add to minimum letter counts (handles double letters). When off, each yellow letter only needs to appear once.">
+                <label class="repeat-toggle"
+                    title="When on, yellow slots add to minimum letter counts (handles double letters). When off, each yellow letter only needs to appear once.">
                     <input type="checkbox" id="repeatSensitive" checked>
                     <span class="repeat-toggle-ui" aria-hidden="true"></span>
-                    <span class="repeat-toggle-text"><strong>Repeat-aware</strong> — match Wordle-style letter counts (doubles, etc.)</span>
+                    <span class="repeat-toggle-text"><strong>Repeat-aware</strong> — match Wordle-style letter counts
+                        (doubles, etc.)</span>
                 </label>
             </div>
 
@@ -247,13 +280,20 @@
                     <span class="row-label-dot gray-dot"></span>
                     Excluded (gray)
                 </span>
-                <input type="text" id="excludes" class="text-input excluded-input hero-excludes" placeholder="Letters not in the word" autocomplete="off" spellcheck="false" aria-label="Letters to exclude from results">
+                <input type="text" id="excludes" class="text-input excluded-input hero-excludes"
+                    placeholder="Letters not in the word" autocomplete="off" spellcheck="false"
+                    aria-label="Letters to exclude from results">
                 <p class="row-hint">Ignored for letters you already set as green, yellow, or must-include.</p>
             </div>
 
             <div class="hero-actions">
-                <button type="button" class="btn btn-primary" id="findBtn" aria-label="Apply filters and scroll to results">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <button type="button" class="btn btn-primary" id="findBtn"
+                    aria-label="Apply filters and scroll to results">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
                     Find words
                 </button>
                 <button type="button" class="btn btn-secondary" id="resetBtn" aria-label="Clear all search filters">
@@ -272,13 +312,15 @@
                 <!-- Play Wordle CTA -->
                 <a href="game.html" class="play-wordle-card">
                     <span class="play-wordle-text">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                             <text x="7" y="16" font-family="sans-serif" font-weight="bold" font-size="10">W</text>
                         </svg>
                         Play Wordle
                     </span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -287,8 +329,10 @@
                 <!-- Dictionary Toggle -->
                 <section class="card" id="dictCard">
                     <h2 class="card-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                            </path>
                         </svg>
                         Dictionary
                     </h2>
@@ -296,13 +340,17 @@
                         <div class="toggle-item active" data-dict="strict">Wordle</div>
                         <div class="toggle-item" data-dict="broad">Full</div>
                     </div>
-                    <p class="text-xs text-muted">Wordle: ~2.3k common answers. Full: entire word list for Scrabble and anagrams.</p>
+                    <p class="text-xs text-muted">Wordle: ~2.3k common answers. Full: entire word list for Scrabble and
+                        anagrams.</p>
                 </section>
 
                 <!-- Sort & Scrabble -->
                 <section class="card">
                     <h2 class="card-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M7 12h10M10 18h4"></path></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 6h18M7 12h10M10 18h4"></path>
+                        </svg>
                         Sort &amp; scores
                     </h2>
                     <label class="sidebar-label" for="sortSelect">Order</label>
@@ -321,7 +369,8 @@
                 <!-- Letter Tracker -->
                 <section class="card">
                     <h2 class="card-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <line x1="4" y1="21" x2="4" y2="14"></line>
                             <line x1="4" y1="10" x2="4" y2="3"></line>
                             <circle cx="12" cy="12" r="3"></circle>
@@ -345,7 +394,8 @@
                     <div class="flex items-center gap-2 results-actions">
                         <span class="results-count" id="resultsCount">0 words</span>
                         <button class="btn btn-primary" id="copyBtn" disabled aria-label="Copy all results">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
                                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                             </svg>
@@ -371,7 +421,8 @@
                     <div class="card-status-bar blue"></div>
                     <h2>
                         <div class="info-icon-wrapper blue">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <line x1="12" y1="16" x2="12" y2="12"></line>
                                 <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -379,8 +430,10 @@
                         </div>
                         About Our Finder
                     </h2>
-                    <p>The ultimate <strong>5 letter word finder</strong> for enthusiasts. Whether for Wordle, Scrabble, or crosswords, discover perfect matches in seconds.</p>
-                    <p>Our list includes thousands of five-letter words with live filtering—no page reload, no accounts.</p>
+                    <p>The ultimate <strong>5 letter word finder</strong> for enthusiasts. Whether for Wordle, Scrabble,
+                        or crosswords, discover perfect matches in seconds.</p>
+                    <p>Our list includes thousands of five-letter words with live filtering—no page reload, no accounts.
+                    </p>
                 </article>
 
                 <!-- How to Use -->
@@ -388,8 +441,11 @@
                     <div class="card-status-bar yellow"></div>
                     <h2>
                         <div class="info-icon-wrapper yellow">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                </path>
                             </svg>
                         </div>
                         How to Use
@@ -407,7 +463,8 @@
                     <div class="card-status-bar green"></div>
                     <h2>
                         <div class="info-icon-wrapper green">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
                                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                                 <path d="M9 3v18"></path>
                                 <path d="M15 3v18"></path>
@@ -417,8 +474,10 @@
                         </div>
                         Perfect for Wordle
                     </h2>
-                    <p>Optimized for daily gameplay. Our "Strict" mode mirrors the official game logic, ensuring you only see valid answer candidates.</p>
-                    <p>Input green, yellow, and gray letters to prune thousands of possibilities into a few winning choices.</p>
+                    <p>Optimized for daily gameplay. Our "Strict" mode mirrors the official game logic, ensuring you
+                        only see valid answer candidates.</p>
+                    <p>Input green, yellow, and gray letters to prune thousands of possibilities into a few winning
+                        choices.</p>
                 </article>
 
                 <!-- Why Choose Our Tool -->
@@ -426,8 +485,11 @@
                     <div class="card-status-bar purple"></div>
                     <h2>
                         <div class="info-icon-wrapper purple">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
                             </svg>
                         </div>
                         Why Choose Us?
@@ -472,4 +534,3 @@
 </body>
 
 </html>
-
