@@ -93,6 +93,7 @@ body.theme-light .pattern-box::after {
 body.theme-light .title {
     background: linear-gradient(to bottom, #1e293b 0%, #475569 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -160,10 +161,9 @@ body.theme-light .footer::before {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--bg-primary);
-    background-image:
-        radial-gradient(at 0% 0%, hsla(222, 47%, 11%, 1) 0px, transparent 50%),
-        radial-gradient(at 50% 0%, hsla(217, 32%, 15%, 1) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, hsla(222, 47%, 11%, 1) 0px, transparent 50%);
+    background-image: 
+        radial-gradient(at 50% 0%, hsla(217, 32%, 18%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(222, 47%, 12%, 1) 0px, transparent 50%);
     color: var(--text-primary);
     min-height: 100vh;
     padding: 0;
@@ -186,16 +186,16 @@ body {
 
 /* Layout */
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 1rem 1.25rem 3rem;
 }
 
 .header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
-    padding: 0 1.5rem;
+    padding: 0;
     padding-top: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -205,12 +205,13 @@ body {
 
 .title {
     font-family: 'Outfit', sans-serif;
-    font-size: clamp(2rem, 7vw, 3.5rem);
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
     font-weight: 900;
     letter-spacing: -0.04em;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
     background: linear-gradient(to bottom, #fff 0%, #cbd5e1 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
     max-width: 850px;
@@ -218,11 +219,11 @@ body {
 
 .subtitle {
     color: var(--text-secondary);
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 500;
-    line-height: 1.7;
+    line-height: 1.6;
     max-width: 700px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 0.5rem;
     letter-spacing: -0.01em;
 }
 
@@ -620,16 +621,16 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-.repeat-toggle input:checked + .repeat-toggle-ui {
+.repeat-toggle input:checked+.repeat-toggle-ui {
     background: var(--accent);
     border-color: var(--accent);
 }
 
-.repeat-toggle input:checked + .repeat-toggle-ui::after {
+.repeat-toggle input:checked+.repeat-toggle-ui::after {
     transform: translateX(1.2rem);
 }
 
-.repeat-toggle input:focus-visible + .repeat-toggle-ui {
+.repeat-toggle input:focus-visible+.repeat-toggle-ui {
     outline: 2px solid var(--accent-light);
     outline-offset: 2px;
 }
@@ -1758,9 +1759,20 @@ body[data-word-length="8"] .results-list {
     flex-shrink: 0;
 }
 
-.green-dot { background: var(--correct); box-shadow: 0 0 6px var(--correct); }
-.yellow-dot { background: var(--present); box-shadow: 0 0 6px var(--present); }
-.gray-dot { background: var(--absent); box-shadow: 0 0 6px var(--absent); }
+.green-dot {
+    background: var(--correct);
+    box-shadow: 0 0 6px var(--correct);
+}
+
+.yellow-dot {
+    background: var(--present);
+    box-shadow: 0 0 6px var(--present);
+}
+
+.gray-dot {
+    background: var(--absent);
+    box-shadow: 0 0 6px var(--absent);
+}
 
 /* Play Wordle Card Link */
 .play-wordle-card {
@@ -1858,10 +1870,15 @@ body[data-word-length="8"] .results-list {
         gap: 1rem;
         padding: 0.75rem 1.25rem;
     }
-    .hero-stat-num { font-size: 1.1rem; }
+
+    .hero-stat-num {
+        font-size: 1.1rem;
+    }
+
     .pattern-box {
         padding: 1.5rem 1rem;
     }
+
     .wrong-pos-grid {
         gap: 0.35rem;
     }

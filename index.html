@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Letter Word Finder — Wordle Solver, Scrabble Scores & Unscrambler</title>
+    <title>5 Letter Word Finder (Free Tool) – Wordle Solver & Word Generator</title>
     <meta name="description"
-        content="Filter 8,000+ five-letter words like Wordle: greens, yellows, grays, repeat-aware logic, must-include letters, Scrabble values, and instant sorting. Free, private, works offline.">
-    <meta name="keywords"
-        content="5 letter word finder, wordle solver, scrabble word finder, five letter words, word unscrambler">
+        content="Use our 5 letter word finder to quickly generate words for Wordle, Scrabble, and puzzles. Enter letters and get instant results. Free, fast, and easy to use.">
+    <meta name="keywords" content="5 letter word finder, wordle solver, five letter words, scrabble help, word generator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://github.com/NaveedIj/5letterwordfinder">
+
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -117,7 +120,9 @@
     <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
         <div class="nav-container">
             <div class="nav-header">
-                <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Menu</h3>
+                <h3
+                    style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
+                    Menu</h3>
                 <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -180,38 +185,10 @@
                 </svg>
             </button>
             <h1 class="title">5 Letter Word Finder – Find Words for Wordle & Puzzles</h1>
-            <p class="subtitle">Use our free tool to find 5 letter words instantly for Wordle, Scrabble, and puzzles.</p>
-            
-            <button class="btn-help" id="helpBtn" title="How to use">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                </svg>
-                How It Works
-            </button>
-
-            <!-- Quick stats bar -->
-            <div class="hero-stats" id="heroStats">
-                <div class="hero-stat">
-                    <span class="hero-stat-num" id="statWordCount">—</span>
-                    <span class="hero-stat-label">Words in list</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num">Live</span>
-                    <span class="hero-stat-label">Results</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num">0</span>
-                    <span class="hero-stat-label">Server calls</span>
-                </div>
-            </div>
+            <p class="subtitle">Use our free 5 letter word finder to generate words instantly for Wordle, Scrabble, and puzzles.</p>
         </header>
 
-        <!-- ======================== COMMAND CENTER ======================== -->
+        <!-- Tool Input -->
         <div class="pattern-box hero-container" id="finder" role="search" aria-label="Word search filters">
             <div class="hero-row">
                 <span class="row-label">
@@ -304,6 +281,38 @@
                 </button>
             </div>
         </div>
+
+        <div class="hero-extras" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem; margin-bottom: 4rem;">
+            <button class="btn-help" id="helpBtn" title="How to use">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                How It Works
+            </button>
+
+            <!-- Quick stats bar -->
+            <div class="hero-stats" id="heroStats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" id="statWordCount">—</span>
+                    <span class="hero-stat-label">Words in list</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">Live</span>
+                    <span class="hero-stat-label">Results</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">0</span>
+                    <span class="hero-stat-label">Server calls</span>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- ======================== MAIN CONTENT GRID ======================== -->
         <main class="main-grid">
@@ -409,97 +418,51 @@
         </main>
 
         <!-- ======================== INFO CARDS ======================== -->
-        <section class="info-section" aria-label="About and how to use">
+        <!-- ======================== SEO CONTENT SECTION ======================== -->
+        <section class="info-section">
             <div class="info-section-header">
                 <h2 class="info-section-title">Everything You Need to Win</h2>
-                <p class="info-section-sub">Built for Wordle champions and word game enthusiasts.</p>
+                <p class="info-section-sub">Master the game with our comprehensive word lookup patterns.</p>
             </div>
+
             <div class="info-content">
-                <!-- About Our Tool -->
-                <article class="info-box blue">
-                    <div class="card-status-bar blue"></div>
-                    <h2>
-                        <div class="info-icon-wrapper blue">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="16" x2="12" y2="12"></line>
-                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                            </svg>
-                        </div>
-                        About Our Finder
-                    </h2>
-                    <p>The ultimate <strong>5 letter word finder</strong> for enthusiasts. Whether for Wordle, Scrabble,
-                        or crosswords, discover perfect matches in seconds.</p>
-                    <p>Our list includes thousands of five-letter words with live filtering—no page reload, no accounts.
-                    </p>
-                </article>
+                <div class="info-box blue">
+                    <h2>What is a 5 Letter Word Finder?</h2>
+                    <p>A 5 letter word finder is a powerful digital tool that helps players of popular word games like Wordle, Scrabble, and other vocabulary puzzles. By entering known letters and excluded characters, users can narrow down a list of potential words from a vast dictionary. Whether you’re stuck on your fourth guess in Wordle or trying to find a high-scoring play in Scrabble, this tool acts as a dictionary-based unscrambler that finds five-letter words matching your specific criteria instantly.</p>
+                </div>
 
-                <!-- How to Use -->
-                <article class="info-box yellow">
-                    <div class="card-status-bar yellow"></div>
-                    <h2>
-                        <div class="info-icon-wrapper yellow">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5">
-                                <path
-                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                                </path>
-                            </svg>
-                        </div>
-                        How to Use
-                    </h2>
+                <div class="info-box purple">
+                    <h2>How to Use This Tool</h2>
+                    <p>Our 5 letter word finder is designed to be intuitive and fast. To get results:</p>
                     <ul class="clean-list">
-                        <li><strong>Pattern Search:</strong> Type known letters, leave blanks for unknowns.</li>
-                        <li><strong>Yellow Logic:</strong> Add letters present but in the wrong spot.</li>
-                        <li><strong>Gray Logic:</strong> Exclude letters confirmed to be absent.</li>
-                        <li><strong>Strict Mode:</strong> Toggle for official Wordle-only answers.</li>
+                        <li><strong>Correct Position</strong>: Enter letters you know are in the right spot (Green tiles).</li>
+                        <li><strong>Wrong Position</strong>: Enter letters that are in the word but currently in the wrong column (Yellow tiles).</li>
+                        <li><strong>Must Include</strong>: Add any extra letters you know must appear somewhere.</li>
+                        <li><strong>Excluded Letters</strong>: Type in all the letters you know are not in the answer (Gray tiles).</li>
                     </ul>
-                </article>
+                </div>
 
-                <!-- Wordle Players -->
-                <article class="info-box green">
-                    <div class="card-status-bar green"></div>
-                    <h2>
-                        <div class="info-icon-wrapper green">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <path d="M9 3v18"></path>
-                                <path d="M15 3v18"></path>
-                                <path d="M3 9h18"></path>
-                                <path d="M3 15h18"></path>
-                            </svg>
-                        </div>
-                        Perfect for Wordle
-                    </h2>
-                    <p>Optimized for daily gameplay. Our "Strict" mode mirrors the official game logic, ensuring you
-                        only see valid answer candidates.</p>
-                    <p>Input green, yellow, and gray letters to prune thousands of possibilities into a few winning
-                        choices.</p>
-                </article>
+                <div class="info-box blue">
+                    <h2>Benefits of Using a Word Finder</h2>
+                    <p>Using a word finder provides several advantages beyond just winning a game. First, it is an excellent way to expand your vocabulary as you discover words you might not have known. Second, it saves time and prevents frustration when you’re down to your last guess in Wordle. Third, for Scrabble players, it helps calculate potential scores and strategic placements. Finally, it helps you understand common letter grouping patterns in the English language.</p>
+                </div>
 
-                <!-- Why Choose Our Tool -->
-                <article class="info-box purple">
-                    <div class="card-status-bar purple"></div>
-                    <h2>
-                        <div class="info-icon-wrapper purple">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5">
-                                <polygon
-                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                </polygon>
-                            </svg>
-                        </div>
-                        Why Choose Us?
-                    </h2>
-                    <ul class="feature-labels">
-                        <li><span class="badge">⚡</span> Instant Results</li>
-                        <li><span class="badge">💸</span> 100% Free</li>
-                        <li><span class="badge">📶</span> Offline Ready</li>
-                        <li><span class="badge">🔒</span> Private & Local</li>
-                    </ul>
-                </article>
+                <div class="info-box purple">
+                    <h2>5 Letter Words Examples</h2>
+                    <p>Five-letter words are surprisingly abundant and diverse. Common examples include "ADIEU," "SLATE," "CRANE," and "AUDIO." These are often used as "starter words" because they contain many vowels and common consonants. More obscure examples like "QUERY," "ZYMES," or "XYLYL" can be the keys to winning complex puzzles. Our tool contains over 8,000 valid English five-letter words to ensure you find exactly what you need.</p>
+                </div>
+
+                <div class="info-box blue">
+                    <h2>Wordle Tips</h2>
+                    <p>To master Wordle, start with words that have many vowels (like ADIEU or AUDIO). Use your second and third guesses to eliminate high-frequency consonants like R, S, T, and L. If you have multiple yellow tiles, try placing those letters in different positions to find the green match quickly. Remember that some Wordles use double letters (like "SWEET" or "BOOKS"), so keep that in mind if you're struggling to find the final character.</p>
+                </div>
+
+                <div class="info-box purple">
+                    <h2>FAQ</h2>
+                    <p><strong>Is this tool free?</strong><br>Yes, our 5 letter word finder is 100% free to use with no registration required.</p>
+                    <p><strong>Can I use it for other games?</strong><br>Absolutely! It works perfectly for Scrabble, crosswords, and any 5-letter unscramble puzzle.</p>
+                    <p><strong>Does it work on my phone?</strong><br>Yes, the website is fully mobile-responsive and works on all smartphones and browsers.</p>
+                </div>
             </div>
         </section>
 
