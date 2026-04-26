@@ -6,7 +6,7 @@ const BASE_URL = "https://5letterwordfinder.vercel.app"; // Official production 
 
 const SEO_DATA = {
     "3": {
-        "title": "3 Letter Word Finder | Solve Short Word Puzzles Fast",
+        "title": "3 Letter Word Finder & Solver | Quick Word Results",
         "description": "Find all 3-letter words matching your pattern. Essential for high-scoring Scrabble plays and short-word anagram games. Accurate and free.",
         "canonical": "/3-letter-word-finder.html",
         "h1": "Find 3 Letter Words Instantly",
@@ -93,7 +93,7 @@ const SEO_DATA = {
         ]
     },
     "6": {
-        "title": "6 Letter Word Finder & Solver | Instant Results",
+        "title": "6 Letter Word Finder & Solver | Advanced Word Search",
         "description": "Find all 6-letter words matching your pattern. Advanced search for Scrabble, Wordle variants, and anagram games. Accurate and free lookup.",
         "canonical": "/6-letter-word-finder.html",
         "h1": "6 Letter Word Finder & Solver",
@@ -122,7 +122,7 @@ const SEO_DATA = {
         ]
     },
     "7": {
-        "title": "7 Letter Word Finder | Solve Word Puzzles Easily",
+        "title": "7 Letter Word Finder & Solver | Solve Word Puzzles Easily",
         "description": "Find 7-letter words instantly. Perfect for Scrabble Bingo, crosswords, and advanced word games. Easy-to-use search with position filters.",
         "canonical": "/7-letter-word-finder.html",
         "h1": "7 Letter Word Finder & Bingo Solver",
@@ -151,7 +151,7 @@ const SEO_DATA = {
         ]
     },
     "8": {
-        "title": "8 Letter Word Finder – Comprehensive Anagram & Puzzle Solver",
+        "title": "8 Letter Word Finder & Solver | Find Longer Words Fast",
         "description": "Search through thousands of 8-letter words. Perfect for crosswords, advanced puzzles, and Scrabble enthusiasts. Accurate, fast, and free lookup tool.",
         "canonical": "/8-letter-word-finder.html",
         "h1": "8 Letter Word Finder & Solver",
