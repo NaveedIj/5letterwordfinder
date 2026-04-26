@@ -6,7 +6,7 @@ const BASE_URL = "https://5letterwordfinder.vercel.app"; // Official production 
 
 const SEO_DATA = {
     "3": {
-        "title": "3 Letter Word Finder – Instant Tool for Wordle & Scrabble",
+        "title": "3 Letter Word Finder | Solve Short Word Puzzles Fast",
         "description": "Find all 3-letter words matching your pattern. Essential for high-scoring Scrabble plays and short-word anagram games. Accurate and free.",
         "canonical": "/3-letter-word-finder.html",
         "h1": "Find 3 Letter Words Instantly",
@@ -35,7 +35,7 @@ const SEO_DATA = {
         ]
     },
     "4": {
-        "title": "4 Letter Word Finder – Quick Solver for Wordle & Scrabble",
+        "title": "4 Letter Word Finder & Solver | Instant Results",
         "description": "Find all 4-letter words matching your criteria. Perfect for short-word puzzles, Scrabble, and anagrams. Fast, free, and accurate solver.",
         "canonical": "/4-letter-word-finder.html",
         "h1": "Find 4 Letter Words Instantly",
@@ -64,7 +64,7 @@ const SEO_DATA = {
         ]
     },
     "5": {
-        "title": "5 Letter Word Finder Tool – Wordle & Scrabble Helper (Free & Fast)",
+        "title": "5 Letter Word Finder & Wordle Solver | Instant Results",
         "description": "Find all 5 letter words instantly with our advanced word finder tool. Perfect for Wordle, Scrabble, and puzzle games. Fast, accurate, and free.",
         "canonical": "/index.html",
         "h1": "Find 5 Letter Words Instantly",
@@ -93,7 +93,7 @@ const SEO_DATA = {
         ]
     },
     "6": {
-        "title": "6 Letter Word Finder – Advanced Solver for Word Puzzles",
+        "title": "6 Letter Word Finder & Solver | Instant Results",
         "description": "Find all 6-letter words matching your pattern. Advanced search for Scrabble, Wordle variants, and anagram games. Accurate and free lookup.",
         "canonical": "/6-letter-word-finder.html",
         "h1": "6 Letter Word Finder & Solver",
@@ -122,7 +122,7 @@ const SEO_DATA = {
         ]
     },
     "7": {
-        "title": "7 Letter Word Finder – Scrabble Bingo & Anagram Solver",
+        "title": "7 Letter Word Finder | Solve Word Puzzles Easily",
         "description": "Find 7-letter words instantly. Perfect for Scrabble Bingo, crosswords, and advanced word games. Easy-to-use search with position filters.",
         "canonical": "/7-letter-word-finder.html",
         "h1": "7 Letter Word Finder & Bingo Solver",
