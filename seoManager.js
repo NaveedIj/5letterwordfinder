@@ -20,15 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         metaDesc.setAttribute('content', data.description);
     }
 
-    // Canonical Tag
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', BASE_URL + data.canonical);
-
     // 2. Update H1 and Subheading
     const h1 = document.querySelector('h1.title');
     const subheading = document.querySelector('p.subtitle');
