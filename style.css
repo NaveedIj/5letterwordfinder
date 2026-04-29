@@ -194,9 +194,9 @@ body {
     top: 0;
     width: 100%;
     z-index: 2000;
-    background: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    padding: 0.75rem 0;
+    background: linear-gradient(90deg, #ffffff, #f8f9ff);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+    padding: 0.85rem 0;
     border-bottom: 1px solid #f1f5f9;
 }
 
@@ -220,23 +220,24 @@ body {
 
 .brand-name {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     font-weight: 800;
-    color: #222;
+    color: #0f172a;
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
 .brand-tagline-header {
     font-size: 0.75rem;
-    color: #777;
+    color: #64748b;
     font-weight: 500;
+    font-style: italic;
 }
 
 /* Navigation Menu */
 .nav-menu {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.75rem;
     list-style: none;
     align-items: center;
     margin: 0;
@@ -246,19 +247,23 @@ body {
 
 .nav-menu-link {
     text-decoration: none;
-    color: #555;
+    color: #334155;
     font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .nav-menu-link:hover {
+    background: #f1f5f9;
     color: #007bff;
 }
 
 .nav-menu-link.active {
     color: #007bff;
-    font-weight: 700;
+    font-weight: 800;
+    background: #f1f5f9;
 }
 
 /* CTA Button */
@@ -266,17 +271,20 @@ body {
     background-color: #007bff;
     color: #ffffff;
     text-decoration: none;
-    padding: 0.6rem 1.25rem;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 0.7rem 1.6rem;
+    border-radius: 50px;
+    font-weight: 700;
     font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.25);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
 }
 
 .btn-cta-header:hover {
     background-color: #0056b3;
     color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.35);
 }
 
 /* Responsive */
