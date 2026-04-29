@@ -14,7 +14,7 @@ const SEO_DATA = {
         "content": [
             {
                 "title": "Why Use a 3 Letter Word Finder?",
-                "text": "Three-letter words are vital in Scrabble and crosswords, especially when you need to play 'hook' words or fit into tight spaces. Our 3 letter word finder identifies every valid combination from standard dictionaries. If you need something slightly longer, try our <a href='index.html'>5 letter word finder tool</a> for more options."
+                "text": "Three-letter words are vital in Scrabble and crosswords, especially when you need to play 'hook' words or fit into tight spaces. Our 3 letter word finder identifies every valid combination from standard dictionaries. If you need something slightly longer, try our <a href='/'>5 letter word finder tool</a> for more options."
             },
             {
                 "title": "Boost Your Short-Word Game",
@@ -43,7 +43,7 @@ const SEO_DATA = {
         "content": [
             {
                 "title": "Why Use a 4 Letter Word Finder?",
-                "text": "Four-letter words are the backbone of many word games. Whether you're dealing with tricky vowels or restrictive consonants, our tool scans thousands of words. For standard Wordle puzzles, we recommend using our <a href='index.html'>5 letter word finder tool</a>."
+                "text": "Four-letter words are the backbone of many word games. Whether you're dealing with tricky vowels or restrictive consonants, our tool scans thousands of words. For standard Wordle puzzles, we recommend using our <a href='/'>5 letter word finder tool</a>."
             },
             {
                 "title": "Master Short Word Puzzles",
@@ -66,7 +66,7 @@ const SEO_DATA = {
     "5": {
         "title": "5 Letter Word Finder & Wordle Solver | Instant Results",
         "description": "Find all 5 letter words instantly with our advanced word finder tool. Perfect for Wordle, Scrabble, and puzzle games. Fast, accurate, and free.",
-        "canonical": "/index.html",
+        "canonical": "/",
         "h1": "Find 5 Letter Words Instantly",
         "subheading": "Use our powerful word finder tool to solve Wordle, Scrabble, and other word puzzles quickly and easily.",
         "content": [
@@ -101,7 +101,7 @@ const SEO_DATA = {
         "content": [
             {
                 "title": "The Power of 6 Letter Words",
-                "text": "Six-letter words offer more complexity and higher scoring potential. Our engine uses a massive dictionary. For Wordle-like constraints, most users prefer the <a href='index.html'>5 letter word finder tool</a>."
+                "text": "Six-letter words offer more complexity and higher scoring potential. Our engine uses a massive dictionary. For Wordle-like constraints, most users prefer the <a href='/'>5 letter word finder tool</a>."
             },
             {
                 "title": "Solve Complex Word Ladders",
@@ -159,7 +159,7 @@ const SEO_DATA = {
         "content": [
             {
                 "title": "Advanced 8 Letter Word Search",
-                "text": "Finding 8-letter words can be challenging. For common puzzle solving, our <a href='index.html'>5 letter word finder tool</a> remains the most popular choice."
+                "text": "Finding 8-letter words can be challenging. For common puzzle solving, our <a href='/'>5 letter word finder tool</a> remains the most popular choice."
             },
             {
                 "title": "Master Complex Anagrams",

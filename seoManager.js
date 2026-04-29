@@ -118,7 +118,7 @@ function renderSpecializedSections(data) {
         <div class="info-box purple">
             <h2>Word Tools</h2>
             <ul class="clean-list">
-                <li><a href="index.html" style="color: inherit; text-decoration: none;">5 Letter Word Finder</a></li>
+                <li><a href="/" style="color: inherit; text-decoration: none;">5 Letter Word Finder</a></li>
                 <li><a href="4-letter-word-finder.html" style="color: inherit; text-decoration: none;">4 Letter Word Finder</a></li>
                 <li><a href="6-letter-word-finder.html" style="color: inherit; text-decoration: none;">6 Letter Word Finder</a></li>
                 <li><a href="7-letter-word-finder.html" style="color: inherit; text-decoration: none;">7 Letter Word Finder</a></li>
