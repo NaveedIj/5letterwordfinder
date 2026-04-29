@@ -188,19 +188,19 @@ body {
 
 /* Layout */
 /* Layout */
-.sticky-header {
+/* SaaS Header Layout */
+.saas-header {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 2000;
     background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 0;
     border-bottom: 1px solid #f1f5f9;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
-    padding: 1rem 0;
-    transition: all 0.3s ease;
 }
 
-.sticky-header .nav-container-header {
+.saas-header .nav-container-header {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -211,25 +211,36 @@ body {
     gap: 1.5rem;
 }
 
-.logo-link {
+/* Branding */
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.brand-name {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.45rem;
+    font-size: 1.35rem;
     font-weight: 800;
     color: #222;
-    text-decoration: none;
-    letter-spacing: -0.03em;
-    transition: color 0.3s ease;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
-.logo-link:hover {
-    color: #007bff;
+.brand-tagline-header {
+    font-size: 0.75rem;
+    color: #777;
+    font-weight: 500;
 }
 
+/* Navigation Menu */
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     list-style: none;
     align-items: center;
+    margin: 0;
+    padding: 0;
     flex-wrap: wrap;
 }
 
@@ -238,61 +249,47 @@ body {
     color: #555;
     font-size: 0.95rem;
     font-weight: 500;
-    padding: 0.4rem 0;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.nav-menu-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #007bff;
-    transition: width 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .nav-menu-link:hover {
     color: #007bff;
 }
 
-.nav-menu-link:hover::after {
-    width: 100%;
-}
-
 .nav-menu-link.active {
-    color: #007bff !important;
+    color: #007bff;
     font-weight: 700;
 }
 
-.nav-menu-link.active::after {
-    width: 100%;
+/* CTA Button */
+.btn-cta-header {
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
-@media (max-width: 768px) {
-    .sticky-header .nav-container-header {
-        justify-content: center;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-    
-    .logo-link {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 0.25rem;
-        font-size: 1.35rem;
-    }
+.btn-cta-header:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
 
-    .nav-menu {
+/* Responsive */
+@media (max-width: 900px) {
+    .saas-header .nav-container-header {
         justify-content: center;
+        text-align: center;
         gap: 1rem;
     }
     
-    .nav-menu-link {
-        font-size: 0.85rem;
-        padding: 0.25rem 0;
+    .brand-container {
+        align-items: center;
+        width: 100%;
     }
 }
 
