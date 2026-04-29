@@ -187,6 +187,98 @@ body {
 }
 
 /* Layout */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 0;
+    transition: all var(--transition-base);
+}
+
+.sticky-header .nav-container-header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-link {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: linear-gradient(to bottom, #fff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity var(--transition-fast);
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-menu-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.nav-menu-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-menu-link.active {
+    color: var(--accent-light);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+@media (max-width: 768px) {
+    .sticky-header .nav-container-header {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .logo-link {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        gap: 0.25rem;
+    }
+    
+    .nav-menu-link {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
