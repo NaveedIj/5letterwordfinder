@@ -48,6 +48,19 @@
 </head>
 
 <body data-word-length="5" style="--word-len: 5;">
+    <header class="sticky-header">
+        <nav class="nav-container-header" role="navigation" aria-label="Main Navigation">
+            <a href="/" class="logo-link">Word Finder Tool</a>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-menu-link active">Home</a></li>
+                <li><a href="/3-letter-word-finder.html" class="nav-menu-link">3 Letter</a></li>
+                <li><a href="/4-letter-word-finder.html" class="nav-menu-link">4 Letter</a></li>
+                <li><a href="/6-letter-word-finder.html" class="nav-menu-link">6 Letter</a></li>
+                <li><a href="/7-letter-word-finder.html" class="nav-menu-link">7 Letter</a></li>
+                <li><a href="/8-letter-word-finder.html" class="nav-menu-link">8 Letter</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Navigation Overlay -->
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
@@ -203,8 +216,8 @@
 
 
 
-        <!-- ======================== HEADER ======================== -->
-        <header class="header">
+        <!-- ======================== HERO SECTION ======================== -->
+        <section class="header">
             <button class="btn-menu" id="menuBtn" aria-label="Open menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -215,7 +228,7 @@
             </button>
             <h1 class="title">5 Letter Word Finder & Wordle Solver</h1>
             <p class="subtitle">Use our powerful word finder tool to solve Wordle, Scrabble, and other word puzzles quickly and easily.</p>
-        </header>
+        </section>
 
         <!-- Tool Input -->
         <div class="pattern-box hero-container" id="finder" role="search" aria-label="Word search filters">
