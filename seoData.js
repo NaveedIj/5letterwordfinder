@@ -2,7 +2,7 @@
  * SEO Data Configuration
  * Scalable foundation for dynamic metadata and content rendering.
  */
-const BASE_URL = "https://5letterwordfinder.vercel.app"; // Official production domain
+const BASE_URL = "https://www.5letterwordfindertool.com"; // Official production domain
 
 const SEO_DATA = {
     "3": {
