@@ -489,3 +489,16 @@ wireCharInputs();
 wireWrongInputs();
 filterWords();
 if (charInputs[0]) charInputs[0].focus();
+
+// Smooth scroll for "Try Tool" button
+document.querySelectorAll('a[href="#tool-section"], a[href="/#tool-section"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const toolSection = document.querySelector('#tool-section');
+        if (toolSection) {
+            e.preventDefault();
+            toolSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
