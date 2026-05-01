@@ -80,8 +80,10 @@ const SEO_DATA = {
             }
         ],
         "faqs": [
-            { "question": "What are the best 5-letter starting words?", "answer": "Common top starters include ADIEU, SLATE, CRANE, and AUDIO due to their high vowel and frequent consonant counts." },
-            { "question": "Does this tool support double letters?", "answer": "Yes, simply toggle the 'Repeat-aware' mode to handle words with repeating letters like SWEET or BOOKS." }
+            { "question": "Is this wordle solver completely free?", "answer": "Yes, it is 100% free to use forever. There are no paywalls or required registrations." },
+            { "question": "Can I use this for Scrabble or crosswords?", "answer": "Absolutely. You can switch the dictionary from \"Wordle\" to \"Full\" to find every valid English word for Scrabble and other board games." },
+            { "question": "Why isn't my word showing up in the results?", "answer": "Make sure you haven't accidentally excluded a required letter. If you are playing Wordle, ensure the dictionary is set to \"Wordle\" mode." },
+            { "question": "Does this tool work on mobile devices?", "answer": "Yes, it is fully optimized for smartphones and tablets, so you can solve puzzles on the go." }
         ],
         "patterns": [
             { "label": "5 Letter words starting with A", "query": "?pos0=A" },
