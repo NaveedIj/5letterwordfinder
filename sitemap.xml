@@ -1,57 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://www.5letterwordfindertool.com/</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
+  <url>
+    <loc>https://www.5letterwordfindertool.com/game.html</loc>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/3-letter-word-finder.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/4-letter-word-finder.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/6-letter-word-finder.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/7-letter-word-finder.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/8-letter-word-finder.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
+  <url>
+    <loc>https://www.5letterwordfindertool.com/5-letter-words-starting-with-a.html</loc>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.5letterwordfindertool.com/5-letter-words-ending-with-e.html</loc>
+    <lastmod>2026-05-02</lastmod>
+  </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/about.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/contact.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
   <url>
     <loc>https://www.5letterwordfindertool.com/privacy.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-02</lastmod>
   </url>
+
 </urlset>
