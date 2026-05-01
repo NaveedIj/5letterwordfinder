@@ -79,12 +79,6 @@ const SEO_DATA = {
                 "text": "Our tool is optimized for the Wordle experience. Use the 'Correct Position' (Green) inputs for confirmed letters. If you're building a Scrabble Bingo, our <a href='7-letter-word-finder.html'>7 letter word finder</a> is the perfect companion."
             }
         ],
-        "faqs": [
-            { "question": "Is this wordle solver completely free?", "answer": "Yes, it is 100% free to use forever. There are no paywalls or required registrations." },
-            { "question": "Can I use this for Scrabble or crosswords?", "answer": "Absolutely. You can switch the dictionary from \"Wordle\" to \"Full\" to find every valid English word for Scrabble and other board games." },
-            { "question": "Why isn't my word showing up in the results?", "answer": "Make sure you haven't accidentally excluded a required letter. If you are playing Wordle, ensure the dictionary is set to \"Wordle\" mode." },
-            { "question": "Does this tool work on mobile devices?", "answer": "Yes, it is fully optimized for smartphones and tablets, so you can solve puzzles on the go." }
-        ],
         "patterns": [
             { "label": "5 Letter words starting with A", "query": "?pos0=A" },
             { "label": "5 Letter words ending with E", "query": "?pos4=E" }
