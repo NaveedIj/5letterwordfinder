@@ -1659,6 +1659,19 @@ body[data-word-length="8"] .results-list {
     margin: 0 0 1.5rem 0;
 }
 
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.7;
+    cursor: default;
+}
+
 .footer-heading {
     color: #ffffff;
     font-size: 1.1rem;
