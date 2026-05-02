@@ -502,3 +502,21 @@ document.querySelectorAll('a[href="#tool-section"], a[href="/#tool-section"]').f
         }
     });
 });
+
+// Responsive Header Menu Toggle
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", function() {
+            navMenu.classList.toggle("active");
+        });
+        
+        document.addEventListener("click", function(event) {
+            if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.classList.remove("active");
+            }
+        });
+    }
+});

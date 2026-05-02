@@ -235,6 +235,16 @@ body {
 }
 
 /* Navigation Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--text-primary);
+}
+
 .nav-menu {
     display: flex;
     gap: 1.75rem;
@@ -243,6 +253,31 @@ body {
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        background: #ffffff;
+        padding: 20px;
+        border: 1px solid #eeeeee;
+        width: 220px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 .nav-menu-link {
