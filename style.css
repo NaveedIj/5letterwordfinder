@@ -163,7 +163,7 @@ body.theme-light .footer::before {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--bg-primary);
-    background-image: 
+    background-image:
         radial-gradient(at 50% 0%, hsla(217, 32%, 18%, 1) 0px, transparent 50%),
         radial-gradient(at 0% 100%, hsla(222, 47%, 12%, 1) 0px, transparent 50%);
     color: var(--text-primary);
@@ -234,19 +234,8 @@ body {
     font-style: italic;
 }
 
-/* Navigation Menu */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    color: var(--text-primary);
-}
-
 .nav-menu {
-    display: flex;
+    display: flex !important;
     gap: 1.75rem;
     list-style: none;
     align-items: center;
@@ -256,27 +245,38 @@ body {
     z-index: 1000;
 }
 
+.menu-toggle {
+    display: none !important;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--text-primary);
+}
+
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block !important;
+    }
+
     .nav-menu {
-        display: none;
+        display: none !important;
         flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 60px;
         right: 20px;
-        background: #ffffff;
+        background: #fff;
         padding: 20px;
-        border: 1px solid #eeeeee;
         width: 220px;
+        border: 1px solid #eeeeee;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 2000;
     }
 
     .nav-menu.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
+        display: flex !important;
     }
 }
 
@@ -329,7 +329,7 @@ body {
         text-align: center;
         gap: 1rem;
     }
-    
+
     .brand-container {
         align-items: center;
         width: 100%;
@@ -2143,4 +2143,4 @@ body[data-word-length="8"] .results-list {
     .tools-grid {
         grid-template-columns: 1fr;
     }
-}
+}
