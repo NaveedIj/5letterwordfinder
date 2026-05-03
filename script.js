@@ -16,6 +16,36 @@ const statWordCount = document.getElementById('statWordCount');
 const sortSelect = document.getElementById('sortSelect');
 const showScrabbleInput = document.getElementById('showScrabble');
 
+let wordleList = [];
+let scrabbleList = [];
+let activeList = [];
+
+if (IS_WORDLE_LENGTH) {
+    Promise.all([
+        fetch("./data/wordle.json").then(res => res.json()),
+        fetch("./data/scrabble.json").then(res => res.json())
+    ])
+    .then(([wordle, scrabble]) => {
+        wordleList = wordle;
+        scrabbleList = scrabble;
+        activeList = currentDict === 'strict' ? wordleList : scrabbleList;
+        console.log("Dictionaries loaded");
+        if (hasAnyFilter()) filterWords();
+    })
+    .catch(err => console.error("Error loading dictionaries:", err));
+} else {
+    // Load specific length for other pages
+    fetch(`./data/${WORD_LENGTH}.json`)
+    .then(res => res.json())
+    .then(list => {
+        activeList = list;
+        console.log(`${WORD_LENGTH}-letter dictionary loaded`);
+        if (hasAnyFilter()) filterWords();
+    })
+    .catch(err => console.error(`Error loading ${WORD_LENGTH}-letter dictionary:`, err));
+}
+
+
 const dictToggle = document.getElementById('dictToggle');
 const dictCard = document.getElementById('dictCard');
 const playWordleCard = document.querySelector('.play-wordle-card');
@@ -68,8 +98,8 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 let trackerState = {};
 
 function getSourcePool() {
-    if (IS_WORDLE_LENGTH && typeof WORDS !== 'undefined') {
-        return currentDict === 'strict' ? WORDS.slice(0, 2315) : WORDS;
+    if (IS_WORDLE_LENGTH) {
+        return activeList;
     }
     const lists = typeof WORD_LISTS_BY_LENGTH !== 'undefined' ? WORD_LISTS_BY_LENGTH : (typeof window !== 'undefined' && window.WORD_LISTS_BY_LENGTH);
     const extra = lists ? lists[WORD_LENGTH] : null;
@@ -219,7 +249,8 @@ function renderResults(pattern = '') {
         `;
         copyBtn.disabled = true;
     } else {
-        const wordGrid = currentResults.map(word => {
+        const displayResults = currentResults.slice(0, 200);
+        const wordGrid = displayResults.map(word => {
             const upperWord = word.toUpperCase();
             let highlightedWord = '';
             for (let i = 0; i < WORD_LENGTH; i++) {
@@ -239,7 +270,8 @@ function renderResults(pattern = '') {
         copyBtn.disabled = false;
     }
 
-    resultsCount.textContent = `${currentResults.length.toLocaleString()} word${currentResults.length !== 1 ? 's' : ''}`;
+    const countText = `${currentResults.length.toLocaleString()} word${currentResults.length !== 1 ? 's' : ''}`;
+    resultsCount.textContent = currentResults.length > 200 ? `${countText} (showing first 200)` : countText;
 }
 
 function renderTracker() {
@@ -427,6 +459,8 @@ if (dictToggle && IS_WORDLE_LENGTH) {
         document.querySelectorAll('#dictToggle .toggle-item').forEach(el => el.classList.remove('active'));
         item.classList.add('active');
         currentDict = item.dataset.dict;
+        
+        activeList = currentDict === 'strict' ? wordleList : scrabbleList;
         filterWords();
     });
 }
