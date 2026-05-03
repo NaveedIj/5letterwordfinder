@@ -215,7 +215,8 @@ body {
 }
 
 .brand-name span {
-    color: #6b8e23; /* Olive/Greenish accent */
+    color: #5f9f3f; /* Professional green */
+    transition: color 0.3s ease;
 }
 
 .brand-container:hover .brand-name {
@@ -223,10 +224,45 @@ body {
     transform: scale(1.03);
 }
 
+.brand-container:hover .brand-name span {
+    color: #2e7d32; /* Darker green on hover */
+}
+
 .brand-tagline-header {
     font-size: 0.75rem;
     color: #64748b;
     font-weight: 500;
+    font-style: italic;
+}
+
+/* Footer Logo Styling */
+.footer-logo-container {
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo-container a {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-container a span {
+    color: #5f9f3f;
+}
+
+.footer-logo-container a:hover {
+    opacity: 0.85;
+}
+
+.footer-tagline {
+    font-size: 13px;
+    color: #bbb;
+    margin-top: 5px;
+    margin-bottom: 1.25rem;
     font-style: italic;
 }
 
