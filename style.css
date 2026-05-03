@@ -203,7 +203,7 @@ body {
 }
 
 .brand-name {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 22px;
     font-weight: 700;
     color: #222;
@@ -229,10 +229,12 @@ body {
 }
 
 .brand-tagline-header {
-    font-size: 0.75rem;
-    color: #64748b;
-    font-weight: 500;
-    font-style: italic;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #777;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    font-style: normal;
 }
 
 /* Footer Logo Styling */
@@ -241,9 +243,9 @@ body {
 }
 
 .footer-logo-container a {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     color: #ffffff;
     text-decoration: none;
     letter-spacing: 0.5px;
@@ -259,11 +261,14 @@ body {
 }
 
 .footer-tagline {
+    font-family: 'Inter', sans-serif;
     font-size: 13px;
-    color: #bbb;
+    color: #777;
+    font-weight: 400;
+    letter-spacing: 0.3px;
     margin-top: 5px;
     margin-bottom: 1.25rem;
-    font-style: italic;
+    font-style: normal;
 }
 
 .nav-menu {
@@ -316,7 +321,8 @@ body {
     text-decoration: none;
     color: #334155;
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 0.3px;
     padding: 0.5rem 0.85rem;
     border-radius: 8px;
     transition: all 0.3s ease;
