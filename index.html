@@ -51,9 +51,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Dynamic SEO System -->
-    <script src="seoData.js" defer></script>
-    <script src="seoManager.js" defer></script>
+
 
     <!-- JSON-LD Schema for FAQ -->
     <script type="application/ld+json">
@@ -816,29 +814,8 @@
 
     <div class="toast" id="toast"></div>
 
-    <script src="words-by-length.js"></script>
-    <script src="script.js"></script>
-    
-    <!-- FORCE Responsive Menu JS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const btn = document.querySelector(".menu-toggle");
-            const menu = document.querySelector(".nav-menu");
-
-            if (btn && menu) {
-                btn.onclick = function(e) {
-                    e.stopPropagation();
-                    menu.classList.toggle("active");
-                };
-                
-                document.addEventListener("click", function(event) {
-                    if (!btn.contains(event.target) && !menu.contains(event.target)) {
-                        menu.classList.remove("active");
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="./seo-data.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
