@@ -20,29 +20,17 @@ let wordleList = [];
 let scrabbleList = [];
 let activeList = [];
 
-if (IS_WORDLE_LENGTH) {
-    Promise.all([
-        fetch("./data/wordle.json").then(res => res.json()),
-        fetch("./data/scrabble.json").then(res => res.json())
-    ])
-    .then(([wordle, scrabble]) => {
-        wordleList = wordle;
-        scrabbleList = scrabble;
+if (typeof wordList !== 'undefined') {
+    const listForLen = wordList.filter(w => w.length === WORD_LENGTH);
+    if (IS_WORDLE_LENGTH) {
+        wordleList = listForLen.slice(0, 2315);
+        scrabbleList = listForLen;
         activeList = currentDict === 'strict' ? wordleList : scrabbleList;
-        console.log("Dictionaries loaded");
-        if (hasAnyFilter()) filterWords();
-    })
-    .catch(err => console.error("Error loading dictionaries:", err));
-} else {
-    // Load specific length for other pages
-    fetch(`./data/${WORD_LENGTH}.json`)
-    .then(res => res.json())
-    .then(list => {
-        activeList = list;
-        console.log(`${WORD_LENGTH}-letter dictionary loaded`);
-        if (hasAnyFilter()) filterWords();
-    })
-    .catch(err => console.error(`Error loading ${WORD_LENGTH}-letter dictionary:`, err));
+    } else {
+        activeList = listForLen;
+    }
+    console.log("Loaded words:", wordList.length);
+    console.log(`Active list for ${WORD_LENGTH} letters:`, activeList.length);
 }
 
 
