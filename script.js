@@ -249,7 +249,8 @@ function renderResults(pattern = '') {
         `;
         copyBtn.disabled = true;
     } else {
-        const displayResults = currentResults.slice(0, 200);
+        const limit = currentDict === 'strict' ? 200 : 1000;
+        const displayResults = currentResults.slice(0, limit);
         const wordGrid = displayResults.map(word => {
             const upperWord = word.toUpperCase();
             let highlightedWord = '';
@@ -271,7 +272,7 @@ function renderResults(pattern = '') {
     }
 
     const countText = `${currentResults.length.toLocaleString()} word${currentResults.length !== 1 ? 's' : ''}`;
-    resultsCount.textContent = currentResults.length > 200 ? `${countText} (showing first 200)` : countText;
+    resultsCount.textContent = currentResults.length > (currentDict === 'strict' ? 200 : 1000) ? `${countText} (showing first ${currentDict === 'strict' ? 200 : 1000})` : countText;
 }
 
 function renderTracker() {
