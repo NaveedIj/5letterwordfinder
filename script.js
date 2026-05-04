@@ -19,6 +19,8 @@ const showScrabbleInput = document.getElementById('showScrabble');
 let wordleList = [];
 let scrabbleList = [];
 let activeList = [];
+let currentResults = [];
+let currentDict = IS_WORDLE_LENGTH ? 'strict' : 'broad';
 
 if (typeof wordList !== 'undefined') {
     const listForLen = wordList.filter(w => w.length === WORD_LENGTH);
@@ -32,6 +34,7 @@ if (typeof wordList !== 'undefined') {
     console.log("Loaded words:", wordList.length);
     console.log(`Active list for ${WORD_LENGTH} letters:`, activeList.length);
 }
+
 
 
 const dictToggle = document.getElementById('dictToggle');
@@ -79,20 +82,10 @@ function mergeCounts(a, b) {
     return o;
 }
 
-let currentDict = IS_WORDLE_LENGTH ? 'strict' : 'broad';
-let currentResults = [];
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 let trackerState = {};
 
-function getSourcePool() {
-    if (IS_WORDLE_LENGTH) {
-        return activeList;
-    }
-    const lists = typeof WORD_LISTS_BY_LENGTH !== 'undefined' ? WORD_LISTS_BY_LENGTH : (typeof window !== 'undefined' && window.WORD_LISTS_BY_LENGTH);
-    const extra = lists ? lists[WORD_LENGTH] : null;
-    return Array.isArray(extra) ? extra : [];
-}
 
 function parseMustInclude(raw) {
     return countLetters(raw.toUpperCase().replace(/[^A-Z]/g, ''));
@@ -140,7 +133,7 @@ function getEffectiveExcludes(excludeList, pattern, wrongPosArr, mustIncludeCoun
     return excludeList.filter(c => !required.has(c));
 }
 
-function filterWords() {
+function updateResults() {
     const pattern = charInputs.map(input => input.value.toUpperCase().trim() || '_').join('');
     const wrongPosArr = wrongPosInputs.map(input => input.value.toUpperCase().trim());
     const repeatSensitive = repeatSensitiveInput ? repeatSensitiveInput.checked : true;
@@ -152,7 +145,7 @@ function filterWords() {
     const greens = greenCountsFromPattern(pattern);
     const effectiveExcludes = getEffectiveExcludes(excludesAll, pattern, wrongPosArr, mustIncludeCounts);
 
-    const sourcePool = getSourcePool();
+    const sourcePool = activeList;
 
     const yellowUnique = [...new Set(wrongPosArr.join('').split('').filter(c => /[A-Z]/.test(c)))];
 
@@ -284,7 +277,7 @@ function resetFilters() {
     excludesInput.value = '';
     if (mustIncludeInput) mustIncludeInput.value = '';
     if (repeatSensitiveInput) repeatSensitiveInput.checked = true;
-    filterWords();
+    updateResults();
     charInputs[0].focus();
 }
 
@@ -359,7 +352,7 @@ function wireCharInputs() {
             if (val && index < last) {
                 charInputs[index + 1].focus();
             }
-            filterWords();
+            updateResults();
         });
 
         input.addEventListener('keydown', (e) => {
@@ -380,7 +373,7 @@ function wireWrongInputs() {
             if (val.length === 1 && index < last) {
                 wrongPosInputs[index + 1].focus();
             }
-            filterWords();
+            updateResults();
         });
 
         input.addEventListener('keydown', (e) => {
@@ -395,7 +388,7 @@ function wireWrongInputs() {
     if (el) {
         el.addEventListener('input', (e) => {
             e.target.value = e.target.value.toUpperCase().replace(/[^A-Z]/g, '');
-            filterWords();
+            updateResults();
         });
     }
 });
@@ -429,7 +422,7 @@ window.addEventListener('keydown', (e) => {
 if (resetBtn) resetBtn.addEventListener('click', resetFilters);
 if (findBtn) {
     findBtn.addEventListener('click', () => {
-        filterWords();
+        updateResults();
         resultsList?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
 }
@@ -450,7 +443,7 @@ if (dictToggle && IS_WORDLE_LENGTH) {
         currentDict = item.dataset.dict;
         
         activeList = currentDict === 'strict' ? wordleList : scrabbleList;
-        filterWords();
+        updateResults();
     });
 }
 
@@ -489,11 +482,8 @@ window.addEventListener('keydown', (e) => {
 function initStats() {
     if (!statWordCount) return;
     let n = 0;
-    if (IS_WORDLE_LENGTH && typeof WORDS !== 'undefined') {
-        n = WORDS.length;
-    } else {
-        const lists = typeof WORD_LISTS_BY_LENGTH !== 'undefined' ? WORD_LISTS_BY_LENGTH : (typeof window !== 'undefined' && window.WORD_LISTS_BY_LENGTH);
-        if (lists && lists[WORD_LENGTH]) n = lists[WORD_LENGTH].length;
+    if (activeList) {
+        n = activeList.length;
     }
     statWordCount.textContent = n ? n.toLocaleString() : '—';
 }
@@ -510,7 +500,7 @@ initLengthUi();
 initStats();
 wireCharInputs();
 wireWrongInputs();
-filterWords();
+updateResults();
 if (charInputs[0]) charInputs[0].focus();
 
 // Smooth scroll for "Try Tool" button
