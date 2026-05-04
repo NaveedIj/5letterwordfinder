@@ -162,6 +162,10 @@ body {
     transition: background-color var(--transition-base), color var(--transition-base);
 }
 
+main {
+    flex: 1;
+}
+
 .bg-glow {
     position: fixed;
     top: 0;
@@ -387,7 +391,6 @@ body {
     margin: 0 auto;
     margin-top: 70px;
     padding: 1rem 1.25rem 3rem;
-    flex: 1;
 }
 
 .header {
