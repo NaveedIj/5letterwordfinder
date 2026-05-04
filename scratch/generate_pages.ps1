@@ -8,12 +8,12 @@ $template = @'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Letter Words Starting With {{L}} – Word Finder Tool</title>
+    <title>5 Letter Words Starting With {{L}} - Word Finder Tool</title>
     <meta name="description" content="Discover 5 letter words starting with {{L}}. Use our dynamic list and Word Finder Tool to solve your Wordle puzzles quickly and efficiently.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.5letterwordfindertool.com/5-letter-words-starting-with-{{l}}.html">
     <!-- Open Graph -->
-    <meta property="og:title" content="5 Letter Words Starting With {{L}} – Word Finder Tool">
+    <meta property="og:title" content="5 Letter Words Starting With {{L}} - Word Finder Tool">
     <meta property="og:description" content="Browse 5-letter words starting with {{L}} and use our tool to filter by position and solve Wordle fast.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.5letterwordfindertool.com/5-letter-words-starting-with-{{l}}.html">
@@ -298,6 +298,6 @@ foreach ($l in $letters) {
     
     $content = $template.Replace("{{L}}", $L).Replace("{{l}}", $ls).Replace("{{NAV}}", $currentNav)
     
-    [System.IO.File]::WriteAllText($filePath, $content)
+    [System.IO.File]::WriteAllText($filePath, $content, [System.Text.Encoding]::UTF8)
     Write-Host "Created/Updated: $fileName"
 }
