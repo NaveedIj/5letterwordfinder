@@ -1451,6 +1451,37 @@ body[data-word-length="8"] .results-list {
     margin-top: auto;
 }
 
+.letter-grid-internal {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.letter-grid-internal a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    border: 1px solid var(--border);
+    font-size: 1rem;
+}
+
+.letter-grid-internal a:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-light);
+}
+
 .clean-list li {
     font-size: 0.95rem;
     line-height: 1.5;
