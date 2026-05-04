@@ -134,6 +134,7 @@ function getEffectiveExcludes(excludeList, pattern, wrongPosArr, mustIncludeCoun
 }
 
 function updateResults() {
+    console.log("updateResults triggered");
     const pattern = charInputs.map(input => input.value.toUpperCase().trim() || '_').join('');
     const wrongPosArr = wrongPosInputs.map(input => input.value.toUpperCase().trim());
     const repeatSensitive = repeatSensitiveInput ? repeatSensitiveInput.checked : true;
@@ -394,7 +395,7 @@ function wireWrongInputs() {
 });
 
 if (repeatSensitiveInput) {
-    repeatSensitiveInput.addEventListener('change', () => filterWords());
+    repeatSensitiveInput.addEventListener('change', () => updateResults());
 }
 
 function toggleModal(show) {
@@ -495,38 +496,38 @@ function initLengthUi() {
     }
 }
 
-loadTheme();
-initLengthUi();
-initStats();
-wireCharInputs();
-wireWrongInputs();
-updateResults();
-if (charInputs[0]) charInputs[0].focus();
+document.addEventListener("DOMContentLoaded", () => {
+    loadTheme();
+    initLengthUi();
+    initStats();
+    wireCharInputs();
+    wireWrongInputs();
+    updateResults();
+    if (charInputs[0]) charInputs[0].focus();
 
-// Smooth scroll for "Try Tool" button
-document.querySelectorAll('a[href="#tool-section"], a[href="/#tool-section"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        const toolSection = document.querySelector('#tool-section');
-        if (toolSection) {
-            e.preventDefault();
-            toolSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+    // Smooth scroll for "Try Tool" button
+    document.querySelectorAll('a[href="#tool-section"], a[href="/#tool-section"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const toolSection = document.querySelector('#tool-section');
+            if (toolSection) {
+                e.preventDefault();
+                toolSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-});
 
-// Responsive Header Menu Toggle
-document.addEventListener("DOMContentLoaded", function() {
+    // Responsive Header Menu Toggle
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
-    
+
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", function() {
+        menuToggle.addEventListener("click", function () {
             navMenu.classList.toggle("active");
         });
-        
-        document.addEventListener("click", function(event) {
+
+        document.addEventListener("click", function (event) {
             if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
                 navMenu.classList.remove("active");
             }
