@@ -1767,7 +1767,12 @@ body[data-word-length="8"] .results-list {
     color: #ffffff;
     font-size: 14px;
     opacity: 0.7;
-    cursor: default;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.icon:hover {
+    opacity: 1;
 }
 
 .footer-heading {
