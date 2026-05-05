@@ -1144,12 +1144,8 @@ body.animations-disabled * {
     color: #ffffff;
     font-size: 14px;
     opacity: 0.7;
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-
-.social-icons .icon:hover {
-    opacity: 1;
+    cursor: default;
+    pointer-events: none;
 }
 
 .footer-heading {

@@ -142,7 +142,8 @@ body.theme-light .section-badge {
     -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -1767,12 +1768,8 @@ body[data-word-length="8"] .results-list {
     color: #ffffff;
     font-size: 14px;
     opacity: 0.7;
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
-
-.icon:hover {
-    opacity: 1;
+    cursor: default;
+    pointer-events: none;
 }
 
 .footer-heading {
