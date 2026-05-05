@@ -169,6 +169,7 @@ $template = @'
             <div class="title-row">
                 <h1 class="title">5 Letter Words Starting With {{L}}</h1>
             </div>
+            <p class="tagline">Your Secret Weapon for Wordle Wins</p>
             <p class="subtitle">Discover the best 5 letter words starting with {{L}} to win your next word game.</p>
         </header>
 
