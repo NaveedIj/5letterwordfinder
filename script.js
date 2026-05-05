@@ -133,6 +133,9 @@ function getEffectiveExcludes(excludeList, pattern, wrongPosArr, mustIncludeCoun
 
 function updateResults() {
     console.log("updateResults triggered");
+    if (typeof activeList !== 'undefined') {
+        console.log("activeList length:", activeList.length);
+    }
     const pattern = charInputs.map(input => input.value.toUpperCase().trim() || '_').join('');
     const wrongPosArr = wrongPosInputs.map(input => input.value.toUpperCase().trim());
     const repeatSensitive = repeatSensitiveInput ? repeatSensitiveInput.checked : true;
@@ -535,22 +538,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-});
 
-// Page-specific Enhancement: Auto-prefill "E" for ending-with-e pages
-// Align tool with page intent while maintaining user control
-if (window.location.pathname.includes("ending-with-e")) {
-    window.addEventListener('load', () => {
+    // Page-specific Enhancement: Auto-prefill "E" for ending-with-e pages
+    if (window.location.pathname.includes("ending-with-e.html")) {
         const inputs = document.querySelectorAll('.char-input');
         if (inputs.length > 0) {
             const lastInput = inputs[inputs.length - 1];
-            // Prefill only if empty to respect existing user input or focus
             if (!lastInput.value) {
                 lastInput.value = 'E';
-                // Trigger input event to refresh filtering logic automatically
+                // Trigger input event to refresh filtering logic
                 lastInput.dispatchEvent(new Event('input', { bubbles: true }));
+                console.log("Auto-prefilled 'E' and triggered update");
             }
         }
-    });
-}
+    }
+});
 

@@ -60,10 +60,6 @@
     </header>
 
     <main>
-        <!-- Dynamic SEO System -->
-        <script src="seo-data.js" defer></script>
-        <script src="seoManager.js" defer></script>
-
         <!-- Navigation Overlay -->
         <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
@@ -155,8 +151,8 @@
                         </div>
                     </div>
                 </section>
-            </div>
-        </div>
+            </section>
+        </main>
 
         <!-- Side Navigation Panel -->
         <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
@@ -213,45 +209,31 @@
         </aside>
 
         <div class="container">
-
             <!-- ======================== HEADER ======================== -->
             <header class="header">
-                <button class="btn-menu" id="menuBtn" aria-label="Open menu">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
-                <div class="title-row">
-                    <h1 class="title">5 Letter Words Ending with E</h1>
-                </div>
-                <p class="tagline">Your Secret Weapon for Wordle Wins</p>
-                <p class="subtitle">Use our powerful word finder tool below to find the perfect word ending in E.</p>
+                <span class="brand-tagline">Advanced Word Search</span>
+                <h1 class="title">5 Letter Words Ending with E</h1>
+                <p class="subtitle">Discover every possible 5-letter word that ends in E. Use our smart filters to narrow down your Wordle guesses and secure your win.</p>
             </header>
 
-            <!-- Tool Input -->
-            <div class="pattern-box hero-container" id="tool-section" role="search" aria-label="Word search filters">
+            <!-- Hero Pattern Tool Section -->
+            <div class="pattern-box">
                 <div class="hero-row">
-                    <span class="row-label">
-                        <span class="row-label-dot green-dot"></span>
-                        Correct Position
-                    </span>
+                    <span class="row-label">Pattern Search</span>
                     <div class="pattern-grid" id="patternGrid">
-                        <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
-                            autofocus id="pos0" aria-label="Letter position 1">
-                        <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
-                            id="pos1" aria-label="Letter position 2">
-                        <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
-                            id="pos2" aria-label="Letter position 3">
-                        <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
-                            id="pos3" aria-label="Letter position 4">
-                        <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
-                            id="pos4" aria-label="Letter position 5">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos0"
+                            aria-label="First letter">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos1"
+                            aria-label="Second letter">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos2"
+                            aria-label="Third letter">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos3"
+                            aria-label="Fourth letter">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos4"
+                            aria-label="Fifth letter">
                     </div>
                 </div>
-
+                
                 <div class="hero-row">
                     <span class="row-label">
                         <span class="row-label-dot yellow-dot"></span>
@@ -324,8 +306,8 @@
             </div>
 
 
-            <!-- Main Content Layout -->
-            <div class="main-layout">
+            <!-- MAIN CONTENT GRID -->
+            <div class="main-grid">
                 <aside class="sidebar">
                     <!-- Dictionary Toggle -->
                     <section class="card" id="dictCard">
@@ -379,10 +361,10 @@
             </div>
 
 
-            <div class="single-column-content">
-                <section class="card content-card">
-                <div class="prose">
-                    <section style="margin-bottom: 3rem;">
+            <section class="info-section">
+                <section class="card">
+                    <div style="padding: 2rem;">
+                        <section style="margin-bottom: 3rem;">
                         <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">What This Page Helps With</h2>
                         <p>Are you staring at a green "E" in the fifth slot of your Wordle grid and feeling stuck? You are in the right place.</p>
                         <p>This page is a dedicated resource for finding every valid 5-letter word that ends with the letter E. Whether you are playing the daily Wordle, a competitive game of Scrabble, or a difficult crossword, we provide the specific vocabulary you need to win.</p>
