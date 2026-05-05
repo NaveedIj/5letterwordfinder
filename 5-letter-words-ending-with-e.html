@@ -25,41 +25,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
     
     <!-- Optimized CSS Loading -->
-    <link rel="preload" href="style.min.css" as="style">
-    <link rel="stylesheet" href="style.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.min.css"></noscript>
+    <link rel="stylesheet" href="style.css">
+
 
     <!-- Dynamic SEO System -->
     <script src="seo-data.js" defer></script>
     <script src="seoManager.js" defer></script>
-    <style>
-        .word-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .word-item {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            color: var(--text-light);
-            text-align: center;
-            padding: 0.5rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 6px;
-        }
-        @media (max-width: 600px) {
-            .word-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
 </head>
 
 <body class="page-about" data-word-length="5" style="--word-len: 5;">
@@ -298,6 +269,7 @@
                         <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" id="w4"
                             aria-label="Wrong position letters for slot 5">
                     </div>
+                    <p class="row-hint">Letters here are in the answer but not in that column.</p>
                 </div>
 
                 <div class="hero-row">
@@ -336,17 +308,76 @@
                         Reset
                     </button>
                 </div>
-            </div>
 
-            <!-- Results Section -->
-            <section class="results-section">
-                <div class="results-header">
-                    <div class="results-meta">
-                        <span class="results-count" id="resultsCount">0 words</span>
+                <!-- Quick stats bar -->
+                <div class="hero-stats" id="heroStats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" id="statWordCount">—</span>
+                        <span class="hero-stat-label">Words in list</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">Live</span>
+                        <span class="hero-stat-label">Results</span>
                     </div>
                 </div>
-                <div id="resultsList" class="results-grid"></div>
-            </section>
+            </div>
+
+
+            <!-- Main Content Layout -->
+            <div class="main-layout">
+                <aside class="sidebar">
+                    <!-- Dictionary Toggle -->
+                    <section class="card" id="dictCard">
+                        <div class="card-title" style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">
+                            Dictionary
+                        </div>
+                        <div class="dictionary-controls" id="dictToggle">
+                            <div class="toggle-item active" data-dict="strict">Wordle</div>
+                            <div class="toggle-item" data-dict="broad">Full</div>
+                        </div>
+                    </section>
+
+                    <!-- Sort & Scrabble -->
+                    <section class="card">
+                        <div class="card-title" style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">
+                            Sort & Scores
+                        </div>
+                        <select id="sortSelect" class="select-input">
+                            <option value="alpha-asc">A → Z</option>
+                            <option value="alpha-desc">Z → A</option>
+                            <option value="score-desc">Scrabble: high → low</option>
+                        </select>
+                        <label class="sidebar-label sidebar-label--spaced">
+                            <input type="checkbox" id="showScrabble" checked>
+                            Show Scrabble values
+                        </label>
+                    </section>
+
+                    <!-- Letter Tracker -->
+                    <section class="card">
+                        <div class="card-title" style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">
+                            Letter Tracker
+                        </div>
+                        <div class="tracker-grid" id="letterTracker"></div>
+                    </section>
+                </aside>
+
+                <!-- Results Panel -->
+                <section class="card results-card" aria-live="polite">
+                    <div class="results-info">
+                        <div class="card-title results-heading" style="margin-bottom: 0; font-size: 1.25rem; font-weight: 800;">Matches</div>
+                        <div class="flex items-center gap-2 results-actions">
+                            <span class="results-count" id="resultsCount">0 words</span>
+                            <button class="btn btn-primary" id="copyBtn" disabled>
+                                Copy all
+                            </button>
+                        </div>
+                    </div>
+                    <div class="results-list" id="resultsList"></div>
+                </section>
+            </div>
+
 
             <div class="single-column-content">
                 <section class="card content-card">
@@ -503,6 +534,8 @@
             </div>
         </div>
     </footer>
+
+    <div class="toast" id="toast"></div>
 
     <script src="./words.js"></script>
     <script src="./script.js"></script>
