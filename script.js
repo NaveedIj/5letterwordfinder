@@ -536,3 +536,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Page-specific Enhancement: Auto-prefill "E" for ending-with-e pages
+// Align tool with page intent while maintaining user control
+if (window.location.pathname.includes("ending-with-e")) {
+    window.addEventListener('load', () => {
+        const inputs = document.querySelectorAll('.char-input');
+        if (inputs.length > 0) {
+            const lastInput = inputs[inputs.length - 1];
+            // Prefill only if empty to respect existing user input or focus
+            if (!lastInput.value) {
+                lastInput.value = 'E';
+                // Trigger input event to refresh filtering logic automatically
+                lastInput.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+        }
+    });
+}
+
