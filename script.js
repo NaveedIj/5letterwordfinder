@@ -539,37 +539,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Page-specific Enhancement: Auto-prefill "E" for ending-with-e pages
-    if (window.location.pathname.includes("ending-with-e.html")) {
-        const inputs = document.querySelectorAll('.char-input');
-        if (inputs.length > 0) {
-            const lastInput = inputs[inputs.length - 1];
-            if (!lastInput.value) {
-                lastInput.value = 'E';
-                lastInput.dispatchEvent(new Event('input', { bubbles: true }));
-            }
-            // Always ensure the first box is focused for "ending with"
-            if (inputs[0]) inputs[0].focus();
-        }
-    }
-
-    // Page-specific Enhancement: Auto-prefill "B" for starting-with-b pages
-    if (window.location.pathname.includes("starting-with-b.html")) {
+    // Page-specific Enhancement: Auto-prefill for SEO Landing Pages
+    const path = window.location.pathname;
+    
+    // Pattern: starting-with-X.html
+    const startingMatch = path.match(/starting-with-([a-z])\.html/i);
+    if (startingMatch) {
+        const letter = startingMatch[1].toUpperCase();
         const inputs = document.querySelectorAll('.char-input');
         if (inputs.length > 0) {
             const firstInput = inputs[0];
             if (!firstInput.value) {
-                firstInput.value = 'B';
+                firstInput.value = letter;
                 firstInput.dispatchEvent(new Event('input', { bubbles: true }));
             }
-            // Focus the first empty input
+            // Focus the first empty input to guide the user
             const emptyInput = Array.from(inputs).find(input => !input.value);
             if (emptyInput) {
-                emptyInput.focus();
-            } else if (inputs[1]) {
-                // Fallback to second input if first is "B" but logic above was skipped
-                inputs[1].focus();
+                setTimeout(() => emptyInput.focus(), 50);
             }
+        }
+    }
+
+    // Pattern: ending-with-X.html
+    const endingMatch = path.match(/ending-with-([a-z])\.html/i);
+    if (endingMatch) {
+        const letter = endingMatch[1].toUpperCase();
+        const inputs = document.querySelectorAll('.char-input');
+        if (inputs.length > 0) {
+            const lastInput = inputs[inputs.length - 1];
+            if (!lastInput.value) {
+                lastInput.value = letter;
+                lastInput.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+            // Always ensure the first box is focused for "ending with" pages
+            if (inputs[0]) setTimeout(() => inputs[0].focus(), 50);
         }
     }
 });
