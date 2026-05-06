@@ -27,10 +27,39 @@
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
 
-
-    <!-- Dynamic SEO System -->
-    <script src="seo-data.js" defer></script>
-    <script src="seoManager.js" defer></script>
+    <!-- JSON-LD FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why are 5-letter words ending in E so common in Wordle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The letter E is the most frequently used vowel in the English language. In Wordle, many five-letter words utilize E as a 'silent E' to change the sound of preceding vowels (like in THEME or CRIME)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best starting words for a puzzle that might end in E?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Top-tier Wordle strategy suggests using high-entropy words like CRANE, SLATE, or STARE. These words not only test the final E position but also cover high-frequency consonants like R, N, L, and S."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I narrow down my Wordle guess when I know it ends in E?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once you have a green E in the fifth slot, focus on the consonant-vowel-consonant structure. Use our letter frequency tracker to see which consonants are still available."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="page-about" data-word-length="5" style="--word-len: 5;">

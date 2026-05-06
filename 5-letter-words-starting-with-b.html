@@ -42,9 +42,39 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Dynamic SEO System -->
-    <script src="seo-data.js" defer></script>
-    <script src="seoManager.js" defer></script>
+    <!-- JSON-LD FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is B a strong starting letter for Wordle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The letter B is a high-frequency consonant that often leads into common vowels (A, E, O) or consonant clusters (BR, BL). Starting with B allows you to quickly identify or eliminate several common word structures in just one guess."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the most common 2nd letters after a starting B?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Statistically, the most common second letters are R (as in BRICK), L (as in BLEND), and the vowels A, E, I, O, U. Testing these combinations early is the best way to narrow down your word list."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I use B words to eliminate high-frequency vowels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Words like BRAIN or BROKE are excellent strategic choices. They allow you to confirm the starting B while simultaneously testing high-value vowels like A, I, or O, helping you solve the puzzle in fewer turns."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body data-word-length="5" style="--word-len: 5;">
