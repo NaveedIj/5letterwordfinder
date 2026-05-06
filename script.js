@@ -552,5 +552,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+
+    // Page-specific Enhancement: Auto-prefill "B" for starting-with-b pages
+    if (window.location.pathname.includes("starting-with-b.html")) {
+        const inputs = document.querySelectorAll('.char-input');
+        if (inputs.length > 0) {
+            const firstInput = inputs[0];
+            if (!firstInput.value) {
+                firstInput.value = 'B';
+                firstInput.dispatchEvent(new Event('input', { bubbles: true }));
+                console.log("Auto-prefilled 'B' and triggered update");
+            }
+        }
+    }
 });
 
