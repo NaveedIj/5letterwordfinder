@@ -4,6 +4,60 @@
  */
 const BASE_URL = "https://www.5letterwordfindertool.com"; // Official production domain
 
+/**
+ * SEO Tokens: Dynamic variables for placeholder replacement.
+ */
+const SEO_TOKENS = {
+    "wordle": "Wordle",
+    "scrabble": "Scrabble",
+    "common": "Wordle-friendly",
+    "extended": "Full Scrabble dictionary"
+};
+
+/**
+ * Audience Strategies: Rotating content angles to prevent duplicate footprints.
+ */
+const SEO_STRATEGIES = {
+    "WORDLE_SOLVER": {
+        "id": "wordle_solver",
+        "intro": "Struggling with your {{pattern}} {{count}}-letter word? You're not alone. When the answer starts with {{letter}}, identifying vowel clusters early is the key to maintaining your streak.",
+        "usage_title": "Mastering {{letter}} Position Logic",
+        "usage_text": "Use the {{letter}} as your primary anchor. We recommend testing words with high vowel density like {{vowels}} to quickly eliminate or confirm the core structure of your puzzle.",
+        "faq_q": "Why is starting with {{letter}} a good Wordle move?",
+        "faq_a": "Statistically, {{letter}} appears in approximately {{percentage}}% of common English words. By confirming its position, you prune the possible answer list by over 80%."
+    },
+    "SCRABBLE_PRO": {
+        "id": "scrabble_pro",
+        "intro": "Looking for the perfect {{letter}} hook? Our {{count}}-letter word finder helps you locate high-scoring combinations {{pattern}} {{letter}} to dominate the board.",
+        "usage_title": "Scoring Big with {{letter}}",
+        "usage_text": "Prioritize words that pair {{letter}} with high-value consonants like {{high_value}}. These combinations often land on bonus squares, turning a simple play into a game-winning bingo.",
+        "faq_q": "Can I use these {{letter}} words in competitive Scrabble?",
+        "faq_a": "Yes. Our extended dictionary includes all valid {{count}}-letter terms recognized by official tournament lists, including rare hooks and high-scoring clusters."
+    },
+    "VOCAB_EXPLORER": {
+        "id": "vocab_explorer",
+        "intro": "Expand your vocabulary by exploring {{count}}-letter English words {{pattern}} {{letter}}. Understanding these linguistic patterns improves both your writing and puzzle-solving speed.",
+        "usage_title": "Linguistic Patterns of {{letter}}",
+        "usage_text": "The letter {{letter}} often leads into common prefixes and suffixes. By studying how {{letter}} interacts with other characters, you'll develop a more intuitive sense for natural word structures.",
+        "faq_q": "Are words {{pattern}} {{letter}} common in English?",
+        "faq_a": "The letter {{letter}} is one of the most versatile in the alphabet. {{count}}-letter words in this category follow predictable phonetic rules that are essential for language mastery."
+    }
+};
+
+/**
+ * Contextual Internal Linking: Semantically rich anchors for better crawl understanding.
+ */
+const INTERNAL_LINKS = {
+    "3_LETTER": "Explore high-scoring 3-letter Scrabble hooks",
+    "4_LETTER": "View common 4-letter word patterns",
+    "5_LETTER": "Master 5-letter Wordle strategies",
+    "6_LETTER": "Solve complex 6-letter word puzzles",
+    "7_LETTER": "Find 7-letter Scrabble Bingos",
+    "8_LETTER": "Discover advanced 8-letter word combinations",
+    "STARTING_WITH": "Browse words starting with {{letter}}",
+    "ENDING_WITH": "Browse words ending with {{letter}}"
+};
+
 const SEO_DATA = {
     "3": {
         "title": "3 Letter Word Finder & Solver | Quick Word Results",

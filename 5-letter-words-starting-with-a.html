@@ -21,9 +21,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.min.css">
+
+    <!-- SEO Logic -->
+    <script src="seo-data.js" defer></script>
+    <script src="seoManager.js" defer></script>
 </head>
 
-<body class="theme-dark">
+<body class="theme-dark" data-word-length="5" data-pattern="starting" data-letter="A" data-seo-strategy="WORDLE_SOLVER">
     <!-- Navigation Overlay -->
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
@@ -76,103 +80,12 @@
             <p class="subtitle">Use our Word Finder Tool to discover the best words for your puzzle.</p>
         </header>
 
-        <div class="single-column-content">
-            <section class="card content-card">
-                <div class="prose">
-                    <p>Are you stuck on Wordle and need a little inspiration? You are not alone! When you know the first letter is an "A", it narrows things down, but finding the exact match can still be a challenge. Words starting with A are incredibly useful because "A" is one of the most common vowels in the English language, making it a powerful anchor for solving your puzzle.</p>
-                    
-                    <p>In this comprehensive guide, we explore why "A" words are so critical for your strategy, how to pivot when you're stuck, and which words offer the highest probability of success. Whether you're a casual player or a Scrabble pro, these insights will help you solve your next 5-letter word challenge with confidence.</p>
-
-                    <h2>The Strategic Advantage of Starting with 'A'</h2>
-                    <p>Starting a 5-letter word puzzle with an "A" is a statistically sound move. "A" is the second most frequent letter in the English language and appears in approximately 43% of all 5-letter words. By identifying its position early, you can often deduce the structure of the remaining word. For instance, if "A" is green in the first spot, you've already eliminated thousands of possibilities that start with consonants or other vowels.</p>
-                    
-                    <p>Furthermore, words starting with A often lead into common consonant clusters like "AL-", "AN-", or "AR-". Understanding these patterns allows you to make more educated guesses in subsequent turns.</p>
-
-                    <h2>Common 5 Letter Words Starting with A</h2>
-                    <div class="word-grid">
-                        <div class="word-item">ABIDE</div>
-                        <div class="word-item">ADIEU</div>
-                        <div class="word-item">AUDIO</div>
-                        <div class="word-item">ALIBI</div>
-                        <div class="word-item">APPLE</div>
-                        <div class="word-item">ARENA</div>
-                        <div class="word-item">AGENT</div>
-                        <div class="word-item">ANGLE</div>
-                        <div class="word-item">ALERT</div>
-                        <div class="word-item">AWARD</div>
-                        <div class="word-item">ACTOR</div>
-                        <div class="word-item">ALTER</div>
-                        <div class="word-item">APART</div>
-                        <div class="word-item">AGREE</div>
-                        <div class="word-item">AMONG</div>
-                        <div class="word-item">APPLY</div>
-                        <div class="word-item">ADAPT</div>
-                        <div class="word-item">ALIVE</div>
-                        <div class="word-item">AHEAD</div>
-                        <div class="word-item">ASIDE</div>
-                    </div>
-
-                    <h2 style="margin-top: 2.5rem;">Maximize Your Vowel Coverage</h2>
-                    <p>One of the most effective ways to use this list is to look for "vowel-heavy" words. Eliminating vowels early is the cornerstone of any winning Wordle strategy. Consider the following words if you know the word starts with A but are unsure of the rest:</p>
-
-                    <div style="margin: 1.5rem 0; overflow-x: auto;">
-                        <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
-                            <thead style="background: rgba(59, 130, 246, 0.1);">
-                                <tr>
-                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid rgba(59, 130, 246, 0.3);">Target Word</th>
-                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid rgba(59, 130, 246, 0.3);">Vowel Count</th>
-                                    <th style="padding: 1rem; text-align: left; border-bottom: 2px solid rgba(59, 130, 246, 0.3);">Strategy Use</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);"><strong>ADIEU</strong></td>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">4</td>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Eliminates A, I, E, U instantly.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);"><strong>AUDIO</strong></td>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">4</td>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Perfect for checking O and U.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);"><strong>ARENA</strong></td>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">3</td>
-                                    <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Checks for double A placement.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2>Wordle Gameplay Scenario</h2>
-                    <p>Let's look at a practical example. Suppose your first guess was <strong>ARISE</strong>. The game tells you that <strong>A</strong> is green (correct spot), but <strong>R, I, S,</strong> and <strong>E</strong> are all gray. You now know the word is <strong>A _ _ _ _</strong> and doesn't contain those four common letters.</p>
-                    <p>Based on our list, a great second guess would be <strong>AUDIO</strong> or <strong>ADOBE</strong>. Why? Because they test new vowels (U, O) and new consonants (D, B) that help you narrow down the field without wasting turns on letters you already know aren't there. This disciplined approach is what separates masters from beginners.</p>
-
-                    <h2>Scrabble vs. Wordle: Dictionary Differences</h2>
-                    <p>It's important to note that not all 5-letter words are created equal. While Scrabble dictionaries (like TWL or SOWPODS) include thousands of obscure words like <strong>AAHED</strong> or <strong>AALII</strong>, Wordle typically uses a more curated list of approximately 2,300 common English words. Our list focuses on these common words to ensure you aren't wasting guesses on terms that aren't in the game's solution list.</p>
-                    
-                    <p>If you're playing Scrabble, however, you might want to explore even more obscure options starting with A to take advantage of high-scoring tiles like Z (e.g., <strong>AZURE</strong>) or X (e.g., <strong>AXIAL</strong>).</p>
-
-                    <h2>Common Mistakes to Avoid with 'A' Words</h2>
-                    <p>One frequent error is repeating the letter A too early if it hasn't been confirmed as a double letter. While words like <strong>ALGAE</strong> or <strong>ABACA</strong> are valid, you gain more information by testing *different* letters in your first two attempts. Only guess double letters when you have enough information to support that move.</p>
-
-                    <h2>Need More Advanced Tools?</h2>
-                    <p>Browsing a list is helpful, but sometimes you need surgical precision. If you have a few yellow letters and aren't sure where they go, use our interactive <a href="index.html">5-Letter Word Finder</a>. You can enter the letters you know, exclude the ones you don't, and get an instant list of every possible match. We also have specialized tools for other lengths:</p>
-                    <ul>
-                        <li><a href="4-letter-word-finder.html">4-Letter Word Finder</a></li>
-                        <li><a href="6-letter-word-finder.html">6-Letter Word Finder</a></li>
-                    </ul>
-
-                    <h2>Frequently Asked Questions (FAQ)</h2>
-                    <p><strong>Is "ADIEU" really the best starting word?</strong><br>
-                    While mathematically "ADIEU" is great for vowel elimination, some experts prefer "ARISE" or "SLATE" because they include more common consonants, which can be even more revealing in the long run.</p>
-                    <p><strong>Are all these words valid in Scrabble?</strong><br>
-                    Yes, every word on this list is a standard English word found in major dictionaries and is valid in Scrabble, Wordle, and Words with Friends.</p>
-                    <p><strong>How often does the Wordle answer start with A?</strong><br>
-                    Statistically, about 6-8% of all Wordle answers start with the letter A. It is one of the top five most common starting letters in the game.</p>
-                </div>
-            </section>
-        </div>
+        <!-- Dynamic SEO Section -->
+        <section class="info-section">
+            <div class="info-content">
+                <!-- Hydrated by seoManager.js -->
+            </div>
+        </section>
 
     </main>
 
