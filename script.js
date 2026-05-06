@@ -562,6 +562,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 firstInput.value = 'B';
                 firstInput.dispatchEvent(new Event('input', { bubbles: true }));
                 console.log("Auto-prefilled 'B' and triggered update");
+                // Focus the second box so user can start typing immediately
+                if (inputs[1]) inputs[1].focus();
             }
         }
     }
