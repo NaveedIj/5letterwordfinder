@@ -546,10 +546,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const lastInput = inputs[inputs.length - 1];
             if (!lastInput.value) {
                 lastInput.value = 'E';
-                // Trigger input event to refresh filtering logic
                 lastInput.dispatchEvent(new Event('input', { bubbles: true }));
-                console.log("Auto-prefilled 'E' and triggered update");
             }
+            // Always ensure the first box is focused for "ending with"
+            if (inputs[0]) inputs[0].focus();
         }
     }
 
@@ -561,9 +561,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!firstInput.value) {
                 firstInput.value = 'B';
                 firstInput.dispatchEvent(new Event('input', { bubbles: true }));
-                console.log("Auto-prefilled 'B' and triggered update");
-                // Focus the second box so user can start typing immediately
-                if (inputs[1]) inputs[1].focus();
+            }
+            // Focus the first empty input
+            const emptyInput = Array.from(inputs).find(input => !input.value);
+            if (emptyInput) {
+                emptyInput.focus();
+            } else if (inputs[1]) {
+                // Fallback to second input if first is "B" but logic above was skipped
+                inputs[1].focus();
             }
         }
     }
