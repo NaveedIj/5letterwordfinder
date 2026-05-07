@@ -96,7 +96,7 @@ $template = @'
     </style>
 </head>
 
-<body class="page-about">
+<body class="page-about" data-word-length="5" data-pattern="starting" data-letter="{{L}}" data-seo-strategy="WORDLE_SOLVER">
     <header class="saas-header">
         <nav class="nav-container-header" role="navigation" aria-label="Main Navigation">
             <a href="/" class="brand-container">
@@ -173,12 +173,16 @@ $template = @'
             <p class="subtitle">Discover the best 5 letter words starting with {{L}} to win your next word game.</p>
         </header>
 
-        <div class="single-column-content">
-            <section class="card content-card">
-                <div class="prose">
-                    <p>Stuck on your daily word puzzle? If you know your word starts with the letter "{{L}}", you've already made great progress! Finding the right 5 letter words starting with {{L}} can be the difference between a win and a loss. Whether you're playing Wordle, Scrabble, or any other word game, having a curated list of possibilities is your secret weapon.</p>
-                    <p>Our dynamic list below is updated to provide you with the most useful and common words. Remember, you can always use our main Word Finder Tool to filter these results by adding more known letters or excluded characters.</p>
+        <!-- Dynamic SEO Section -->
+        <section class="info-section">
+            <div class="info-content">
+                <!-- Hydrated by seoManager.js -->
+            </div>
+        </section>
 
+        <div class="single-column-content">
+            <section class="card content-card" style="margin-top: 2rem;">
+                <div class="prose">
                     <h2>List of 5 Letter Words Starting With {{L}}</h2>
                     <div id="wordGrid" class="word-grid">
                         <div class="word-item">LOADING...</div>
@@ -283,11 +287,7 @@ foreach ($l in $letters) {
     $fileName = "5-letter-words-starting-with-$ls.html"
     $filePath = Join-Path $baseDir $fileName
     
-    # Skip original a.html
-    if ($ls -eq 'a') {
-        Write-Host "Skipping existing file: $fileName"
-        continue
-    }
+    # Removed skip for original a.html to ensure consistency
     
     $currentNav = ""
     foreach ($ln in $letters) {
