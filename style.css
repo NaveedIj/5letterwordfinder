@@ -36,6 +36,19 @@
 
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Phase 1.5: Numeric Stability */
+    --font-nums: tabular-nums;
+}
+
+/* Phase 1.5: Global Transition Lock
+   Prevents all transitions/animations during initial hydration and theme application.
+   Ensures the page appears 'instant' and 'solid' on load. */
+body:not(.hydrated) *,
+body:not(.hydrated) *::before,
+body:not(.hydrated) *::after {
+    transition: none !important;
+    animation: none !important;
 }
 
 body.theme-light {
@@ -161,7 +174,8 @@ body {
 }
 
 html {
-    background-color: #0f172a; /* Immutable base to prevent white flash */
+    background-color: #0f172a;
+    /* Immutable base to prevent white flash */
 }
 
 body {
@@ -178,6 +192,8 @@ body {
     padding: 0;
     overflow-x: hidden;
     /* Visual Stability: Removed transition to prevent jitter on theme hydration */
+    opacity: 1 !important;
+    /* Force opacity from first paint */
 }
 
 main {
@@ -1121,14 +1137,16 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     /* Fixed row height to prevent jumping during word injection */
-    grid-auto-rows: 46px; 
+    grid-auto-rows: 46px;
     justify-content: center;
     align-content: start;
     gap: 0.75rem;
     contain: layout;
+    /* GPU Stabilization */
+    transform: translateZ(0);
 }
 
-/* Hard Placeholder Skeleton (Pixel-Perfect) */
+/* Hard Placeholder Skeleton (Pixel-Perfect Phase 1.5) */
 .results-list:empty::before {
     content: "";
     grid-column: 1 / -1;
@@ -1138,12 +1156,12 @@ main {
     gap: 0.75rem;
     width: 100%;
     height: 100%;
-    /* Create visual cards using CSS background to match final UI exactly */
-    /* Sage Green (var(--bg-elevated)) boxes with gap space */
-    background: 
-        repeat 0 0 / calc(80px + 0.75rem) 46px
-        linear-gradient(to right, var(--bg-elevated) 0px, var(--bg-elevated) 80px, transparent 80px);
-    opacity: 0.15;
+    /* Use var(--bg-primary) and var(--radius-md) matching content exactly */
+    background:
+        repeat 0 0 / calc(80px + 0.75rem) 46px linear-gradient(to right, var(--bg-primary) 0px, var(--bg-primary) 80px, transparent 80px);
+    border-radius: var(--radius-md);
+    opacity: 1;
+    /* Force visibility immediately */
     contain: strict;
 }
 
@@ -1176,9 +1194,46 @@ body[data-word-length="8"] .results-list {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none;
+    /* Locked until .hydrated */
     color: var(--text-secondary);
     line-height: 1.2;
+}
+
+.word-item.skeleton {
+    background: var(--bg-primary);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    height: 46px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+body.hydrated .word-item:not(.skeleton) {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-stat-num {
+    font-variant-numeric: var(--font-nums);
+    font-feature-settings: "tnum";
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    100% {
+        opacity: 0.15;
+    }
+}
+
+.word-item.skeleton {
+    animation: pulse 2s infinite ease-in-out;
 }
 
 .word-score {
@@ -1190,6 +1245,7 @@ body[data-word-length="8"] .results-list {
     letter-spacing: 0;
     margin-left: 0.25rem;
     vertical-align: middle;
+    font-variant-numeric: var(--font-nums);
 }
 
 .word-item:hover .word-score {
@@ -1378,6 +1434,7 @@ body[data-word-length="8"] .results-list {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--text-muted);
+    font-variant-numeric: var(--font-nums);
 }
 
 /* Info Section & Premium Cards */
@@ -1959,7 +2016,8 @@ body[data-word-length="8"] .results-list {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.95); /* More opaque, no blur jitter */
+    background: rgba(15, 23, 42, 0.95);
+    /* More opaque, no blur jitter */
 }
 
 .modal-content {
@@ -2027,7 +2085,8 @@ body[data-word-length="8"] .results-list {
     gap: 3rem;
     margin-top: 0.5rem;
     padding: 1.25rem 3rem;
-    background: rgba(30, 41, 59, 0.6); /* More stable background */
+    background: rgba(30, 41, 59, 0.6);
+    /* More stable background */
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);

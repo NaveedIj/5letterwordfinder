@@ -557,6 +557,10 @@ function initLengthUi() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Phase 1.5: Immediate Synchronous Render for Stability
+    initStats();
+    updateResults();
+    
     // Theme is now partially handled by CSS/HTML, but we ensure state parity
     if (darkModeToggle) {
         darkModeToggle.checked = document.documentElement.classList.contains('theme-dark');
@@ -568,6 +572,11 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCommonDataset().then(() => {
         initStats();
         updateResults();
+        
+        // Mark as hydrated to enable transitions safely after first real render
+        requestAnimationFrame(() => {
+            document.body.classList.add('hydrated');
+        });
     });
 
     wireCharInputs();

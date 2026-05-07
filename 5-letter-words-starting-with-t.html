@@ -23,8 +23,8 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
     <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=block" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=block" media="print" onload="this.media='all'">
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
@@ -90,6 +90,16 @@
             }
         }
     </style>
+    <!-- Phase 1.5: Theme Persistence & White Flash Prevention -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+            document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
+            document.documentElement.style.backgroundColor = isDark ? '#0f172a' : '#f8fafc';
+        })();
+    </script>
 </head>
 
 <body class="page-about" data-word-length="5" data-pattern="starting" data-letter="T" data-seo-strategy="WORDLE_SOLVER">

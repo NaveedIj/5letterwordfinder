@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -67,12 +67,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=block"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- SEO Logic -->
     <script src="seo-data.js" defer></script>
     <script src="seoManager.js" defer></script>
+    <!-- Phase 1.5: Theme Persistence & White Flash Prevention -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+            document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
+            document.documentElement.style.backgroundColor = isDark ? '#0f172a' : '#f8fafc';
+        })();
+    </script>
 </head>
 
 <body data-word-length="5" style="--word-len: 5;" data-pattern="ending" data-letter="S" data-seo-strategy="WORDLE_SOLVER">
@@ -398,7 +408,19 @@
                             </button>
                         </div>
                     </div>
-                    <div class="results-list" id="resultsList"></div>
+                                        <div class="results-list" id="resultsList">
+                        <!-- Phase 1.5: Static Skeleton -->
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                        <div class="word-item skeleton"></div>
+                    </div>
                 </section>
             </div>
 
