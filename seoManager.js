@@ -190,16 +190,23 @@
      * Renders Specialized Sections (Patterns & Guides) with semantically rich links.
      */
     function renderSpecializedSections(data, tokens) {
-        const infoSection = document.querySelector('.info-section');
-        if (!infoSection) return;
+        const contentContainer = document.querySelector('.info-content');
+        if (!contentContainer) return;
+
+        // Visual Stability: Do not append specialized sections on the homepage 
+        // if static content is already high-quality.
+        const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+        if (isHomepage) return;
 
         // Prevent double rendering
-        const existing = infoSection.querySelector('.specialized-seo');
-        if (existing) existing.remove();
+        const existing = document.querySelector('.specialized-seo');
+        if (existing) return;
 
         const container = document.createElement('div');
-        container.className = 'info-content specialized-seo';
-        container.style.marginTop = '4rem';
+        container.className = 'specialized-seo-wrapper';
+        container.style.marginTop = '2rem';
+        container.style.paddingTop = '2rem';
+        container.style.borderTop = '1px solid var(--border)';
 
         let html = '';
 
@@ -229,7 +236,7 @@
     }
 
     container.innerHTML = html;
-    infoSection.appendChild(container);
+    contentContainer.appendChild(container);
 }
 
     /**

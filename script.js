@@ -18,9 +18,15 @@ const showScrabbleInput = document.getElementById('showScrabble');
 
 let commonList = [];
 const fullList = typeof wordList !== 'undefined' ? wordList : [];
-let activeList = [];
-let currentResults = [];
 let currentDict = IS_WORDLE_LENGTH ? 'common' : 'full';
+
+// Visual Stability: Synchronously initialize activeList based on data-attributes
+// to prevent "0" or "—" jumping to a real number during async fetch.
+let activeList = IS_WORDLE_LENGTH 
+    ? fullList.filter(w => w.length === 5) 
+    : fullList.filter(w => w.length === WORD_LENGTH);
+
+let currentResults = [];
 
 /**
  * Loads the primary common dataset from JSON
@@ -535,7 +541,12 @@ function initStats() {
     if (activeList) {
         n = activeList.length;
     }
-    statWordCount.textContent = n ? n.toLocaleString() : '—';
+    const formatted = n ? n.toLocaleString() : '—';
+    
+    // Visual Stability: Only update if different to avoid layout thrashing/jitter
+    if (statWordCount.textContent !== formatted) {
+        statWordCount.textContent = formatted;
+    }
 }
 
 function initLengthUi() {
