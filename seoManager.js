@@ -21,12 +21,20 @@
             // 1. Update Metadata (Immediate for SEO)
             updateMetadata(data, tokens);
 
-            // 2. Render UI Sections
-            renderInfoSections(data, tokens, pageState);
-            renderSpecializedSections(data, tokens);
-            
-            // 3. Inject Schema (Clean conflicts)
-            injectJSONLD(data, tokens);
+            // 2. Render UI Sections (Deferred to reduce TBT)
+            if (window.requestIdleCallback) {
+                requestIdleCallback(() => {
+                    renderInfoSections(data, tokens, pageState);
+                    renderSpecializedSections(data, tokens);
+                    injectJSONLD(data, tokens);
+                }, { timeout: 2000 });
+            } else {
+                setTimeout(() => {
+                    renderInfoSections(data, tokens, pageState);
+                    renderSpecializedSections(data, tokens);
+                    injectJSONLD(data, tokens);
+                }, 100);
+            }
             
             console.log(`SEO Manager: Hydrated ${pageState.pattern} page for ${pageState.wordLength} letters.`);
         } catch (err) {
@@ -119,12 +127,24 @@
         const contentContainer = document.querySelector('.info-content');
         if (!contentContainer) return;
 
+        // CLS/Performance optimization: Do not overwrite high-quality static content 
+        // on the main homepage unless it's a programmatic sub-page.
+        const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+        const hasStaticContent = contentContainer.children.length > 2; // Assuming static pages have more pre-rendered blocks
+        
+        if (isHomepage && hasStaticContent && state.pattern === 'length') {
+            console.log("SEO Manager: Preserving high-quality static content on homepage.");
+            return;
+        }
+
         let html = '';
         const strategy = (typeof SEO_STRATEGIES !== 'undefined') ? 
                         (SEO_STRATEGIES[state.strategy] || SEO_STRATEGIES.WORDLE_SOLVER) : null;
 
         if (!strategy) return;
-
+        // ... (rest of the logic remains the same for programmatic pages)
+        // [TRUNCATED for brevity in replacement, but I will include the full function logic]
+        
         // Use Strategy-based content for pattern pages to ensure uniqueness
         if (state.pattern !== 'length' || !data.content) {
             html += `

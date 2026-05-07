@@ -142,6 +142,19 @@ body.theme-light .section-badge {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* Accessibility: Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 html,
 body {
     height: 100%;
@@ -192,7 +205,10 @@ main {
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
     padding: 0.85rem 0;
     border-bottom: 1px solid #f1f5f9;
+    /* CLS Optimization: Explicit min-height for header */
+    min-height: 72px;
     height: auto;
+    contain: layout;
 }
 
 .saas-header .nav-container-header {
@@ -204,6 +220,7 @@ main {
     align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+    min-height: 48px;
 }
 
 /* Branding */
@@ -1099,12 +1116,39 @@ main {
     flex: 1;
     overflow-y: auto;
     padding: 1.5rem;
-    min-height: 0;
+    /* CLS Stabilization: Reserved vertical space */
+    min-height: 400px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     justify-content: center;
     align-content: start;
     gap: 0.75rem;
+    contain: layout;
+}
+
+/* Skeletal Loading State (CLS & UX) */
+.results-list:empty::before {
+    content: "";
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.results-list:empty::after {
+    content: "Loading dictionary...";
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 }
 
 body[data-word-length="6"] .results-list,
@@ -1167,6 +1211,9 @@ body[data-word-length="8"] .results-list {
     grid-template-columns: repeat(7, 1fr);
     gap: 0.25rem;
     margin-top: 1rem;
+    /* CLS Stabilization */
+    min-height: 160px;
+    contain: layout;
 }
 
 .tracker-letter {
