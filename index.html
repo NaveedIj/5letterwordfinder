@@ -29,79 +29,23 @@
     <meta name="twitter:description"
         content="Find 5-letter words instantly with Word Finder Tool. Filter by correct, wrong, and excluded letters to solve Wordle and Scrabble puzzles fast.">
     <meta name="twitter:image" content="https://www.5letterwordfindertool.com/preview.png">
-
-    <!-- SEO Logic -->
-    <script src="seo-data.js" defer></script>
-    <script src="seoManager.js" defer></script>
-
- <!-- JSON-LD Schema for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "5 Letter Word Finder",
-      "description": "Free tool to generate 5-letter words for Wordle, Scrabble, and puzzles. Enter letters and get instant results.",
-      "url": "https://www.5letterwordfindertool.com/",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "All"
-    }
-    </script>
-
+    
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <!-- Dynamic SEO System -->
+    <!-- SEO Logic (Phase 3 Hardened) -->
     <script src="seo-data.js" defer></script>
     <script src="seoManager.js" defer></script>
-
-
-
-    <!-- JSON-LD Schema for FAQ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is this wordle solver completely free?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, it is 100% free to use forever. There are no paywalls or required registrations."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I use this for Scrabble or crosswords?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely. You can switch the dictionary from \"Wordle\" to \"Full\" to find every valid English word for Scrabble and other board games."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why isn't my word showing up in the results?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Make sure you haven't accidentally excluded a required letter. If you are playing Wordle, ensure the dictionary is set to \"Wordle\" mode."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does this tool work on mobile devices?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, it is fully optimized for smartphones and tablets, so you can solve puzzles on the go."
-          }
-        }
-      ]
-    }
-    </script>
 </head>
 
 <body data-word-length="5" data-pattern="length" data-seo-strategy="WORDLE_SOLVER" style="--word-len: 5;">
@@ -797,25 +741,6 @@
                 </div>
             </section>
 
-            <section class="faq" style="margin-top:40px;">
-                <h2>Frequently Asked Questions</h2>
-
-                <h3>Is this wordle solver completely free?</h3>
-                <p>Yes, it is 100% free to use forever. There are no paywalls or required registrations.</p>
-
-                <h3>Can I use this for Scrabble or crosswords?</h3>
-                <p>Absolutely. You can switch the dictionary from "Wordle" to "Full" to find every valid English word
-                    for Scrabble and other board games.</p>
-
-                <h3>Why isn't my word showing up in the results?</h3>
-                <p>Make sure you haven't accidentally excluded a required letter. If you are playing Wordle, ensure the
-                    dictionary is set to "Wordle" mode.</p>
-
-                <h3>Does this tool work on mobile devices?</h3>
-                <p>Yes, it is fully optimized for smartphones and tablets, so you can solve puzzles on the go.</p>
-
-            </section>
-
         </div><!-- end .container -->
 
     </main>
@@ -876,7 +801,7 @@
                     <a href="/#tool-section" class="btn-footer-cta">Try Word Finder</a>
                 </div>
             </div>
-
+            
             <div class="footer-bottom-bar">
                 <p>&copy; 2026 Word Finder Tool. All rights reserved.</p>
             </div>

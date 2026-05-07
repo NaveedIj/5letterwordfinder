@@ -75,7 +75,7 @@ for (const n of [3, 4, 6, 7, 8]) {
 
     // 6. Update Script Inclusion
     html = html.replace(
-        /<script src="words\.js"><\/script>\s*\r?\n\s*<script src="script\.js"><\/script>/,
+        /<script src="\.\/words\.js"><\/script>\s*\r?\n\s*<script src="\.\/script\.js"><\/script>/,
         '<script src="words-by-length.js"></script>\n    <script src="script.js"></script>'
     );
 
