@@ -557,7 +557,11 @@ function initLengthUi() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadTheme();
+    // Theme is now partially handled by CSS/HTML, but we ensure state parity
+    if (darkModeToggle) {
+        darkModeToggle.checked = document.documentElement.classList.contains('theme-dark');
+    }
+    
     initLengthUi();
     
     // Start loading the common dataset immediately

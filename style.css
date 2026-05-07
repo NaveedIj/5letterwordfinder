@@ -160,6 +160,10 @@ body {
     height: 100%;
 }
 
+html {
+    background-color: #0f172a; /* Immutable base to prevent white flash */
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
@@ -173,7 +177,7 @@ body {
     flex-direction: column;
     padding: 0;
     overflow-x: hidden;
-    transition: background-color var(--transition-base), color var(--transition-base);
+    /* Visual Stability: Removed transition to prevent jitter on theme hydration */
 }
 
 main {
@@ -1134,6 +1138,13 @@ main {
     gap: 0.75rem;
     width: 100%;
     height: 100%;
+    /* Create visual cards using CSS background to match final UI exactly */
+    /* Sage Green (var(--bg-elevated)) boxes with gap space */
+    background: 
+        repeat 0 0 / calc(80px + 0.75rem) 46px
+        linear-gradient(to right, var(--bg-elevated) 0px, var(--bg-elevated) 80px, transparent 80px);
+    opacity: 0.15;
+    contain: strict;
 }
 
 .results-list:empty::after {
@@ -1143,12 +1154,7 @@ main {
     color: var(--text-muted);
     font-size: 0.875rem;
     margin-top: 1rem;
-    animation: pulse 1.5s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+    /* Static text for stability during hydration */
 }
 
 body[data-word-length="6"] .results-list,
@@ -1953,9 +1959,7 @@ body[data-word-length="8"] .results-list {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(15, 23, 42, 0.95); /* More opaque, no blur jitter */
 }
 
 .modal-content {
@@ -2023,12 +2027,11 @@ body[data-word-length="8"] .results-list {
     gap: 3rem;
     margin-top: 0.5rem;
     padding: 1.25rem 3rem;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(30, 41, 59, 0.6); /* More stable background */
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    /* Visual Stability: Lock height to prevent hydration jump */
+    /* Visual Stability: Removed backdrop-filter to prevent loading flash */
     height: 84px;
     box-sizing: border-box;
     contain: layout;
