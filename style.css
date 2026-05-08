@@ -41,15 +41,7 @@
     --font-nums: tabular-nums;
 }
 
-/* Phase 1.5: Global Transition Lock
-   Prevents all transitions/animations during initial hydration and theme application.
-   Ensures the page appears 'instant' and 'solid' on load. */
-body:not(.hydrated) *,
-body:not(.hydrated) *::before,
-body:not(.hydrated) *::after {
-    transition: none !important;
-    animation: none !important;
-}
+
 
 body.theme-light {
     --bg-primary: #f8fafc;
@@ -1147,22 +1139,11 @@ main {
 }
 
 /* Hard Placeholder Skeleton (Pixel-Perfect Phase 1.5) */
+/* Placeholder Reservation (Stable Native) */
 .results-list:empty::before {
     content: "";
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    grid-auto-rows: 46px;
-    gap: 0.75rem;
-    width: 100%;
-    height: 100%;
-    /* Use var(--bg-primary) and var(--radius-md) matching content exactly */
-    background:
-        repeat 0 0 / calc(80px + 0.75rem) 46px linear-gradient(to right, var(--bg-primary) 0px, var(--bg-primary) 80px, transparent 80px);
-    border-radius: var(--radius-md);
-    opacity: 1;
-    /* Force visibility immediately */
-    contain: strict;
+    min-height: 450px;
 }
 
 .results-list:empty::after {
@@ -1194,23 +1175,9 @@ body[data-word-length="8"] .results-list {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     cursor: pointer;
-    transition: none;
-    /* Locked until .hydrated */
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--text-secondary);
     line-height: 1.2;
-}
-
-.word-item.skeleton {
-    background: var(--bg-primary);
-    border: 1px solid transparent;
-    border-radius: var(--radius-md);
-    height: 46px;
-    opacity: 0.15;
-    pointer-events: none;
-}
-
-body.hydrated .word-item:not(.skeleton) {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-stat-num {
@@ -1218,23 +1185,7 @@ body.hydrated .word-item:not(.skeleton) {
     font-feature-settings: "tnum";
 }
 
-@keyframes pulse {
-    0% {
-        opacity: 0.15;
-    }
 
-    50% {
-        opacity: 0.25;
-    }
-
-    100% {
-        opacity: 0.15;
-    }
-}
-
-.word-item.skeleton {
-    animation: pulse 2s infinite ease-in-out;
-}
 
 .word-score {
     display: inline-block;

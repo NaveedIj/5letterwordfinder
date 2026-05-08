@@ -47,18 +47,8 @@ async function loadCommonDataset() {
         // Default to common list if available
         if (currentDict === 'common') {
             activeList = commonList;
-            // Use requestIdleCallback for initial heavy render to keep LCP stable
-            if (window.requestIdleCallback) {
-                requestIdleCallback(() => {
-                    updateResults();
-                    initStats();
-                }, { timeout: 1000 });
-            } else {
-                setTimeout(() => {
-                    updateResults();
-                    initStats();
-                }, 50);
-            }
+            updateResults();
+            initStats();
         }
     } catch (err) {
         console.warn("Falling back to internal dictionary:", err);
@@ -260,46 +250,43 @@ function updateTracker(includes, excludes) {
 function renderResults(pattern = '') {
     const showScores = showScrabbleInput ? showScrabbleInput.checked : false;
 
-    // Use requestAnimationFrame to batch DOM updates and prevent layout thrashing
-    requestAnimationFrame(() => {
-        if (!hasAnyFilter() || currentResults.length === 0) {
-            resultsList.innerHTML = `
-                <div class="empty-state">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="8" x2="12" y2="12"></line>
-                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                    </svg>
-                    <p>${hasAnyFilter() ? 'No matching words. Loosen a filter or toggle repeat-aware.' : 'Type letters above — results update as you go.'}</p>
-                </div>
-            `;
-            copyBtn.disabled = true;
-        } else {
-            const limit = currentDict === 'common' ? 200 : 1000;
-            const displayResults = currentResults.slice(0, limit);
-            const wordGrid = displayResults.map(word => {
-                const upperWord = word.toUpperCase();
-                let highlightedWord = '';
-                for (let i = 0; i < WORD_LENGTH; i++) {
-                    const isMatch = pattern && pattern[i] && pattern[i] !== '_' && pattern[i] !== '?' && pattern[i].toUpperCase() === upperWord[i];
-                    if (isMatch) {
-                        highlightedWord += `<span class="char-match">${upperWord[i]}</span>`;
-                    } else {
-                        highlightedWord += upperWord[i];
-                    }
+    if (!hasAnyFilter() || currentResults.length === 0) {
+        resultsList.innerHTML = `
+            <div class="empty-state">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <p>${hasAnyFilter() ? 'No matching words. Loosen a filter or toggle repeat-aware.' : 'Type letters above — results update as you go.'}</p>
+            </div>
+        `;
+        copyBtn.disabled = true;
+    } else {
+        const limit = currentDict === 'common' ? 200 : 1000;
+        const displayResults = currentResults.slice(0, limit);
+        const wordGrid = displayResults.map(word => {
+            const upperWord = word.toUpperCase();
+            let highlightedWord = '';
+            for (let i = 0; i < WORD_LENGTH; i++) {
+                const isMatch = pattern && pattern[i] && pattern[i] !== '_' && pattern[i] !== '?' && pattern[i].toUpperCase() === upperWord[i];
+                if (isMatch) {
+                    highlightedWord += `<span class="char-match">${upperWord[i]}</span>`;
+                } else {
+                    highlightedWord += upperWord[i];
                 }
-                const score = scrabbleScore(word);
-                const scoreHtml = showScores ? `<span class="word-score" title="Scrabble face value">${score}</span>` : '';
-                return `<div class="word-item" data-word="${upperWord}" title="Click to copy">${highlightedWord}${scoreHtml}</div>`;
-            }).join('');
+            }
+            const score = scrabbleScore(word);
+            const scoreHtml = showScores ? `<span class="word-score" title="Scrabble face value">${score}</span>` : '';
+            return `<div class="word-item" data-word="${upperWord}" title="Click to copy">${highlightedWord}${scoreHtml}</div>`;
+        }).join('');
 
-            resultsList.innerHTML = wordGrid;
-            copyBtn.disabled = false;
-        }
+        resultsList.innerHTML = wordGrid;
+        copyBtn.disabled = false;
+    }
 
-        const countText = `${currentResults.length.toLocaleString()} word${currentResults.length !== 1 ? 's' : ''}`;
-        resultsCount.textContent = currentResults.length > (currentDict === 'common' ? 200 : 1000) ? `${countText} (showing first ${currentDict === 'common' ? 200 : 1000})` : countText;
-    });
+    const countText = `${currentResults.length.toLocaleString()} word${currentResults.length !== 1 ? 's' : ''}`;
+    resultsCount.textContent = currentResults.length > (currentDict === 'common' ? 200 : 1000) ? `${countText} (showing first ${currentDict === 'common' ? 200 : 1000})` : countText;
 }
 
 function renderTracker() {
@@ -572,11 +559,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCommonDataset().then(() => {
         initStats();
         updateResults();
-        
-        // Mark as hydrated to enable transitions safely after first real render
-        requestAnimationFrame(() => {
-            document.body.classList.add('hydrated');
-        });
     });
 
     wireCharInputs();
