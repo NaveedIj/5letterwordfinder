@@ -42,17 +42,21 @@ async function loadCommonDataset() {
         const response = await fetch('/data/wordle-common.json');
         if (!response.ok) throw new Error('Dataset fetch failed');
         commonList = await response.json();
-        console.log("Common dataset loaded:", commonList.length);
         
-        // Default to common list if available
+        // If the current dictionary is set to common, update activeList and refresh UI
+        // This only happens once on startup or when the toggle is triggered.
         if (currentDict === 'common') {
+            const oldLength = activeList.length;
             activeList = commonList;
-            updateResults();
-            initStats();
+            
+            // Only re-render if the dataset actually changed
+            if (oldLength !== activeList.length) {
+                updateResults();
+                initStats();
+            }
         }
     } catch (err) {
         console.warn("Falling back to internal dictionary:", err);
-        // Fallback: Filter fullList for common-style words or just 5-letter words
         commonList = fullList.filter(w => w.length === 5);
         if (currentDict === 'common') {
             activeList = commonList;
@@ -247,8 +251,14 @@ function updateTracker(includes, excludes) {
     renderTracker();
 }
 
+let lastRenderedHash = '';
+
 function renderResults(pattern = '') {
     const showScores = showScrabbleInput ? showScrabbleInput.checked : false;
+    
+    // Performance optimization: Generate a signature of the current state to avoid redundant DOM work
+    const renderHash = `${currentResults.length}-${pattern}-${showScores}-${currentDict}`;
+    if (renderHash === lastRenderedHash) return;
 
     if (!hasAnyFilter() || currentResults.length === 0) {
         resultsList.innerHTML = `
@@ -269,7 +279,7 @@ function renderResults(pattern = '') {
             const upperWord = word.toUpperCase();
             let highlightedWord = '';
             for (let i = 0; i < WORD_LENGTH; i++) {
-                const isMatch = pattern && pattern[i] && pattern[i] !== '_' && pattern[i] !== '?' && pattern[i].toUpperCase() === upperWord[i];
+                const isMatch = pattern && pattern[i] && pattern[i] !== '_' && pattern[i].toUpperCase() === upperWord[i];
                 if (isMatch) {
                     highlightedWord += `<span class="char-match">${upperWord[i]}</span>`;
                 } else {
@@ -287,6 +297,8 @@ function renderResults(pattern = '') {
 
     const countText = `${currentResults.length.toLocaleString()} word${currentResults.length !== 1 ? 's' : ''}`;
     resultsCount.textContent = currentResults.length > (currentDict === 'common' ? 200 : 1000) ? `${countText} (showing first ${currentDict === 'common' ? 200 : 1000})` : countText;
+    
+    lastRenderedHash = renderHash;
 }
 
 function renderTracker() {
@@ -555,11 +567,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     initLengthUi();
     
-    // Start loading the common dataset immediately
-    loadCommonDataset().then(() => {
-        initStats();
-        updateResults();
-    });
+    // Startup Flow: 
+    // 1. Initial synchronous render based on primary dataset
+    initStats();
+    updateResults();
+    
+    // 2. Async background load for wordle-common (if needed)
+    loadCommonDataset();
 
     wireCharInputs();
     wireWrongInputs();
