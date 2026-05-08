@@ -2293,3 +2293,105 @@ body[data-word-length="8"] .results-list {
         grid-template-columns: 1fr;
     }
 }
+
+/* =============================================
+   LAZY LOADING & PERFORMANCE OPTIMIZATIONS
+   ============================================= */
+
+.lazy-section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /* Visual Stability: Reserve height to prevent CLS */
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    margin-bottom: 4rem;
+}
+
+/* Skeleton state for placeholders */
+.lazy-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.03),
+        transparent
+    );
+    transform: translateX(-100%);
+}
+
+body.theme-light .lazy-section::before {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.02),
+        transparent
+    );
+}
+
+.lazy-section.is-loading::before {
+    animation: skeleton-shimmer 2s infinite;
+}
+
+@keyframes skeleton-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Specific Placeholder Heights */
+#seo-placeholder {
+    min-height: 800px;
+}
+
+#tools-placeholder {
+    min-height: 300px;
+}
+
+#examples-placeholder {
+    min-height: 500px;
+}
+
+@media (max-width: 768px) {
+    #seo-placeholder {
+        min-height: 1200px;
+    }
+    #tools-placeholder {
+        min-height: 450px;
+    }
+    #examples-placeholder {
+        min-height: 700px;
+    }
+}
+
+/* Deferred Footer Icons */
+.social-icons-deferred {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    min-height: 20px; /* Space for icons */
+}
+
+/* Hide templates */
+template {
+    display: none !important;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 3px solid rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--accent);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+

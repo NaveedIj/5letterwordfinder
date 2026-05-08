@@ -444,6 +444,18 @@ if (repeatSensitiveInput) {
 
 function toggleModal(show) {
     if (show) {
+        // Hydrate content if needed
+        const contentEl = document.getElementById('helpModalContent');
+        const template = document.getElementById('help-modal-template');
+        if (contentEl && template && contentEl.querySelector('.loading-spinner-container')) {
+            contentEl.innerHTML = '';
+            contentEl.appendChild(template.content.cloneNode(true));
+            
+            // Re-wire events for the newly injected content
+            const newCloseBtn = contentEl.querySelector('#closeModalBtn');
+            if (newCloseBtn) newCloseBtn.addEventListener('click', () => toggleModal(false));
+        }
+
         helpModal.classList.add('show');
         helpModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -454,9 +466,12 @@ function toggleModal(show) {
     }
 }
 
+
 if (helpBtn) helpBtn.addEventListener('click', () => toggleModal(true));
+// Initial wire-up for existing close button (if any) or overlay
 if (closeModalBtn) closeModalBtn.addEventListener('click', () => toggleModal(false));
 if (modalOverlay) modalOverlay.addEventListener('click', () => toggleModal(false));
+
 
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && helpModal.classList.contains('show')) {
@@ -608,8 +623,78 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- LAZY HYDRATION SYSTEM ---
+    const LazyHydrator = {
+        hydrate(placeholderId, templateId, delay = 0) {
+            const placeholder = document.getElementById(placeholderId);
+            const template = document.getElementById(templateId);
+            if (!placeholder || !template) return;
+
+            const action = () => {
+                placeholder.classList.remove('is-loading');
+                placeholder.innerHTML = '';
+                placeholder.appendChild(template.content.cloneNode(true));
+                placeholder.classList.add('is-hydrated');
+                
+                // If it's the SEO placeholder, it might have links that need smooth scroll
+                if (placeholderId === 'seo-placeholder') {
+                    this.wireSmoothScroll(placeholder);
+                }
+            };
+
+            if (delay > 0) {
+                setTimeout(action, delay);
+            } else if ('requestIdleCallback' in window) {
+                requestIdleCallback(action);
+            } else {
+                setTimeout(action, 200);
+            }
+        },
+
+        wireSmoothScroll(container) {
+            container.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href').slice(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        },
+
+        hydrateFooterIcons() {
+            const container = document.getElementById('social-icons-footer');
+            if (!container) return;
+
+            const icons = [
+                { label: 'Facebook', path: 'M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7h-2.54V12h2.54V9.79c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.95h-2.33v7C18.34 21.19 22 17.04 22 12.06c0-5.53-4.5-10.02-10-10.02z' },
+                { label: 'Twitter', path: 'M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z' },
+                { label: 'LinkedIn', path: 'M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.18-3.46c-1.34 0-1.94.75-2.28 1.25V9.43h-2.58v9.07h2.58v-4.57c0-1.21.23-2.39 1.74-2.39 1.49 0 1.5 1.39 1.5 2.47v4.56h2.22zM6.6 8.35c.83 0 1.5-.68 1.5-1.5 0-.83-.67-1.5-1.5-1.5S5.1 6.02 5.1 6.85c0 .82.67 1.5 1.5 1.5zM5.3 18.5h2.58V9.43H5.3v9.07z' }
+            ];
+
+            container.innerHTML = icons.map(icon => `
+                <span class="icon" aria-label="${icon.label}">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="${icon.path}"></path>
+                    </svg>
+                </span>
+            `).join('');
+        }
+    };
+
+    // Hydrate non-critical sections progressively
+    window.addEventListener('load', () => {
+        LazyHydrator.hydrate('seo-placeholder', 'seo-section-template');
+        LazyHydrator.hydrate('tools-placeholder', 'tools-section-template');
+        LazyHydrator.hydrate('examples-placeholder', 'examples-section-template');
+        LazyHydrator.hydrateFooterIcons();
+    });
+
     // Page-specific Enhancement: Auto-prefill for SEO Landing Pages
     const path = window.location.pathname;
+
     
     // Pattern: starting-with-X.html
     const startingMatch = path.match(/starting-with-([a-z])\.html/i);
