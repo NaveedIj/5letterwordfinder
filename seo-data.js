@@ -20,27 +20,27 @@ const SEO_TOKENS = {
 const SEO_STRATEGIES = {
     "WORDLE_SOLVER": {
         "id": "wordle_solver",
-        "intro": "Struggling with your {{pattern}} {{count}}-letter word? You're not alone. When the answer starts with {{letter}}, identifying vowel clusters early is the key to maintaining your streak.",
-        "usage_title": "Mastering {{letter}} Position Logic",
-        "usage_text": "Use the {{letter}} as your primary anchor. We recommend testing words with high vowel density like {{vowels}} to quickly eliminate or confirm the core structure of your puzzle.",
-        "faq_q": "Why is starting with {{letter}} a good Wordle move?",
-        "faq_a": "Statistically, {{letter}} appears in approximately {{percentage}}% of common English words. By confirming its position, you prune the possible answer list by over 80%."
+        "intro": "Identifying a {{count}}-letter word {{pattern}} <strong>{{letter}}</strong> requires a balance of vowel-hunting and consonant elimination. In competitive Wordle play, {{letter}} acts as a critical anchor that can narrow down thousands of possibilities to just a few dozen strategic choices.",
+        "usage_title": "Positional Strategy for {{letter}}",
+        "usage_text": "When the solution is {{pattern}} {{letter}}, we recommend testing <strong>{{vowels}}</strong> first. Statistically, this reveals the core structure of the word faster than random guessing. Pay close attention to {{count}}-letter patterns that pair {{letter}} with high-frequency companions like R, S, or T.",
+        "faq_q": "Why is {{letter}} a powerful position for Wordle answers?",
+        "faq_a": "The letter {{letter}} appears in approximately {{percentage}}% of common solutions. By pinning its position early, you can often solve the daily puzzle in 3 guesses or fewer."
     },
     "SCRABBLE_PRO": {
         "id": "scrabble_pro",
-        "intro": "Looking for the perfect {{letter}} hook? Our {{count}}-letter word finder helps you locate high-scoring combinations {{pattern}} {{letter}} to dominate the board.",
-        "usage_title": "Scoring Big with {{letter}}",
-        "usage_text": "Prioritize words that pair {{letter}} with high-value consonants like {{high_value}}. These combinations often land on bonus squares, turning a simple play into a game-winning bingo.",
-        "faq_q": "Can I use these {{letter}} words in competitive Scrabble?",
-        "faq_a": "Yes. Our extended dictionary includes all valid {{count}}-letter terms recognized by official tournament lists, including rare hooks and high-scoring clusters."
+        "intro": "Mastering the {{count}}-letter board requires knowing your {{letter}} hooks. Whether you are looking for words {{pattern}} {{letter}} or high-value combinations, our tool identifies the most efficient scoring paths.",
+        "usage_title": "Maximizing Point Value with {{letter}}",
+        "usage_text": "Prioritize words that utilize {{high_value}}. In professional Scrabble play, securing a bonus square with a {{count}}-letter word {{pattern}} {{letter}} can result in a 30+ point lead in a single turn.",
+        "faq_q": "Are these {{letter}} words legal in tournament play?",
+        "faq_a": "Yes. Our extended dictionary matches official tournament word lists, ensuring every word {{pattern}} {{letter}} is valid for competitive play."
     },
     "VOCAB_EXPLORER": {
         "id": "vocab_explorer",
-        "intro": "Expand your vocabulary by exploring {{count}}-letter English words {{pattern}} {{letter}}. Understanding these linguistic patterns improves both your writing and puzzle-solving speed.",
-        "usage_title": "Linguistic Patterns of {{letter}}",
-        "usage_text": "The letter {{letter}} often leads into common prefixes and suffixes. By studying how {{letter}} interacts with other characters, you'll develop a more intuitive sense for natural word structures.",
-        "faq_q": "Are words {{pattern}} {{letter}} common in English?",
-        "faq_a": "The letter {{letter}} is one of the most versatile in the alphabet. {{count}}-letter words in this category follow predictable phonetic rules that are essential for language mastery."
+        "intro": "Linguistic analysis of {{count}}-letter words {{pattern}} {{letter}} reveals fascinating phonetic trends. Studying these structures improves both your writing speed and your intuitive grasp of English morphology.",
+        "usage_title": "Phonetic Patterns of {{letter}}",
+        "usage_text": "The letter {{letter}} often interacts with common prefixes and suffixes in {{count}}-letter words. Mastering these clusters makes it easier to recognize complex terms in crosswords and literature.",
+        "faq_q": "How common are {{count}}-letter words {{pattern}} {{letter}}?",
+        "faq_a": "They represent a significant portion of the English lexicon. Understanding {{letter}} clusters is a foundational step for advanced vocabulary building."
     }
 };
 
@@ -48,14 +48,14 @@ const SEO_STRATEGIES = {
  * Contextual Internal Linking: Semantically rich anchors for better crawl understanding.
  */
 const INTERNAL_LINKS = {
-    "3_LETTER": "Explore high-scoring 3-letter Scrabble hooks",
-    "4_LETTER": "View common 4-letter word patterns",
+    "3_LETTER": "Find high-scoring Scrabble hooks",
+    "4_LETTER": "View common 4-letter patterns",
     "5_LETTER": "Master 5-letter Wordle strategies",
-    "6_LETTER": "Solve complex 6-letter word puzzles",
-    "7_LETTER": "Find 7-letter Scrabble Bingos",
-    "8_LETTER": "Discover advanced 8-letter word combinations",
-    "STARTING_WITH": "Browse words starting with {{letter}}",
-    "ENDING_WITH": "Browse words ending with {{letter}}"
+    "6_LETTER": "Solve complex 6-letter puzzles",
+    "7_LETTER": "Discover 7-letter Scrabble Bingos",
+    "8_LETTER": "View advanced 8-letter combinations",
+    "STARTING_WITH": "Explore vowel-heavy Wordle patterns starting with {{letter}}",
+    "ENDING_WITH": "Browse common ending-letter strategies for {{letter}}"
 };
 
 const SEO_DATA = {
@@ -125,21 +125,71 @@ const SEO_DATA = {
         "subheading": "Use our powerful word finder tool to solve Wordle, Scrabble, and other word puzzles quickly and easily.",
         "content": [
             {
-                "title": "What is this 5 Letter Word Finder?",
-                "text": "A 5 letter word finder helps players of popular games like Wordle. By entering known letters and excluded characters, users can narrow down potential words. If you are playing a variant with more letters, check out our <a href='6-letter-word-finder.html'>6 letter word finder</a> for advanced support."
+                "title": "Top Wordle Solving Strategies",
+                "text": "Success in Wordle depends on your opening move. Start with high-entropy words like <strong>CRANE</strong>, <strong>SLATE</strong>, or <strong>STARE</strong> to eliminate common consonants. If you prefer vowel hunting, <strong>ADIEU</strong> or <strong>AUDIO</strong> can quickly reveal the word's skeleton."
             },
             {
-                "title": "How to Use the Wordle Helper",
-                "text": "Our tool is optimized for the Wordle experience. Use the 'Correct Position' (Green) inputs for confirmed letters. If you're building a Scrabble Bingo, our <a href='7-letter-word-finder.html'>7 letter word finder</a> is the perfect companion."
+                "title": "Vowel vs. Consonant Balance",
+                "text": "Most 5-letter English words contain at least two vowels. If your first guess reveals no vowels, focus on 'Y' as a proxy or test 'O' and 'I' immediately. High-frequency consonants like R, S, T, L, and N should be your secondary priority."
+            },
+            {
+                "title": "Advanced Pattern Recognition",
+                "text": "Watch for common letter clusters. Many 5-letter words end in <strong>-ER</strong>, <strong>-ING</strong>, or <strong>-ED</strong>. Identifying these patterns early allows you to focus your remaining guesses on the variable prefix letters."
             }
+        ],
+        "faqs": [
+            { "question": "What is the best starting word for Wordle?", "answer": "Mathematically, 'CRANE' and 'SLATE' are among the best because they use high-frequency letters in their most common positions." },
+            { "question": "How do I find words with specific letters?", "answer": "Use our 'Must Include' filter. If you need two of the same letter (like two E's), simply enter 'EE' in that field." },
+            { "question": "Can I use this for Scrabble?", "answer": "Yes. Switch the dictionary toggle to 'Full' to see all valid competitive Scrabble words, including rare 5-letter hooks." }
         ],
         "patterns": [
             { "label": "5 Letter words starting with A", "query": "?pos0=A" },
             { "label": "5 Letter words ending with E", "query": "?pos4=E" }
         ],
         "guides": [
-            { "label": "Top Wordle Starting Words", "link": "#" },
-            { "label": "How to Solve Wordle Every Day", "link": "#" }
+            { "label": "Vowel-Heavy Wordle Openings", "link": "#" },
+            { "label": "High-Scoring Scrabble Hooks", "link": "#" },
+            { "label": "Common Ending-Letter Strategies", "link": "#" }
+        ]
+    },
+    "5-starting-a": {
+        "title": "5 Letter Words Starting with A | Wordle Strategy Guide",
+        "description": "Discover 5-letter words starting with A. Learn why A is a powerful starting vowel and how to use it to solve Wordle faster.",
+        "h1": "5 Letter Words Starting with A",
+        "subheading": "Master your opening move with these A-starting words.",
+        "content": [
+            {
+                "title": "The Power of the 'A' Start",
+                "text": "Starting with <strong>A</strong> is a classic Wordle strategy. Vowels are the skeleton of any word, and since 'A' is the second most common vowel, confirming its position early eliminates thousands of possibilities. High-frequency 'A' starts include <strong>ADIEU</strong> and <strong>ALIVE</strong>."
+            },
+            {
+                "title": "Consonant Pairings with A",
+                "text": "When your word starts with A, it is often followed by L, R, or S. Words like <strong>ALERT</strong>, <strong>ARISE</strong>, and <strong>ASSET</strong> are excellent second-turn guesses if you've confirmed the initial A."
+            }
+        ],
+        "faqs": [
+            { "question": "Is 'ADIEU' a good starting word?", "answer": "Yes, 'ADIEU' is popular because it tests four vowels at once, helping you map out the word's structure immediately." },
+            { "question": "What are common A-starting patterns?", "answer": "Many 5-letter words starting with A follow the A-C-V-C-C pattern (like ABORT) or A-V-C-V-C (like ALIVE)." }
+        ]
+    },
+    "5-ending-e": {
+        "title": "5 Letter Words Ending in E | Wordle Solver Tips",
+        "description": "Browse 5-letter words ending with E. Understand the 'Silent E' pattern and improve your Wordle winning streak.",
+        "h1": "5 Letter Words Ending with E",
+        "subheading": "Solve 'Ending in E' puzzles with expert linguistic patterns.",
+        "content": [
+            {
+                "title": "The Silent E Mastery",
+                "text": "A huge percentage of 5-letter English words end in <strong>E</strong>. This is often a 'Silent E' that modifies the preceding vowel's sound. Words like <strong>CRANE</strong>, <strong>SLATE</strong>, and <strong>THEME</strong> are prime examples of this structural necessity."
+            },
+            {
+                "title": "Common E-Ending Suffixes",
+                "text": "In Wordle, if you see a green E in the fifth slot, consider if the word is a simple noun or an infinitive verb. Patterns like <strong>-ARE</strong>, <strong>-IRE</strong>, and <strong>-ONE</strong> are extremely frequent in the official answer list."
+            }
+        ],
+        "faqs": [
+            { "question": "Why does Wordle have so many words ending in E?", "answer": "E is the most frequent letter in English. Its role in vowel modification makes it a staple for 5-letter word construction." },
+            { "question": "What is the best guess for a word ending in E?", "answer": "If you know it ends in E, try testing R, S, T, and L in the 2nd and 4th positions, as in 'STARE' or 'PLATE'." }
         ]
     },
     "6": {

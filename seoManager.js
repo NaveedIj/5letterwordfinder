@@ -15,7 +15,9 @@
                 return;
             }
 
-            const data = SEO_DATA[pageState.wordLength] || {};
+            // Check if we have more specific SEO_DATA for this pattern
+            const specificKey = `${pageState.wordLength}-${pageState.pattern}-${pageState.letter.toLowerCase()}`;
+            const data = SEO_DATA[specificKey] || SEO_DATA[pageState.wordLength] || {};
             const tokens = getHydratedTokens(pageState, data);
             
             // 1. Update Metadata (Immediate for SEO)
@@ -215,10 +217,10 @@
         <div class="info-box yellow">
             <h2>Related Word Tools</h2>
             <ul class="clean-list">
-                <li><a href="/3-letter-word-finder.html">${INTERNAL_LINKS["3_LETTER"]}</a></li>
-                <li><a href="/4-letter-word-finder.html">${INTERNAL_LINKS["4_LETTER"]}</a></li>
-                <li><a href="/">${INTERNAL_LINKS["5_LETTER"]}</a></li>
-                <li><a href="/6-letter-word-finder.html">${INTERNAL_LINKS["6_LETTER"]}</a></li>
+                <li><a href="/3-letter-word-finder.html">${hydrate(INTERNAL_LINKS["3_LETTER"], tokens)}</a></li>
+                <li><a href="/4-letter-word-finder.html">${hydrate(INTERNAL_LINKS["4_LETTER"], tokens)}</a></li>
+                <li><a href="/">${hydrate(INTERNAL_LINKS["5_LETTER"], tokens)}</a></li>
+                <li><a href="/6-letter-word-finder.html">${hydrate(INTERNAL_LINKS["6_LETTER"], tokens)}</a></li>
             </ul>
         </div>
     `;
