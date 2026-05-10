@@ -79,7 +79,7 @@
         const highValue = ['Q', 'Z', 'J', 'X'].includes(letter) ? 'vowel anchors' : 'high-scoring tiles like Z or Q';
         
         // Realistic stats (placeholder logic for programmatic expansion)
-        const percentage = letter ? (Math.random() * 5 + 3).toFixed(1) : '—';
+        const percentage = letter ? (Math.random() * 5 + 3).toFixed(1) : '-';
 
         return {
             ...baseTokens,

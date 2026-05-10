@@ -16,7 +16,7 @@ function buildCharInputs(n) {
 
 function buildWrongInputs(n) {
     return Array.from({ length: n }, (_, i) =>
-        `                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="–" autocomplete="off" spellcheck="false" id="w${i}" aria-label="Wrong position letters for slot ${i + 1}">`
+        `                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w${i}" aria-label="Wrong position letters for slot ${i + 1}">`
     ).join('\n');
 }
 
@@ -34,11 +34,11 @@ for (const n of [3, 4, 6, 7, 8]) {
     // 2. Update Basic Metadata
     html = html.replace(
         /<title>[\s\S]*?<\/title>/,
-        `<title>${O} Letter Word Finder — Solver &amp; Unscrambler</title>`
+        `<title>${O} Letter Word Finder - Solver &amp; Unscrambler</title>`
     );
     html = html.replace(
         /<meta name="description" content="[^"]*">/,
-        `<meta name="description" content="Filter ${o}-letter words with green, yellow, and gray logic, Scrabble scores, and sorting. Runs in your browser—no sign-up.">`
+        `<meta name="description" content="Filter ${o}-letter words with green, yellow, and gray logic, Scrabble scores, and sorting. Runs in your browser-no sign-up.">`
     );
     html = html.replace(
         /<meta name="keywords" content="[^"]*">/,
@@ -49,7 +49,7 @@ for (const n of [3, 4, 6, 7, 8]) {
     html = html.replace(/<h1 class="title">[^<]+<\/h1>/, `<h1 class="title">${O} Letter Word Finder</h1>`);
     html = html.replace(
         /<p class="subtitle">[^<]+<\/p>/,
-        `<p class="subtitle">Same filters as our Wordle helper—tuned for ${o}-letter words.</p>`
+        `<p class="subtitle">Same filters as our Wordle helper-tuned for ${o}-letter words.</p>`
     );
 
     // 4. Update Filter Grids

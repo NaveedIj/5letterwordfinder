@@ -21,7 +21,7 @@ const fullList = typeof wordList !== 'undefined' ? wordList : [];
 let currentDict = IS_WORDLE_LENGTH ? 'common' : 'full';
 
 // Visual Stability: Synchronously initialize activeList based on data-attributes
-// to prevent "0" or "—" jumping to a real number during async fetch.
+// to prevent "0" or "-" jumping to a real number during async fetch.
 let activeList = IS_WORDLE_LENGTH 
     ? fullList.filter(w => w.length === 5) 
     : fullList.filter(w => w.length === WORD_LENGTH);
@@ -268,7 +268,7 @@ function renderResults(pattern = '') {
                     <line x1="12" y1="8" x2="12" y2="12"></line>
                     <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
-                <p>${hasAnyFilter() ? 'No matching words. Loosen a filter or toggle repeat-aware.' : 'Type letters above — results update as you go.'}</p>
+                <p>${hasAnyFilter() ? 'No matching words. Loosen a filter or toggle repeat-aware.' : 'Type letters above - results update as you go.'}</p>
             </div>
         `;
         copyBtn.disabled = true;
@@ -555,7 +555,7 @@ function initStats() {
     if (activeList) {
         n = activeList.length;
     }
-    const formatted = n ? n.toLocaleString() : '—';
+    const formatted = n ? n.toLocaleString() : '-';
     
     // Visual Stability: Only update if different to avoid layout thrashing/jitter
     if (statWordCount.textContent !== formatted) {

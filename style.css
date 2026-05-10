@@ -1537,7 +1537,7 @@ body[data-word-length="8"] .results-list {
 }
 
 .clean-list li::before {
-    content: "→";
+    content: "to";
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -1924,7 +1924,7 @@ body[data-word-length="8"] .results-list {
     box-shadow: var(--shadow-md);
 }
 
-/* Title Row — help button styles consolidated below with .btn-help */
+/* Title Row - help button styles consolidated below with .btn-help */
 .title-row {
     display: flex;
     align-items: center;
@@ -2021,7 +2021,7 @@ body[data-word-length="8"] .results-list {
 }
 
 /* =============================================
-   HOMEPAGE OVERHAUL — NEW ELEMENTS
+   HOMEPAGE OVERHAUL - NEW ELEMENTS
    ============================================= */
 
 /* Hero Stats Bar */
