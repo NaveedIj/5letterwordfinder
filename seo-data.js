@@ -60,32 +60,24 @@ const INTERNAL_LINKS = {
 
 const SEO_DATA = {
     "3": {
-        "title": "3 Letter Word Finder & Solver | Quick Word Results",
-        "description": "Find all 3-letter words matching your pattern. Essential for high-scoring Scrabble plays and short-word anagram games. Accurate and free.",
+        "title": "3 Letter Words - Fast Scrabble & Wordle Picks",
+        "description": "Find all 3-letter words for Scrabble and Wordle elimination. Discover high-scoring hooks like ZAX and QIS to maximize your points and narrow down guesses.",
         "canonical": "/3-letter-word-finder.html",
-        "h1": "Find 3 Letter Words Instantly",
-        "subheading": "The quickest way to find valid 3-letter words for any game or puzzle.",
+        "h1": "Find 3 Letter Words Fast",
+        "subheading": "Compact word list for Scrabble hooks and quick puzzle elimination.",
         "content": [
             {
-                "title": "Why Use a 3 Letter Word Finder?",
-                "text": "Three-letter words are vital in Scrabble and crosswords, especially when you need to play 'hook' words or fit into tight spaces. Our 3 letter word finder identifies every valid combination from standard dictionaries. If you need something slightly longer, try our <a href='/'>5 letter word finder tool</a> for more options."
+                "title": "Mastering Scrabble Hooks",
+                "text": "Three-letter words are the 'connectors' of the Scrabble board. Using high-value tiles like <strong>X, Q, and Z</strong> in short words can net you massive points without opening up the board to your opponent. For example, <strong>ZAX</strong> is a tournament favorite that effectively uses the Z hook."
             },
             {
-                "title": "Boost Your Short-Word Game",
-                "text": "Mastering 3-letter words can significantly improve your performance in competitive word gaming. Use our filters to find precisely what you need, whether it's words starting with 'Q' or containing a 'Z'."
+                "title": "Fast Wordle Pattern Testing",
+                "text": "While Wordle uses 5-letter words, testing 3-letter stems can help you isolate vowel clusters and consonant stems like <strong>STR</strong> or <strong>ING</strong>. Use our tool to find short words that help you eliminate letters quickly in early rounds."
             }
         ],
         "faqs": [
-            { "question": "What are the highest scoring 3-letter words?", "answer": "Words like ZAX, ZEK, and QIS often yield the highest points in Scrabble due to high-value tiles." },
-            { "question": "Are 3-letter words useful in Wordle?", "answer": "While Wordle uses 5-letter words, many 3-letter patterns emerge as you narrow down your guesses." }
-        ],
-        "patterns": [
-            { "label": "3 Letter words starting with A", "query": "?pos0=A" },
-            { "label": "3 Letter words ending with E", "query": "?pos2=E" }
-        ],
-        "guides": [
-            { "label": "Solving 3-Letter Crosswords", "link": "#" },
-            { "label": "Scrabble Hook Strategies", "link": "#" }
+            { "question": "What are the best 3-letter words for Scrabble?", "answer": "Focus on high-value characters. ZAX, ZEK, and QIS are excellent because they utilize high-point tiles in a compact, easy-to-play format." },
+            { "question": "How do 3-letter words help in Wordle?", "answer": "They are perfect for testing letter-position logic. If you suspect a 'TH' or 'SH' cluster, finding short words with those stems can confirm their presence." }
         ]
     },
     "4": {
@@ -277,6 +269,48 @@ const SEO_DATA = {
         "guides": [
             { "label": "8-Letter Puzzle Tips", "link": "#" },
             { "label": "Cracking Long Anagrams", "link": "#" }
+        ]
+    },
+    "5-starting-s": {
+        "title": "5 Letter Words Starting With S - Common Wordle Patterns",
+        "description": "Discover 5-letter words starting with S. Learn high-frequency Wordle openers like SLATE and how to navigate consonant clusters like ST, SH, and SP effectively.",
+        "canonical": "/5-letter-words-starting-with-s.html",
+        "h1": "5 Letter Words Starting With S",
+        "subheading": "Master the most common starting letter in Wordle with strategic S-openers.",
+        "content": [
+            {
+                "title": "The Dominance of Starting S",
+                "text": "The letter <strong>S</strong> is the most frequent starting character in the Wordle lexicon. This makes it both a blessing and a curse; while it's easy to find matches, you need a strategy to narrow down the choices. Openers like <strong>SLATE</strong> are popular because they test high-frequency vowels alongside the S anchor."
+            },
+            {
+                "title": "Navigating S-Consonant Clusters",
+                "text": "When you know a word starts with S, pay attention to clusters. <strong>ST, SH, and SP</strong> are extremely common. If your tool reveals a yellow T, testing <strong>ST-</strong> patterns early can save you multiple turns. However, beware of 'trap' words like <strong>SASSY</strong> that use rare double-consonant patterns."
+            }
+        ],
+        "faqs": [
+            { "question": "What is the best S-starting word for Wordle?", "answer": "SLATE and STARE are statistically among the best openers. They combine the common starting S with the most frequent vowels and consonants." },
+            { "question": "Are S-starting words common in Scrabble?", "answer": "Absolutely. S is versatile for building hooks, though it only scores 1 point. Its value lies in board connection and pluralization." }
+        ]
+    },
+    "5-ending-e": {
+        "title": "Words Ending in E - Silent-E Wordle Strategy",
+        "description": "Find 5-letter words ending in E. Master silent-E patterns and vowel-consonant balancing with expert Wordle strategies and examples like CRANE.",
+        "canonical": "/5-letter-words-ending-with-e.html",
+        "h1": "5 Letter Words Ending in E",
+        "subheading": "Master the linguistic anchor of 5-letter words: The Silent-E.",
+        "content": [
+            {
+                "title": "Silent-E Strategic Importance",
+                "text": "The letter <strong>E</strong> is the most common ending for 5-letter English words, often functioning as a 'Silent-E' that modifies the preceding vowel. In Wordle, confirming an E at the end early on (as in <strong>CRANE</strong>) dramatically narrows the possibilities for the internal vowel structure."
+            },
+            {
+                "title": "Vowel-Consonant Balancing",
+                "text": "Words ending in E often follow a Consonant-Vowel-Consonant-Vowel pattern. When you secure the ending E, your next priority should be testing high-frequency vowels like A and I. This prevents you from wasting guesses on words that don't fit the natural phonetic flow of English suffix patterns."
+            }
+        ],
+        "faqs": [
+            { "question": "Why are so many Wordle answers ending in E?", "answer": "English morphology relies heavily on E for verb endings, adjectives, and silent-E structures. It is the most statistically likely ending for any 5-letter word." },
+            { "question": "Is CRANE a good word for E-ending searches?", "answer": "Yes, CRANE is one of the top-rated Wordle openers specifically because it tests for the common E-ending while also checking high-value consonants like R and N." }
         ]
     }
 };
