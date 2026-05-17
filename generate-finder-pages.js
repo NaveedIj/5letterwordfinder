@@ -32,6 +32,12 @@ for (const n of [3, 4, 6, 7, 8]) {
     const o = ord[n];
 
     // 2. Update Basic Metadata
+    const canonicalUrl = `https://www.5letterwordfindertool.com/${n}-letter-word-finder.html`;
+    html = html.replace(
+        /<link rel="canonical" href="[^"]*">/,
+        `<link rel="canonical" href="${canonicalUrl}">`
+    );
+
     html = html.replace(
         /<title>[\s\S]*?<\/title>/,
         `<title>${O} Letter Word Finder - Solver &amp; Unscrambler</title>`
