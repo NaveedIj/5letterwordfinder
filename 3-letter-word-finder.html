@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,6 +40,31 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <!-- JSON-LD Schema for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the best 3-letter words for Scrabble?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Focus on high-value characters. ZAX, ZEK, and QIS are excellent because they utilize high-point tiles in a compact, easy-to-play format."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do 3-letter words help in Wordle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are perfect for testing letter-position logic. If you suspect a 'TH' or 'SH' cluster, finding short words with those stems can confirm their presence."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- SEO Logic (Phase 3 Hardened) -->
     <script src="seo-data.js" defer></script>
@@ -67,7 +92,7 @@
             </a>
 
             <!-- HAMBURGER BUTTON -->
-            <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+            <button class="menu-toggle" aria-label="Toggle Menu">â˜°</button>
 
             <!-- NAVIGATION -->
             <ul class="nav-menu">
@@ -501,201 +526,36 @@
 
 
             <!-- ======================== INFO CARDS ======================== -->
-            <!-- ======================== SEO CONTENT SECTION ======================== -->
-            <div id="seo-placeholder" class="lazy-section is-loading"></div>
+            
+            <!-- PRE-RENDERED SEO CONTENT SECTION -->
+            <section class="seo-guide-section" style="margin-top: 4rem;">
+                <div class="info-section-header">
+                    <h2 class="info-section-title">Find 3 Letter Words Fast</h2>
+                    <p class="info-section-sub">Compact word list for Scrabble hooks and quick puzzle elimination.</p>
+                </div>
 
-            <template id="seo-section-template">
-                <section class="info-section">
-                    <div class="info-section-header">
-                        <h2 class="info-section-title">Master the 5-Letter Word Game</h2>
-                        <p class="info-section-sub">Expert strategies, linguistic insights, and tool-tips to keep your streak alive.</p>
+                <div class="info-content">
+                    <div class="info-box blue">
+                        <h3>Mastering Scrabble Hooks</h3>
+                        <p>Three-letter words are the 'connectors' of the Scrabble board. Using high-value tiles like <strong>X, Q, and Z</strong> in short words can net you massive points without opening up the board to your opponent. For example, <strong>ZAX</strong> is a tournament favorite that effectively uses the Z hook.</p>
                     </div>
-
-                    <div class="info-content">
-                        <!-- Strategy Section: Wordle Openings -->
-                        <div class="info-box blue">
-                            <h3>Winning Wordle Strategies</h3>
-                            <ul class="clean-list">
-                                <li><strong>The Vowel Hunt:</strong> Start with <em>AUDIO</em> or <em>ADIEU</em> to identify 3-4 vowels in one turn.</li>
-                                <li><strong>Consonant Clusters:</strong> Use <em>CRANE</em> or <em>SLATE</em> to test the most common Wordle consonants (R, S, T, L, N).</li>
-                                <li><strong>Double Letters:</strong> Don't forget that letters can repeat! Patterns like <em>ABUSE</em> vs <em>ABBEY</em> often trip up players.</li>
-                            </ul>
-                            <details class="strategy-details">
-                                <summary>Why certain starting words improve success...</summary>
-                                <div class="details-content">
-                                    <p>Statistically, words like <strong>CRANE</strong> are superior because they place high-frequency letters in their most statistically likely positions. For example, 'E' is the most common ending letter for 5-letter Wordle answers.</p>
-                                </div>
-                            </details>
+                    <div class="info-box purple">
+                        <h3>Fast Wordle Pattern Testing</h3>
+                        <p>While Wordle uses 5-letter words, testing 3-letter stems can help you isolate vowel clusters and consonant stems like <strong>STR</strong> or <strong>ING</strong>. Use our tool to find short words that help you eliminate letters quickly in early rounds.</p>
+                    </div>
+                    <div class="info-box green">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <strong>What are the best 3-letter words for Scrabble?</strong>
+                            <p>Focus on high-value characters. ZAX, ZEK, and QIS are excellent because they utilize high-point tiles in a compact, easy-to-play format.</p>
                         </div>
-
-                        <!-- Linguistic Insights -->
-                        <div class="info-box purple">
-                            <h3>Letter Frequency & Position</h3>
-                            <p>Understanding where letters usually fall can save you guesses:</p>
-                            <ul class="clean-list">
-                                <li><strong>S</strong> is the most common starting letter but rarely the ending letter in Wordle (to avoid easy plurals).</li>
-                                <li><strong>E</strong> and <strong>Y</strong> are high-frequency ending anchors.</li>
-                                <li><strong>CH</strong>, <strong>SH</strong>, and <strong>TH</strong> are critical consonant pairings to test early.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Scrabble Helper -->
-                        <div class="info-box blue">
-                            <h3>Scrabble & Competitive Play</h3>
-                            <p>Switch to the <strong>Full Dictionary</strong> to find high-scoring hooks:</p>
-                            <ul class="clean-list">
-                                <li>Focus on <strong>Q</strong>, <strong>Z</strong>, and <strong>J</strong> for massive point boosts.</li>
-                                <li>Use the 5-letter finder to plan 'Bingos' by identifying potential 7-letter stems.</li>
-                                <li>Check for <strong>S</strong> and <strong>ED</strong> hooks to extend existing board words.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Internal Hub -->
-                        <div class="info-box purple">
-                            <h3>Explore Specialized Guides</h3>
-                            <div class="letter-grid-internal">
-                                <a href="5-letter-words-starting-with-s.html" title="Strategic S openers">Analyze S-starting Wordle patterns</a>
-                                <a href="5-letter-words-ending-with-e.html" title="Silent-E endings">Common silent-E endings</a>
-                                <a href="3-letter-word-finder.html" title="3-letter hooks">High-scoring 3-letter Scrabble hooks</a>
-                                <a href="7-letter-word-finder.html">Scrabble Bingos</a>
-                            </div>
-                        </div>
-
-                        <!-- FAQ -->
-                        <div class="info-box green">
-                            <h3>Frequently Asked Questions</h3>
-                            <div class="faq-item">
-                                <strong>How does the 'Must Include' filter work?</strong>
-                                <p>It ensures results contain specific letters regardless of position. Use <em>EE</em> to find words with at least two E's.</p>
-                            </div>
-                            <div class="faq-item">
-                                <strong>Is this tool safe for daily Wordle?</strong>
-                                <p>Yes! We use the official Wordle answer list to ensure you don't get obscure dictionary words that will never be the daily answer.</p>
-                            </div>
+                        <div class="faq-item">
+                            <strong>How do 3-letter words help in Wordle?</strong>
+                            <p>They are perfect for testing letter-position logic. If you suspect a 'TH' or 'SH' cluster, finding short words with those stems can confirm their presence.</p>
                         </div>
                     </div>
-                </section>
-            </template>
-
-
-            <!-- ======================== EXPLORE MORE TOOLS ======================== -->
-            <div id="tools-placeholder" class="lazy-section is-loading"></div>
-
-            <template id="tools-section-template">
-                <section class="tools-section">
-                    <h2 class="info-section-title">Explore More Word Tools</h2>
-                    <div class="tools-grid">
-                        <a href="4-letter-word-finder.html" class="tool-card">
-                            <div class="tool-card-icon">4</div>
-                            <div class="tool-card-info">
-                                <h3>4 Letter Word Finder</h3>
-                                <p>Generate short words for crossword help.</p>
-                            </div>
-                        </a>
-                        <a href="6-letter-word-finder.html" class="tool-card">
-                            <div class="tool-card-icon">6</div>
-                            <div class="tool-card-info">
-                                <h3>6 Letter Word Finder</h3>
-                                <p>Solve longer puzzles and anagrams.</p>
-                            </div>
-                        </a>
-                        <a href="game.html" class="tool-card">
-                            <div class="tool-card-icon">W</div>
-                            <div class="tool-card-info">
-                                <h3>Wordle Solver Tool</h3>
-                                <p>Specialized logic for the daily game.</p>
-                            </div>
-                        </a>
-                        <a href="/" class="tool-card">
-                            <div class="tool-card-icon">S</div>
-                            <div class="tool-card-info">
-                                <h3>Scrabble Word Finder</h3>
-                                <p>Find high-scoring words instantly.</p>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-            </template>
-
-
-            <!-- ======================== SEO CONTENT: EXAMPLE WORDS ======================== -->
-            <div id="examples-placeholder" class="lazy-section is-loading"></div>
-
-            <template id="examples-section-template">
-                <section class="tools-section">
-                    <h2 class="info-section-title">Example 5-Letter Words for Wordle & Scrabble</h2>
-                    <div class="info-content"
-                        style="max-width: 800px; margin: 0 auto; padding: 2rem; background: var(--bg-card); border-radius: 1rem; border: 1px solid var(--border-color);">
-                        <p>When it comes to daily puzzle challenges, mastering five-letter words is the ultimate key to a
-                            winning Wordle strategy. The secret to success lies in choosing strong opening guesses that
-                            knock
-                            out multiple vowels and high-frequency consonants early on. By studying common five-letter
-                            patterns,
-                            you can drastically reduce the number of guesses it takes to zero in on the daily solution. If
-                            you
-                            find yourself enjoying longer challenges after conquering Wordle, step up your game with our <a
-                                href="6-letter-word-finder.html">6-letter word finder</a>. The list below highlights some
-                            excellent five-letter choices that feature great letter distributions to help you strategize
-                            your
-                            next move and keep your winning streak alive.</p>
-                        <p><em>Words verified from standard English dictionaries.</em></p>
-                        <ul
-                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 0.5rem; list-style: none; padding: 0; margin-top: 1rem;">
-                            <li>ADIEU</li>
-                            <li>ALERT</li>
-                            <li>ALIEN</li>
-                            <li>ALTER</li>
-                            <li>AUDIO</li>
-                            <li>BLAME</li>
-                            <li>BLIND</li>
-                            <li>BLOCK</li>
-                            <li>BOARD</li>
-                            <li>BRAIN</li>
-                            <li>BREAD</li>
-                            <li>BREAK</li>
-                            <li>BRING</li>
-                            <li>BROWN</li>
-                            <li>BUILD</li>
-                            <li>CATCH</li>
-                            <li>CAUSE</li>
-                            <li>CHAIN</li>
-                            <li>CHAIR</li>
-                            <li>CHART</li>
-                            <li>CHASE</li>
-                            <li>CHIEF</li>
-                            <li>CHILD</li>
-                            <li>CLASS</li>
-                            <li>CLEAN</li>
-                            <li>CLEAR</li>
-                            <li>CLOCK</li>
-                            <li>CLOSE</li>
-                            <li>COACH</li>
-                            <li>COAST</li>
-                            <li>COUNT</li>
-                            <li>COURT</li>
-                            <li>COVER</li>
-                            <li>CRANE</li>
-                            <li>CRAZY</li>
-                            <li>CREAM</li>
-                            <li>CRIME</li>
-                            <li>CROSS</li>
-                            <li>CROWD</li>
-                            <li>CROWN</li>
-                            <li>DANCE</li>
-                            <li>DEATH</li>
-                            <li>DEPTH</li>
-                            <li>DOUBT</li>
-                            <li>DRAFT</li>
-                            <li>DREAM</li>
-                            <li>DRINK</li>
-                            <li>DRIVE</li>
-                            <li>EARTH</li>
-                            <li>EMPTY</li>
-                        </ul>
-                    </div>
-                </section>
-            </template>
-
+                </div>
+            </section>
 
         </div><!-- end .container -->
 
@@ -764,3 +624,4 @@
 </body>
 
 </html>
+
