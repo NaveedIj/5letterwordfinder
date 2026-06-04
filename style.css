@@ -96,13 +96,7 @@ body.theme-light .pattern-box::after {
 body.theme-light .title {
     color: var(--text-primary);
     background: none;
-    -webkit-text-fill-color: initial;
-}
-
-body.theme-light .info-section-title {
-    color: var(--text-primary);
-    background: none;
-    -webkit-text-fill-color: initial;
+    -webkit-text-fill-color: var(--text-primary);
 }
 
 
