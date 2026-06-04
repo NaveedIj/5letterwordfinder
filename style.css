@@ -242,12 +242,16 @@ main {
     font-family: 'Inter', sans-serif;
     font-size: 22px;
     font-weight: 700;
-    color: #222;
+    color: var(--text-primary);
     text-decoration: none;
     letter-spacing: 0.5px;
     line-height: 1.2;
     display: inline-block;
     transition: opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+body.theme-light .brand-name {
+    color: #222;
 }
 
 .brand-name span {
@@ -257,8 +261,12 @@ main {
 }
 
 .brand-container:hover .brand-name {
-    color: #000;
+    color: white;
     transform: scale(1.03);
+}
+
+body.theme-light .brand-container:hover .brand-name {
+    color: #000;
 }
 
 .brand-container:hover .brand-name span {
@@ -415,7 +423,7 @@ main {
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 1rem;
     padding: 1rem 1.25rem 3rem;
 }
 
@@ -1918,14 +1926,14 @@ body[data-word-length="8"] .results-list {
 
 .btn-menu {
     position: absolute;
-    left: 0;
+    left: 1rem;
     top: 0;
     z-index: 2;
     border: none;
     background: var(--bg-elevated);
     color: var(--text-primary);
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.75rem 0.85rem;
     border-radius: 0.5rem;
     transition: opacity var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
     display: flex;
