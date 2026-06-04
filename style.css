@@ -1377,7 +1377,7 @@ body[data-word-length="8"] .results-list {
 
 /* Info Section & Premium Cards */
 .info-section {
-    margin-top: 6rem;
+    margin-top: 0;
     padding-bottom: 2rem;
 }
 
@@ -2204,7 +2204,7 @@ body[data-word-length="8"] .results-list {
 
 /* Info Section spacing from main grid */
 .info-section {
-    margin-top: 6rem;
+    margin-top: 0;
     padding-bottom: 2rem;
 }
 
@@ -2318,9 +2318,7 @@ body[data-word-length="8"] .results-list {
     position: relative;
     overflow: hidden;
     /* Visual Stability: Reserve height to prevent CLS */
-    background: var(--bg-card);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--border);
+    margin-top: 6rem;
     margin-bottom: 4rem;
 }
 
