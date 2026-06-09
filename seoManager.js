@@ -247,6 +247,14 @@
      */
     function injectJSONLD(data, tokens) {
         try {
+            // 0. Check for existing static FAQ schema to prevent duplicates
+            const staticSchemas = document.querySelectorAll('script[type="application/ld+json"]:not([data-seo-schema="dynamic"])');
+            for (let i = 0; i < staticSchemas.length; i++) {
+                if (staticSchemas[i].textContent && staticSchemas[i].textContent.includes('"FAQPage"')) {
+                    return; // Prevent duplicate generation
+                }
+            }
+
             // 1. Remove existing dynamic schemas to prevent conflicts
             const existing = document.querySelectorAll('script[data-seo-schema="dynamic"]');
             existing.forEach(el => el.remove());
