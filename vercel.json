@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/5-letter-word-finder.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
