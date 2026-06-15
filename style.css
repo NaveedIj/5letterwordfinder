@@ -2404,4 +2404,89 @@ template {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* =========================================================
+   MOBILE UX OPTIMIZATION ADDITIONS 
+   ========================================================= */
+@media (max-width: 768px) {
+    /* 1. Header Optimization */
+    .saas-header { height: 56px !important; }
+    .saas-header .nav-container-header { padding: 0 1rem; }
+    .brand-name { font-size: 1.15rem !important; }
+    .brand-tagline-header { display: none !important; }
+    .btn-cta-header { padding: 0.4rem 1rem !important; font-size: 0.85rem !important; }
+    
+    /* 2. Above The Fold & 3. Spacing Audit */
+    .container { padding-top: 0.5rem !important; }
+    .header { margin-bottom: 0.5rem !important; padding: 0 1rem !important; }
+    .title { font-size: 1.6rem !important; line-height: 1.2 !important; }
+    .subtitle { font-size: 0.95rem !important; margin-bottom: 0 !important; }
+    
+    /* Move main tool higher */
+    .pattern-box { 
+        padding: 1.25rem !important; 
+        gap: 1.25rem !important; 
+        margin-bottom: 1.5rem !important; 
+    }
+    .hero-row { gap: 0.5rem !important; }
+    .hero-extras { margin-top: 0 !important; margin-bottom: 1.5rem !important; }
+    
+    /* 4. Visual Hierarchy & CTA Visibility */
+    #findBtn { 
+        font-size: 1.1rem !important; 
+        padding: 0.875rem !important; 
+        width: 100%; /* Make CTA full width on mobile */
+        margin-bottom: 0.5rem;
+    }
+    .hero-actions { 
+        flex-direction: column; 
+        gap: 0.5rem; 
+        width: 100%;
+    }
+    .btn-secondary { width: 100%; }
+    
+    /* 6. Section Prioritization (Results before Sidebar) */
+    .main-grid {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        gap: 1rem !important;
+    }
+    
+    /* 5. Card Optimization */
+    .card {
+        padding: 1.25rem !important;
+    }
+    .card-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    .showcase-grid { grid-template-columns: 1fr !important; }
+    .showcase-card { padding: 1.25rem !important; }
+    
+    /* 7. Typography / Readability */
+    .info-content p, .info-content li {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Fix stats taking space without enough value */
+    .hero-stats {
+        flex-wrap: wrap;
+        padding: 0.5rem !important;
+    }
+    .hero-stat {
+        padding: 0.25rem 0.5rem !important;
+    }
+
+    /* 8. Footer Spacing */
+    .site-footer {
+        padding: 2rem 0 1.5rem !important;
+    }
+    .footer-grid {
+        gap: 1.5rem !important;
+    }
+    .footer-col {
+        margin-bottom: 0 !important;
+    }
+}
 
