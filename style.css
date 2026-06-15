@@ -401,14 +401,19 @@ body.theme-light .brand-container:hover .brand-name {
 /* Responsive */
 @media (max-width: 900px) {
     .saas-header .nav-container-header {
-        justify-content: center;
-        text-align: center;
-        gap: 1rem;
+        justify-content: space-between;
+        gap: 0.5rem;
     }
 
     .brand-container {
-        align-items: center;
-        width: 100%;
+        align-items: flex-start;
+        width: auto;
+        flex-grow: 1;
+        padding-left: 0.5rem;
+    }
+
+    .menu-toggle {
+        order: -1;
     }
 }
 
