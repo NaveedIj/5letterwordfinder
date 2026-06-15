@@ -2415,7 +2415,12 @@ template {
    ========================================================= */
 @media (max-width: 768px) {
     /* 1. Header Optimization */
-    .saas-header { height: 56px !important; }
+    .saas-header { 
+        height: 56px !important; 
+        top: -1px !important; /* Fix subpixel rendering 1px gap on mobile */
+        box-shadow: none !important; /* Prevent shadow bleed upwards */
+        border-top: none !important; 
+    }
     .saas-header .nav-container-header { padding: 0 1rem; }
     .brand-name { font-size: 1.15rem !important; }
     .brand-tagline-header { display: none !important; }
