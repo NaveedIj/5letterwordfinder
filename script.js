@@ -75,7 +75,6 @@ const dictCard = document.getElementById('dictCard');
 const playWordleCard = document.querySelector('.play-wordle-card');
 const letterTracker = document.getElementById('letterTracker');
 
-const menuBtn = document.getElementById('menuBtn');
 const navPanel = document.getElementById('navPanel');
 const navOverlay = document.getElementById('navOverlay');
 const closeNavBtn = document.getElementById('closeNavBtn');
@@ -489,7 +488,6 @@ if (findBtn) {
 if (copyBtn) copyBtn.addEventListener('click', copyResults);
 if (darkModeToggle) darkModeToggle.addEventListener('change', toggleTheme);
 
-if (menuBtn) menuBtn.addEventListener('click', () => toggleNav(true));
 if (closeNavBtn) closeNavBtn.addEventListener('click', () => toggleNav(false));
 if (navOverlay) navOverlay.addEventListener('click', () => toggleNav(false));
 
@@ -609,17 +607,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Responsive Header Menu Toggle
     const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
-        });
-
-        document.addEventListener("click", function (event) {
-            if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                navMenu.classList.remove("active");
-            }
+    if (menuToggle) {
+        menuToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            toggleNav(true);
         });
     }
 

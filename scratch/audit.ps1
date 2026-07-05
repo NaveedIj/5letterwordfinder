@@ -1,105 +1,58 @@
-$dir = "c:\laragon\www\5-letter-word-finder"
-$files = Get-ChildItem -Path $dir -Filter "*.html" | Select-Object -ExpandProperty Name
-
-$sitemapPath = Join-Path $dir "sitemap.xml"
-$sitemapUrls = @()
-if (Test-Path $sitemapPath) {
-    [xml]$sitemap = Get-Content $sitemapPath
-    if ($sitemap.urlset -and $sitemap.urlset.url) {
-        foreach ($u in $sitemap.urlset.url) {
-            $sitemapUrls += $u.loc
-        }
-    }
-}
-
-$sitemapFiles = @()
-foreach ($url in $sitemapUrls) {
-    $p = $url -replace "^https://www.5letterwordfindertool.com/", ""
-    if ($p -eq "") { $p = "index.html" }
-    $sitemapFiles += $p
-}
-
-$inboundLinks = @{}
-foreach ($f in $files) {
-    $inboundLinks[$f] = [System.Collections.Generic.HashSet[string]]::new()
-}
-if (-not $inboundLinks.ContainsKey('index.html')) {
-    $inboundLinks['index.html'] = [System.Collections.Generic.HashSet[string]]::new()
-}
-
-$regex = [regex]'(?i)href=["'']([^"''#\?]+)[#\?]*[^"'']*["'']'
+$files = Get-ChildItem -Path "c:\laragon\www\5-letter-word-finder" -Filter "*.html"
+$results = @{}
 
 foreach ($file in $files) {
-    $content = Get-Content (Join-Path $dir $file) -Raw
-    $matches = $regex.Matches($content)
-    foreach ($m in $matches) {
-        $link = $m.Groups[1].Value.Trim()
-        
-        if ($link -match "^http" -or $link -match "^mailto:" -or $link -eq "") {
-            if ($link -match "^https://www.5letterwordfindertool.com/") {
-                $link = $link -replace "^https://www.5letterwordfindertool.com/", ""
-            } else {
-                continue
-            }
-        }
-        
-        if ($link -eq "/" -or $link -eq "") {
-            $link = "index.html"
-        }
-        
-        if ($link.StartsWith("/")) {
-            $link = $link.Substring(1)
-        }
-        
-        if ($link -eq "") { $link = "index.html" }
-        
-        if ($link.EndsWith(".html") -or $link -eq "index.html") {
-            if (-not $inboundLinks.ContainsKey($link)) {
-                $inboundLinks[$link] = [System.Collections.Generic.HashSet[string]]::new()
-            }
-            [void]$inboundLinks[$link].Add($file)
-        }
+    $content = Get-Content -Path $file.FullName -Raw
+
+    # Titles
+    $titles = @([regex]::Matches($content, '(?si)<title>(.*?)</title>').Groups[1].Value)
+
+    # Meta descriptions
+    $descriptions = @([regex]::Matches($content, '(?si)<meta\s+name="description"\s+content="([^"]*)">').Groups[1].Value)
+
+    # H1s
+    $h1s = @([regex]::Matches($content, '(?si)<h1[^>]*>(.*?)</h1>').Groups[1].Value)
+
+    # Canonical
+    $canonicals = @([regex]::Matches($content, '(?si)<link\s+rel="canonical"\s+href="([^"]*)">').Groups[1].Value)
+
+    # Robots
+    $robots = @([regex]::Matches($content, '(?si)<meta\s+name="robots"\s+content="([^"]*)">').Groups[1].Value)
+
+    # Schemas
+    $orgSchema = ([regex]::Matches($content, '(?si)"@type"\s*:\s*"Organization"')).Count
+    $faqSchema = ([regex]::Matches($content, '(?si)"@type"\s*:\s*"FAQPage"')).Count
+    
+    # Internal links
+    $hrefs = @()
+    foreach ($match in [regex]::Matches($content, '(?si)<a\s+[^>]*href="([^"]+)"')) {
+        $hrefs += $match.Groups[1].Value
+    }
+
+    # Word count (rough)
+    # Extract body content first
+    $bodyMatch = [regex]::Match($content, '(?si)<body[^>]*>(.*?)</body>')
+    $wordCount = 0
+    if ($bodyMatch.Success) {
+        $bodyText = $bodyMatch.Groups[1].Value
+        # Strip all tags
+        $bodyText = $bodyText -replace '<[^>]+>', ' '
+        # Replace multiple spaces
+        $bodyText = $bodyText -replace '\s+', ' '
+        $wordCount = ($bodyText.Trim() -split '\s+').Count
+    }
+
+    $results[$file.Name] = @{
+        titles = $titles
+        descriptions = $descriptions
+        h1s = $h1s
+        canonicals = $canonicals
+        robots = $robots
+        orgSchema = $orgSchema
+        faqSchema = $faqSchema
+        hrefs = $hrefs
+        wordCount = $wordCount
     }
 }
 
-foreach ($f in $sitemapFiles) {
-    if (-not $inboundLinks.ContainsKey($f)) {
-        $inboundLinks[$f] = [System.Collections.Generic.HashSet[string]]::new()
-    }
-}
-
-$report = @()
-foreach ($target in $inboundLinks.Keys) {
-    $linksCount = $inboundLinks[$target].Count
-    $issue = ""
-    $fix = ""
-    
-    $inSitemap = $sitemapFiles -contains $target
-    $isHtmlFile = ($files -contains $target) -or ($target -eq "index.html")
-    
-    if (-not $isHtmlFile -and $inSitemap) {
-        $issue = "In sitemap but file does not exist"
-        $fix = "Remove from sitemap or create page"
-    } elseif ($linksCount -eq 0 -and $inSitemap) {
-        $issue = "Orphan page (in sitemap)"
-        $fix = "Add internal links from related pages"
-    } elseif ($linksCount -eq 0 -and -not $inSitemap) {
-        $issue = "Orphan page (not in sitemap)"
-        $fix = "Add to sitemap & link internally, or delete"
-    } elseif ($linksCount -lt 3) {
-        $issue = "Low internal links (<3)"
-        $fix = "Add links from index or letter-nav block"
-    } else {
-        $issue = "OK"
-        $fix = "None"
-    }
-    
-    $report += [PSCustomObject]@{
-        URL = $target
-        Links = $linksCount
-        Issue = $issue
-        Fix = $fix
-    }
-}
-
-$report | ConvertTo-Json
+$results | ConvertTo-Json -Depth 10 | Out-File -FilePath "c:\laragon\www\5-letter-word-finder\scratch\audit_results.json" -Encoding UTF8

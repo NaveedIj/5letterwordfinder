@@ -321,7 +321,7 @@ body.theme-light .brand-container:hover .brand-name {
 }
 
 .menu-toggle {
-    display: none !important;
+    display: block;
     background: none;
     border: none;
     font-size: 1.8rem;
@@ -331,27 +331,8 @@ body.theme-light .brand-container:hover .brand-name {
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block !important;
-    }
-
     .nav-menu {
         display: none !important;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #fff;
-        padding: 20px;
-        width: 220px;
-        border: 1px solid #eeeeee;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        z-index: 2000;
-    }
-
-    .nav-menu.active {
-        display: flex !important;
     }
 }
 
@@ -1920,29 +1901,6 @@ body[data-word-length="8"] .results-list {
 }
 
 
-
-.btn-menu {
-    position: absolute;
-    left: 1rem;
-    top: 0;
-    z-index: 2;
-    border: none;
-    background: var(--bg-elevated);
-    color: var(--text-primary);
-    cursor: pointer;
-    padding: 0.75rem 0.85rem;
-    border-radius: 0.5rem;
-    transition: opacity var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-sm);
-}
-
-.btn-menu:hover {
-    background: var(--btn-hover);
-    box-shadow: var(--shadow-md);
-}
 
 /* Title Row - help button styles consolidated below with .btn-help */
 .title-row {
