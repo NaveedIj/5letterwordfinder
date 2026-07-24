@@ -217,6 +217,7 @@
         <div class="info-box yellow">
             <h2>Related Word Tools</h2>
             <ul class="clean-list">
+                <li><a href="/ai-word-solver">${hydrate(INTERNAL_LINKS["AI_SOLVER"], tokens)}</a></li>
                 <li><a href="/3-letter-word-finder.html">${hydrate(INTERNAL_LINKS["3_LETTER"], tokens)}</a></li>
                 <li><a href="/4-letter-word-finder.html">${hydrate(INTERNAL_LINKS["4_LETTER"], tokens)}</a></li>
                 <li><a href="/">${hydrate(INTERNAL_LINKS["5_LETTER"], tokens)}</a></li>

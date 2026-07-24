@@ -48,6 +48,7 @@ const SEO_STRATEGIES = {
  * Contextual Internal Linking: Semantically rich anchors for better crawl understanding.
  */
 const INTERNAL_LINKS = {
+    "AI_SOLVER": "Solve Wordle, Scrabble, and puzzles with AI Word Solver",
     "3_LETTER": "Find high-scoring Scrabble hooks",
     "4_LETTER": "View common 4-letter patterns",
     "5_LETTER": "Master 5-letter Wordle strategies",

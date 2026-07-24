@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/ai-word-solver",
+      "destination": "/ai-word-solver.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/5-letter-word-finder.html",

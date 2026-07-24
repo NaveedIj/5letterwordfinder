@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Word Solver – Find Words by Pattern | 5 Letter Word Finder Tool</title>
+    <meta name="description"
+        content="Find matching words instantly using our AI Word Solver. Solve Wordle, Scrabble, Crossword, and Hangman puzzles with smart letter pattern matching and advanced filters.">
+    <meta name="keywords"
+        content="AI word solver, word pattern solver, wordle solver, scrabble solver, crossword solver, hangman solver">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.5letterwordfindertool.com/ai-word-solver">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="AI Word Solver – Find Words by Pattern | 5 Letter Word Finder Tool">
+    <meta property="og:description"
+        content="Find matching words instantly using our AI Word Solver. Solve Wordle, Scrabble, Crossword, and Hangman puzzles with smart letter pattern matching and advanced filters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.5letterwordfindertool.com/ai-word-solver">
+    <meta property="og:image" content="https://www.5letterwordfindertool.com/preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Word Solver – Find Words by Pattern | 5 Letter Word Finder Tool">
+    <meta name="twitter:description"
+        content="Find matching words instantly using our AI Word Solver. Solve Wordle, Scrabble, Crossword, and Hangman puzzles with smart letter pattern matching and advanced filters.">
+    <meta name="twitter:image" content="https://www.5letterwordfindertool.com/preview.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Preload critical fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap">
+
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Phase 1.5: Theme Persistence & White Flash Prevention -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+            document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
+            document.documentElement.style.backgroundColor = isDark ? '#0f172a' : '#f8fafc';
+        })();
+    </script>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "5 Letter Word Finder Tool",
+      "url": "https://www.5letterwordfindertool.com/",
+      "logo": "https://www.5letterwordfindertool.com/preview.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/5-letter-word-finder-tool",
+        "https://www.facebook.com/profile.php?id=61590811286427",
+        "https://www.pinterest.com/5letterwordfindertool/",
+        "https://x.com/5letterwordfind"
+      ]
+    }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WW6EJYTTML"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WW6EJYTTML');
+    </script>
+
+    <!-- WebApp & Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI Word Solver",
+      "url": "https://www.5letterwordfindertool.com/ai-word-solver",
+      "description": "Find matching words instantly using our AI Word Solver. Solve Wordle, Scrabble, Crossword, and Hangman puzzles with smart letter pattern matching and advanced filters.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.5letterwordfindertool.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI Word Solver",
+        "item": "https://www.5letterwordfindertool.com/ai-word-solver"
+      }]
+    }
+    </script>
+    <style>
+        .ai-solver-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2.5rem;
+        }
+
+        .ai-field-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .ai-field-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .ai-pattern-input {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            font-family: 'Outfit', monospace, sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+
+        .ai-pattern-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+        }
+
+        .ai-filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ai-filter-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .ai-filter-item label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .ai-length-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .ai-length-btn {
+            padding: 0.45rem 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .ai-length-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .ai-length-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        .ai-result-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .ai-result-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all var(--transition-fast);
+        }
+
+        .ai-result-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .ai-card-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-card-word {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: 1px;
+        }
+
+        .ai-card-meta {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .ai-copy-btn {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all var(--transition-fast);
+        }
+
+        .ai-copy-btn:hover {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        .back-home-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: transform var(--transition-fast);
+        }
+
+        .back-home-link:hover {
+            transform: translateX(-3px);
+        }
+    </style>
+</head>
+
+<body data-word-length="any" data-pattern="ai-solver">
+    <header class="saas-header">
+        <nav class="nav-container-header" role="navigation" aria-label="Main Navigation">
+            <!-- BRANDING -->
+            <a href="/" class="brand-container">
+                <span class="brand-name">Word Finder <span>Tool</span></span>
+                <span class="brand-tagline-header">Your Secret Weapon for Wordle Wins</span>
+            </a>
+
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- NAVIGATION -->
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-menu-link">Home</a></li>
+                <li><a href="ai-word-solver" class="nav-menu-link active">AI Word Solver</a></li>
+                <li><a href="3-letter-word-finder.html" class="nav-menu-link">3 Letter</a></li>
+                <li><a href="4-letter-word-finder.html" class="nav-menu-link">4 Letter</a></li>
+                <li><a href="6-letter-word-finder.html" class="nav-menu-link">6 Letter</a></li>
+                <li><a href="7-letter-word-finder.html" class="nav-menu-link">7 Letter</a></li>
+                <li><a href="8-letter-word-finder.html" class="nav-menu-link">8 Letter</a></li>
+            </ul>
+
+            <!-- CTA BUTTON -->
+            <div class="nav-cta">
+                <a href="#tool-section" class="btn-cta-header">Try Tool</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Navigation Overlay -->
+        <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+        <!-- Background Glow -->
+        <div class="bg-glow"></div>
+
+        <!-- Side Navigation Panel -->
+        <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h3
+                        style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
+                        Menu</h3>
+                    <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="ai-word-solver" class="nav-link nav-link--current">AI Word Solver</a>
+                    <a href="game.html" class="nav-link"
+                        style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <text x="7" y="16" font-family="sans-serif" font-weight="bold" font-size="10">W</text>
+                        </svg>
+                        Play Wordle
+                    </a>
+                    <div class="nav-divider"></div>
+                    <p class="nav-section-label">Word finders</p>
+                    <a href="3-letter-word-finder.html" class="nav-link">3 Letter Word Finder</a>
+                    <a href="4-letter-word-finder.html" class="nav-link">4 Letter Word Finder</a>
+                    <a href="/" class="nav-link">5 Letter Word Finder</a>
+                    <a href="6-letter-word-finder.html" class="nav-link">6 Letter Word Finder</a>
+                    <a href="7-letter-word-finder.html" class="nav-link">7 Letter Word Finder</a>
+                    <a href="8-letter-word-finder.html" class="nav-link">8 Letter Word Finder</a>
+                    <div class="nav-divider"></div>
+                    <p class="nav-section-label">Information</p>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <a href="privacy.html" class="nav-link">Privacy Policy</a>
+                    <div class="nav-divider"></div>
+                    <div class="nav-setting">
+                        <span class="setting-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                            </svg>
+                        </span>
+                        <span class="setting-text">Dark Mode</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="container">
+
+            <a href="/" class="back-home-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Home
+            </a>
+
+            <!-- ======================== HERO SECTION ======================== -->
+            <section class="header">
+                <h1 class="title">AI Word Solver</h1>
+                <p class="tagline">Find Words by Pattern & Advanced Filters</p>
+                <p class="subtitle">Solve Wordle, Scrabble, Crossword, Hangman, and word puzzles instantly using smart
+                    pattern matching.</p>
+            </section>
+
+            <!-- Tool Input -->
+            <div class="ai-solver-box" id="tool-section" role="search" aria-label="AI Word Solver filters">
+
+                <!-- 1. PATTERN INPUT -->
+                <div class="ai-field-group">
+                    <div class="ai-field-label">
+                        <span class="row-label-dot green-dot"></span>
+                        Pattern Input (use _ or ? for unknown letters)
+                    </div>
+                    <input type="text" id="aiPatternInput" class="ai-pattern-input" placeholder="e.g. A__LE, C_T, B_RD, __ING"
+                        autocomplete="off" spellcheck="false" autofocus>
+                </div>
+
+                <!-- 2. LETTER FILTERS -->
+                <div class="ai-filters-grid">
+                    <div class="ai-filter-item">
+                        <label for="aiStartsWith">Starts With</label>
+                        <input type="text" id="aiStartsWith" class="text-input" placeholder="e.g. A" autocomplete="off"
+                            spellcheck="false">
+                    </div>
+                    <div class="ai-filter-item">
+                        <label for="aiEndsWith">Ends With</label>
+                        <input type="text" id="aiEndsWith" class="text-input" placeholder="e.g. E" autocomplete="off"
+                            spellcheck="false">
+                    </div>
+                    <div class="ai-filter-item">
+                        <label for="aiContains">Contains (Include)</label>
+                        <input type="text" id="aiContains" class="text-input" placeholder="e.g. R, T" autocomplete="off"
+                            spellcheck="false">
+                    </div>
+                    <div class="ai-filter-item">
+                        <label for="aiDoesNotContain">Does Not Contain (Exclude)</label>
+                        <input type="text" id="aiDoesNotContain" class="text-input" placeholder="e.g. X, Z"
+                            autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+
+                <!-- 3. WORD LENGTH -->
+                <div class="ai-field-group">
+                    <div class="ai-field-label">Word Length</div>
+                    <div class="ai-length-options" id="aiLengthOptions">
+                        <button type="button" class="ai-length-btn active" data-length="all">All</button>
+                        <button type="button" class="ai-length-btn" data-length="3">3 Letters</button>
+                        <button type="button" class="ai-length-btn" data-length="4">4 Letters</button>
+                        <button type="button" class="ai-length-btn" data-length="5">5 Letters</button>
+                        <button type="button" class="ai-length-btn" data-length="6">6 Letters</button>
+                        <button type="button" class="ai-length-btn" data-length="7">7 Letters</button>
+                        <button type="button" class="ai-length-btn" data-length="8+">8+ Letters</button>
+                    </div>
+                </div>
+
+                <!-- 4. SOLVE BUTTON & ACTIONS -->
+                <div class="hero-actions" style="margin-top: 1.5rem;">
+                    <button type="button" class="btn btn-primary" id="aiSolveBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        Solve Words
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="aiResetBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 6h18"></path>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                        </svg>
+                        Clear all
+                    </button>
+                </div>
+            </div>
+
+            <!-- RESULTS SECTION -->
+            <div class="main-grid">
+                <aside class="sidebar">
+                    <!-- SORTING CONTROL -->
+                    <section class="card">
+                        <div class="card-title"
+                            style="font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 6h18M7 12h10M10 18h4"></path>
+                            </svg>
+                            Sorting
+                        </div>
+                        <label class="sidebar-label" for="aiSortSelect">Order</label>
+                        <select id="aiSortSelect" class="select-input" aria-label="Sort results">
+                            <option value="alpha-asc">Alphabetical (A to Z)</option>
+                            <option value="length-asc">Shortest First</option>
+                            <option value="length-desc">Longest First</option>
+                        </select>
+                    </section>
+
+                    <!-- Play Wordle CTA -->
+                    <a href="game.html" class="play-wordle-card">
+                        <span class="play-wordle-text">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <text x="7" y="16" font-family="sans-serif" font-weight="bold" font-size="10">W</text>
+                            </svg>
+                            Play Wordle
+                        </span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </aside>
+
+                <section class="card results-card" aria-live="polite" aria-label="Word search results">
+                    <div class="results-info">
+                        <div class="card-title results-heading"
+                            style="margin-bottom: 0; font-size: 1.25rem; font-weight: 800;">Matching Words</div>
+                        <div class="flex items-center gap-2 results-actions">
+                            <span class="results-count" id="aiResultsCount">0 words</span>
+                            <button class="btn btn-primary" id="aiCopyAllBtn" disabled aria-label="Copy all results">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy all
+                            </button>
+                        </div>
+                    </div>
+                    <div id="aiResultsContainer" class="ai-result-cards-grid">
+                        <!-- Results Cards Hydrated by JS -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- SEO CONTENT SECTION -->
+            <section class="info-section" style="margin-top: 4rem;">
+                <div class="info-section-header">
+                    <h2 class="info-section-title">Smart AI Pattern Matching for Every Word Game</h2>
+                    <p class="info-section-sub">Solve Wordle, Scrabble, Crosswords, Hangman, and anagram puzzles with instant pattern recognition.</p>
+                </div>
+
+                <div class="info-content">
+                    <div class="info-box blue">
+                        <h3>Pattern Matching Power</h3>
+                        <p>Our AI Word Solver allows you to enter exact letter placements alongside unknown placeholders like <code>_</code> or <code>?</code>. Whether you have <strong>A__LE</strong>, <strong>C_T</strong>, <strong>B_RD</strong>, or <strong>__ING</strong>, the solver scans tens of thousands of English words to present accurate matches instantly.</p>
+                    </div>
+
+                    <div class="info-box purple">
+                        <h3>Comprehensive Word Filters</h3>
+                        <p>Fine-tune your searches with granular letter constraints:</p>
+                        <ul class="clean-list">
+                            <li><strong>Starts With & Ends With:</strong> Instantly target words beginning or ending with specific characters.</li>
+                            <li><strong>Contains & Excludes:</strong> Filter out impossible letter combinations and keep only matching candidates.</li>
+                            <li><strong>Word Length Selection:</strong> Filter seamlessly across 3-letter, 4-letter, 5-letter, 6-letter, 7-letter, and 8+ letter dictionaries.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box green">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-item">
+                            <strong>How do wildcard characters work?</strong>
+                            <p>You can use both underscore (<code>_</code>) and question mark (<code>?</code>) interchangeably to represent any single missing letter.</p>
+                        </div>
+                        <div class="faq-item">
+                            <strong>Which word games are supported?</strong>
+                            <p>AI Word Solver supports Wordle, Scrabble, Words With Friends, Crosswords, Hangman, and general anagram solving.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RELATED TOOLS SECTION -->
+            <section class="tools-section" style="margin-top: 4rem; margin-bottom: 4rem;">
+                <h2 class="info-section-title">Related Tools</h2>
+                <div class="tools-grid">
+                    <a href="/" class="tool-card">
+                        <div class="tool-card-icon">5</div>
+                        <div class="tool-card-info">
+                            <h3>5 Letter Word Finder</h3>
+                            <p>Specialized solver for Wordle and 5-letter games.</p>
+                        </div>
+                    </a>
+                    <a href="3-letter-word-finder.html" class="tool-card">
+                        <div class="tool-card-icon">3</div>
+                        <div class="tool-card-info">
+                            <h3>3 Letter Word Finder</h3>
+                            <p>Find short words and Scrabble hooks.</p>
+                        </div>
+                    </a>
+                    <a href="4-letter-word-finder.html" class="tool-card">
+                        <div class="tool-card-icon">4</div>
+                        <div class="tool-card-info">
+                            <h3>4 Letter Word Finder</h3>
+                            <p>Generate short words for crossword help.</p>
+                        </div>
+                    </a>
+                    <a href="6-letter-word-finder.html" class="tool-card">
+                        <div class="tool-card-icon">6</div>
+                        <div class="tool-card-info">
+                            <h3>6 Letter Word Finder</h3>
+                            <p>Solve longer puzzles and anagrams.</p>
+                        </div>
+                    </a>
+                    <a href="7-letter-word-finder.html" class="tool-card">
+                        <div class="tool-card-icon">7</div>
+                        <div class="tool-card-info">
+                            <h3>7 Letter Word Finder</h3>
+                            <p>Find Scrabble Bingos and 7-letter words.</p>
+                        </div>
+                    </a>
+                    <a href="8-letter-word-finder.html" class="tool-card">
+                        <div class="tool-card-icon">8</div>
+                        <div class="tool-card-info">
+                            <h3>8 Letter Word Finder</h3>
+                            <p>Master long-form 8-letter puzzles.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </div><!-- end .container -->
+
+    </main>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- 1. BRAND SECTION -->
+                <div class="footer-col brand-col">
+                    <div class="footer-logo-container">
+                        <a href="/">Word Finder <span>Tool</span></a>
+                    </div>
+                    <p class="footer-tagline">Your Secret Weapon for Wordle Wins</p>
+                    <p class="footer-desc">Free word finder tool for Wordle, Scrabble, and word puzzles.</p>
+                    <div class="social-icons" role="list">
+                        <a href="https://www.linkedin.com/company/5-letter-word-finder-tool" target="_blank"
+                            rel="noopener noreferrer" class="icon" aria-label="Follow us on LinkedIn" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.18-3.46c-1.34 0-1.94.75-2.28 1.25V9.43h-2.58v9.07h2.58v-4.57c0-1.21.23-2.39 1.74-2.39 1.49 0 1.5 1.39 1.5 2.47v4.56h2.22zM6.6 8.35c.83 0 1.5-.68 1.5-1.5 0-.83-.67-1.5-1.5-1.5S5.1 6.02 5.1 6.85c0 .82.67 1.5 1.5 1.5zM5.3 18.5h2.58V9.43H5.3v9.07z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61590811286427" target="_blank"
+                            rel="noopener noreferrer" class="icon" aria-label="Follow us on Facebook" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7h-2.54V12h2.54V9.79c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.95h-2.33v7C18.34 21.19 22 17.04 22 12.06c0-5.53-4.5-10.02-10-10.02z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.pinterest.com/5letterwordfindertool/" target="_blank"
+                            rel="noopener noreferrer" class="icon" aria-label="Follow us on Pinterest" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/5letterwordfind" target="_blank" rel="noopener noreferrer" class="icon"
+                            aria-label="Follow us on X (Twitter)" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. QUICK LINKS -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="ai-word-solver">AI Word Solver</a></li>
+                        <li><a href="3-letter-word-finder.html">3 Letter Word Finder</a></li>
+                        <li><a href="4-letter-word-finder.html">4 Letter Word Finder</a></li>
+                        <li><a href="6-letter-word-finder.html">6 Letter Word Finder</a></li>
+                        <li><a href="7-letter-word-finder.html">7 Letter Word Finder</a></li>
+                        <li><a href="8-letter-word-finder.html">8 Letter Word Finder</a></li>
+                    </ul>
+                </div>
+
+                <!-- 3. RESOURCES -->
+                <div class="footer-col">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="5-letter-words-starting-with-a.html">5 Letter Words Starting with A</a></li>
+                        <li><a href="5-letter-words-ending-with-e.html">5 Letter Words Ending with E</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- 4. CTA / TRUST -->
+                <div class="footer-col cta-col">
+                    <h4 class="footer-heading">Level Up Your Game</h4>
+                    <p class="footer-trust-text">Helping players solve word puzzles faster.</p>
+                    <a href="#tool-section" class="btn-footer-cta">Try AI Word Solver</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p>&copy; 2026 Word Finder Tool. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="words.js"></script>
+    <script src="ai-solver.js"></script>
+</body>
+
+</html>
