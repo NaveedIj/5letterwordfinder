@@ -54,19 +54,101 @@
             document.documentElement.style.backgroundColor = isDark ? '#0f172a' : '#f8fafc';
         })();
     </script>
-    <!-- Organization Schema -->
+    <!-- Consolidated Schema.org JSON-LD Graph -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "5 Letter Word Finder Tool",
-      "url": "https://www.5letterwordfindertool.com/",
-      "logo": "https://www.5letterwordfindertool.com/preview.png",
-      "sameAs": [
-        "https://www.linkedin.com/company/5-letter-word-finder-tool",
-        "https://www.facebook.com/profile.php?id=61590811286427",
-        "https://www.pinterest.com/5letterwordfindertool/",
-        "https://x.com/5letterwordfind"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.5letterwordfindertool.com/#organization",
+          "name": "5 Letter Word Finder Tool",
+          "url": "https://www.5letterwordfindertool.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://www.5letterwordfindertool.com/#logo",
+            "url": "https://www.5letterwordfindertool.com/preview.png",
+            "contentUrl": "https://www.5letterwordfindertool.com/preview.png",
+            "caption": "5 Letter Word Finder Tool Logo"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/5-letter-word-finder-tool",
+            "https://www.facebook.com/profile.php?id=61590811286427",
+            "https://www.pinterest.com/5letterwordfindertool/",
+            "https://x.com/5letterwordfind"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.5letterwordfindertool.com/#website",
+          "url": "https://www.5letterwordfindertool.com/",
+          "name": "5 Letter Word Finder Tool",
+          "description": "A Smart 5 Letter Word Finder for Wordle, Scrabble & Crosswords",
+          "publisher": {
+            "@id": "https://www.5letterwordfindertool.com/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.5letterwordfindertool.com/#webpage",
+          "url": "https://www.5letterwordfindertool.com/",
+          "name": "5 Letter Word Finder & Wordle Solver",
+          "description": "Find 5-letter words instantly with our free Word Finder. Solve Wordle, Scrabble, crosswords and other word puzzles using smart search filters.",
+          "isPartOf": {
+            "@id": "https://www.5letterwordfindertool.com/#website"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://www.5letterwordfindertool.com/#webapp",
+          "name": "5 Letter Word Finder Tool",
+          "url": "https://www.5letterwordfindertool.com/",
+          "description": "An interactive word finder and Wordle solver tool to find 5-letter words by including or excluding specific letters.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "All",
+          "browserRequirements": "Requires JavaScript",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.5letterwordfindertool.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I filter 5-letter words with this tool?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enter known letters in the correct position boxes (green), misplaced letters in the yellow row, and letters not in the word into the excluded box. Our 5 Letter Word Finder updates matches live as you type."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this tool accurate for daily Wordle solutions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The default search uses the official list of common 5-letter words used in Wordle, giving you practical recommendations rather than obscure dictionary terms."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.5letterwordfindertool.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.5letterwordfindertool.com/"
+            }
+          ]
+        }
       ]
     }
     </script>
@@ -78,35 +160,6 @@
   gtag('js', new Date());
 
   gtag('config', 'G-WW6EJYTTML');
-</script>
-
-<!-- WebApp & Breadcrumb Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "5 Letter Word Finder Tool",
-  "url": "https://www.5letterwordfindertool.com/",
-  "description": "An interactive word finder and Wordle solver tool to find 5-letter words by including or excluding specific letters.",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://www.5letterwordfindertool.com/"
-  }]
-}
 </script>
 </head>
 
