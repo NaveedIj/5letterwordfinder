@@ -348,7 +348,89 @@
 <p>If your first guess magically reveals a green X in position one, your Wordle strategy is simple: test E and Y immediately. The XE- and XY- prefixes are the only realistic combinations in standard English Wordle words starting with X. From there, fill in the blanks with N or R.</p>
 
 <h2>List of 5 Letter Words Starting With X</h2>
-<div id="wordGrid" class="word-grid"><div class="word-item">LOADING...</div></div>
+<div id="wordGrid" class="word-grid">
+                        <div class="word-item">XENON</div>
+                        <div class="word-item">XEROX</div>
+                        <div class="word-item">XYLEM</div>
+                        <div class="word-item">XEBEC</div>
+                        <div class="word-item">XENIA</div>
+                        <div class="word-item">XENIC</div>
+                        <div class="word-item">XENOS</div>
+                        <div class="word-item">XENYL</div>
+                        <div class="word-item">XERES</div>
+                        <div class="word-item">XERIC</div>
+                        <div class="word-item">XERUS</div>
+                        <div class="word-item">XICAK</div>
+                        <div class="word-item">XINCA</div>
+                        <div class="word-item">XOANA</div>
+                        <div class="word-item">XUREL</div>
+                        <div class="word-item">XVIII</div>
+                        <div class="word-item">XXIII</div>
+                        <div class="word-item">XYLAN</div>
+                        <div class="word-item">XYLIA</div>
+                        <div class="word-item">XYLIC</div>
+                        <div class="word-item">XYLOL</div>
+                        <div class="word-item">XYLON</div>
+                        <div class="word-item">XYLYL</div>
+                        <div class="word-item">XYRID</div>
+                        <div class="word-item">XYRIS</div>
+                        <div class="word-item">XYSTI</div>
+                        <div class="word-item">XYSTS</div>
+                    </div>
+                        <div class="word-item">XEROX</div>
+                        <div class="word-item">XYLEM</div>
+                        <div class="word-item">XEBEC</div>
+                        <div class="word-item">XENIA</div>
+                        <div class="word-item">XENIC</div>
+                        <div class="word-item">XENOS</div>
+                        <div class="word-item">XENYL</div>
+                        <div class="word-item">XERES</div>
+                        <div class="word-item">XERIC</div>
+                        <div class="word-item">XERUS</div>
+                        <div class="word-item">XICAK</div>
+                        <div class="word-item">XINCA</div>
+                        <div class="word-item">XOANA</div>
+                        <div class="word-item">XUREL</div>
+                        <div class="word-item">XVIII</div>
+                        <div class="word-item">XXIII</div>
+                        <div class="word-item">XYLAN</div>
+                        <div class="word-item">XYLIA</div>
+                        <div class="word-item">XYLIC</div>
+                        <div class="word-item">XYLOL</div>
+                        <div class="word-item">XYLON</div>
+                        <div class="word-item">XYLYL</div>
+                        <div class="word-item">XYRID</div>
+                        <div class="word-item">XYRIS</div>
+                        <div class="word-item">XYSTI</div>
+                        <div class="word-item">XYSTS</div>
+                    </div>
+                        <div class="word-item">XEROX</div>
+                        <div class="word-item">XYLEM</div>
+                        <div class="word-item">XEBEC</div>
+                        <div class="word-item">XENIA</div>
+                        <div class="word-item">XENIC</div>
+                        <div class="word-item">XENOS</div>
+                        <div class="word-item">XENYL</div>
+                        <div class="word-item">XERES</div>
+                        <div class="word-item">XERIC</div>
+                        <div class="word-item">XERUS</div>
+                        <div class="word-item">XICAK</div>
+                        <div class="word-item">XINCA</div>
+                        <div class="word-item">XOANA</div>
+                        <div class="word-item">XUREL</div>
+                        <div class="word-item">XVIII</div>
+                        <div class="word-item">XXIII</div>
+                        <div class="word-item">XYLAN</div>
+                        <div class="word-item">XYLIA</div>
+                        <div class="word-item">XYLIC</div>
+                        <div class="word-item">XYLOL</div>
+                        <div class="word-item">XYLON</div>
+                        <div class="word-item">XYLYL</div>
+                        <div class="word-item">XYRID</div>
+                        <div class="word-item">XYRIS</div>
+                        <div class="word-item">XYSTI</div>
+                        <div class="word-item">XYSTS</div>
+                    </div></div>
 
 <h3>Frequently Asked Questions</h3>
 <details>
@@ -498,18 +580,7 @@
     </footer>
 
     <script src="./words.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const letter = 'x';
-            const grid = document.getElementById('wordGrid');
-            if (typeof wordList !== 'undefined' && grid) {
-                const filtered = wordList.filter(w => w.length === 5 && w.toLowerCase().startsWith(letter.toLowerCase()));
-                const displayWords = filtered.slice(0, 200); 
-                grid.innerHTML = displayWords.map(w => `<div class="word-item">${w.toUpperCase()}</div>`).join('');
-                if (filtered.length === 0) { grid.innerHTML = '<p>No words found.</p>'; }
-            }
-        });
-    </script>
+    
     <script src="./script.js"></script>
 </body>
 </html>

@@ -196,38 +196,38 @@ async function inject() {
     let content = fs.readFileSync(filePath, 'utf8');
 
     // Build the new SEO block
-    const faqsHtml = data.faqs.map(f => \`
+    const faqsHtml = data.faqs.map(f => `
                         <details class="faq-item">
-                            <summary><strong>\${f.q}</strong></summary>
-                            <p>\${f.a}</p>
-                        </details>\`).join('\\n');
+                            <summary><strong>${f.q}</strong></summary>
+                            <p>${f.a}</p>
+                        </details>`).join('\n');
 
     const newSeoBlock = `<section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">
-                    <h2 class="info-section-title">\${data.title}</h2>
-                    <p class="info-section-sub">\${data.sub}</p>
+                    <h2 class="info-section-title">${data.title}</h2>
+                    <p class="info-section-sub">${data.sub}</p>
                 </div>
 
                 <div class="info-content">
                     <div class="info-box blue">
                         <h3>Introduction & Overview</h3>
-                        <p>\${data.intro}</p>
+                        <p>${data.intro}</p>
                     </div>
                     <div class="info-box purple">
                         <h3>Advanced Strategy</h3>
-                        <p>\${data.strategy}</p>
-                        <p><strong>Pro Tip:</strong> \${data.opening}</p>
+                        <p>${data.strategy}</p>
+                        <p><strong>Pro Tip:</strong> ${data.opening}</p>
                     </div>
                     <div class="info-box blue">
                         <h3>Word Frequency & Common Mistakes</h3>
-                        <p>\${data.frequency}</p>
-                        <p>\${data.mistakes}</p>
-                        <p><em>Did you know?</em> \${data.facts}</p>
+                        <p>${data.frequency}</p>
+                        <p>${data.mistakes}</p>
+                        <p><em>Did you know?</em> ${data.facts}</p>
                     </div>
                     <div class="info-box green">
                         <h3>Frequently Asked Questions</h3>
-\${faqsHtml}
-                    </div>\${relatedLinks}
+${faqsHtml}
+                    </div>${relatedLinks}
                 </div>
             </section>`;
 
@@ -238,12 +238,12 @@ async function inject() {
         content = content.replace(regex, newSeoBlock);
         fs.writeFileSync(filePath, content, 'utf8');
         updatedCount++;
-        console.log(\`Successfully updated \${filename}\`);
+        console.log(`Successfully updated ${filename}`);
     } else {
-        console.error(\`Could not find seo-guide-section in \${filename}\`);
+        console.error(`Could not find seo-guide-section in ${filename}`);
     }
   }
-  console.log(\`Finished. Updated \${updatedCount} pages.\`);
+  console.log(`Finished. Updated ${updatedCount} pages.`);
 }
 
 inject().catch(console.error);
