@@ -676,11 +676,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Hydrate non-critical sections progressively
+    // Hydrate non-critical components progressively
     window.addEventListener('load', () => {
-        LazyHydrator.hydrate('seo-placeholder', 'seo-section-template');
-        LazyHydrator.hydrate('tools-placeholder', 'tools-section-template');
-        LazyHydrator.hydrate('examples-placeholder', 'examples-section-template');
         LazyHydrator.hydrateFooterIcons();
     });
 
