@@ -1,3 +1,8 @@
+if (!process.env.ALLOW_LEGACY_GEN) {
+    console.error("CRITICAL SAFETY GUARD: Legacy generation script execution is locked to prevent regression of pre-rendered schema and hero alignment. Set ALLOW_LEGACY_GEN=1 to override.");
+    process.exit(1);
+}
+
 const fs = require('fs');
 const path = require('path');
 

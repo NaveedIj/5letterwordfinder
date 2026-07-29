@@ -65,6 +65,7 @@ const SEO_DATA = {
         "description": "Find all 3-letter words for Scrabble and Wordle elimination. Discover high-scoring hooks like ZAX and QIS to maximize your points and narrow down guesses.",
         "canonical": "/3-letter-word-finder.html",
         "h1": "Find 3 Letter Words Fast",
+        "tagline": "Fast 3-Letter Word Finder for Scrabble Hooks & Quick Elimination",
         "subheading": "Compact word list for Scrabble hooks and quick puzzle elimination.",
         "content": [
             {
@@ -86,6 +87,7 @@ const SEO_DATA = {
         "description": "Find all 4-letter words matching your criteria. Perfect for short-word puzzles, Scrabble, and anagrams. Fast, free, and accurate solver.",
         "canonical": "/4-letter-word-finder.html",
         "h1": "Find 4 Letter Words Instantly",
+        "tagline": "Essential 4-Letter Word Solver for Scrabble & Anagram Stems",
         "subheading": "The ultimate quick-solver for 4-letter word puzzles and games.",
         "content": [
             {
@@ -190,6 +192,7 @@ const SEO_DATA = {
         "description": "Solve complex 6-letter words using advanced deduction strategies. Discover prefixes, suffixes, and consonant patterns for Wordle extensions and Scrabble.",
         "canonical": "/6-letter-word-finder.html",
         "h1": "6 Letter Word Finder & Strategy Guide",
+        "tagline": "Advanced 6-Letter Word Solver & Pattern Unscrambler",
         "subheading": "Unlock long-form word games with our comprehensive 6-letter search engine and strategy guide.",
         "content": [
             {
@@ -224,6 +227,7 @@ const SEO_DATA = {
         "description": "Find 7-letter words instantly. Perfect for Scrabble Bingo, crosswords, and advanced word games. Easy-to-use search with position filters.",
         "canonical": "/7-letter-word-finder.html",
         "h1": "7 Letter Word Finder & Bingo Solver",
+        "tagline": "7-Letter Word Finder for Scrabble Bingos & Crosswords",
         "subheading": "Search through thousands of 7-letter words to find the perfect match for your puzzle.",
         "content": [
             {
@@ -253,6 +257,7 @@ const SEO_DATA = {
         "description": "Search through thousands of 8-letter words. Perfect for crosswords, advanced puzzles, and Scrabble enthusiasts. Accurate, fast, and free lookup tool.",
         "canonical": "/8-letter-word-finder.html",
         "h1": "8 Letter Word Finder & Solver",
+        "tagline": "Comprehensive 8-Letter Word Unscrambler & Puzzle Helper",
         "subheading": "The ultimate search engine for long-form 8-letter word puzzles.",
         "content": [
             {

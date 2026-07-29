@@ -122,16 +122,42 @@ for (const n of [3, 6]) {
     html = html.replace(/<meta name="twitter:description"[\s\S]*?content="[^"]*">/, `<meta name="twitter:description"\n        content="${description}">`);
 
     // JSON-LD Schema
-    html = html.replace(/<!-- JSON-LD Schema for SEO -->[\s\S]*?<\/script>\s*/g, ''); // Remove existing if any
-    const jsonLd = generateJsonLd(dataKey);
-    if (jsonLd) {
-        html = html.replace('</head>', `${jsonLd}</head>`);
+    // 1. Update WebPage entity inside @graph to be page-specific
+    html = html.replace(
+        /"@type": "WebPage",\s*"@id": "[^"]*",\s*"url": "[^"]*",\s*"name": "[^"]*",\s*"description": "[^"]*"/,
+        `"@type": "WebPage",\n          "@id": "${canonicalUrl}#webpage",\n          "url": "${canonicalUrl}",\n          "name": "${title.replace(/"/g, '\\"')}",\n          "description": "${description.replace(/"/g, '\\"')}"`
+    );
+
+    // 2. Consolidate FAQPage into @graph entity (replace homepage placeholder FAQ entity inside @graph)
+    if (data.faqs && Array.isArray(data.faqs)) {
+        const pageFaqEntity = JSON.stringify({
+            "@type": "FAQPage",
+            "@id": `${canonicalUrl}#faq`,
+            "mainEntity": data.faqs.map(f => ({
+                "@type": "Question",
+                "name": f.question,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f.answer
+                }
+            }))
+        }, null, 10).split('\n').map(line => '        ' + line).join('\n').trim();
+
+        html = html.replace(
+            /\{\s*"@type": "FAQPage",\s*"@id": "[^"]*#faq",\s*"mainEntity": \[\s*[\s\S]*?\s*\]\s*\}/,
+            pageFaqEntity
+        );
     }
 
-    // 3. Update Headings
+    // Clean up old standalone JSON-LD FAQ blocks if any present in template
+    html = html.replace(/<!-- JSON-LD Schema for SEO -->[\s\S]*?<\/script>\s*/g, '');
+
+    // 3. Update Headings & Tagline
     const h1 = data.h1 || `${O} Letter Word Finder`;
+    const tagline = data.tagline || 'Your Secret Weapon for Wordle Wins';
     const subheading = data.subheading || `Same filters as our Wordle helper-tuned for ${o}-letter words.`;
     html = html.replace(/<h1 class="title">[^<]+<\/h1>/, `<h1 class="title">${h1}</h1>`);
+    html = html.replace(/<p class="tagline">[^<]+<\/p>/, `<p class="tagline">${tagline}</p>`);
     html = html.replace(/<p class="subtitle">[^<]+<\/p>/, `<p class="subtitle">${subheading}</p>`);
 
     // 4. Update Filter Grids
