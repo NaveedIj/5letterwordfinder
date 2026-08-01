@@ -165,6 +165,24 @@ function getEffectiveExcludes(excludeList, pattern, wrongPosArr, mustIncludeCoun
     return excludeList.filter(c => !required.has(c));
 }
 
+function detectFilterConflicts(pattern, wrongPosArr, excludesAll, mustIncludeCounts) {
+    const conflicts = [];
+    const greenSet = new Set(pattern.split('').filter(c => /[A-Z]/.test(c)));
+    const yellowSet = new Set(wrongPosArr.join('').split('').filter(c => /[A-Z]/.test(c)));
+    const mustSet = new Set(Object.keys(mustIncludeCounts));
+
+    excludesAll.forEach(char => {
+        if (greenSet.has(char)) {
+            conflicts.push(`Letter '${char}' is marked as Excluded, but also placed in Correct Position.`);
+        } else if (yellowSet.has(char)) {
+            conflicts.push(`Letter '${char}' is marked as Excluded, but also placed in Wrong Position.`);
+        } else if (mustSet.has(char)) {
+            conflicts.push(`Letter '${char}' is marked as Excluded, but also set in Must Include.`);
+        }
+    });
+    return conflicts;
+}
+
 function updateResults() {
     console.log("updateResults triggered");
     if (typeof activeList !== 'undefined') {
@@ -178,6 +196,20 @@ function updateResults() {
 
     const excludesRaw = excludesInput.value.toUpperCase().trim();
     const excludesAll = [...new Set(excludesRaw.split('').filter(c => /[A-Z]/.test(c)))];
+    
+    // Conflict Detection (Option B Implementation)
+    const conflicts = detectFilterConflicts(pattern, wrongPosArr, excludesAll, mustIncludeCounts);
+    const warningBanner = document.getElementById('conflictWarning');
+    const warningText = document.getElementById('conflictWarningText');
+    if (warningBanner && warningText) {
+        if (conflicts.length > 0) {
+            warningText.textContent = conflicts.join(' ');
+            warningBanner.style.display = 'flex';
+        } else {
+            warningBanner.style.display = 'none';
+        }
+    }
+
     const greens = greenCountsFromPattern(pattern);
     const effectiveExcludes = getEffectiveExcludes(excludesAll, pattern, wrongPosArr, mustIncludeCounts);
 
@@ -256,21 +288,42 @@ function renderResults(pattern = '') {
     const showScores = showScrabbleInput ? showScrabbleInput.checked : false;
     
     // Performance optimization: Generate a signature of the current state to avoid redundant DOM work
-    const renderHash = `${currentResults.length}-${pattern}-${showScores}-${currentDict}`;
+    const renderHash = `${currentResults.length}-${activeList ? activeList.length : 0}-${pattern}-${showScores}-${currentDict}-${hasAnyFilter()}`;
     if (renderHash === lastRenderedHash) return;
 
-    if (!hasAnyFilter() || currentResults.length === 0) {
+    if (!hasAnyFilter()) {
+        // Initial Empty State: Interactive Starter Word Suggestions
+        const starterWords = ['CRANE', 'AUDIO', 'SLATE', 'ADIEU', 'RAISE'];
+        const chipsHtml = starterWords.map(w => `<button type="button" class="starter-chip" data-starter="${w}">${w}</button>`).join('');
+        
         resultsList.innerHTML = `
-            <div class="empty-state">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <div class="empty-state starter-empty-state">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    <path d="M12 8v4l3 3"></path>
                 </svg>
-                <p>${hasAnyFilter() ? 'No matching words. Loosen a filter or toggle repeat-aware.' : 'Type letters above - results update as you go.'}</p>
+                <p class="empty-title">Ready to find words!</p>
+                <p class="empty-sub">Type your known green or yellow letters above, or click a popular starter word to test:</p>
+                <div class="starter-chips">${chipsHtml}</div>
             </div>
         `;
         copyBtn.disabled = true;
+    } else if (currentResults.length === 0) {
+        // Valid Search with Zero Results
+        resultsList.innerHTML = `
+            <div class="empty-state zero-results-state">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+                <p class="empty-title">No 5-letter words match these filters</p>
+                <p class="empty-sub">Try clearing excluded letters or switching from Wordle to Full dictionary in the sidebar.</p>
+                <button type="button" class="btn btn-secondary btn-sm" id="emptyResetBtn" style="margin-top: 0.75rem;">Clear All Filters</button>
+            </div>
+        `;
+        copyBtn.disabled = true;
+        document.getElementById('emptyResetBtn')?.addEventListener('click', resetFilters);
     } else {
         const limit = currentDict === 'common' ? 200 : 1000;
         const displayResults = currentResults.slice(0, limit);
@@ -294,8 +347,15 @@ function renderResults(pattern = '') {
         copyBtn.disabled = false;
     }
 
-    const countText = `${currentResults.length.toLocaleString()} word${currentResults.length !== 1 ? 's' : ''}`;
-    resultsCount.textContent = currentResults.length > (currentDict === 'common' ? 200 : 1000) ? `${countText} (showing first ${currentDict === 'common' ? 200 : 1000})` : countText;
+    if (!hasAnyFilter()) {
+        resultsCount.textContent = `${activeList ? activeList.length.toLocaleString() : '2,309'} words available`;
+    } else if (currentResults.length === 0) {
+        resultsCount.textContent = `0 matching words`;
+    } else {
+        const limit = currentDict === 'common' ? 200 : 1000;
+        const countText = `${currentResults.length.toLocaleString()} matching word${currentResults.length !== 1 ? 's' : ''}`;
+        resultsCount.textContent = currentResults.length > limit ? `${countText} (showing first ${limit})` : countText;
+    }
     
     lastRenderedHash = renderHash;
 }
@@ -532,6 +592,18 @@ if (showScrabbleInput) {
 
 if (resultsList) {
     resultsList.addEventListener('click', (e) => {
+        const starterChip = e.target.closest('.starter-chip');
+        if (starterChip) {
+            const word = starterChip.getAttribute('data-starter');
+            if (word && word.length === 5) {
+                resetFilters();
+                for (let i = 0; i < 5; i++) {
+                    if (charInputs[i]) charInputs[i].value = word[i];
+                }
+                updateResults();
+                return;
+            }
+        }
         const wordItem = e.target.closest('.word-item');
         if (wordItem) {
             const text = wordItem.getAttribute('data-word') || wordItem.textContent.replace(/\d+/g, '').trim();
