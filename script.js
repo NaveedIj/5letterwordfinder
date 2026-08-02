@@ -34,7 +34,7 @@ let currentResults = [];
  */
 async function loadCommonDataset() {
     if (!IS_WORDLE_LENGTH) {
-        activeList = fullList;
+        activeList = fullList.filter(w => w.length === WORD_LENGTH);
         return;
     }
     
@@ -564,9 +564,9 @@ if (dictToggle && IS_WORDLE_LENGTH) {
         currentDict = (mode === 'strict') ? 'common' : 'extended';
         
         if (currentDict === "common") {
-            activeList = commonList.length ? commonList : fullList.filter(w => w.length === 5);
+            activeList = commonList.length ? commonList : fullList.filter(w => w.length === WORD_LENGTH);
         } else {
-            activeList = fullList;
+            activeList = fullList.filter(w => w.length === WORD_LENGTH);
         }
         
         console.log(`Dictionary switched to: ${currentDict} (${activeList.length} words)`);
