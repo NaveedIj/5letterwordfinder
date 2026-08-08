@@ -2004,19 +2004,26 @@ body[data-word-length="8"] .results-list {
 }
 
 .btn-footer-cta {
-    display: inline-block;
-    background-color: #3b82f6;
-    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    color: #ffffff !important;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 100px;
+    font-weight: 700;
     font-size: 0.95rem;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: opacity var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .btn-footer-cta:hover {
-    background-color: #2563eb;
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-footer-cta:active {
+    transform: scale(0.98);
 }
 
 .footer-bottom-bar {
@@ -2409,6 +2416,21 @@ body[data-word-length="8"] .results-list {
     margin: 0;
     line-height: 1.4;
 }
+
+.tool-card-arrow {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-left: auto;
+    opacity: 0.5;
+    transform: translateX(0);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
+}
+
+.tool-card:hover .tool-card-arrow {
+    opacity: 1;
+    color: var(--accent);
+    transform: translateX(4px);
 }
 
 .footer-trust {
