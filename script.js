@@ -607,6 +607,8 @@ if (resultsList) {
         const wordItem = e.target.closest('.word-item');
         if (wordItem) {
             const text = wordItem.getAttribute('data-word') || wordItem.textContent.replace(/\d+/g, '').trim();
+            wordItem.classList.add('copied-flash');
+            setTimeout(() => wordItem.classList.remove('copied-flash'), 200);
             copyToClipboard(text, `Copied "${text}"!`);
         }
     });
