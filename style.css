@@ -2323,6 +2323,29 @@ body[data-word-length="8"] .results-list {
     font-weight: 500;
 }
 
+.editorial-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-light);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.privacy-badge {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.75rem;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.4;
+}
+
+.footer-editorial-line {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
+}
+
 /* Info Section spacing from main grid */
 .info-section {
     margin-top: 0;
