@@ -655,11 +655,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initLengthUi();
     
     // Startup Flow: 
-    // 1. Initial synchronous render based on primary dataset
-    initStats();
-    updateResults();
-    
-    // 2. Async background load for wordle-common (if needed)
+    // 1. Async background load for wordle-common (if needed)
     loadCommonDataset();
 
     wireCharInputs();

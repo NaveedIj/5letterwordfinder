@@ -35,8 +35,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- Preload critical fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap">
+    <!-- Non-blocking Google Fonts Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap">
+    </noscript>
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
@@ -1003,8 +1007,8 @@
 
     <div class="toast" id="toast"></div>
 
-    <script src="./words.js"></script>
-    <script src="./script.js"></script>
+    <script src="./words.js" defer></script>
+    <script src="./script.js" defer></script>
 </body>
 
 </html>
