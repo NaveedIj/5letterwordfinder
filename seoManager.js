@@ -126,7 +126,8 @@
      * Renders informational blocks using the selected Strategy or fallback static data.
      */
     function renderInfoSections(data, tokens, state) {
-        const contentContainer = document.querySelector('.info-content');
+        const contentContainers = Array.from(document.querySelectorAll('.info-content'));
+        const contentContainer = contentContainers.find(el => !el.closest('.modal') && !el.closest('#helpModal') && !el.closest('.seo-guide-section'));
         if (!contentContainer) return;
 
         // CLS/Performance optimization: Do not overwrite high-quality static content 
@@ -192,7 +193,8 @@
      * Renders Specialized Sections (Patterns & Guides) with semantically rich links.
      */
     function renderSpecializedSections(data, tokens) {
-        const contentContainer = document.querySelector('.info-content');
+        const contentContainers = Array.from(document.querySelectorAll('.info-content'));
+        const contentContainer = contentContainers.find(el => !el.closest('.modal') && !el.closest('#helpModal') && !el.closest('.seo-guide-section'));
         if (!contentContainer) return;
 
         // Visual Stability: Do not append specialized sections on the homepage 
