@@ -206,18 +206,106 @@
   gtag('config', 'G-WW6EJYTTML');
 </script>
 <!-- Microsoft Clarity Analytics -->
-<script type="text/javascript">
+<script>
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "pxv43j2o89");
 </script>
+<style>
+    .info-section .info-box {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        height: 100%;
+    }
+    .info-section .info-box ul {
+        margin-top: 0;
+    }
+    .info-section details.faq-details {
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.5rem;
+    }
+    .info-section details.faq-details:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .info-section summary.faq-summary {
+        font-weight: 700;
+        color: var(--text-primary);
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.95rem;
+        user-select: none;
+        padding: 0.25rem 0;
+    }
+    .info-section summary.faq-summary::-webkit-details-marker {
+        display: none;
+    }
+    .info-section summary.faq-summary::after {
+        content: "+";
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--accent-light);
+        margin-left: 0.5rem;
+        transition: transform 0.2s ease;
+    }
+    .info-section details[open] summary.faq-summary::after {
+        content: "−";
+    }
+    .info-section .faq-answer {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-top: 0.5rem;
+        line-height: 1.5;
+    }
+    .letter-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-xl);
+        justify-content: center;
+    }
+    .letter-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: var(--bg-elevated);
+        color: var(--text-primary);
+        text-decoration: none;
+        border-radius: var(--radius-md);
+        font-weight: 700;
+        font-family: 'Outfit', sans-serif;
+        transition: all var(--transition-fast);
+        border: 1px solid var(--border);
+        font-size: 1rem;
+    }
+    .letter-link:hover {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent-light);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+</style>
 </head>
 
 <body data-word-length="5" data-pattern="length" data-seo-strategy="WORDLE_SOLVER" style="--word-len: 5;">
     <header class="saas-header">
-        <nav class="nav-container-header" role="navigation" aria-label="Main Navigation">
+        <nav class="nav-container-header" aria-label="Main Navigation">
             <!-- BRANDING -->
             <a href="/" class="brand-container">
                 <span class="brand-name">Word Finder <span>Tool</span></span>
@@ -606,7 +694,7 @@
                     </a>
 
                     <!-- Dictionary Toggle -->
-                    <section class="card" id="dictCard">
+                    <div class="card" id="dictCard">
                         <div class="card-title"
                             style="font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -621,10 +709,10 @@
                             <div class="toggle-item" data-dict="broad">Full</div>
                         </div>
                         <p class="text-xs text-muted">Wordle: curated list of common daily solution words. Full: comprehensive dictionary list for Scrabble and anagram puzzles.</p>
-                    </section>
+                    </div>
 
                     <!-- Sort & Scrabble -->
-                    <section class="card">
+                    <div class="card">
                         <div class="card-title"
                             style="font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -644,10 +732,10 @@
                             <input type="checkbox" id="showScrabble" checked class="checkbox-inline">
                             Show Scrabble face values
                         </label>
-                    </section>
+                    </div>
 
                     <!-- Letter Tracker -->
-                    <section class="card">
+                    <div class="card">
                         <div class="card-title"
                             style="font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -665,7 +753,7 @@
                         <div class="tracker-grid" id="letterTracker">
                             <!-- A-Z generated by JS -->
                         </div>
-                    </section>
+                    </div>
                 </aside>
 
                 <!-- Results Panel -->
@@ -751,7 +839,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
 
 
@@ -893,59 +981,6 @@
             </div>
 
             <!-- PRE-RENDERED STRATEGY & FAQ SECTION -->
-            <style>
-                .info-section .info-box {
-                    display: flex;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                    height: 100%;
-                }
-                .info-section .info-box ul {
-                    margin-top: 0;
-                }
-                .info-section details.faq-details {
-                    margin-bottom: 0.75rem;
-                    border-bottom: 1px solid var(--border);
-                    padding-bottom: 0.5rem;
-                }
-                .info-section details.faq-details:last-child {
-                    border-bottom: none;
-                    margin-bottom: 0;
-                    padding-bottom: 0;
-                }
-                .info-section summary.faq-summary {
-                    font-weight: 700;
-                    color: var(--text-primary);
-                    cursor: pointer;
-                    list-style: none;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-size: 0.95rem;
-                    user-select: none;
-                    padding: 0.25rem 0;
-                }
-                .info-section summary.faq-summary::-webkit-details-marker {
-                    display: none;
-                }
-                .info-section summary.faq-summary::after {
-                    content: "+";
-                    font-size: 1.2rem;
-                    font-weight: 400;
-                    color: var(--accent-light);
-                    margin-left: 0.5rem;
-                    transition: transform 0.2s ease;
-                }
-                .info-section details[open] summary.faq-summary::after {
-                    content: "−";
-                }
-                .info-section .faq-answer {
-                    font-size: 0.9rem;
-                    color: var(--text-secondary);
-                    margin-top: 0.5rem;
-                    line-height: 1.5;
-                }
-            </style>
             <section class="info-section" style="margin-top: 4rem;">
                 <div class="info-section-header">
                     <h2 class="info-section-title">5 Letter Word Finder & Strategy Guide</h2>
@@ -1034,43 +1069,6 @@
             </section>
 
             <!-- ======================== ALPHABETICAL INDEX ======================== -->
-            <style>
-                .letter-nav {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 0.5rem;
-                    margin-top: 1rem;
-                    margin-bottom: 2rem;
-                    padding: 1.5rem;
-                    background: var(--bg-card);
-                    border: 1px solid var(--border);
-                    border-radius: var(--radius-xl);
-                    justify-content: center;
-                }
-                .letter-link {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    background: var(--bg-elevated);
-                    color: var(--text-primary);
-                    text-decoration: none;
-                    border-radius: var(--radius-md);
-                    font-weight: 700;
-                    font-family: 'Outfit', sans-serif;
-                    transition: all var(--transition-fast);
-                    border: 1px solid var(--border);
-                    font-size: 1rem;
-                }
-                .letter-link:hover {
-                    background: var(--accent);
-                    color: white;
-                    border-color: var(--accent-light);
-                    transform: translateY(-2px);
-                    box-shadow: var(--shadow-md);
-                }
-            </style>
             <section class="tools-section" style="margin-top: 4rem; margin-bottom: 4rem;">
                 <div class="info-section-header">
                     <h2 class="info-section-title">Browse 5 Letter Words by Starting Letter</h2>
@@ -1174,7 +1172,7 @@
 
                 <!-- 2. QUICK LINKS -->
                 <div class="footer-col">
-                    <h4 class="footer-heading">Quick Links</h4>
+                    <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links-list">
                         <li><a href="/">Home</a></li>
                         <li><a href="ai-word-solver">AI Word Solver</a></li>
@@ -1188,7 +1186,7 @@
 
                 <!-- 3. RESOURCES -->
                 <div class="footer-col">
-                    <h4 class="footer-heading">Resources</h4>
+                    <h3 class="footer-heading">Resources</h3>
                     <ul class="footer-links-list">
                         <li><a href="5-letter-words-starting-with-a.html">5 Letter Words Starting with A</a></li>
                         <li><a href="5-letter-words-ending-with-e.html">5 Letter Words Ending with E</a></li>
@@ -1200,7 +1198,7 @@
 
                 <!-- 4. CTA / TRUST -->
                 <div class="footer-col cta-col">
-                    <h4 class="footer-heading">Level Up Your Game</h4>
+                    <h3 class="footer-heading">Level Up Your Game</h3>
                     <p class="footer-trust-text">Helping players solve word puzzles faster.</p>
                     <a href="/#tool-section" class="btn-footer-cta">Try Word Finder</a>
                 </div>
