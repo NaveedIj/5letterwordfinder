@@ -75,10 +75,21 @@ for (const letter of letters) {
     const matchingWords = getCrated5LetterWords(w => w.startsWith(letter), 150);
     const gridHtml = renderStaticWordGrid(matchingWords);
 
-    // Replace dynamic LOADING... or previous word grid content with static HTML grid
-    const wordGridRegex = /<div id="wordGrid" class="word-grid">[\s\S]*?<\/div>/;
+    // Conditional transparency disclaimer
+    let disclaimerHtml = '';
+    if (matchingWords.length === 150) {
+        disclaimerHtml = '\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>';
+    } else if (matchingWords.length > 0) {
+        disclaimerHtml = `\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all ${matchingWords.length} matching words from our dictionary list.</p>`;
+    }
+
+    // Remove any previously injected disclaimer notice
+    content = content.replace(/\s*<p class="text-muted" style="margin-top: 1rem; font-size: 0\.9rem; text-align: center;">[\s\S]*?<\/p>/g, '');
+
+    // Match exact wordGrid container cleanly
+    const wordGridRegex = /<div id="wordGrid" class="word-grid">[\s\S]*?<\/div>(?=\s*(?:<h3>|<h2|<section|<\/div>|\$))/;
     if (wordGridRegex.test(content)) {
-        content = content.replace(wordGridRegex, `<div id="wordGrid" class="word-grid">\n${gridHtml}\n                    </div>`);
+        content = content.replace(wordGridRegex, `<div id="wordGrid" class="word-grid">\n${gridHtml}\n                    </div>${disclaimerHtml}`);
     }
 
     // Ensure self-referential canonical URL
@@ -104,11 +115,10 @@ for (const letter of letters) {
 
 console.log(`Updated ${updatedStartingCount} starting letter pages with static HTML word grids.`);
 
-// 4. Process 4 Ending Letter Pages (e, s, t, y)
-const endingLetters = ['e', 's', 't', 'y'];
+// 4. Process 26 Ending Letter Pages (e.g., e, s, t, y, z...)
 let updatedEndingCount = 0;
 
-for (const letter of endingLetters) {
+for (const letter of letters) {
     const fileName = `5-letter-words-ending-with-${letter}.html`;
     const filePath = path.join(__dirname, fileName);
     if (!fs.existsSync(filePath)) continue;
@@ -117,11 +127,21 @@ for (const letter of endingLetters) {
 
     // Get top curated words ending with letter
     const matchingWords = getCrated5LetterWords(w => w.endsWith(letter), 150);
-    const gridHtml = renderStaticWordGrid(matchingWords);
 
-    const wordGridRegex = /<div id="wordGrid" class="word-grid">[\s\S]*?<\/div>/;
-    if (wordGridRegex.test(content)) {
-        content = content.replace(wordGridRegex, `<div id="wordGrid" class="word-grid">\n${gridHtml}\n                    </div>`);
+    // Conditional transparency disclaimer
+    let disclaimerHtml = '';
+    if (matchingWords.length === 150) {
+        disclaimerHtml = '\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>';
+    } else if (matchingWords.length > 0) {
+        disclaimerHtml = `\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all ${matchingWords.length} matching words from our dictionary list.</p>`;
+    }
+
+    // Remove any previously injected disclaimer notice
+    content = content.replace(/\s*<p class="text-muted" style="margin-top: 1rem; font-size: 0\.9rem; text-align: center;">[\s\S]*?<\/p>/g, '');
+
+    // For ending letter pages, insert disclaimer right after closing .info-content container or before .seo-guide-section
+    if (content.includes('</section>') && !content.includes(disclaimerHtml)) {
+        content = content.replace(/(<section class="seo-guide-section" style="margin-top: 4rem;">)/, `${disclaimerHtml}\n\n            $1`);
     }
 
     const canonicalUrl = `https://www.5letterwordfindertool.com/5-letter-words-ending-with-${letter}.html`;
