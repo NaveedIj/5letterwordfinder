@@ -250,6 +250,12 @@
      */
     function injectJSONLD(data, tokens) {
         try {
+            const isHomepage =
+                window.location.pathname === '/' ||
+                window.location.pathname.endsWith('/index.html');
+
+            if (isHomepage) return; // Static schema already exists on homepage — skip dynamic injection
+
             // 0. Check for existing static FAQ schema to prevent duplicates
             const staticSchemas = document.querySelectorAll('script[type="application/ld+json"]:not([data-seo-schema="dynamic"])');
             for (let i = 0; i < staticSchemas.length; i++) {
