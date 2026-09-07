@@ -137,26 +137,18 @@
             },
             {
               "@type": "Question",
-              "name": "Is this tool accurate for daily Wordle solutions?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. The default search filters against the 2,309-word common Wordle solution list."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do I find 5-letter words containing specific letters?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Type any required letters into the 'Must Include' box or yellow misplaced row. The solver filters the list to show candidate words containing those exact characters."
-              }
-            },
-            {
-              "@type": "Question",
               "name": "What is the difference between Wordle Mode and Full Dictionary Mode?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Wordle Mode filters across 2,309 curated daily solution words. Full Dictionary Mode searches 15,921 valid 5-letter terms for broader Scrabble and crossword word filtering."
+                "text": "Wordle Mode filters across our 2,309-word curated daily solution list. Full Dictionary Mode searches our broader 15,921-word 5-letter list for Scrabble and crossword filtering."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the solver handle duplicate or repeated letters?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The filter engine tracks letter frequency automatically. If you enter duplicate letters into the input boxes or yellow slots, candidate words must contain at least that many letter occurrences."
               }
             },
             {
@@ -164,31 +156,15 @@
               "name": "Can I sort matching words by Scrabble score?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Use the order dropdown in the sidebar to sort results by Scrabble point value from highest to lowest or lowest to highest."
+                "text": "Yes. Use the order dropdown in the sidebar to sort results by Scrabble face values from highest to lowest or lowest to highest."
               }
             },
             {
               "@type": "Question",
-              "name": "How does the solver handle duplicate letters?",
+              "name": "Are my search queries private?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "If you enter duplicate letters into the filter inputs, candidate words must contain at least that many occurrences."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are my searches private?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Word matching and letter filtering run locally in your browser."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is this 5-letter word finder free to use?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. The tool is free to use with no account registration, software downloads, or usage limits required."
+                "text": "Yes. Word matching and letter filtering run locally in your browser. Your letter inputs and search queries are not sent to our server."
               }
             }
           ]
@@ -514,7 +490,7 @@
 
                 <h1 class="title">5 Letter Word Finder – Instant Wordle &amp; Scrabble Solver</h1>
                 <p class="tagline">A Smart 5 Letter Word Finder for Wordle, Scrabble & Crosswords</p>
-                <p class="subtitle">Instantly filter 5 letter words using letter positions, misplaced characters, and excluded tiles. Built to help you solve daily Wordle puzzles, Scrabble anagrams, and crossword clues fast.</p>
+                <p class="subtitle">Search and filter 5-letter words using exact letter positions, misplaced tile clues, and excluded letter filters. Built to help you find matching candidate words for daily Wordle puzzles, Scrabble plays, and crossword clues fast.</p>
             </section>
 
             <!-- Tool Input -->
@@ -668,7 +644,7 @@
                         <span class="hero-stat-label">Server calls</span>
                     </div>
                 </div>
-                <p class="privacy-badge">🛡️ <strong>100% Client-Side Privacy:</strong> Word filtering and pattern matching run entirely inside your browser. Your search queries are never sent to external servers.</p>
+                <p class="privacy-badge">🛡️ <strong>Browser-Based Privacy:</strong> Word-matching logic runs locally inside your browser, so your letter inputs and search queries are not sent to our server.</p>
             </div>
 
 
@@ -784,58 +760,52 @@
             <div id="seo-placeholder" class="lazy-section">
                 <section class="info-section">
                     <div class="info-section-header">
-                        <h2 class="info-section-title">Master 5-Letter Word Puzzles with Practical Strategies</h2>
-                        <p class="info-section-sub">Opening guesses, letter frequency patterns, and filtering tips to solve daily Wordle and word games.</p>
-                        <p class="editorial-meta">Content Reviewed Periodically • Last Updated: August 2026</p>
+                        <h2 class="info-section-title">How to Use the 5 Letter Word Finder</h2>
+                        <p class="info-section-sub">Filter matching candidate words using exact tile positions, misplaced letter clues, and dataset options.</p>
+                        <p class="editorial-meta">Content Reviewed Periodically • Word Game Datasets</p>
                     </div>
 
                     <div class="info-content">
-                        <!-- Strategy Section: Wordle Openings -->
+                        <!-- Box 1: Core Filtering Mechanics -->
                         <div class="info-box blue">
-                            <h3>Starting Word Strategies</h3>
+                            <h3>1. Search &amp; Pattern Filters</h3>
+                            <p>Our 5-letter word finder narrows down matching candidates in real time as you enter puzzle feedback:</p>
                             <ul class="clean-list">
-                                <li><strong>Vowel-Heavy Openers:</strong> Guesses like <em>AUDIO</em> or <em>ADIEU</em> test four vowels in a single turn to locate the word's vocalic core.</li>
-                                <li><strong>Consonant-Rich Openers:</strong> Words such as <em>CRANE</em>, <em>SLATE</em>, or <em>ALTER</em> test five frequent consonants (R, S, T, L, N) in common positions.</li>
-                                <li><strong>Accounting for Duplicate Letters:</strong> English vocabulary frequently repeats letters (such as <em>ABBEY</em> or <em>PRESS</em>). When few single letter candidates remain, test for duplicates.</li>
-                            </ul>
-                            <details class="strategy-details">
-                                <summary>Why starting word choice matters...</summary>
-                                <div class="details-content">
-                                    <p>Starting guesses like <strong>CRANE</strong> test several different letters at once, helping narrow down the remaining candidate list.</p>
-                                </div>
-                            </details>
-                        </div>
-
-                        <!-- Linguistic Insights -->
-                        <div class="info-box purple">
-                            <h3>Letter Frequency & Position Trends</h3>
-                            <p>Understanding letter placement patterns in 5-letter English words helps manage your guesses:</p>
-                            <ul class="clean-list">
-                                <li><strong>Ending Anchors:</strong> Letters like <strong>E</strong> and <strong>Y</strong> frequently close 5-letter English words (explore <a href="5-letter-words-ending-with-e.html">words ending with E</a> and <a href="5-letter-words-ending-with-y.html">words ending with Y</a>).</li>
-                                <li><strong>Consonant Digraphs:</strong> Pairings such as <strong>CH</strong>, <strong>SH</strong>, and <strong>TH</strong> are helpful consonant combinations to test when yellow tile clues suggest their presence.</li>
+                                <li><strong>Correct Position (Green):</strong> Enter letters whose exact 1st–5th slot position you already know.</li>
+                                <li><strong>Wrong Position (Yellow):</strong> Enter letters that exist in the word but belong in a different slot.</li>
+                                <li><strong>Excluded Letters (Gray):</strong> Enter confirmed incorrect letters to eliminate all matching words.</li>
+                                <li><strong>Must Include &amp; Repeats:</strong> Filter for required letters regardless of slot, including double-letter occurrences (e.g., two E's for <em>ABBEY</em>).</li>
                             </ul>
                         </div>
 
-                        <!-- How This Tool Works -->
+                        <!-- Box 2: Dataset Modes -->
                         <div class="info-box green">
-                            <h3>How Our Word Solver Works</h3>
+                            <h3>2. Wordle Mode vs. Full Dictionary Mode</h3>
+                            <p>Select the underlying word list that matches your specific word game:</p>
                             <ul class="clean-list">
-                                <li><strong>Local Browser Filtering:</strong> Word matching and letter filtering run locally in your browser.</li>
-                                <li><strong>Wordle Dictionary Mode:</strong> Filters against a curated set of 2,309 common 5-letter solution words used in daily word games.</li>
-                                <li><strong>Full Dictionary Mode:</strong> Searches 15,921 valid 5-letter terms for broader Scrabble and crossword word filtering.</li>
-                                <li><strong>Verified Lexicons:</strong> Dataset lists are derived from standard English word game references, including CSW21 and NWL lexicons.</li>
-                                <li><strong>Letter Inclusion Filter:</strong> Use the 'Must Include' input to find words containing specific letters regardless of tile position.</li>
+                                <li><strong>Wordle Mode:</strong> Filters against our 2,309-word list of common solution words used in daily Wordle puzzles.</li>
+                                <li><strong>Full Dictionary Mode:</strong> Searches our broader 15,921-word 5-letter list for Scrabble, anagrams, and crossword puzzles.</li>
                             </ul>
                         </div>
 
-                        <!-- Scrabble Helper -->
-                        <div class="info-box blue">
-                            <h3>Scrabble & Crossword Board Tips</h3>
-                            <p>Toggle to Full Dictionary Mode for broader word game play:</p>
+                        <!-- Box 3: Strategic Openings -->
+                        <div class="info-box purple">
+                            <h3>3. Strategic Opening Guesses</h3>
+                            <p>Choosing an opening 5-letter word with a useful mix of letters can help reveal clues and narrow the candidate list early:</p>
                             <ul class="clean-list">
-                                <li>Focus on high-value tiles like <strong>Q</strong>, <strong>Z</strong>, <strong>J</strong>, and <strong>X</strong> to maximize total turn points.</li>
-                                <li>Use green position boxes to solve tricky crossword blanks when surrounding letters are already placed.</li>
-                                <li>Look for <strong>S</strong>, <strong>ED</strong>, and <strong>ING</strong> hooks to extend existing board tiles and create multi-word plays.</li>
+                                <li><strong>Vowel-Oriented Openers:</strong> Words like <em>AUDIO</em> or <em>ADIEU</em> test multiple vowels in a single turn.</li>
+                                <li><strong>Consonant-Oriented Openers:</strong> Words such as <em>CRANE</em>, <em>SLATE</em>, or <em>ALTER</em> test multiple common consonants.</li>
+                                <li><strong>Common Word Endings:</strong> Words ending in <strong>E</strong> or <strong>Y</strong> represent common structural patterns (e.g., <em>STARE</em>, <em>HEAVY</em>).</li>
+                            </ul>
+                        </div>
+
+                        <!-- Box 4: Scrabble Use Case -->
+                        <div class="info-box blue">
+                            <h3>4. Scrabble &amp; Crossword Helper</h3>
+                            <p>Use the finder to solve board game tiles and crossword blanks:</p>
+                            <ul class="clean-list">
+                                <li><strong>Sort by Scrabble Values:</strong> Order candidate words from highest to lowest face value to maximize your turn points.</li>
+                                <li><strong>Crossword Blanks:</strong> Use green position slots to fill in missing letters when surrounding board tiles are placed.</li>
                             </ul>
                         </div>
                     </div>
@@ -916,13 +886,13 @@
             <div id="examples-placeholder" class="lazy-section">
                 <section class="tools-section">
                     <div class="info-section-header">
-                        <h2 class="info-section-title">Example 5-Letter Words for Wordle & Scrabble</h2>
-                        <p class="info-section-sub">High-frequency candidate patterns and strategic opening word choices.</p>
+                        <h2 class="info-section-title">Example 5-Letter Words for Wordle &amp; Scrabble</h2>
+                        <p class="info-section-sub">Candidate word patterns and strategic opening choices.</p>
                     </div>
                     <div style="max-width: 800px; margin: 0 auto; padding: 2rem; background: var(--bg-card); border-radius: 1rem; border: 1px solid var(--border-color);">
-                        <p>When solving daily word puzzles, choosing strong starting words is essential. Finding the target word in fewer turns relies on testing high-frequency vowels and common consonants early in the game. Whether you are using a 5 Letter Word Finder to solve your daily Wordle, finding high-scoring anagrams in Scrabble, or filling in tricky crossword blanks, studying candidate patterns helps narrow down possibilities quickly. If you enjoy longer word games, explore our <a
+                        <p>When solving daily word puzzles, choosing strong starting words can help reveal letter clues efficiently. Whether you are using a 5 Letter Word Finder to solve your daily Wordle, finding high-scoring anagrams in Scrabble, or filling in tricky crossword blanks, studying candidate patterns helps narrow down possibilities quickly. If you enjoy longer word games, explore our <a
                                 href="6-letter-word-finder.html">6-letter word finder</a> or check out popular starting words below.</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted); border-left: 3px solid var(--accent); padding-left: 0.75rem; margin: 1rem 0;"><strong>Lexicon Sources:</strong> Word lists are based on commonly used English word game lexicons, including Collins Scrabble Words (CSW21), the Official Tournament and Club Word List (TWL06/NWL family), and standard Wordle solution sets where applicable.</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); border-left: 3px solid var(--accent); padding-left: 0.75rem; margin: 1rem 0;"><strong>Lexicon Sources:</strong> Word lists are drawn from English word-game and dictionary datasets used by the site's different tools, including a 2,309-word Wordle-oriented list and a broader 15,921-word 5-letter list.</p>
                         <ul
                             style="display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 0.5rem; list-style: none; padding: 0; margin-top: 1rem;">
                             <li>ADIEU</li>
@@ -983,53 +953,11 @@
             <!-- PRE-RENDERED STRATEGY & FAQ SECTION -->
             <section class="info-section" style="margin-top: 4rem;">
                 <div class="info-section-header">
-                    <h2 class="info-section-title">5 Letter Word Finder & Strategy Guide</h2>
-                    <p class="info-section-sub">Find 5-letter words for Wordle, Scrabble, and other word puzzles using letter and pattern filters.</p>
+                    <h2 class="info-section-title">5 Letter Word Finder FAQs</h2>
+                    <p class="info-section-sub">Frequently asked questions about filtering candidate words and dataset options.</p>
                 </div>
 
                 <div class="info-content">
-                    <!-- COMPONENT 1: HOW TO USE -->
-                    <div class="info-box blue">
-                        <h3>How to Use the 5 Letter Word Finder</h3>
-                        <p>Our solver filters candidate words in real time based on your puzzle feedback:</p>
-                        <ul class="clean-list">
-                            <li><strong>Correct Position (Green):</strong> Enter letters whose exact position you know.</li>
-                            <li><strong>Wrong Position (Yellow):</strong> Enter letters that belong in the word but are in a different position.</li>
-                            <li><strong>Excluded Letters (Gray):</strong> Enter letters that are not in the word to remove matching candidates.</li>
-                        </ul>
-                    </div>
-
-                    <!-- COMPONENT 2: WORDLE VS FULL DICTIONARY MODE -->
-                    <div class="info-box green">
-                        <h3>Wordle Mode vs Full Dictionary Mode</h3>
-                        <p>Switch between word lists depending on the type of puzzle you are solving.</p>
-                        <ul class="clean-list">
-                            <li><strong>Wordle Mode:</strong> Searches the site's 2,309-word curated Wordle dataset.</li>
-                            <li><strong>Full Dictionary Mode:</strong> Searches the site's 15,921-word 5-letter dictionary dataset.</li>
-                        </ul>
-                    </div>
-
-                    <!-- COMPONENT 3: CURATED 5-LETTER EXAMPLES -->
-                    <div class="info-box purple">
-                        <h3>5-Letter Word Examples</h3>
-                        <p>Here are some 5-letter words you can use as examples when exploring word patterns and possible solutions:</p>
-                        <div class="word-grid" style="margin-top: 1rem;">
-                            <div class="word-item">HEART</div>
-                            <div class="word-item">STARE</div>
-                            <div class="word-item">RAISE</div>
-                            <div class="word-item">HOUSE</div>
-                            <div class="word-item">HOTEL</div>
-                            <div class="word-item">HEAVY</div>
-                            <div class="word-item">HABIT</div>
-                            <div class="word-item">HAPPY</div>
-                            <div class="word-item">HORSE</div>
-                            <div class="word-item">HUMAN</div>
-                            <div class="word-item">HUMOR</div>
-                            <div class="word-item">HURRY</div>
-                        </div>
-                    </div>
-
-                    <!-- COMPONENT 4: VISIBLE FAQS WITH NATIVE ACCORDION -->
                     <div class="info-box green">
                         <h3>Frequently Asked Questions</h3>
                         <details class="faq-details">
@@ -1037,32 +965,20 @@
                             <p class="faq-answer">Enter known letters in the correct position boxes (green), misplaced letters in the yellow row, and letters not in the word into the excluded box. The solver updates matching candidate words in real time as you type.</p>
                         </details>
                         <details class="faq-details">
-                            <summary class="faq-summary">Is this tool accurate for daily Wordle solutions?</summary>
-                            <p class="faq-answer">Yes. The default search filters against the 2,309-word common Wordle solution list.</p>
-                        </details>
-                        <details class="faq-details">
-                            <summary class="faq-summary">How do I find 5-letter words containing specific letters?</summary>
-                            <p class="faq-answer">Type any required letters into the 'Must Include' box or yellow misplaced row. The solver filters the list to show candidate words containing those exact characters.</p>
-                        </details>
-                        <details class="faq-details">
                             <summary class="faq-summary">What is the difference between Wordle Mode and Full Dictionary Mode?</summary>
-                            <p class="faq-answer">Wordle Mode filters across 2,309 curated daily solution words. Full Dictionary Mode searches 15,921 valid 5-letter terms for broader Scrabble and crossword word filtering.</p>
+                            <p class="faq-answer">Wordle Mode filters across our 2,309-word curated daily solution list. Full Dictionary Mode searches our broader 15,921-word 5-letter list for Scrabble and crossword filtering.</p>
+                        </details>
+                        <details class="faq-details">
+                            <summary class="faq-summary">How does the solver handle duplicate or repeated letters?</summary>
+                            <p class="faq-answer">The filter engine tracks letter frequency automatically. If you enter duplicate letters into the input boxes or yellow slots, candidate words must contain at least that many letter occurrences.</p>
                         </details>
                         <details class="faq-details">
                             <summary class="faq-summary">Can I sort matching words by Scrabble score?</summary>
-                            <p class="faq-answer">Yes. Use the order dropdown in the sidebar to sort results by Scrabble point value from highest to lowest or lowest to highest.</p>
+                            <p class="faq-answer">Yes. Use the order dropdown in the sidebar to sort results by Scrabble face values from highest to lowest or lowest to highest.</p>
                         </details>
                         <details class="faq-details">
-                            <summary class="faq-summary">How does the solver handle duplicate letters?</summary>
-                            <p class="faq-answer">The engine tracks letter frequency automatically. If you enter duplicate letters into the filter inputs, candidate words must contain at least that many occurrences.</p>
-                        </details>
-                        <details class="faq-details">
-                            <summary class="faq-summary">Are my searches private?</summary>
-                            <p class="faq-answer">Yes. Word matching and letter filtering run locally in your browser.</p>
-                        </details>
-                        <details class="faq-details">
-                            <summary class="faq-summary">Is this 5-letter word finder free to use?</summary>
-                            <p class="faq-answer">Yes. The tool is free to use with no account registration, software downloads, or usage limits required.</p>
+                            <summary class="faq-summary">Are my search queries private?</summary>
+                            <p class="faq-answer">Yes. Word matching and letter filtering run locally in your browser. Your letter inputs and search queries are not sent to our server.</p>
                         </details>
                     </div>
                 </div>
