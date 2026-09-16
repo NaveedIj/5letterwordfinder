@@ -211,6 +211,15 @@
                     <h2>Why We Built This</h2>
                     <p>We love word games, but we found many existing solvers to be cluttered with ads, slow to load, or lacking the specific "Wordle-style" logic needed for modern games. We decided to build a tool that runs entirely in your browser-meaning it's instant, private, and works even when you're offline.</p>
 
+                    <h2>Architecture & Methodology</h2>
+                    <p>Our solver is engineered around a <strong>privacy-first, client-side architecture</strong>. Unlike traditional web tools that send search queries back to a server, <strong>5 Letter Word Finder Tool</strong> loads its dataset into your browser RAM. Your letter inputs (green, yellow, and gray box constraints) are evaluated entirely on your device, ensuring zero search history transmission.</p>
+
+                    <p>We maintain two distinct dictionary datasets to match player intent:</p>
+                    <ul>
+                        <li><strong>Wordle Solution Dataset (~2,300 words):</strong> Curated daily solution targets to help players solve daily Wordle puzzles without clutter from obscure terms.</li>
+                        <li><strong>Full English Dictionary (~12,900 words):</strong> Comprehensive 5-letter lexicon for Scrabble validation, anagram solvers, and general word puzzle exploration.</li>
+                    </ul>
+
                     <h2>Key Features</h2>
                     <ul>
                         <li><strong>Wordle-Ready Logic:</strong> Use green, yellow, and gray filters just like the game.</li>
