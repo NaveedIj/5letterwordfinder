@@ -329,7 +329,7 @@ function renderResults(pattern = '') {
     } else {
         const limit = currentDict === 'common' ? 200 : 1000;
         const displayResults = currentResults.slice(0, limit);
-        const wordGrid = displayResults.map(word => {
+        const wordGrid = displayResults.map((word, index) => {
             const upperWord = word.toUpperCase();
             let highlightedWord = '';
             for (let i = 0; i < WORD_LENGTH; i++) {
@@ -342,7 +342,8 @@ function renderResults(pattern = '') {
             }
             const score = scrabbleScore(word);
             const scoreHtml = showScores ? `<span class="word-score" title="Scrabble face value">${score}</span>` : '';
-            return `<div class="word-item" data-word="${upperWord}" title="Click to copy">${highlightedWord}${scoreHtml}</div>`;
+            const delay = Math.min(index * 15, 300);
+            return `<div class="word-item" data-word="${upperWord}" title="Click to copy" style="animation-delay: ${delay}ms;">${highlightedWord}${scoreHtml}</div>`;
         }).join('');
 
         resultsList.innerHTML = wordGrid;
@@ -353,6 +354,8 @@ function renderResults(pattern = '') {
         resultsCount.textContent = `${activeList ? activeList.length.toLocaleString() : '2,656'} words available`;
     } else if (currentResults.length === 0) {
         resultsCount.textContent = `0 matching words`;
+    } else if (currentResults.length >= 1 && currentResults.length <= 5) {
+        resultsCount.textContent = `Only ${currentResults.length} left — almost there! 🎯`;
     } else {
         const limit = currentDict === 'common' ? 200 : 1000;
         const countText = `${currentResults.length.toLocaleString()} matching word${currentResults.length !== 1 ? 's' : ''}`;
