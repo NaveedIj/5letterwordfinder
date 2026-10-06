@@ -189,6 +189,24 @@ function applyTheme() {
     document.getElementById('animationsToggle').checked = s.animations;
 }
 
+let commonList = [];
+const fullList = typeof wordList !== 'undefined' ? wordList : [];
+
+async function loadGameDataset() {
+    try {
+        const response = await fetch('/data/wordle-common.json');
+        if (!response.ok) throw new Error('Dataset fetch failed');
+        commonList = await response.json();
+    } catch (err) {
+        console.warn('Falling back to internal word list:', err);
+        commonList = WORD_LIST;
+    }
+}
+
+function getActiveWordList() {
+    return (commonList && commonList.length > 0) ? commonList : WORD_LIST;
+}
+
 function getDayNumber() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -198,6 +216,7 @@ function getDayNumber() {
 function initGame(mode = 'daily') {
     gameMode = mode;
     const day = getDayNumber();
+    const list = getActiveWordList();
 
     if (mode === 'daily') {
         const saved = localStorage.getItem(`wordle_daily_v3_${day}`);
@@ -210,11 +229,11 @@ function initGame(mode = 'daily') {
             hintUsed = state.hintUsed;
             keyStates = state.keyStates;
         } else {
-            targetWord = WORD_LIST[day % WORD_LIST.length].toUpperCase();
+            targetWord = list[day % list.length].toUpperCase();
             resetLocalState();
         }
     } else {
-        targetWord = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)].toUpperCase();
+        targetWord = list[Math.floor(Math.random() * list.length)].toUpperCase();
         resetLocalState();
     }
 
@@ -257,7 +276,9 @@ function renderBoard() {
                 const letter = guesses[i][j];
                 tile.textContent = letter;
                 tile.classList.add('filled');
-                applyColorsToTile(tile, letter, j, guesses[i]);
+                if (letter !== '.') {
+                    applyColorsToTile(tile, letter, j, guesses[i]);
+                }
             }
             row.appendChild(tile);
         }
@@ -336,7 +357,7 @@ function validateHardMode(guess) {
 
 function submitGuess() {
     if (currentGuess.length !== WORD_LENGTH) return showMsg('Not enough letters', 'error');
-    if (!WORD_LIST.includes(currentGuess.toLowerCase())) return showMsg('Invalid word', 'error');
+    if (!isWordValid(currentGuess)) return showMsg('Invalid word', 'error');
 
     const validation = validateHardMode(currentGuess);
     if (!validation.valid) return showMsg(validation.msg, 'error');
@@ -401,28 +422,7 @@ function updateKeyState(l, pos) {
     }
 }
 
-function useHint() {
-    if (gameOver || hintUsed || currentAttempt >= MAX_ATTEMPTS - 1) return;
-    const unrevealed = [];
-    for (let i = 0; i < WORD_LENGTH; i++) if (!revealedLetters.correct[i]) unrevealed.push(i);
-    if (unrevealed.length === 0) return;
 
-    const pos = unrevealed[Math.floor(Math.random() * unrevealed.length)];
-    const letter = targetWord[pos];
-
-    hintUsed = true;
-    guesses.push(".".repeat(pos) + letter + ".".repeat(WORD_LENGTH - pos - 1)); // Placeholder for stats/history
-    const row = document.querySelector(`[data-row="${currentAttempt}"]`);
-    const tile = row.querySelector(`[data-col="${pos}"]`);
-    tile.textContent = letter;
-    tile.classList.add('filled', 'correct', 'hint-tile');
-    revealedLetters.correct[pos] = letter;
-
-    currentAttempt++;
-    currentGuess = '';
-    showMsg(`Hint: ${letter} found!`, 'info');
-    saveState();
-}
 
 function showMsg(t, type) {
     elements.message.textContent = t;
@@ -569,7 +569,48 @@ function toggleNav(open) {
 
 // Initialization
 applyTheme();
-initGame();
+loadGameDataset().then(() => {
+    initGame();
+});
+
+function isWordValid(word) {
+    const lower = word.toLowerCase();
+    return (commonList && commonList.includes(lower)) || 
+           (fullList && fullList.includes(lower)) || 
+           WORD_LIST.includes(lower);
+}
+
+function useHint() {
+    if (gameOver || hintUsed || currentAttempt >= MAX_ATTEMPTS) return;
+    const unrevealed = [];
+    for (let i = 0; i < WORD_LENGTH; i++) if (!revealedLetters.correct[i]) unrevealed.push(i);
+    if (unrevealed.length === 0) return;
+
+    const pos = unrevealed[Math.floor(Math.random() * unrevealed.length)];
+    const letter = targetWord[pos];
+
+    hintUsed = true;
+    revealedLetters.correct[pos] = letter;
+    
+    // Fill current row tile at position
+    const row = document.querySelector(`[data-row="${currentAttempt}"]`);
+    if (row) {
+        const tile = row.querySelector(`[data-col="${pos}"]`);
+        if (tile) {
+            tile.textContent = letter;
+            tile.classList.add('filled', 'correct', 'hint-tile');
+        }
+    }
+
+    // Auto update currentGuess at that position if empty
+    let newGuessArr = (currentGuess + ' '.repeat(WORD_LENGTH)).slice(0, WORD_LENGTH).split('');
+    newGuessArr[pos] = letter;
+    currentGuess = newGuessArr.join('').trimEnd();
+
+    showMsg(`Hint: ${letter} at position ${pos + 1}!`, 'info');
+    saveState();
+}
+
 if (!localStorage.getItem('wordle_onboarded_v3')) {
     setTimeout(() => { elements.howToModal.classList.add('active'); localStorage.setItem('wordle_onboarded_v3', 'true'); }, 500);
 }
