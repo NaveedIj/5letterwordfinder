@@ -348,7 +348,7 @@ function renderResults(pattern = '') {
     }
 
     if (!hasAnyFilter()) {
-        resultsCount.textContent = `${activeList ? activeList.length.toLocaleString() : '2,309'} words available`;
+        resultsCount.textContent = `${activeList ? activeList.length.toLocaleString() : '2,656'} words available`;
     } else if (currentResults.length === 0) {
         resultsCount.textContent = `0 matching words`;
     } else {
