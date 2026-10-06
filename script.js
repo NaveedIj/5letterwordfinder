@@ -13,6 +13,8 @@ const resultsCount = document.getElementById('resultsCount');
 const copyBtn = document.getElementById('copyBtn');
 const toast = document.getElementById('toast');
 const statWordCount = document.getElementById('statWordCount');
+const statLiveResults = document.getElementById('statLiveResults');
+const statModeLabel = document.getElementById('statModeLabel');
 const sortSelect = document.getElementById('sortSelect');
 const showScrabbleInput = document.getElementById('showScrabble');
 
@@ -356,6 +358,14 @@ function renderResults(pattern = '') {
         const countText = `${currentResults.length.toLocaleString()} matching word${currentResults.length !== 1 ? 's' : ''}`;
         resultsCount.textContent = currentResults.length > limit ? `${countText} (showing first ${limit})` : countText;
     }
+
+    if (statLiveResults) {
+        const liveCount = hasAnyFilter() ? currentResults.length : (activeList ? activeList.length : 0);
+        const formattedLive = liveCount.toLocaleString();
+        if (statLiveResults.textContent !== formattedLive) {
+            statLiveResults.textContent = formattedLive;
+        }
+    }
     
     lastRenderedHash = renderHash;
 }
@@ -629,9 +639,15 @@ function initStats() {
     }
     const formatted = n ? n.toLocaleString() : '-';
     
-    // Visual Stability: Only update if different to avoid layout thrashing/jitter
     if (statWordCount.textContent !== formatted) {
         statWordCount.textContent = formatted;
+    }
+
+    if (statModeLabel) {
+        const labelText = currentDict === 'common' ? 'WORDLE MODE' : 'FULL DICTIONARY';
+        if (statModeLabel.textContent !== labelText) {
+            statModeLabel.textContent = labelText;
+        }
     }
 }
 
