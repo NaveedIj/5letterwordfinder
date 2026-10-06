@@ -119,6 +119,20 @@
             padding: 2rem;
             box-shadow: var(--shadow-lg);
             margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .ai-solver-box::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-xl);
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), transparent 60%, rgba(217, 70, 239, 0.15));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
         }
 
         .ai-field-group {
@@ -153,7 +167,7 @@
         .ai-pattern-input:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.25);
         }
 
         .ai-filters-grid {
@@ -717,7 +731,7 @@
 
     <div class="toast" id="toast"></div>
 
-    <script src="words.js"></script>
+    <script src="words-by-length.js"></script>
     <script src="ai-solver.js"></script>
 </body>
 

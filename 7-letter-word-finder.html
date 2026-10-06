@@ -385,128 +385,137 @@
                 <p class="subtitle">Search through thousands of 7-letter words to find the perfect match for your puzzle.</p>
             </section>
 
-            <!-- Tool Input -->
+            <!-- Tool Container (Side-by-Side Hero) -->
             <div class="pattern-box hero-container" id="tool-section" role="search" aria-label="Word search filters">
-                <div class="hero-row">
-                    <span class="row-label">
-                        <span class="row-label-dot green-dot"></span>
-                        Correct Position
-                    </span>
-                    <div class="pattern-grid" id="patternGrid">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" autofocus id="pos0" aria-label="Letter position 1">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos1" aria-label="Letter position 2">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos2" aria-label="Letter position 3">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos3" aria-label="Letter position 4">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos4" aria-label="Letter position 5">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos5" aria-label="Letter position 6">
-                    <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos6" aria-label="Letter position 7">
-                </div>
-                </div>
-
-                <div class="hero-row">
-                    <span class="row-label">
-                        <span class="row-label-dot yellow-dot"></span>
-                        Wrong position (yellow)
-                    </span>
-                    <div class="wrong-pos-grid" id="wrongPosGrid">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w0" aria-label="Wrong position letters for slot 1">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w1" aria-label="Wrong position letters for slot 2">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w2" aria-label="Wrong position letters for slot 3">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w3" aria-label="Wrong position letters for slot 4">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w4" aria-label="Wrong position letters for slot 5">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w5" aria-label="Wrong position letters for slot 6">
-                    <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w6" aria-label="Wrong position letters for slot 7">
-                </div>
-                    <p class="row-hint">Letters here are in the answer but not in that column-same as Wordle yellow.</p>
-                </div>
-
-                <div class="hero-row">
-                    <span class="row-label">
-                        <span class="row-label-dot teal-dot"></span>
-                        Must include (any position)
-                    </span>
-                    <label for="mustInclude" class="sr-only">Letters that must appear in the word</label>
-                    <input type="text" id="mustInclude" class="text-input must-include-input hero-excludes"
-                        placeholder="Extra letters that must appear (EE = need two E's)" autocomplete="off"
-                        spellcheck="false" aria-label="Letters that must appear anywhere, with repeats counting">
-                    <p class="row-hint">Use this for "unknown position" letters: repeats count, e.g.
-                        <strong>ABBC</strong>
-                        needs two B's.
-                    </p>
-                </div>
-
-                <div class="hero-row hero-row--toggle">
-                    <label class="repeat-toggle"
-                        title="When on, yellow slots add to minimum letter counts (handles double letters). When off, each yellow letter only needs to appear once.">
-                        <input type="checkbox" id="repeatSensitive" checked>
-                        <span class="repeat-toggle-ui" aria-hidden="true"></span>
-                        <span class="repeat-toggle-text"><strong>Repeat-aware</strong> - match Wordle-style letter
-                            counts
-                            (doubles, etc.)</span>
-                    </label>
-                </div>
-
-                <div class="hero-row">
-                    <span class="row-label">
-                        <span class="row-label-dot gray-dot"></span>
-                        Excluded (gray)
-                    </span>
-                    <label for="excludes" class="sr-only">Letters to exclude from the word</label>
-                    <input type="text" id="excludes" class="text-input excluded-input hero-excludes"
-                        placeholder="Letters not in the word" autocomplete="off" spellcheck="false"
-                        aria-label="Letters to exclude from results">
-                    <p class="row-hint">Ignored for letters you already set as green, yellow, or must-include.</p>
-                </div>
-
-                <div class="hero-actions">
-                    <button type="button" class="btn btn-primary" id="findBtn"
-                        aria-label="Apply filters and scroll to results">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        Find My Words
-                    </button>
-                    <button type="button" class="btn btn-secondary" id="resetBtn" aria-label="Clear all search filters">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M3 6h18"></path>
-                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                            </path>
-                        </svg>
-                        Clear all
-                    </button>
-                </div>
-            </div>
-
-            <div class="hero-extras"
-                style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem; margin-bottom: 4rem;">
-                <button class="btn-help" id="helpBtn" title="How to use">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                    How It Works
-                </button>
-
-                <!-- Quick stats bar -->
-                <div class="hero-stats" id="heroStats">
-                    <div class="hero-stat" aria-live="polite">
-                        <span class="hero-stat-num" id="statWordCount">41,998</span>
-                        <span class="hero-stat-label">Words in list</span>
+                <div class="hero-tool-layout">
+                    <!-- LEFT COLUMN: RESULTS PANEL -->
+                    <div class="hero-results-panel card">
+                        <div class="results-info">
+                            <div class="results-heading">
+                                <span class="card-title" style="margin-bottom: 0; font-size: 1.25rem; font-weight: 800;">Matches</span>
+                            </div>
+                            <div class="flex items-center gap-2 results-actions">
+                                <span class="results-count" id="resultsCount">0 words</span>
+                                <button class="btn btn-primary btn-sm" id="copyBtn" disabled aria-label="Copy all results">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copy all
+                                </button>
+                            </div>
+                        </div>
+                        <div class="results-list" id="resultsList">
+                            <!-- Results generated by JS -->
+                        </div>
                     </div>
-                    <div class="hero-stat-divider"></div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-num">Live</span>
-                        <span class="hero-stat-label">Results</span>
-                    </div>
-                    <div class="hero-stat-divider"></div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-num">0</span>
-                        <span class="hero-stat-label">Server calls</span>
+
+                    <!-- RIGHT COLUMN: INPUTS PANEL -->
+                    <div class="hero-inputs-panel">
+                        <!-- Mode Label Pill -->
+                        <div class="mode-toggle-wrapper">
+                            <div class="segmented-toggle" style="justify-content: center; width: 100%;">
+                                <span class="toggle-item active" style="cursor: default; width: 100%; text-align: center;">7-LETTER MODE · <span id="statWordCount">41,929</span> WORDS</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-row">
+                            <span class="row-label">
+                                <span class="row-label-dot green-dot"></span>
+                                Correct Position
+                            </span>
+                            <div class="pattern-grid" id="patternGrid">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" autofocus id="pos0" aria-label="Letter position 1">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos1" aria-label="Letter position 2">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos2" aria-label="Letter position 3">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos3" aria-label="Letter position 4">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos4" aria-label="Letter position 5">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos5" aria-label="Letter position 6">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false" id="pos6" aria-label="Letter position 7">
+                            </div>
+                        </div>
+
+                        <div class="hero-row">
+                            <span class="row-label">
+                                <span class="row-label-dot yellow-dot"></span>
+                                Wrong position (yellow)
+                            </span>
+                            <div class="wrong-pos-grid" id="wrongPosGrid">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w0" aria-label="Wrong position letters for slot 1">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w1" aria-label="Wrong position letters for slot 2">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w2" aria-label="Wrong position letters for slot 3">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w3" aria-label="Wrong position letters for slot 4">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w4" aria-label="Wrong position letters for slot 5">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w5" aria-label="Wrong position letters for slot 6">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" autocomplete="off" spellcheck="false" id="w6" aria-label="Wrong position letters for slot 7">
+                            </div>
+                            <p class="row-hint">Letters here are in the answer but not in that column-same as Wordle yellow.</p>
+                        </div>
+
+                        <div class="hero-row">
+                            <span class="row-label">
+                                <span class="row-label-dot gray-dot"></span>
+                                Excluded (gray)
+                            </span>
+                            <label for="excludes" class="sr-only">Letters to exclude from the word</label>
+                            <input type="text" id="excludes" class="text-input excluded-input hero-excludes"
+                                placeholder="Letters not in the word" autocomplete="off" spellcheck="false"
+                                aria-label="Letters to exclude from results">
+                            <p class="row-hint">Ignored for letters you already set as green, yellow, or must-include.</p>
+                        </div>
+
+                        <!-- Advanced Filters Section -->
+                        <details class="advanced-filters-details" id="advancedFiltersDetails">
+                            <summary class="advanced-filters-summary">
+                                <span>Advanced Filters (Must Include &amp; Repeat Settings)</span>
+                                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </summary>
+                            <div class="advanced-filters-content">
+                                <div class="hero-row">
+                                    <span class="row-label">
+                                        <span class="row-label-dot teal-dot"></span>
+                                        Must include (any position)
+                                    </span>
+                                    <label for="mustInclude" class="sr-only">Letters that must appear in the word</label>
+                                    <input type="text" id="mustInclude" class="text-input must-include-input hero-excludes"
+                                        placeholder="Extra letters that must appear (EE = need two E's)" autocomplete="off"
+                                        spellcheck="false" aria-label="Letters that must appear anywhere, with repeats counting">
+                                    <p class="row-hint">Use this for "unknown position" letters: repeats count, e.g. <strong>ABBC</strong> needs two B's.</p>
+                                </div>
+
+                                <div class="hero-row hero-row--toggle">
+                                    <label class="repeat-toggle"
+                                        title="When on, yellow slots add to minimum letter counts (handles double letters). When off, each yellow letter only needs to appear once.">
+                                        <input type="checkbox" id="repeatSensitive" checked>
+                                        <span class="repeat-toggle-ui" aria-hidden="true"></span>
+                                        <span class="repeat-toggle-text"><strong>Repeat-aware</strong> - match Wordle-style letter counts (doubles, etc.)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </details>
+
+                        <div class="hero-actions">
+                            <button type="button" class="btn btn-primary" id="findBtn"
+                                aria-label="Apply filters and scroll to results">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Find My Words
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="resetBtn" aria-label="Clear all search filters">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M3 6h18"></path>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                    </path>
+                                </svg>
+                                Clear all
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
