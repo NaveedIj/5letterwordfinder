@@ -126,6 +126,7 @@ const elements = {
     gameOverModal: document.getElementById('gameOverModal'),
     statsModal: document.getElementById('statsModal'),
     hintBtn: document.getElementById('hintBtn'),
+    mainNewGameBtn: document.getElementById('mainNewGameBtn'),
     playAgainBtn: document.getElementById('playAgainBtn'),
     onboardDoneBtn: document.getElementById('onboardDoneBtn')
 };
@@ -439,10 +440,31 @@ function updateUI() {
     elements.playAgainBtn.style.display = (gameOver && gameMode === 'free') ? 'block' : 'none';
 }
 
+function triggerConfetti() {
+    const modalContent = elements.gameOverModal.querySelector('.modal-content');
+    if (!modalContent) return;
+    const container = document.createElement('div');
+    container.className = 'confetti-container';
+    const colors = ['#8b5cf6', '#d946ef', '#10b981', '#f59e0b', '#38bdf8'];
+    for (let i = 0; i < 30; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = (Math.random() * 0.5) + 's';
+        piece.style.animationDuration = (1.8 + Math.random() * 1.2) + 's';
+        container.appendChild(piece);
+    }
+    modalContent.appendChild(container);
+    setTimeout(() => container.remove(), 3500);
+}
+
 function showGameOver() {
     elements.gameOverModal.classList.add('active');
-    document.getElementById('gameResult').textContent = guesses[guesses.length - 1] === targetWord ? 'Victory!' : 'Keep Trying';
+    const won = guesses.length > 0 && guesses[guesses.length - 1] === targetWord;
+    document.getElementById('gameResult').textContent = won ? 'Victory!' : 'Keep Trying';
     document.getElementById('wordReveal').textContent = `The word was ${targetWord}`;
+    if (won) triggerConfetti();
     renderShareGrid();
     updateUI();
 }
@@ -516,6 +538,7 @@ document.getElementById('closeStatsBtn').onclick = () => elements.statsModal.cla
 document.getElementById('closeGameOverBtn').onclick = () => elements.gameOverModal.classList.remove('active');
 document.getElementById('shareBtn').onclick = copyResults;
 elements.hintBtn.onclick = useHint;
+if (elements.mainNewGameBtn) elements.mainNewGameBtn.onclick = () => initGame('free');
 elements.playAgainBtn.onclick = () => initGame('free');
 document.getElementById('menuResetBtn').onclick = () => {
     if (confirm('Reset current game?')) {
