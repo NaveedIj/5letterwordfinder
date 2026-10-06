@@ -78,14 +78,14 @@
         gtag('config', 'G-WW6EJYTTML');
     </script>
 
-    <!-- WebApp & Breadcrumb Schema -->
+    <!-- WebApp, Breadcrumb & FAQ Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "AI Word Solver",
+      "name": "AI Word Solver for Word Games",
       "url": "https://www.5letterwordfindertool.com/ai-word-solver",
-      "description": "Find matching words instantly using our AI Word Solver. Solve Wordle, Scrabble, Crossword, and Hangman puzzles with smart letter pattern matching and advanced filters.",
+      "description": "Find matching words instantly using our AI Word Solver for Word Games. Solve Wordle, Scrabble, Crossword, and Hangman puzzles with smart letter pattern matching and advanced filters.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "All",
       "offers": {
@@ -109,6 +109,78 @@
         "name": "AI Word Solver",
         "item": "https://www.5letterwordfindertool.com/ai-word-solver"
       }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an AI word solver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A tool that finds words matching your letters and patterns — for Wordle, Scrabble, crosswords, and anagrams. Ours uses fast dictionary pattern-matching; no account needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the AI word solver solve Wordle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Enter your green letters in Correct Position, yellows in Must Include, grays in Excluded — it returns every possible answer. You make the final pick."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work for Scrabble?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — enter your rack letters, and toggle Scrabble scores to see the highest-value plays first, including high scorers like QUIZ (22) and JAZZ (29)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the AI word solver free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, completely free with unlimited searches. No signup, no app download."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it solve math word problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — this solver handles word games (letters and patterns), not math homework. For math, try a dedicated math solver app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it solve puzzles from a photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — it can't scan images. Type the letters you see into the pattern box manually."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do wildcard characters work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can use both underscore (_) and question mark (?) interchangeably to represent any single missing letter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which word games are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI Word Solver supports Wordle, Scrabble, Words With Friends, Crosswords, Hangman, and general anagram solving."
+          }
+        }
+      ]
     }
     </script>
     <style>
@@ -416,10 +488,9 @@
 
             <!-- ======================== HERO SECTION ======================== -->
             <section class="header">
-                <h1 class="title">AI Word Solver</h1>
+                <h1 class="title">AI Word Solver for Word Games</h1>
                 <p class="tagline">Find Words by Pattern & Advanced Filters</p>
-                <p class="subtitle">Solve Wordle, Scrabble, Crossword, Hangman, and word puzzles instantly using smart
-                    pattern matching.</p>
+                <p class="subtitle">This AI word solver helps you solve <strong>word games</strong> — Wordle, Scrabble, crosswords, and anagrams. It is not a math solver or an image scanner: type your letters and patterns, and it finds matching words instantly.</p>
             </section>
 
             <!-- Tool Input -->
@@ -573,14 +644,73 @@
                         <h3>Comprehensive Word Filters</h3>
                         <p>Fine-tune your searches with granular letter constraints:</p>
                         <ul class="clean-list">
-                            <li><strong>Starts With & Ends With:</strong> Instantly target words beginning or ending with specific characters.</li>
-                            <li><strong>Contains & Excludes:</strong> Filter out impossible letter combinations and keep only matching candidates.</li>
-                            <li><strong>Word Length Selection:</strong> Filter seamlessly across 3-letter, 4-letter, 5-letter, 6-letter, 7-letter, and 8+ letter dictionaries.</li>
+                            <li><strong>Starts With &amp; Ends With:</strong> Instantly target words beginning or ending with specific characters.</li>
+                            <li><strong>Contains &amp; Excludes:</strong> Filter out impossible letter combinations and keep only matching candidates.</li>
+                            <li><strong>Word Length Selection:</strong> Filter seamlessly across <a href="3-letter-word-finder.html">3-letter</a>, <a href="4-letter-word-finder.html">4-letter</a>, <a href="/">5-letter</a>, <a href="6-letter-word-finder.html">6-letter</a>, <a href="7-letter-word-finder.html">7-letter</a>, and <a href="8-letter-word-finder.html">8+ letter</a> dictionaries.</li>
                         </ul>
+                    </div>
+
+                    <div class="info-box blue">
+                        <h2>How the AI Word Solver Works</h2>
+                        <p>No magic, no signup — just smart pattern matching. Here's what happens when you type:</p>
+                        <ol style="margin-top: 0.75rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li><strong>Pattern input</strong> — enter what you know, like <code>S_A_E</code> (S, blank, A, blank, E). The solver treats blanks as wildcards.</li>
+                            <li><strong>Letter filters</strong> — add letters that must appear (green/yellow clues) and letters to exclude (gray clues).</li>
+                            <li><strong>Instant matching</strong> — it scans tens of thousands of dictionary words and returns every match, ranked by relevance or Scrabble score.</li>
+                        </ol>
+                        <p style="margin-top: 0.75rem;">It's called "AI" because it does in milliseconds what would take you hours: cross-referencing patterns against a full dictionary. The strategy is still yours — the solver just never misses an option.</p>
+                    </div>
+
+                    <div class="info-box purple">
+                        <h2>What Can the Word Solver Solve?</h2>
+                        <ul style="margin-top: 0.75rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li><strong>Wordle &amp; clones</strong> — turn green/yellow/gray clues into a shortlist of answers with our <a href="/" style="color: var(--accent-light); font-weight: 600;">5-letter word finder</a>.</li>
+                            <li><strong>Scrabble &amp; Words With Friends</strong> — find the highest-scoring play from your rack, including Q-without-U words like QAT and QIS. Discover hooks for <a href="3-letter-word-finder.html">3-letter</a>, <a href="4-letter-word-finder.html">4-letter</a>, <a href="6-letter-word-finder.html">6-letter</a>, <a href="7-letter-word-finder.html">7-letter</a>, and <a href="8-letter-word-finder.html">8-letter</a> plays.</li>
+                            <li><strong>Crosswords</strong> — enter known letters with blanks for unknowns (<code>C_OS_WORD</code> style patterns).</li>
+                            <li><strong>Anagrams &amp; jumbles</strong> — drop in scrambled letters and see every valid word.</li>
+                            <li><strong>Spelling help</strong> — "starts with STR and ends with -ING" questions answered instantly.</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;">If your puzzle involves letters and patterns, this solver handles it.</p>
+                    </div>
+
+                    <div class="info-box blue">
+                        <h2>Can AI Really Solve Wordle?</h2>
+                        <p>Honestly? <strong>Mostly yes — with your help.</strong> The solver narrows 2,656 possible answers to a handful, but the final pick needs human judgment: which guess gives the most information? Pro tips:</p>
+                        <ul style="margin-top: 0.75rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <li>Start with vowel-heavy openers (ADIEU, AUDIO, RAISE) to maximize early clues.</li>
+                            <li>Enter gray letters in Excluded immediately — every excluded letter halves the list.</li>
+                            <li>When 2–3 options remain, guess a word that tests the <em>differing</em> letters, not one of the answers.</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem;">Use our <a href="game.html" style="color: var(--accent-light); font-weight: 600;">free Wordle game</a> to practice — unlimited rounds, no signup.</p>
                     </div>
 
                     <div class="info-box green">
                         <h3>Frequently Asked Questions</h3>
+
+                        <div class="faq-item">
+                            <strong>What is an AI word solver?</strong>
+                            <p>A tool that finds words matching your letters and patterns — for Wordle, Scrabble, crosswords, and anagrams. Ours uses fast dictionary pattern-matching; no account needed.</p>
+                        </div>
+                        <div class="faq-item">
+                            <strong>Can the AI word solver solve Wordle?</strong>
+                            <p>Yes. Enter your green letters in Correct Position, yellows in Must Include, grays in Excluded — it returns every possible answer. You make the final pick.</p>
+                        </div>
+                        <div class="faq-item">
+                            <strong>Does it work for Scrabble?</strong>
+                            <p>Yes — enter your rack letters, and toggle Scrabble scores to see the highest-value plays first, including high scorers like QUIZ (22) and JAZZ (29).</p>
+                        </div>
+                        <div class="faq-item">
+                            <strong>Is the AI word solver free?</strong>
+                            <p>Yes, completely free with unlimited searches. No signup, no app download.</p>
+                        </div>
+                        <div class="faq-item">
+                            <strong>Can it solve math word problems?</strong>
+                            <p>No — this solver handles word <em>games</em> (letters and patterns), not math homework. For math, try a dedicated math solver app.</p>
+                        </div>
+                        <div class="faq-item">
+                            <strong>Can it solve puzzles from a photo?</strong>
+                            <p>No — it can't scan images. Type the letters you see into the pattern box manually.</p>
+                        </div>
                         <div class="faq-item">
                             <strong>How do wildcard characters work?</strong>
                             <p>You can use both underscore (<code>_</code>) and question mark (<code>?</code>) interchangeably to represent any single missing letter.</p>
