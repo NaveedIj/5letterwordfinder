@@ -592,6 +592,7 @@ function toggleNav(open) {
 
 // Initialization
 applyTheme();
+elements.gameBoard.innerHTML = '<div class="board-loading">Loading puzzle data...</div>';
 loadGameDataset().then(() => {
     initGame();
 });
