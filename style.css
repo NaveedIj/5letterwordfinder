@@ -247,8 +247,8 @@ body.theme-light .brand-name {
 }
 
 .brand-name span {
-    color: #5f9f3f;
-    /* Professional green */
+    color: #10b981;
+    /* Professional emerald green */
     transition: color 0.3s ease;
 }
 
@@ -262,8 +262,8 @@ body.theme-light .brand-container:hover .brand-name {
 }
 
 .brand-container:hover .brand-name span {
-    color: #2e7d32;
-    /* Darker green on hover */
+    color: #059669;
+    /* Darker emerald on hover */
 }
 
 .brand-tagline-header {
@@ -291,7 +291,7 @@ body.theme-light .brand-container:hover .brand-name {
 }
 
 .footer-logo-container a span {
-    color: #5f9f3f;
+    color: #10b981;
 }
 
 .footer-logo-container a:hover {
@@ -1936,7 +1936,7 @@ body[data-word-length="8"] .results-list {
 
 /* ======================== SITE FOOTER ======================== */
 .site-footer {
-    background-color: #0f172a;
+    background-color: #061014;
     color: #cbd5e1;
     padding: 4rem 1.5rem 1.5rem;
     margin-top: 6rem;
