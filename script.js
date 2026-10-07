@@ -458,7 +458,7 @@ function toggleTheme(e) {
 function loadTheme() {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    const isDark = savedTheme !== 'light';
 
     document.body.classList.remove('theme-dark', 'theme-light');
     document.body.classList.add(isDark ? 'theme-dark' : 'theme-light');

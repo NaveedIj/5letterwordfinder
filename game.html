@@ -36,9 +36,9 @@
         (function() {
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+            const isDark = savedTheme !== 'light';
             document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
-            document.documentElement.style.backgroundColor = isDark ? '#0f172a' : '#f8fafc';
+            document.documentElement.style.backgroundColor = isDark ? '#061014' : '#f8fafc';
         })();
     </script>
     <!-- Organization Schema -->
