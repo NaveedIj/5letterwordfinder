@@ -370,6 +370,34 @@
             transform: translateX(-3px);
         }
     </style>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.5letterwordfindertool.com/#website",
+          "url": "https://www.5letterwordfindertool.com/",
+          "name": "5 Letter Word Finder",
+          "description": "Free word game solver, Wordle solver, and anagram finder.",
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.5letterwordfindertool.com/ai-word-solver.html#webpage",
+          "url": "https://www.5letterwordfindertool.com/ai-word-solver.html",
+          "name": "AI Word Solver for Word Games",
+          "description": "AI-assisted word solver for Wordle, Scrabble, crosswords, and anagram puzzles.",
+          "isPartOf": {
+            "@id": "https://www.5letterwordfindertool.com/#website"
+          },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body data-word-length="any" data-pattern="ai-solver">

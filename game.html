@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,7 +7,7 @@
 
     <!-- SEO Optimization -->
     <title>Play Wordle Online – Free Daily & Unlimited Word Game</title>
-    <meta name="description" content="Play Wordle online for free with daily puzzles, unlimited mode, hints and game statistics. Enjoy a fast, mobile-friendly Wordle experience without downloads.">
+    <meta name="description" content="Play unlimited 5-letter word guessing games. Guess the secret word in 6 tries with color feedback. Track your stats, win streak, and share your score.">
     <meta name="keywords"
         content="wordle, word game, 5 letter word finder, puzzle, daily challenge, word puzzle, offline game, browser game">
     <meta name="author" content="Word Finder Tool">
@@ -156,6 +156,34 @@
   }]
 }
 </script>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.5letterwordfindertool.com/#website",
+          "url": "https://www.5letterwordfindertool.com/",
+          "name": "5 Letter Word Finder",
+          "description": "Free word game solver, Wordle solver, and anagram finder.",
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.5letterwordfindertool.com/game.html#webpage",
+          "url": "https://www.5letterwordfindertool.com/game.html",
+          "name": "Unlimited 5-Letter Word Game",
+          "description": "Play unlimited 5-letter word guessing games. Guess the secret word in 6 tries with color feedback.",
+          "isPartOf": {
+            "@id": "https://www.5letterwordfindertool.com/#website"
+          },
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="theme-dark">
@@ -166,7 +194,7 @@
     <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
         <div class="nav-container">
             <div class="nav-header">
-                <h2>Menu</h2>
+                <div class=\h2-style\>Menu</div>
                 <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -519,7 +547,7 @@
     <div class="modal" id="settingsModal" role="dialog" aria-labelledby="settingsTitle" aria-modal="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="settingsTitle">Game Options</h2>
+                <div class=\h2-style\ id="settingsTitle">Game Options</div>
                 <button class="btn-close" id="closeSettingsBtn" aria-label="Close settings">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -557,7 +585,7 @@
     <div class="modal" id="howToModal" role="dialog" aria-labelledby="howToTitle" aria-modal="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="howToTitle">How To Play</h2>
+                <div class=\h2-style\ id="howToTitle">How To Play</div>
                 <button class="btn-close" id="closeHowToBtn" aria-label="Close">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -596,7 +624,7 @@
     <div class="modal" id="statsModal" role="dialog" aria-labelledby="statsModalTitle" aria-modal="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="statsModalTitle">Your Statistics</h2>
+                <div class=\h2-style\ id="statsModalTitle">Your Statistics</div>
                 <button class="btn-close" id="closeStatsBtn" aria-label="Close">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -631,7 +659,7 @@
     <div class="modal" id="gameOverModal" role="dialog" aria-labelledby="gameOverTitle" aria-modal="true">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="gameOverTitle">Result</h2>
+                <div class=\h2-style\ id="gameOverTitle">Result</div>
                 <button class="btn-close" id="closeGameOverBtn" aria-label="Close">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -665,6 +693,7 @@
 </body>
 
 </html>
+
 
 
 
