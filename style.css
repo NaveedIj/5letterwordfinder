@@ -3461,7 +3461,7 @@ body.theme-light .privacy-badge {
 
     .trust-badge-item {
         font-size: 0.8rem !important;
-        justify-content: center;
+        justify-content: flex-start !important;
     }
 
     .hero-stats {
