@@ -613,8 +613,10 @@ if (sortPillsContainer) {
 
         if (sortSelect) {
             sortSelect.value = sortVal;
-            sortSelect.dispatchEvent(new Event('change'));
         }
+        sortResults();
+        const pattern = charInputs.map(input => input.value.toUpperCase().trim() || '_').join('');
+        renderResults(pattern);
     });
 }
 
