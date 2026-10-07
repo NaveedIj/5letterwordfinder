@@ -348,6 +348,12 @@
         transform: translateY(-2px);
         box-shadow: var(--shadow-md);
     }
+    .intro-hook-box + .subtitle {
+        color: #334155;
+    }
+    .theme-dark .intro-hook-box + .subtitle {
+        color: var(--text-secondary);
+    }
 </style>
 </head>
 
@@ -726,7 +732,7 @@
                     <p style="margin: 0; font-size: 0.98rem; line-height: 1.6; color: var(--text-primary);">Enter your Wordle clues below and get every matching 5-letter word in real time — green letters in their exact slots, yellow letters that are misplaced, gray letters to exclude. Free forever, no signup, and your letters never leave your browser.</p>
                 </div>
 
-            <p class="subtitle">Search and filter 5-letter words using exact letter positions, misplaced tile clues, and excluded letter filters. Built to help you find matching candidate words for daily Wordle puzzles, Scrabble plays, and crossword clues fast.</p>
+            <p class="subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Search and filter 5-letter words using exact letter positions, misplaced tile clues, and excluded letter filters. Built to help you find matching candidate words for daily Wordle puzzles, Scrabble plays, and crossword clues fast.</p>
 
             <div class="hero-extras"
                 style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem; margin-bottom: 4rem;">
