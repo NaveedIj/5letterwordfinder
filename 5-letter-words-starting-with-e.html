@@ -248,6 +248,154 @@
         </nav>
     </header>
 
+            <!-- Hero Pattern Tool Section -->
+            <div class="pattern-box">
+                <div class="hero-row">
+                    <span class="row-label">Pattern Search</span>
+                    <div class="pattern-grid" id="patternGrid">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos0"
+                            aria-label="First letter" value="E">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos1"
+                            aria-label="Second letter">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos2"
+                            aria-label="Third letter">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos3"
+                            aria-label="Fourth letter">
+                        <input type="text" class="char-input" maxlength="1" placeholder="_" id="pos4"
+                            aria-label="Fifth letter">
+                    </div>
+                </div>
+                
+                <div class="hero-row">
+                    <span class="row-label">
+                        <span class="row-label-dot yellow-dot"></span>
+                        Wrong position (yellow)
+                    </span>
+                    <div class="wrong-pos-grid" id="wrongPosGrid">
+                        <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w0"
+                            aria-label="Wrong position letters for slot 1">
+                        <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w1"
+                            aria-label="Wrong position letters for slot 2">
+                        <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w2"
+                            aria-label="Wrong position letters for slot 3">
+                        <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w3"
+                            aria-label="Wrong position letters for slot 4">
+                        <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w4"
+                            aria-label="Wrong position letters for slot 5">
+                    </div>
+                    <p class="row-hint">Letters here are in the answer but not in that column.</p>
+                </div>
+
+                <div class="hero-row">
+                    <span class="row-label">
+                        <span class="row-label-dot teal-dot"></span>
+                        Must include
+                    </span>
+                    <input type="text" id="mustInclude" class="text-input must-include-input hero-excludes"
+                        placeholder="Letters that must appear" autocomplete="off"
+                        spellcheck="false" aria-label="Letters that must appear anywhere">
+                </div>
+
+                <div class="hero-row hero-row--toggle">
+                    <label class="repeat-toggle">
+                        <input type="checkbox" id="repeatSensitive" checked>
+                        <span class="repeat-toggle-ui" aria-hidden="true"></span>
+                        <span class="repeat-toggle-text"><strong>Repeat-aware</strong></span>
+                    </label>
+                </div>
+
+                <div class="hero-row">
+                    <span class="row-label">
+                        <span class="row-label-dot gray-dot"></span>
+                        Excluded (gray)
+                    </span>
+                    <input type="text" id="excludes" class="text-input excluded-input hero-excludes"
+                        placeholder="Letters not in the word" autocomplete="off" spellcheck="false"
+                        aria-label="Letters to exclude">
+                </div>
+
+                <div class="hero-actions">
+                    <button type="button" class="btn btn-primary" id="findBtn">
+                        Find My Words
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="resetBtn">
+                        Reset
+                    </button>
+                </div>
+
+                <!-- Quick stats bar -->
+                <div class="hero-stats" id="heroStats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" id="statWordCount">-</span>
+                        <span class="hero-stat-label">Words in list</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">Live</span>
+                        <span class="hero-stat-label">Results</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- MAIN CONTENT GRID -->
+            <div class="main-grid">
+                <aside class="sidebar">
+                    <!-- Dictionary Toggle -->
+                    <section class="card" id="dictCard">
+                        <div class="card-title" style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">
+                            Dictionary
+                        </div>
+                        <div class="dictionary-controls" id="dictToggle">
+                            <div class="toggle-item active" data-dict="strict">Wordle</div>
+                            <div class="toggle-item" data-dict="broad">Full</div>
+                        </div>
+                    </section>
+
+                    <!-- Sort & Scrabble -->
+                    <section class="card">
+                        <div class="card-title" style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">
+                            Sort & Scores
+                        </div>
+                        <select id="sortSelect" class="select-input">
+                            <option value="alpha-asc">A to Z</option>
+                            <option value="alpha-desc">Z to A</option>
+                            <option value="score-desc">Scrabble: high to low</option>
+                            <option value="score-asc">Scrabble: low to high</option>
+                        </select>
+                        <label class="sidebar-label sidebar-label--spaced">
+                            <input type="checkbox" id="showScrabble" checked>
+                            Show Scrabble values
+                        </label>
+                    </section>
+
+                    <!-- Letter Tracker -->
+                    <section class="card">
+                        <div class="card-title" style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">
+                            Letter Tracker
+                        </div>
+                        <div class="tracker-grid" id="letterTracker"></div>
+                    </section>
+                </aside>
+
+                <!-- Results Panel -->
+                <section class="card results-card" aria-live="polite">
+                    <div class="results-info">
+                        <div class="card-title results-heading" style="margin-bottom: 0; font-size: 1.25rem; font-weight: 800;">Matches</div>
+                        <div class="flex items-center gap-2 results-actions">
+                            <span class="results-count" id="resultsCount">0 words</span>
+                            <button class="btn btn-primary" id="copyBtn" disabled>
+                                Copy all
+                            </button>
+                        </div>
+                    </div>
+                    <div class="results-list" id="resultsList">
+                        <!-- Results generated by JS -->
+                    </div>
+                </section>
+            </div>
+
+
     <main>
     <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     <div class="bg-glow"></div>
