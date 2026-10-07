@@ -360,7 +360,7 @@ body.theme-light .brand-container:hover .brand-name {
 
 /* CTA Button */
 .btn-cta-header {
-    background: linear-gradient(135deg, #22d3ee, #d946ef);
+    background: linear-gradient(135deg, #22d3ee, #0ea5e9);
     color: #ffffff;
     text-decoration: none;
     padding: 0.7rem 1.6rem;
@@ -429,7 +429,7 @@ body.theme-light .brand-container:hover .brand-name {
 }
 
 .title-gradient {
-    background: linear-gradient(135deg, #22d3ee 0%, #d946ef 100%);
+    background: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1109,7 +1109,7 @@ body.theme-light .filter-warning-banner {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #22d3ee, #d946ef);
+    background: linear-gradient(135deg, #22d3ee, #0ea5e9);
     color: white;
     border: none;
     box-shadow: 0 4px 14px rgba(34, 211, 238, 0.35);
