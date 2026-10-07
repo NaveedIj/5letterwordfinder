@@ -2955,23 +2955,164 @@ template {
     height: 100%;
 }
 
-@media (max-width: 768px) {
-    .play-wordle-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
-        padding: 18px 20px;
-    }
+/* =========================================================
+   SEGMENTED SORT PILLS & COMPACT SCRABBLE SWITCH
+   ========================================================= */
+.sort-pills-container {
+    display: inline-flex;
+    background: var(--bg-primary);
+    padding: 0.2rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    gap: 0.15rem;
+}
 
-    .play-wordle-banner .banner-btn {
+.sort-pill {
+    border: none;
+    background: transparent;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.sort-pill.active {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.35);
+}
+
+.sort-pill:hover:not(.active) {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+}
+
+/* Compact Scrabble Switch Style */
+.scrabble-switch-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.scrabble-switch-ui {
+    position: relative;
+    width: 34px;
+    height: 18px;
+    background: var(--bg-elevated);
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.scrabble-switch-ui::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.scrabble-switch-label input:checked + .scrabble-switch-ui {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+}
+
+.scrabble-switch-label input:checked + .scrabble-switch-ui::after {
+    transform: translateX(16px);
+    background: #ffffff;
+}
+
+/* =========================================================
+   FULL-WIDTH LETTER TRACKER CARD & 3-STATE STYLING
+   ========================================================= */
+.letter-tracker-card {
+    width: 100%;
+}
+
+.letter-tracker-card .tracker-grid {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 0.5rem;
+}
+
+.tracker-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+/* Wordle Semantic 3-State Colors */
+.tracker-letter.correct {
+    background: #10b981 !important;
+    border-color: #059669 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.tracker-letter.present {
+    background: #f59e0b !important;
+    border-color: #d97706 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.tracker-letter.excluded {
+    background: #334155 !important;
+    border-color: #1e293b !important;
+    color: #64748b !important;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+body.theme-light .tracker-letter.excluded {
+    background: #cbd5e1 !important;
+    border-color: #94a3b8 !important;
+    color: #64748b !important;
+}
+
+@media (max-width: 768px) {
+    .sort-pills-container {
         width: 100%;
         justify-content: center;
     }
 
-    .tool-extras-duo {
-        grid-template-columns: 1fr;
+    .sort-pill {
+        flex: 1;
+        text-align: center;
+    }
+
+    .letter-tracker-card .tracker-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.4rem;
+    }
+
+    .tracker-letter {
+        height: 38px;
+        font-size: 0.85rem;
     }
 }
+
 
 
 

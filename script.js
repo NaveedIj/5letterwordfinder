@@ -258,7 +258,10 @@ function updateResults() {
     });
 
     sortResults();
-    updateTracker(yellowUnique, effectiveExcludes);
+    const correctSet = new Set(pattern.split('').filter(c => /[A-Z]/.test(c)));
+    const presentSet = new Set([...yellowUnique, ...Object.keys(mustIncludeCounts)]);
+    const excludedSet = new Set(effectiveExcludes);
+    updateTracker(correctSet, presentSet, excludedSet);
     renderResults(pattern);
 }
 
@@ -277,10 +280,18 @@ function sortResults() {
     currentResults = arr;
 }
 
-function updateTracker(includes, excludes) {
+function updateTracker(correctSet, presentSet, excludedSet) {
     trackerState = {};
-    includes.forEach(c => { trackerState[c] = 'included'; });
-    excludes.forEach(c => { trackerState[c] = 'excluded'; });
+    // Priority: correct > present > excluded
+    if (excludedSet) {
+        excludedSet.forEach(c => { trackerState[c] = 'excluded'; });
+    }
+    if (presentSet) {
+        presentSet.forEach(c => { trackerState[c] = 'present'; });
+    }
+    if (correctSet) {
+        correctSet.forEach(c => { trackerState[c] = 'correct'; });
+    }
     renderTracker();
 }
 
@@ -585,6 +596,25 @@ if (dictToggle && IS_WORDLE_LENGTH) {
         console.log(`Dictionary switched to: ${currentDict} (${activeList.length} words)`);
         updateResults();
         initStats();
+    });
+}
+
+
+const sortPillsContainer = document.getElementById('sortPills');
+if (sortPillsContainer) {
+    sortPillsContainer.addEventListener('click', (e) => {
+        const btn = e.target.closest('.sort-pill');
+        if (!btn) return;
+        const sortVal = btn.dataset.sort;
+        if (!sortVal) return;
+
+        sortPillsContainer.querySelectorAll('.sort-pill').forEach(el => el.classList.remove('active'));
+        btn.classList.add('active');
+
+        if (sortSelect) {
+            sortSelect.value = sortVal;
+            sortSelect.dispatchEvent(new Event('change'));
+        }
     });
 }
 
