@@ -59,257 +59,199 @@
     </script>
     <!-- Consolidated Schema.org JSON-LD Graph -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
+{
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "Organization",
-          "@id": "https://www.5letterwordfindertool.com/#organization",
-          "name": "5 Letter Word Finder Tool",
-          "url": "https://www.5letterwordfindertool.com/",
-          "logo": {
-            "@type": "ImageObject",
-            "@id": "https://www.5letterwordfindertool.com/#logo",
-            "url": "https://www.5letterwordfindertool.com/preview.png",
-            "contentUrl": "https://www.5letterwordfindertool.com/preview.png",
-            "caption": "5 Letter Word Finder Tool Logo"
-          },
-          "sameAs": [
-            "https://www.linkedin.com/company/5-letter-word-finder-tool",
-            "https://www.facebook.com/profile.php?id=61590811286427",
-            "https://www.pinterest.com/5letterwordfindertool/",
-            "https://x.com/5letterwordfind"
-          ]
+            "@type": "Organization",
+            "@id": "https://www.5letterwordfindertool.com/#organization",
+            "name": "5 Letter Word Finder Tool",
+            "url": "https://www.5letterwordfindertool.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "@id": "https://www.5letterwordfindertool.com/#logo",
+                "url": "https://www.5letterwordfindertool.com/preview.png",
+                "contentUrl": "https://www.5letterwordfindertool.com/preview.png",
+                "caption": "5 Letter Word Finder Tool Logo"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/5-letter-word-finder-tool",
+                "https://www.facebook.com/profile.php?id=61590811286427",
+                "https://www.pinterest.com/5letterwordfindertool/",
+                "https://x.com/5letterwordfind"
+            ]
         },
         {
-          "@type": "WebSite",
-          "@id": "https://www.5letterwordfindertool.com/#website",
-          "url": "https://www.5letterwordfindertool.com/",
-          "name": "5 Letter Word Finder Tool",
-          "description": "A Smart 5 Letter Word Finder for Wordle, Scrabble & Crosswords",
-          "publisher": {
-            "@id": "https://www.5letterwordfindertool.com/#organization"
-          },
-          "inLanguage": "en-US"
+            "@type": "WebSite",
+            "@id": "https://www.5letterwordfindertool.com/#website",
+            "url": "https://www.5letterwordfindertool.com/",
+            "name": "5 Letter Word Finder Tool",
+            "description": "A Smart 5 Letter Word Finder for Wordle, Scrabble & Crosswords",
+            "publisher": {
+                "@id": "https://www.5letterwordfindertool.com/#organization"
+            },
+            "inLanguage": "en-US"
         },
         {
-          "@type": "WebPage",
-          "@id": "https://www.5letterwordfindertool.com/#webpage",
-          "url": "https://www.5letterwordfindertool.com/",
-          "name": "5 Letter Word Finder & Wordle Solver",
-          "description": "Find 5-letter words instantly with our free Word Finder. Solve Wordle, Scrabble, crosswords and other word puzzles using smart search filters.",
-          "isPartOf": {
-            "@id": "https://www.5letterwordfindertool.com/#website"
-          },
-          "mainEntity": {
-            "@id": "https://www.5letterwordfindertool.com/#webapp"
-          },
-          "inLanguage": "en-US"
+            "@type": "WebPage",
+            "@id": "https://www.5letterwordfindertool.com/#webpage",
+            "url": "https://www.5letterwordfindertool.com/",
+            "name": "5 Letter Word Finder & Wordle Solver",
+            "description": "Find 5-letter words instantly with our free Word Finder. Solve Wordle, Scrabble, crosswords and other word puzzles using smart search filters.",
+            "isPartOf": {
+                "@id": "https://www.5letterwordfindertool.com/#website"
+            },
+            "mainEntity": {
+                "@id": "https://www.5letterwordfindertool.com/#webapp"
+            },
+            "inLanguage": "en-US"
         },
         {
-          "@type": "WebApplication",
-          "@id": "https://www.5letterwordfindertool.com/#webapp",
-          "name": "5 Letter Word Finder",
-          "url": "https://www.5letterwordfindertool.com/",
-          "description": "Free 5 letter word finder and Wordle solver. Filter by green, yellow and gray letters, handle repeated letters, and sort by Scrabble score.",
-          "applicationCategory": "UtilitiesApplication",
-          "operatingSystem": "Web browser",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://www.5letterwordfindertool.com/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How do I use the 5 letter word finder?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Enter your known letters into the green Correct Position boxes, misplaced letters into the yellow row, and ruled-out letters into the gray Excluded box. The solver filters all 15,921 five-letter words live as you type."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the best starting word for Wordle?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Data-backed analyses point to SLATE, CRANE, and TRACE as the top tier — the NYT's WordleBot rates them effectively equal. They combine the most common letters with strong positional placement."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do green, yellow, and gray letters work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Green means the letter is correct and in the right slot. Yellow means the letter is in the answer but in a different slot. Gray means the letter isn't in the word at all. Enter each into its matching row and the finder applies all three filters at once."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does the solver handle repeated letters like the two E's in ABBEY?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Switch on Repeat-aware mode. The engine counts letter frequency, so if you enter two E's, every result must contain at least two E's — the same logic Wordle itself uses."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What's the difference between Wordle Mode and Full Dictionary Mode?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wordle Mode searches a curated 2,656-word list of common Wordle-style answers. Full Dictionary Mode searches all 15,921 five-letter words for Scrabble, Words With Friends, crosswords, and anagrams."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How many 5-letter words are there in English?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our full dictionary list contains 15,921 five-letter words compiled from standard word-game dictionaries. The Wordle-mode list is much smaller — 2,656 words."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I sort results by Scrabble score?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Use the sort dropdown to order matches by Scrabble face value, highest to lowest, and find the best-scoring play from your tiles."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does it work for Scrabble, Words With Friends, and crosswords?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Full Dictionary Mode covers tile games and anagrams, the Scrabble sort ranks plays by point value, and the green position slots double as crossword-blank fillers."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is the 5 letter word finder free? Do I need an account?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Completely free, no account, no signup. Open the page and start typing."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are my searches private?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. All filtering runs locally in your browser. Your letters are never sent to our servers, logged, or shared."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Why do some valid 5-letter words never appear as Wordle answers?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wordle draws its daily answers from a curated pool of common words, while accepting a much larger set as valid guesses."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What should I do when I'm down to a trap like _ATCH?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Don't guess blindly into a 1-in-6 trap. Instead, play an eliminator word that tests the differing letters all at once."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I search 5 letter words by position?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Enter known letters into the green Correct Position boxes for their exact 1st–5th slots, and the finder returns only words matching that pattern."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do I find 5 letter words with these letters?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Type the letters into Must include when you know the letters but not their slots — the solver returns every 5-letter word containing them."
-              }
+            "@type": "WebApplication",
+            "@id": "https://www.5letterwordfindertool.com/#webapp",
+            "name": "5 Letter Word Finder",
+            "url": "https://www.5letterwordfindertool.com/",
+            "description": "Free 5 letter word finder and Wordle solver. Filter by green, yellow and gray letters, handle repeated letters, and sort by Scrabble score.",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Web browser",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
             }
-          ]
-        },
-            {
-              "@type": "Question",
-              "name": "What is the best starting word for Wordle?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Data-backed analyses point to SLATE, CRANE, and TRACE as the top tier — the NYT's WordleBot rates them effectively equal. They combine the most common letters with strong positional placement."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does the solver handle repeated letters like the two E's in ABBEY?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Switch on Repeat-aware mode. The engine counts letter frequency, so if you enter two E's, every result must contain at least two E's — the same logic Wordle itself uses."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What's the difference between Wordle Mode and Full Dictionary Mode?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wordle Mode searches a curated 2,656-word list of common Wordle-style answers. Full Dictionary Mode searches all 15,921 five-letter words for Scrabble, Words With Friends, crosswords, and anagrams."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Are my searches private?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. All filtering runs locally in your browser. Your letters are never sent to our servers, logged, or shared."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is the 5 letter word finder free?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Completely free, no account, no signup. Open the page and start typing."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I search 5 letter words by position?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Enter known letters into the green Correct Position boxes for their exact 1st–5th slots, and the finder returns only words matching that pattern."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do I find 5 letter words with these letters?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Type the letters into Must include when you know the letters but not their slots — the solver returns every 5-letter word containing them."
-              }
-            }
-          ]
         },
         {
-          "@type": "BreadcrumbList",
-          "@id": "https://www.5letterwordfindertool.com/#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.5letterwordfindertool.com/"
-            }
-          ]
+            "@type": "FAQPage",
+            "@id": "https://www.5letterwordfindertool.com/#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How do I use the 5 letter word finder?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Enter your known letters into the green \"Correct Position\" boxes, misplaced letters into the yellow row, and ruled-out letters into the gray \"Excluded\" box. The solver filters all 15,921 five-letter words live as you type — no search button needed."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is the best starting word for Wordle?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Data-backed analyses point to SLATE, CRANE, and TRACE as the top tier — the NYT's WordleBot rates them effectively equal. They combine the most common letters (S, T, R, L, N, E, A) with strong positional placement. Avoid repeating letters in your opener, and note that popular vowel-heavy picks like ADIEU cost players extra guesses over time."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do green, yellow, and gray letters work?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Green means the letter is correct and in the right slot. Yellow means the letter is in the answer but in a different slot. Gray means the letter isn't in the word at all. Enter each into its matching row and the finder applies all three filters at once."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does the solver handle repeated letters like the two E's in ABBEY?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Switch on Repeat-aware mode. The engine counts letter frequency, so if you enter two E's, every result must contain at least two E's — the same logic Wordle itself uses. Most competing solvers ignore repeats and return wrong matches."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What's the difference between Wordle Mode and Full Dictionary Mode?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Wordle Mode searches a curated 2,656-word list of common Wordle-style answers, so you rarely waste a guess on an obscure word. Full Dictionary Mode searches all 15,921 five-letter words — built for Scrabble, Words With Friends, crosswords, and anagrams."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How many 5-letter words are there in English?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Our full dictionary list contains 15,921 five-letter words compiled from standard word-game dictionaries. The Wordle-mode list is much smaller — 2,656 words — which is why the two modes exist."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I sort results by Scrabble score?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Use the sort dropdown to order matches by Scrabble face value, highest to lowest, and find the best-scoring play from your tiles."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does it work for Scrabble, Words With Friends, and crosswords?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Full Dictionary Mode covers tile games and anagrams, the Scrabble sort ranks plays by point value, and the green position slots double as crossword-blank fillers when you know some letters but not others."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is the 5 letter word finder free? Do I need an account?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Completely free, no account, no signup. Open the page and start typing — that's the whole onboarding."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are my searches private?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. All filtering runs locally in your browser. Your letters are never sent to our servers, logged, or shared — they never leave your device."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Why do some valid 5-letter words never appear as Wordle answers?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Wordle draws its daily answers from a curated pool of common words, while accepting a much larger set as valid guesses. Obscure words can be valid guesses but will rarely be the answer — which is exactly why Wordle Mode filters the list down for you."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What should I do when I'm down to a trap like _ATCH?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Don't guess blindly into a 1-in-6 trap (WATCH, CATCH, HATCH, LATCH, MATCH, PATCH). Instead, play an \"eliminator\" word that tests the differing letters all at once — CLAMP, for example, checks C, L, M, and P in a single guess. Enter the feedback into the solver and the trap collapses to one answer."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I search 5 letter words by position?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes — that's the tool's core job. Enter known letters into the green \"Correct Position\" boxes for their exact 1st–5th slots, and the finder returns only words matching that pattern. It's a 5 letter word finder by position, not just an alphabetical list."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I find 5 letter words with these letters?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Type the letters into \"Must include\" when you know the letters but not their slots — the solver returns every 5-letter word containing them. Layer greens, yellows, and grays on top to narrow the list further."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.5letterwordfindertool.com/#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.5letterwordfindertool.com/"
+                }
+            ]
         }
-      ]
-    }
+    ]
+}
     </script>
 <style>
     .info-section .info-box {
