@@ -3091,7 +3091,72 @@ body.theme-light .tracker-letter.excluded {
     color: #64748b !important;
 }
 
+/* =========================================================
+   RESULTS HEADER 2-ROW LAYOUT & EMPTY STATE SPACING
+   ========================================================= */
+.results-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0.75rem;
+}
+
+.results-info-row-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.results-heading-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.results-heading-group .card-title {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.results-info-row-top #copyBtn {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.results-info-row-top #copyBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.results-info-row-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.results-list .empty-state {
+    margin-top: 1.5rem;
+}
+
 @media (max-width: 768px) {
+    .results-info-row-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .scrabble-switch-label {
+        justify-content: center;
+    }
+
     .sort-pills-container {
         width: 100%;
         justify-content: center;

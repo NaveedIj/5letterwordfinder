@@ -575,9 +575,23 @@
                 <div class="hero-tool-layout">
                     <!-- LEFT COLUMN: RESULTS PANEL -->
                     <div class="hero-results-panel card">
-                        <div class="results-info" style="flex-wrap: wrap; gap: 0.75rem;">
-                            <div class="results-heading" style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                                <span class="card-title" style="margin-bottom: 0; font-size: 1.25rem; font-weight: 800;">Matches</span>
+                        <div class="results-info">
+                            <!-- Row 1: Matches title, count pill, and Copy button -->
+                            <div class="results-info-row-top">
+                                <div class="results-heading-group">
+                                    <span class="card-title">Matches</span>
+                                    <span class="results-count" id="resultsCount">0 words</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" id="copyBtn" disabled aria-label="Copy all results">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copy all
+                                </button>
+                            </div>
+                            <!-- Row 2: Sort pills and Scrabble points switch -->
+                            <div class="results-info-row-bottom">
                                 <!-- Segmented Sort Pills -->
                                 <div class="sort-pills-container" id="sortPills">
                                     <button type="button" class="sort-pill active" data-sort="alpha-asc">A–Z</button>
@@ -591,21 +605,11 @@
                                     <option value="score-desc">Scrabble: high to low</option>
                                     <option value="score-asc">Scrabble: low to high</option>
                                 </select>
-                            </div>
-                            <div class="flex items-center gap-2 results-actions" style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                                 <label class="scrabble-switch-label" title="Show or hide Scrabble points on results">
                                     <input type="checkbox" id="showScrabble" checked class="sr-only">
                                     <span class="scrabble-switch-ui" aria-hidden="true"></span>
-                                    <span class="scrabble-switch-text">Show Scrabble points on results</span>
+                                    <span class="scrabble-switch-text">Scrabble points</span>
                                 </label>
-                                <span class="results-count" id="resultsCount">0 words</span>
-                                <button class="btn btn-primary btn-sm" id="copyBtn" disabled aria-label="Copy all results">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                    </svg>
-                                    Copy all
-                                </button>
                             </div>
                         </div>
                         <div class="results-list" id="resultsList">
