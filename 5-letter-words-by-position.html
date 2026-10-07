@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Letter Fill in the Blank Word Finder – Search by Position</title>
+    <meta name="description" content="Fill in the blank 5 letter words! Use _ for unknowns: _ATCH, S____, __A_E. Search by 1st-5th letter position, wildcard blanks, Wordle greens & crossword patterns. Free, no signup.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.5letterwordfindertool.com/5-letter-words-by-position.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="5 Letter Fill in the Blank Word Finder – Search by Position">
+    <meta property="og:description" content="Fill in the blank 5 letter words! Use _ for unknowns: _ATCH, S____, __A_E. Search by 1st-5th letter position, wildcard blanks, Wordle greens & crossword patterns. Free, no signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.5letterwordfindertool.com/5-letter-words-by-position.html">
+    <meta property="og:image" content="https://www.5letterwordfindertool.com/preview.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="5 Letter Fill in the Blank Word Finder – Search by Position">
+    <meta name="twitter:description" content="Fill in the blank 5 letter words! Use _ for unknowns: _ATCH, S____, __A_E. Search by 1st-5th letter position, wildcard blanks, Wordle greens & crossword patterns. Free, no signup.">
+    <meta name="twitter:image" content="https://www.5letterwordfindertool.com/preview.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
+
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .pattern-badge {
+            font-family: 'Outfit', monospace;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent);
+            background: rgba(34, 211, 238, 0.1);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(34, 211, 238, 0.25);
+            display: inline-block;
+        }
+        .quotable-answer-box {
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(16, 185, 129, 0.08));
+            border: 1px solid rgba(34, 211, 238, 0.25);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        .wordle-note-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(34, 211, 238, 0.05));
+            border-left: 4px solid #10b981;
+            border-radius: 0 10px 10px 0;
+            padding: 0.85rem 1.1rem;
+            margin: 0.75rem 0 1.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+        .wordle-note-box strong {
+            color: #10b981;
+        }
+        .cta-btn-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .btn-cyan-gradient {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0f172a;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35);
+            transition: all 0.25s ease;
+        }
+        .btn-cyan-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+            color: #0f172a;
+        }
+    </style>
+
+    <!-- Phase 1.5: Theme Persistence & White Flash Prevention -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const isDark = savedTheme !== 'light';
+            document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
+            document.documentElement.style.backgroundColor = isDark ? '#061014' : '#f8fafc';
+        })();
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "5 Letter Word Finder Tool",
+      "url": "https://www.5letterwordfindertool.com/",
+      "logo": "https://www.5letterwordfindertool.com/preview.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/5-letter-word-finder-tool",
+        "https://www.facebook.com/profile.php?id=61590811286427",
+        "https://www.pinterest.com/5letterwordfindertool/",
+        "https://x.com/5letterwordfind"
+      ]
+    }
+    </script>
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "5 Letter Fill in the Blank Word Finder – Search by Position",
+      "description": "Fill in the blank 5 letter words! Use _ for unknowns: _ATCH, S____, __A_E. Search by 1st-5th letter position, wildcard blanks, Wordle greens & crossword patterns. Free, no signup.",
+      "image": "https://www.5letterwordfindertool.com/preview.png",
+      "datePublished": "2026-10-08",
+      "dateModified": "2026-10-08",
+      "author": {
+        "@type": "Person",
+        "name": "Naveed ijaz",
+        "url": "https://github.com/NaveedIj"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "5 Letter Word Finder Tool",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.5letterwordfindertool.com/preview.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.5letterwordfindertool.com/5-letter-words-by-position.html"
+      }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.5letterwordfindertool.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "5 Letter Words by Position",
+        "item": "https://www.5letterwordfindertool.com/5-letter-words-by-position.html"
+      }]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I find 5 letter words with A as the second letter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter _A___ in a position finder. Common results: BAKER, CANDY, DANCE, PAPER, WATER, MAGIC, HAPPY."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a 5 letter fill-in-the-blank solver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Type known letters with _ for blanks (e.g. _ATCH → CATCH, MATCH, WATCH). It returns every word matching the pattern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I use a blank/wildcard in word search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Leave the position empty or type _. It matches any letter — useful for Scrabble blank tiles and crossword gaps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I search two positions at once, like 2nd letter A and ends with E?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — fill both slots: _A__E gives WASTE, BASTE, PASTE, TASTE, HASTE. Our tool handles any combination of positions."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WW6EJYTTML"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WW6EJYTTML');
+    </script>
+</head>
+
+<body class="page-about">
+    <header class="saas-header">
+        <nav class="nav-container-header" role="navigation" aria-label="Main Navigation">
+            <a href="/" class="brand-container">
+                <span class="brand-name">Word Finder <span>Tool</span></span>
+                <span class="brand-tagline-header">Instant Word &amp; Puzzle Solver</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-menu-link">Home</a></li>
+                <li><a href="5-letter-words.html" class="nav-menu-link">5 Letter Words</a></li>
+                <li><a href="ai-word-solver" class="nav-menu-link">AI Word Solver</a></li>
+                <li><a href="3-letter-word-finder.html" class="nav-menu-link">3 Letter</a></li>
+                <li><a href="4-letter-word-finder.html" class="nav-menu-link">4 Letter</a></li>
+                <li><a href="6-letter-word-finder.html" class="nav-menu-link">6 Letter</a></li>
+                <li><a href="7-letter-word-finder.html" class="nav-menu-link">7 Letter</a></li>
+                <li><a href="8-letter-word-finder.html" class="nav-menu-link">8 Letter</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="/#tool-section" class="btn-cta-header">Try Tool</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+        <div class="bg-glow"></div>
+
+        <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Menu</h3>
+                    <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="5-letter-words.html" class="nav-link">5 Letter Words</a>
+                    <a href="ai-word-solver" class="nav-link">AI Word Solver</a>
+                    <a href="3-letter-word-finder.html" class="nav-link">3 Letter Word Finder</a>
+                    <a href="4-letter-word-finder.html" class="nav-link">4 Letter Word Finder</a>
+                    <a href="6-letter-word-finder.html" class="nav-link">6 Letter Word Finder</a>
+                    <a href="7-letter-word-finder.html" class="nav-link">7 Letter Word Finder</a>
+                    <a href="8-letter-word-finder.html" class="nav-link">8 Letter Word Finder</a>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="container main-content" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+            <header class="page-header" style="text-align: center; margin-bottom: 2.5rem;">
+                <div class="title-row">
+                    <h1 class="title">5 Letter Fill in the Blank Word Finder</h1>
+                </div>
+                <p class="tagline">Search 5-Letter Words by Exact Position &amp; Wildcards</p>
+            </header>
+
+            <div class="single-column-content">
+                <section class="card content-card">
+                    <div class="prose">
+                        <div class="quotable-answer-box">
+                            A fill-in-the-blank 5-letter word finder lets you search with blanks (_) for unknown letters. Type known letters in their exact positions — like _ATCH, S____, or __A_E — and get every matching word instantly. Perfect for crosswords, Wordle green letters, and "words with these letters and a blank" puzzles. Free forever, no signup.
+                        </div>
+
+                        <h2>How Fill-in-the-Blank Search Works</h2>
+                        <p>Three steps:</p>
+                        <ol>
+                            <li>Type known letters in their exact 1st–5th positions</li>
+                            <li>Use _ (underscore) for every unknown letter</li>
+                            <li>Get results instantly — no button needed</li>
+                        </ol>
+                        <p><strong>Example:</strong> you know a crossword answer looks like <code>_ATCH</code>. Type it in — you get CATCH, MATCH, WATCH.</p>
+
+                        <div class="cta-btn-container">
+                            <a href="/" class="btn-cyan-gradient">Try the Blank Finder Tool</a>
+                        </div>
+
+                        <h2>Worked Examples (Common Words First)</h2>
+
+                        <h3>Pattern <span class="pattern-badge">_ATCH</span> — "ends with ATCH":</h3>
+                        <p>CATCH, MATCH, WATCH — plus HATCH, LATCH, PATCH.</p>
+                        <div class="wordle-note-box">
+                            <strong>Wordle note:</strong> none are common Wordle answers, but all are valid guesses.
+                        </div>
+
+                        <h3>Pattern <span class="pattern-badge">S____</span> — "starts with S":</h3>
+                        <p>S is the most common starting letter (1,813 words in our data):</p>
+                        <p>SALAD, SCALE, SCENE, SCORE, SENSE, SERVE, SEVEN, SHADE, SHAKE, SHALL — and top Wordle starters SLATE, STARE.</p>
+                        <div class="wordle-note-box">
+                            <strong>Wordle note:</strong> SLATE and SHAKE are excellent Wordle answers and openers.
+                        </div>
+
+                        <h3>Pattern <span class="pattern-badge">__A_E</span> — "A in 3rd, E in 5th":</h3>
+                        <p>AWAKE, AWARE, BLADE, BLAME, BRAVE, CHASE, FLAME, FRAME, GRADE, GRAVE</p>
+                        <div class="wordle-note-box">
+                            <strong>Wordle note:</strong> BRAVE, GRADE, and SHAKE are all strong Wordle answers.
+                        </div>
+
+                        <h3>Pattern <span class="pattern-badge">_A___</span> — "A as 2nd letter":</h3>
+                        <p>The 2nd slot is vowel-heavy — A appears 2,871 times here:</p>
+                        <p>BACON, BADGE, BAKER, BASIC, CABIN, CABLE, CANDY, CARRY, CATCH, CAUSE</p>
+                        <div class="wordle-note-box">
+                            <strong>Wordle note:</strong> CANDY and BAKER are common answers.
+                        </div>
+
+                        <h3>Pattern <span class="pattern-badge">___E_</span> — "E in 4th position":</h3>
+                        <p>E dominates the 4th slot (2,511 words):</p>
+                        <p>AFTER, AGREE, ALIEN, ALTER, ANGEL, ANGER, ARMED, ASSET, BAKER, BRIEF</p>
+
+                        <h3>Pattern <span class="pattern-badge">____E</span> — "ends with E":</h3>
+                        <p>The single most common ending (1,873 words):</p>
+                        <p>ABOVE, ABUSE, ACUTE, AGREE, ALIKE, ALIVE, ALONE, ANGLE, ANKLE, APPLE</p>
+                        <div class="wordle-note-box">
+                            <strong>Wordle note:</strong> CRANE, SLATE, BRAVE, SHAKE — the best starters <a href="5-letter-words-ending-with-e.html" style="color: var(--accent-light); font-weight: 600;">end in E</a>.
+                        </div>
+
+                        <h2>Words with a Blank (Wildcard Tile)</h2>
+                        <p>A blank matches any letter. In our finder:</p>
+                        <ul>
+                            <li>Leave the position empty (or type _) — it matches everything</li>
+                            <li>Combine with known letters: <code>_RA_E</code> finds BRAVE, GRADE, CRANE</li>
+                        </ul>
+                        <p><strong>Scrabble blank strategy:</strong> blanks are worth 0 points but unlock bingos. Save them for 7-letter plays.</p>
+
+                        <h2>Position Search for Wordle (Greens)</h2>
+                        <p>Wordle green letters = correct position. This is exactly fill-in-the-blank search:</p>
+                        <ol>
+                            <li>Put green letters in their exact slots</li>
+                            <li>Add yellows to "wrong position"</li>
+                            <li>Add grays to "excluded"</li>
+                        </ol>
+                        <p><strong>Likely answers vs valid guesses:</strong> our <a href="5-letter-words.html" style="color: var(--accent-light); font-weight: 600;">15,921-word list</a> has every valid word, but Wordle answers come from a curated 2,656-word pool. Our finder shows both — common answers first.</p>
+
+                        <div class="cta-btn-container">
+                            <a href="ai-word-solver" class="btn-cyan-gradient">Free Wordle Solver</a>
+                        </div>
+
+                        <h2>Frequently Asked Questions</h2>
+                        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+                            <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 1.25rem; border-radius: 12px;">
+                                <strong>How do I find 5 letter words with A as the second letter?</strong>
+                                <p style="margin-top: 0.5rem; margin-bottom: 0; color: var(--text-secondary);">Enter _A___ in a position finder. Common results: BAKER, CANDY, DANCE, PAPER, WATER, MAGIC, HAPPY.</p>
+                            </div>
+                            <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 1.25rem; border-radius: 12px;">
+                                <strong>What is a 5 letter fill-in-the-blank solver?</strong>
+                                <p style="margin-top: 0.5rem; margin-bottom: 0; color: var(--text-secondary);">Type known letters with _ for blanks (e.g. _ATCH → CATCH, MATCH, WATCH). It returns every word matching the pattern.</p>
+                            </div>
+                            <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 1.25rem; border-radius: 12px;">
+                                <strong>How do I use a blank/wildcard in word search?</strong>
+                                <p style="margin-top: 0.5rem; margin-bottom: 0; color: var(--text-secondary);">Leave the position empty or type _. It matches any letter — useful for Scrabble blank tiles and crossword gaps.</p>
+                            </div>
+                            <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 1.25rem; border-radius: 12px;">
+                                <strong>Can I search two positions at once, like 2nd letter A and ends with E?</strong>
+                                <p style="margin-top: 0.5rem; margin-bottom: 0; color: var(--text-secondary);">Yes — fill both slots: _A__E gives WASTE, BASTE, PASTE, TASTE, HASTE. Our tool handles any combination of positions.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo-container">
+                        <a href="/">Word Finder <span>Tool</span></a>
+                    </div>
+                    <p class="footer-tagline">Instant Word &amp; Puzzle Solver</p>
+                    <p class="footer-desc">Free, privacy-focused word tool designed to help players solve Wordle, Scrabble, and crossword puzzles.</p>
+                    <div class="social-icons" role="list">
+                        <a href="https://www.linkedin.com/company/5-letter-word-finder-tool" target="_blank" rel="noopener noreferrer" class="icon" aria-label="Follow us on LinkedIn" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.18-3.46c-1.34 0-1.94.75-2.28 1.25V9.43h-2.58v9.07h2.58v-4.57c0-1.21.23-2.39 1.74-2.39 1.49 0 1.5 1.39 1.5 2.47v4.56h2.22zM6.6 8.35c.83 0 1.5-.68 1.5-1.5 0-.83-.67-1.5-1.5-1.5S5.1 6.02 5.1 6.85c0 .82.67 1.5 1.5 1.5zM5.3 18.5h2.58V9.43H5.3v9.07z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61590811286427" target="_blank" rel="noopener noreferrer" class="icon" aria-label="Follow us on Facebook" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7h-2.54V12h2.54V9.79c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.95h-2.33v7C18.34 21.19 22 17.04 22 12.06c0-5.53-4.5-10.02-10-10.02z"/></svg>
+                        </a>
+                        <a href="https://www.pinterest.com/5letterwordfindertool/" target="_blank" rel="noopener noreferrer" class="icon" aria-label="Follow us on Pinterest" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z"/></svg>
+                        </a>
+                        <a href="https://x.com/5letterwordfind" target="_blank" rel="noopener noreferrer" class="icon" aria-label="Follow us on X (Twitter)" role="listitem">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="5-letter-words.html">5 Letter Words</a></li>
+                        <li><a href="ai-word-solver">AI Word Solver</a></li>
+                        <li><a href="3-letter-word-finder.html">3 Letter Word Finder</a></li>
+                        <li><a href="4-letter-word-finder.html">4 Letter Word Finder</a></li>
+                        <li><a href="6-letter-word-finder.html">6 Letter Word Finder</a></li>
+                        <li><a href="7-letter-word-finder.html">7 Letter Word Finder</a></li>
+                        <li><a href="8-letter-word-finder.html">8 Letter Word Finder</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 class="footer-heading">Resources</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="5-letter-words-starting-with-a.html">5 Letter Words Starting with A</a></li>
+                        <li><a href="5-letter-words-ending-with-e.html">5 Letter Words Ending with E</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col cta-col">
+                    <h3 class="footer-heading">Level Up Your Game</h3>
+                    <p class="footer-trust-text">Helping players solve word puzzles faster.</p>
+                    <a href="/#tool-section" class="btn-footer-cta">Try Word Finder</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p>&copy; 2026 Word Finder Tool. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
