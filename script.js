@@ -840,5 +840,17 @@ document.addEventListener("DOMContentLoaded", () => {
             if (inputs[0]) setTimeout(() => inputs[0].focus(), 50);
         }
     }
+    // Drawer Submenu Accordion Handler
+    document.querySelectorAll('.drawer-accordion-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            btn.classList.toggle('active');
+            const targetId = btn.getAttribute('data-target');
+            const subMenu = document.getElementById(targetId);
+            if (subMenu) {
+                subMenu.classList.toggle('open');
+            }
+        });
+    });
 });
 

@@ -353,9 +353,113 @@ body.theme-light .brand-container:hover .brand-name {
 }
 
 .nav-menu-link.active {
-    color: #007bff;
+    color: #22d3ee;
     font-weight: 800;
-    background: #f1f5f9;
+    background: rgba(34, 211, 238, 0.1);
+}
+
+/* Header Dropdown Menu */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+}
+
+.nav-dropdown-toggle .arrow {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle .arrow {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: #061014;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    z-index: 2050;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    display: flex;
+}
+
+.nav-dropdown-menu li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-dropdown-menu li a:hover {
+    background: rgba(34, 211, 238, 0.12);
+    color: #22d3ee;
+}
+
+/* Mobile Drawer Submenus */
+.drawer-accordion-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.drawer-accordion-btn .arrow {
+    transition: transform 0.2s ease;
+}
+
+.drawer-accordion-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+.drawer-sub-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.drawer-sub-menu.open {
+    display: flex;
+}
+
+.drawer-sub-menu a {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.drawer-sub-menu a:hover {
+    color: #22d3ee;
+    background: rgba(34, 211, 238, 0.1);
 }
 
 /* CTA Button */

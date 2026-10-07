@@ -523,7 +523,11 @@ function fallbackCopy(text) {
 }
 
 // Event Listeners
-elements.menuBtn.onclick = () => toggleNav(true);
+const headerMenuToggle = document.querySelector(".menu-toggle");
+if (headerMenuToggle) {
+    headerMenuToggle.onclick = (e) => { e.preventDefault(); toggleNav(true); };
+}
+if (elements.menuBtn) elements.menuBtn.onclick = () => toggleNav(true);
 elements.closeNavBtn.onclick = () => toggleNav(false);
 elements.navOverlay.onclick = () => toggleNav(false);
 elements.settingsBtn.onclick = () => elements.settingsModal.classList.add('active');

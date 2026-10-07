@@ -261,13 +261,33 @@
 
             <ul class="nav-menu">
                 <li><a href="/" class="nav-menu-link">Home</a></li>
-                <li><a href="5-letter-words.html" class="nav-menu-link">5 Letter Words</a></li>
-                <li><a href="ai-word-solver" class="nav-menu-link">AI Word Solver</a></li>
-                <li><a href="3-letter-word-finder.html" class="nav-menu-link">3 Letter</a></li>
-                <li><a href="4-letter-word-finder.html" class="nav-menu-link">4 Letter</a></li>
-                <li><a href="6-letter-word-finder.html" class="nav-menu-link">6 Letter</a></li>
-                <li><a href="7-letter-word-finder.html" class="nav-menu-link">7 Letter</a></li>
-                <li><a href="8-letter-word-finder.html" class="nav-menu-link">8 Letter</a></li>
+                <li class="nav-dropdown">
+                    <a href="5-letter-words.html" class="nav-menu-link nav-dropdown-toggle">Word Lists <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="5-letter-words.html">5 Letter Words</a></li>
+                        <li><a href="6-letter-words.html">6 Letter Words</a></li>
+                        <li><a href="7-letter-words.html">7 Letter Words</a></li>
+                        <li><a href="8-letter-words.html">8 Letter Words</a></li>
+                    </ul>
+                </li>
+                <li><a href="ai-word-solver.html" class="nav-menu-link">AI Word Solver</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-menu-link nav-dropdown-toggle">Finders <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="3-letter-word-finder.html">3 Letter Finder</a></li>
+                        <li><a href="4-letter-word-finder.html">4 Letter Finder</a></li>
+                        <li><a href="6-letter-word-finder.html">6 Letter Finder</a></li>
+                        <li><a href="7-letter-word-finder.html">7 Letter Finder</a></li>
+                        <li><a href="8-letter-word-finder.html">8 Letter Finder</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-menu-link nav-dropdown-toggle">Guides <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="best-wordle-starting-words.html">Best Wordle Starting Words</a></li>
+                        <li><a href="5-letter-words-by-position.html">Fill in the Blank Finder</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <div class="nav-cta">
@@ -293,14 +313,51 @@
                 </div>
                 <nav class="nav-links">
                     <a href="/" class="nav-link">Home</a>
-                    <a href="5-letter-words.html" class="nav-link">5 Letter Words</a>
-                    <a href="ai-word-solver" class="nav-link">AI Word Solver</a>
-                    <a href="3-letter-word-finder.html" class="nav-link">3 Letter Word Finder</a>
-                    <a href="4-letter-word-finder.html" class="nav-link">4 Letter Word Finder</a>
-                    <a href="6-letter-word-finder.html" class="nav-link">6 Letter Word Finder</a>
-                    <a href="7-letter-word-finder.html" class="nav-link">7 Letter Word Finder</a>
-                    <a href="8-letter-word-finder.html" class="nav-link">8 Letter Word Finder</a>
-                    <a href="game.html" class="nav-link">Wordle Game</a>
+                    
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-word-lists">
+                        <span>Word Lists</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-word-lists">
+                        <a href="5-letter-words.html">5 Letter Words</a>
+                        <a href="6-letter-words.html">6 Letter Words</a>
+                        <a href="7-letter-words.html">7 Letter Words</a>
+                        <a href="8-letter-words.html">8 Letter Words</a>
+                    </div>
+
+                    <a href="ai-word-solver.html" class="nav-link">AI Word Solver</a>
+
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-finders">
+                        <span>Finders</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-finders">
+                        <a href="3-letter-word-finder.html">3 Letter Finder</a>
+                        <a href="4-letter-word-finder.html">4 Letter Finder</a>
+                        <a href="6-letter-word-finder.html">6 Letter Finder</a>
+                        <a href="7-letter-word-finder.html">7 Letter Finder</a>
+                        <a href="8-letter-word-finder.html">8 Letter Finder</a>
+                    </div>
+
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-guides">
+                        <span>Guides</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-guides">
+                        <a href="best-wordle-starting-words.html">Best Wordle Starting Words</a>
+                        <a href="5-letter-words-by-position.html">Fill in the Blank Finder</a>
+                    </div>
+
+                    <a href="game.html" class="nav-link" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <text x="7" y="16" font-family="sans-serif" font-weight="bold" font-size="10">W</text>
+                        </svg>
+                        Play Wordle
+                    </a>
+
+                    <div class="nav-divider"></div>
+                    <p class="nav-section-label">Information</p>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <a href="privacy.html" class="nav-link">Privacy Policy</a>
                 </nav>
             </div>
         </aside>
@@ -385,7 +442,7 @@
 
                         <h2>The ADIEU Trap (Why Vowel-Heavy Starters Lose)</h2>
                         <p>ADIEU is the most popular starting word in Wordle — and the least efficient among the top 30 starters, according to NYT data from 515M+ games. Players using ADIEU need roughly 74 more guesses per year than SLATE players.</p>
-                        <p><strong>Why?</strong> Four vowels feel productive, but consonants (R, S, T, L, N) carry more information per guess. AUDIO has the same problem. Use a balanced starter instead — or play ADIEU first and follow with a consonant-heavy second guess using our <a href="ai-word-solver" style="color: var(--accent-light); font-weight: 600;">AI Word Solver</a>.</p>
+                        <p><strong>Why?</strong> Four vowels feel productive, but consonants (R, S, T, L, N) carry more information per guess. AUDIO has the same problem. Use a balanced starter instead — or play ADIEU first and follow with a consonant-heavy second guess using our <a href="ai-word-solver.html" style="color: var(--accent-light); font-weight: 600;">AI Word Solver</a>.</p>
 
                         <h2>Should You Use the Same Starter Every Day?</h2>
                         <p>For maximum score: yes. Pick one top-tier word (CRANE, SLATE, or TRACE) and use it daily — consistency lets you read the feedback patterns faster.</p>
@@ -453,7 +510,7 @@
                     <ul class="footer-links-list">
                         <li><a href="/">Home</a></li>
                         <li><a href="5-letter-words.html">5 Letter Words</a></li>
-                        <li><a href="ai-word-solver">AI Word Solver</a></li>
+                        <li><a href="ai-word-solver.html">AI Word Solver</a></li>
                         <li><a href="3-letter-word-finder.html">3 Letter Word Finder</a></li>
                         <li><a href="4-letter-word-finder.html">4 Letter Word Finder</a></li>
                         <li><a href="6-letter-word-finder.html">6 Letter Word Finder</a></li>
