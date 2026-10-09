@@ -265,8 +265,19 @@ function updateResults() {
     renderResults(pattern);
 }
 
+function getActiveSortMode() {
+    if (sortSelect && sortSelect.value) {
+        return sortSelect.value;
+    }
+    const activePill = document.querySelector('.sort-pill.active');
+    if (activePill && activePill.dataset.sort) {
+        return activePill.dataset.sort;
+    }
+    return 'alpha-asc';
+}
+
 function sortResults() {
-    const mode = sortSelect ? sortSelect.value : 'alpha-asc';
+    const mode = getActiveSortMode();
     const arr = [...currentResults];
     if (mode === 'alpha-asc') {
         arr.sort((a, b) => a.localeCompare(b));
@@ -299,9 +310,10 @@ let lastRenderedHash = '';
 
 function renderResults(pattern = '') {
     const showScores = showScrabbleInput ? showScrabbleInput.checked : false;
+    const sortMode = getActiveSortMode();
     
     // Performance optimization: Generate a signature of the current state to avoid redundant DOM work
-    const renderHash = `${currentResults.length}-${activeList ? activeList.length : 0}-${pattern}-${showScores}-${currentDict}-${hasAnyFilter()}`;
+    const renderHash = `${currentResults.length}-${activeList ? activeList.length : 0}-${pattern}-${showScores}-${currentDict}-${hasAnyFilter()}-${sortMode}`;
     if (renderHash === lastRenderedHash) return;
 
     if (!hasAnyFilter()) {
@@ -614,6 +626,7 @@ if (sortPillsContainer) {
         if (sortSelect) {
             sortSelect.value = sortVal;
         }
+        lastRenderedHash = '';
         sortResults();
         const pattern = charInputs.map(input => input.value.toUpperCase().trim() || '_').join('');
         renderResults(pattern);
@@ -622,6 +635,7 @@ if (sortPillsContainer) {
 
 if (sortSelect) {
     sortSelect.addEventListener('change', () => {
+        lastRenderedHash = '';
         sortResults();
         const pattern = charInputs.map(input => input.value.toUpperCase().trim() || '_').join('');
         renderResults(pattern);
