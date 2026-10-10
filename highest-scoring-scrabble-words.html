@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highest Scoring 5-Letter Scrabble Words (2026)</title>
+    <meta name="description" content="Discover the highest scoring 5-letter Scrabble words like JAZZY (33 pts) and FIZZY (29 pts). Full tile values, top 20 word list, and pro placement tips.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.5letterwordfindertool.com/highest-scoring-scrabble-words.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Highest Scoring 5-Letter Scrabble Words (2026)">
+    <meta property="og:description" content="Discover the highest scoring 5-letter Scrabble words like JAZZY (33 pts) and FIZZY (29 pts). Full tile values, top 20 word list, and pro placement tips.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.5letterwordfindertool.com/highest-scoring-scrabble-words.html">
+    <meta property="og:image" content="https://www.5letterwordfindertool.com/preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Highest Scoring 5-Letter Scrabble Words (2026)">
+    <meta name="twitter:description" content="Discover the highest scoring 5-letter Scrabble words like JAZZY (33 pts) and FIZZY (29 pts). Full tile values, top 20 word list, and pro placement tips.">
+    <meta name="twitter:image" content="https://www.5letterwordfindertool.com/preview.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
+
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .word-table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            -webkit-overflow-scrolling: touch;
+        }
+        .custom-word-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 500px;
+        }
+        .custom-word-table th {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            padding: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
+        }
+        .custom-word-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        .custom-word-table tr:last-child td {
+            border-bottom: none;
+        }
+        .custom-word-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .word-badge {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--accent-light);
+        }
+        .quotable-answer-box {
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(16, 185, 129, 0.08));
+            border: 1px solid rgba(34, 211, 238, 0.25);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        .cta-btn-container {
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+        .btn-cyan-gradient {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0f172a;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35);
+            transition: all 0.25s ease;
+        }
+        .btn-cyan-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+            color: #0f172a;
+        }
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .step-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
+    <!-- Theme Persistence & White Flash Prevention -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const isDark = savedTheme !== 'light';
+            document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
+            document.documentElement.style.backgroundColor = isDark ? '#061014' : '#f8fafc';
+        })();
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "5 Letter Word Finder Tool",
+      "url": "https://www.5letterwordfindertool.com/",
+      "logo": "https://www.5letterwordfindertool.com/preview.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/5-letter-word-finder-tool",
+        "https://www.facebook.com/profile.php?id=61590811286427",
+        "https://www.pinterest.com/5letterwordfindertool/",
+        "https://x.com/5letterwordfind"
+      ]
+    }
+    </script>
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Highest Scoring 5-Letter Scrabble Words (2026)",
+      "description": "Discover the highest scoring 5-letter Scrabble words like JAZZY (33 pts) and FIZZY (29 pts). Full tile values, top 20 word list, and pro placement tips.",
+      "image": "https://www.5letterwordfindertool.com/preview.png",
+      "datePublished": "2026-10-11",
+      "dateModified": "2026-10-11",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel Harison"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "5 Letter Word Finder Tool",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.5letterwordfindertool.com/preview.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.5letterwordfindertool.com/highest-scoring-scrabble-words.html"
+      }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.5letterwordfindertool.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guides",
+        "item": "https://www.5letterwordfindertool.com/best-wordle-starting-words.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Highest Scoring 5-Letter Scrabble Words",
+        "item": "https://www.5letterwordfindertool.com/highest-scoring-scrabble-words.html"
+      }]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you play JAZZY in Scrabble?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, JAZZY is a valid Scrabble word in both the NASPA word list and Collins Scrabble Words. It means full of jazz or lively, and at 33 base points it is the highest-scoring 5-letter word in the NASPA lexicon. Just make sure your group agrees on which dictionary you are using before the game starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the highest possible Scrabble score for one word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The highest theoretical single-word Scrabble score is 1,778 points for OXYPHENBUTAZONE played across three triple word scores with all seven tiles plus existing letters. In real tournament play, scores above 300 for one word are extremely rare. For everyday games, landing a 5-letter word like JAZZY on a triple word score for 99 points is a realistic dream play."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the 50-point bingo bonus work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You earn a 50-point bingo bonus by playing all seven of your tiles in a single turn. The bonus is added after all letter and word multipliers are calculated. Bingos are the fastest way to build a big lead, so look for common 7-letter stems like SATINE or RETINA on your rack and learn a few high-probability bingo words."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is QUIZZY a valid Scrabble word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "QUIZZY is valid in Collins Scrabble Words, the lexicon used in most countries outside North America, where it scores 36 base points. It is not valid in the NASPA word list used for North American tournament play. Always confirm which dictionary your game uses, since Collins contains thousands of extra words that NASPA does not allow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What letters are worth the most in Scrabble?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Q and Z are worth the most at 10 points each, followed by J and X at 8 points each. These four tiles appear only once each in the 100-tile bag, which is why they carry premium values. K is next at 5 points, making it the most valuable of the common consonants."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I save my Z and Q tiles or play them fast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Play your Q as soon as you find a good spot — an unplayed Q costs 10 points at game's end and clogs your rack. The Z is more flexible, so holding it one turn for a double or triple letter square often pays off. Never hold tiles so long that the game ends with them stuck on your rack."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WW6EJYTTML"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WW6EJYTTML');
+    </script>
+</head>
+
+<body class="page-about">
+    <header class="saas-header">
+        <nav class="nav-container-header" role="navigation" aria-label="Main Navigation">
+            <a href="/" class="brand-container">
+                <span class="brand-name">Word Finder <span>Tool</span></span>
+                <span class="brand-tagline-header">Instant Word &amp; Puzzle Solver</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-menu-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="5-letter-words.html" class="nav-menu-link nav-dropdown-toggle">Word Lists <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="5-letter-words.html">5 Letter Words</a></li>
+                        <li><a href="6-letter-words.html">6 Letter Words</a></li>
+                        <li><a href="7-letter-words.html">7 Letter Words</a></li>
+                        <li><a href="8-letter-words.html">8 Letter Words</a></li>
+                    </ul>
+                </li>
+                <li><a href="ai-word-solver.html" class="nav-menu-link">AI Word Solver</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-menu-link nav-dropdown-toggle">Finders <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="3-letter-word-finder.html">3 Letter Finder</a></li>
+                        <li><a href="4-letter-word-finder.html">4 Letter Finder</a></li>
+                        <li><a href="6-letter-word-finder.html">6 Letter Finder</a></li>
+                        <li><a href="7-letter-word-finder.html">7 Letter Finder</a></li>
+                        <li><a href="8-letter-word-finder.html">8 Letter Finder</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-menu-link nav-dropdown-toggle">Guides <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="best-wordle-starting-words.html">Best Wordle Starting Words</a></li>
+                        <li><a href="wordle-strategy-guide.html">Wordle Strategy Guide</a></li>
+                        <li><a href="5-letter-words-with-most-vowels.html">Words With Most Vowels</a></li>
+                        <li><a href="highest-scoring-scrabble-words.html">Highest Scoring Scrabble Words</a></li>
+                        <li><a href="wordle-beginner-tips.html">Wordle Beginner Tips</a></li>
+                        <li><a href="5-letter-words-by-position.html">Fill in the Blank Finder</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="/#tool-section" class="btn-cta-header">Try Tool</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+        <div class="bg-glow"></div>
+
+        <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Menu</h3>
+                    <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-word-lists">
+                        <span>Word Lists</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-word-lists">
+                        <a href="5-letter-words.html">5 Letter Words</a>
+                        <a href="6-letter-words.html">6 Letter Words</a>
+                        <a href="7-letter-words.html">7 Letter Words</a>
+                        <a href="8-letter-words.html">8 Letter Words</a>
+                    </div>
+
+                    <a href="ai-word-solver.html" class="nav-link">AI Word Solver</a>
+
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-finders">
+                        <span>Finders</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-finders">
+                        <a href="3-letter-word-finder.html">3 Letter Finder</a>
+                        <a href="4-letter-word-finder.html">4 Letter Finder</a>
+                        <a href="6-letter-word-finder.html">6 Letter Finder</a>
+                        <a href="7-letter-word-finder.html">7 Letter Finder</a>
+                        <a href="8-letter-word-finder.html">8 Letter Finder</a>
+                    </div>
+
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-guides">
+                        <span>Guides</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-guides">
+                        <a href="best-wordle-starting-words.html">Best Wordle Starting Words</a>
+                        <a href="wordle-strategy-guide.html">Wordle Strategy Guide</a>
+                        <a href="5-letter-words-with-most-vowels.html">Words With Most Vowels</a>
+                        <a href="highest-scoring-scrabble-words.html">Highest Scoring Scrabble Words</a>
+                        <a href="wordle-beginner-tips.html">Wordle Beginner Tips</a>
+                        <a href="5-letter-words-by-position.html">Fill in the Blank Finder</a>
+                    </div>
+
+                    <a href="game.html" class="nav-link" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <text x="7" y="16" font-family="sans-serif" font-weight="bold" font-size="10">W</text>
+                        </svg>
+                        Play Wordle
+                    </a>
+
+                    <div class="nav-divider"></div>
+                    <p class="nav-section-label">Information</p>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <a href="privacy.html" class="nav-link">Privacy Policy</a>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="container main-content" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+            <header class="page-header" style="text-align: center; margin-bottom: 2.5rem;">
+                <div class="title-row">
+                    <h1 class="title">Highest Scoring 5-Letter Scrabble Words</h1>
+                </div>
+                <p class="tagline">Data-Driven Wordle Strategy &amp; Analysis</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                    <span>By <strong>Daniel Harison</strong></span> • <span>Published October 11, 2026</span>
+                </div>
+            </header>
+
+            <article class="prose">
+<div class="quotable-answer-box">
+    <p style="margin: 0;">Want to win more Scrabble games? The secret is knowing which 5-letter words pack the biggest point punch. Words like JAZZY and FIZZY can score 29 to 33 points from tiles alone — before any board bonuses. This guide lists the 20 highest-scoring <a href="5-letter-words.html" style="color: var(--accent-light); font-weight: 600;">5-letter words</a>, explains tile values, and shares pro tips for placing words where they earn the most.</p>
+</div>
+
+<div class="info-box blue" style="margin-bottom: 2rem;">
+    <h2>What is the highest scoring 5-letter Scrabble word?</h2>
+    <p>JAZZY is the highest scoring 5-letter Scrabble word at 33 points, using the official tile values (J=8, A=1, Z=10, Z=10, Y=4). It beats every other 5-letter word because it packs two 10-point Z tiles plus the 8-point J into a single play. In the Collins Scrabble Words lexicon, QUIZZY scores even higher at 36 points.</p>
+    <p>These are base tile values before any board multipliers. Landing JAZZY on premium squares like a triple word score can multiply its value several times over, which is why saving high-value tiles for the right moment is a core Scrabble skill.</p>
+</div>
+
+<div class="info-box green" style="margin-bottom: 2rem;">
+    <h2>How many points is JAZZY worth in Scrabble?</h2>
+    <p>JAZZY is worth 33 points in Scrabble, calculated from its five tiles: J=8, A=1, Z=10, Z=10, and Y=4. That makes it the highest-scoring 5-letter word in the NASPA word list. Note that this is the base value before board bonuses; on a triple word score, JAZZY would be worth 99 points.</p>
+    <p>Some older sources list JAZZY at 34 points, but the correct total under official tile values is 33. Always double-check point math yourself — it is good practice and keeps score disputes friendly.</p>
+</div>
+
+<div class="info-box purple" style="margin-bottom: 2rem;">
+    <h2>Why are J, Q, X, and Z worth so many points?</h2>
+    <p>J, Q, X, and Z are worth 8 to 10 points because each appears only once in the 100-tile bag. Scrabble gives the highest values to the rarest letters: J and X score 8 points each, while Q and Z score 10 each. Their scarcity makes them harder to play, so the big points balance the risk of holding them.</p>
+    <p>This is also why words like JAZZY and QUIZZY dominate high-score lists — they combine two or more of these rare tiles. Learning short words that use Q without U, like QAT or QOPHS, helps you get rid of the tricky Q tile faster. Find more word plays with our <a href="/" style="color: var(--accent-light); font-weight: 600;">free word finder tool</a>.</p>
+</div>
+
+<div class="info-box blue" style="margin-bottom: 2rem;">
+    <h2>What are the Scrabble tile point values?</h2>
+    <p>Scrabble tiles score 0 to 10 points. Worth 1 point: E, A, I, O, N, R, T, L, S, U. Worth 2: D, G. Worth 3: B, C, M, P. Worth 4: F, H, V, W, Y. Worth 5: K. Worth 8: J, X. Worth 10: Q, Z. Blank tiles score 0 but can stand for any letter.</p>
+    <p>The full tile distribution table below shows exactly how many of each tile exist in the 100-tile set. Memorizing which letters are rare helps you plan when to play — or hold — your big-point tiles.</p>
+
+    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--accent); margin-top: 1.5rem;">Full Scrabble Tile Distribution (100 tiles)</h3>
+    <div class="word-table-container">
+        <table class="custom-word-table">
+            <thead>
+                <tr>
+                    <th>Points</th>
+                    <th>Tiles (count)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>Blank (2)</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>E (12), A (9), I (9), O (8), N (6), R (6), T (6), L (4), S (4), U (4)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>D (4), G (3)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>B (2), C (2), M (2), P (2)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>F (2), H (2), V (2), W (2), Y (2)</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>K (1)</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>J (1), X (1)</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Q (1), Z (1)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="info-box green" style="margin-bottom: 2rem;">
+    <h2>Where should I place words for maximum Scrabble points?</h2>
+    <p>Place words on premium squares for maximum Scrabble points, especially the triple word score squares near the board's corners. Put high-value tiles like J, Q, X, and Z on double or triple letter squares first, since letter bonuses apply before word bonuses. Using all seven tiles in one turn also earns a 50-point bingo bonus.</p>
+    <p>Plan two moves ahead: sometimes holding a Z for one turn to land it on a triple letter square beats playing it immediately. Watch your opponent's premium squares too — blocking their triple word access is smart defense. Practice board placement in our <a href="game.html" style="color: var(--accent-light); font-weight: 600;">free Wordle game</a>.</p>
+</div>
+
+<div class="info-box purple" style="margin-bottom: 2rem;">
+    <h2>What are the best 5-letter words with Q?</h2>
+    <p>The best 5-letter words with Q are QUAKY (21 points), QUAFF (20), QUICK (20), QUACK (20), and QUIFF (20). QUAKY leads because it pairs the 10-point Q with the 5-point K and 4-point Y. These words are valuable because the Q tile is hard to play, and each one turns a tricky rack into a strong scoring turn.</p>
+    <p>Most Q words need a U, so keep one handy or learn U-less Q words like QAT, QOPHS, and QINDAR for emergencies. Getting rid of the Q early frees your rack for better draws and avoids the end-game penalty for unplayed tiles. Search for pattern matches using our <a href="/" style="color: var(--accent-light); font-weight: 600;">5-letter word finder</a>.</p>
+</div>
+
+<div class="info-box blue" style="margin-bottom: 2rem;">
+    <h2>Top 20 Highest-Scoring 5-Letter Scrabble Words (base tile values)</h2>
+    <div class="word-table-container">
+        <table class="custom-word-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Word</th>
+                    <th>Points</th>
+                    <th>Tile Math</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><span class="word-badge">JAZZY</span></td><td>33</td><td>J8 + A1 + Z10 + Z10 + Y4</td></tr>
+                <tr><td>2</td><td><span class="word-badge">FIZZY</span></td><td>29</td><td>F4 + I1 + Z10 + Z10 + Y4</td></tr>
+                <tr><td>3</td><td><span class="word-badge">FUZZY</span></td><td>29</td><td>F4 + U1 + Z10 + Z10 + Y4</td></tr>
+                <tr><td>4</td><td><span class="word-badge">WHIZZ</span></td><td>29</td><td>W4 + H4 + I1 + Z10 + Z10</td></tr>
+                <tr><td>5</td><td><span class="word-badge">PIZZA</span></td><td>25</td><td>P3 + I1 + Z10 + Z10 + A1</td></tr>
+                <tr><td>6</td><td><span class="word-badge">JIFFY</span></td><td>21</td><td>J8 + I1 + F4 + F4 + Y4</td></tr>
+                <tr><td>7</td><td><span class="word-badge">JACKY</span></td><td>21</td><td>J8 + A1 + C3 + K5 + Y4</td></tr>
+                <tr><td>8</td><td><span class="word-badge">QUAKY</span></td><td>21</td><td>Q10 + U1 + A1 + K5 + Y4</td></tr>
+                <tr><td>9</td><td><span class="word-badge">ZAPPY</span></td><td>21</td><td>Z10 + A1 + P3 + P3 + Y4</td></tr>
+                <tr><td>10</td><td><span class="word-badge">ZIPPY</span></td><td>21</td><td>Z10 + I1 + P3 + P3 + Y4</td></tr>
+                <tr><td>11</td><td><span class="word-badge">ZINKY</span></td><td>21</td><td>Z10 + I1 + N1 + K5 + Y4</td></tr>
+                <tr><td>12</td><td><span class="word-badge">ZAXES</span></td><td>21</td><td>Z10 + A1 + X8 + E1 + S1</td></tr>
+                <tr><td>13</td><td><span class="word-badge">QUAFF</span></td><td>20</td><td>Q10 + U1 + A1 + F4 + F4</td></tr>
+                <tr><td>14</td><td><span class="word-badge">QUICK</span></td><td>20</td><td>Q10 + U1 + I1 + C3 + K5</td></tr>
+                <tr><td>15</td><td><span class="word-badge">QUACK</span></td><td>20</td><td>Q10 + U1 + A1 + C3 + K5</td></tr>
+                <tr><td>16</td><td><span class="word-badge">QUIFF</span></td><td>20</td><td>Q10 + U1 + I1 + F4 + F4</td></tr>
+                <tr><td>17</td><td><span class="word-badge">FURZY</span></td><td>20</td><td>F4 + U1 + R1 + Z10 + Y4</td></tr>
+                <tr><td>18</td><td><span class="word-badge">HAFIZ</span></td><td>20</td><td>H4 + A1 + F4 + I1 + Z10</td></tr>
+                <tr><td>19</td><td><span class="word-badge">WOOZY</span></td><td>20</td><td>W4 + O1 + O1 + Z10 + Y4</td></tr>
+                <tr><td>20</td><td><span class="word-badge">JUNKY</span></td><td>19</td><td>J8 + U1 + N1 + K5 + Y4</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic;">*Bonus (Collins Scrabble Words only): QUIZZY — 36 points (Q10 + U1 + I1 + Z10 + Z10 + Y4). Not valid in the NASPA word list.*</p>
+</div>
+
+<div class="info-box green" style="margin-top: 3rem; margin-bottom: 2.5rem;">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">Can you play JAZZY in Scrabble?</summary>
+        <p style="margin-top: 0.5rem;">Yes, JAZZY is a valid Scrabble word in both the NASPA word list and Collins Scrabble Words. It means full of jazz or lively, and at 33 base points it is the highest-scoring 5-letter word in the NASPA lexicon. Just make sure your group agrees on which dictionary you are using before the game starts.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">What is the highest possible Scrabble score for one word?</summary>
+        <p style="margin-top: 0.5rem;">The highest theoretical single-word Scrabble score is 1,778 points for OXYPHENBUTAZONE played across three triple word scores with all seven tiles plus existing letters. In real tournament play, scores above 300 for one word are extremely rare. For everyday games, landing a 5-letter word like JAZZY on a triple word score for 99 points is a realistic dream play.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">How does the 50-point bingo bonus work?</summary>
+        <p style="margin-top: 0.5rem;">You earn a 50-point bingo bonus by playing all seven of your tiles in a single turn. The bonus is added after all letter and word multipliers are calculated. Bingos are the fastest way to build a big lead, so look for common 7-letter stems like SATINE or RETINA on your rack and learn a few high-probability bingo words.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">Is QUIZZY a valid Scrabble word?</summary>
+        <p style="margin-top: 0.5rem;">QUIZZY is valid in Collins Scrabble Words, the lexicon used in most countries outside North America, where it scores 36 base points. It is not valid in the NASPA word list used for North American tournament play. Always confirm which dictionary your game uses, since Collins contains thousands of extra words that NASPA does not allow.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">What letters are worth the most in Scrabble?</summary>
+        <p style="margin-top: 0.5rem;">Q and Z are worth the most at 10 points each, followed by J and X at 8 points each. These four tiles appear only once each in the 100-tile bag, which is why they carry premium values. K is next at 5 points, making it the most valuable of the common consonants.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">Should I save my Z and Q tiles or play them fast?</summary>
+        <p style="margin-top: 0.5rem;">Play your Q as soon as you find a good spot — an unplayed Q costs 10 points at game's end and clogs your rack. The Z is more flexible, so holding it one turn for a double or triple letter square often pays off. Never hold tiles so long that the game ends with them stuck on your rack.</p>
+    </details>
+</div>
+
+<div class="quotable-answer-box" style="text-align: center;">
+    <p style="margin: 0; font-size: 1.1rem;"><strong>Ready to find your own high-scoring words?</strong> Try our free 5-letter word finder — enter your letters and discover every playable word in seconds.</p>
+</div>
+
+<div class="cta-btn-container">
+    <a href="/" class="btn-cyan-gradient">Try the Free Tool →</a>
+</div>
+            </article>
+
+            <div style="font-size:0.85rem; color:var(--text-muted); text-align:center; margin:3rem 0 1rem; padding-top:1rem; border-top:1px solid var(--border);">
+              <strong>Last Updated:</strong> October 2026
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo-container">
+                        <span class="brand-name">Word Finder <span>Tool</span></span>
+                    </div>
+                    <p class="footer-desc">Free, privacy-first word game helper &amp; Wordle solver. Zero ads, instant letter filtering.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Word Finders</h4>
+                    <ul class="footer-links">
+                        <li><a href="3-letter-word-finder.html">3 Letter Word Finder</a></li>
+                        <li><a href="4-letter-word-finder.html">4 Letter Word Finder</a></li>
+                        <li><a href="/">5 Letter Word Finder</a></li>
+                        <li><a href="6-letter-word-finder.html">6 Letter Word Finder</a></li>
+                        <li><a href="7-letter-word-finder.html">7 Letter Word Finder</a></li>
+                        <li><a href="8-letter-word-finder.html">8 Letter Word Finder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Guides &amp; Lists</h4>
+                    <ul class="footer-links">
+                        <li><a href="best-wordle-starting-words.html">Best Wordle Starting Words</a></li>
+                        <li><a href="wordle-strategy-guide.html">Wordle Strategy Guide</a></li>
+                        <li><a href="5-letter-words-with-most-vowels.html">Words With Most Vowels</a></li>
+                        <li><a href="highest-scoring-scrabble-words.html">Highest Scoring Scrabble Words</a></li>
+                        <li><a href="wordle-beginner-tips.html">Wordle Beginner Tips</a></li>
+                        <li><a href="5-letter-words-by-position.html">Fill in the Blank Finder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Legal &amp; Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 5LetterWordFinderTool.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

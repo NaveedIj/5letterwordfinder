@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Letter Words with the Most Vowels (Full List)</title>
+    <meta name="description" content="Full list of 5-letter words with the most vowels for Wordle: ADIEU, AUDIO, OUIJA & more. Learn why vowels matter and which openers win.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.5letterwordfindertool.com/5-letter-words-with-most-vowels.html">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="5-Letter Words with the Most Vowels (Full List)">
+    <meta property="og:description" content="Full list of 5-letter words with the most vowels for Wordle: ADIEU, AUDIO, OUIJA & more. Learn why vowels matter and which openers win.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.5letterwordfindertool.com/5-letter-words-with-most-vowels.html">
+    <meta property="og:image" content="https://www.5letterwordfindertool.com/preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="5-Letter Words with the Most Vowels (Full List)">
+    <meta name="twitter:description" content="Full list of 5-letter words with the most vowels for Wordle: ADIEU, AUDIO, OUIJA & more. Learn why vowels matter and which openers win.">
+    <meta name="twitter:image" content="https://www.5letterwordfindertool.com/preview.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
+
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .word-table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            -webkit-overflow-scrolling: touch;
+        }
+        .custom-word-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 500px;
+        }
+        .custom-word-table th {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            padding: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
+        }
+        .custom-word-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        .custom-word-table tr:last-child td {
+            border-bottom: none;
+        }
+        .custom-word-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .word-badge {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--accent-light);
+        }
+        .quotable-answer-box {
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(16, 185, 129, 0.08));
+            border: 1px solid rgba(34, 211, 238, 0.25);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0 2rem 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+        .cta-btn-container {
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+        .btn-cyan-gradient {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0f172a;
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35);
+            transition: all 0.25s ease;
+        }
+        .btn-cyan-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+            color: #0f172a;
+        }
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .step-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
+    <!-- Theme Persistence & White Flash Prevention -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const isDark = savedTheme !== 'light';
+            document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
+            document.documentElement.style.backgroundColor = isDark ? '#061014' : '#f8fafc';
+        })();
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "5 Letter Word Finder Tool",
+      "url": "https://www.5letterwordfindertool.com/",
+      "logo": "https://www.5letterwordfindertool.com/preview.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/5-letter-word-finder-tool",
+        "https://www.facebook.com/profile.php?id=61590811286427",
+        "https://www.pinterest.com/5letterwordfindertool/",
+        "https://x.com/5letterwordfind"
+      ]
+    }
+    </script>
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "5-Letter Words with the Most Vowels (Full List)",
+      "description": "Full list of 5-letter words with the most vowels for Wordle: ADIEU, AUDIO, OUIJA & more. Learn why vowels matter and which openers win.",
+      "image": "https://www.5letterwordfindertool.com/preview.png",
+      "datePublished": "2026-10-11",
+      "dateModified": "2026-10-11",
+      "author": {
+        "@type": "Person",
+        "name": "Daniel Harison"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "5 Letter Word Finder Tool",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.5letterwordfindertool.com/preview.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.5letterwordfindertool.com/5-letter-words-with-most-vowels.html"
+      }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.5letterwordfindertool.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guides",
+        "item": "https://www.5letterwordfindertool.com/best-wordle-starting-words.html"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "5-Letter Words with the Most Vowels",
+        "item": "https://www.5letterwordfindertool.com/5-letter-words-with-most-vowels.html"
+      }]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I use ADIEU as my first Wordle guess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, NYT Wordle accepts ADIEU as a valid guess, and it tests four vowels (A, E, I, U) in a single move. Note that some vowel-heavy words are guess-only and never appear as answers. Many players still open with ADIEU for fast vowel information, then follow with consonant-heavy second guesses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best vowel-heavy starting word for Wordle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AUDIO is often considered the best vowel-heavy starter because it is a common everyday word with four vowels (A, U, D, I, O — four vowels plus D). ADIEU covers the same four vowels but is a less common French borrowing. If you prefer the vowel-first style, AUDIO gives you the same information with a word you already know."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any 5-letter words with 5 vowels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. No standard English 5-letter word contains all five vowels. The disputed term IOUEA is sometimes cited, but it is an obscure scientific name absent from normal dictionaries. The practical maximum is four vowels, as in ADIEU, AUDIO, OUIJA, URAEI, and MIAOU."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Wordle accept OUIJA as a guess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, NYT Wordle accepts OUIJA as a valid guess. Although it names a spirit board, dictionaries list \"ouija\" as a common noun, so it qualifies. With four vowels (O, U, I, A) plus J, it is one of the few 4-vowel words most players have actually heard of."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which vowels should I test first in Wordle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Test E and A first — vowel frequency studies rank them among the most common letters in English and in Wordle answers. O, I, and U follow. A balanced opener like CRANE or SLATE covers E and A plus top consonants, which is why data-driven starting word strategy guides recommend them over pure vowel dumps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are good 3-vowel 5-letter words for Wordle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common 3-vowel options include RAISE, ARISE, HOUSE, RADIO, MEDIA, OCEAN, PIANO, VIDEO, and JUICE. These are more likely to be actual answers than obscure 4-vowel words, and they still test three vowels at once. RAISE and ARISE are especially popular because they also include the high-frequency consonants R and S."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WW6EJYTTML"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WW6EJYTTML');
+    </script>
+</head>
+
+<body class="page-about">
+    <header class="saas-header">
+        <nav class="nav-container-header" role="navigation" aria-label="Main Navigation">
+            <a href="/" class="brand-container">
+                <span class="brand-name">Word Finder <span>Tool</span></span>
+                <span class="brand-tagline-header">Instant Word &amp; Puzzle Solver</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-menu-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="5-letter-words.html" class="nav-menu-link nav-dropdown-toggle">Word Lists <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="5-letter-words.html">5 Letter Words</a></li>
+                        <li><a href="6-letter-words.html">6 Letter Words</a></li>
+                        <li><a href="7-letter-words.html">7 Letter Words</a></li>
+                        <li><a href="8-letter-words.html">8 Letter Words</a></li>
+                    </ul>
+                </li>
+                <li><a href="ai-word-solver.html" class="nav-menu-link">AI Word Solver</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-menu-link nav-dropdown-toggle">Finders <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="3-letter-word-finder.html">3 Letter Finder</a></li>
+                        <li><a href="4-letter-word-finder.html">4 Letter Finder</a></li>
+                        <li><a href="6-letter-word-finder.html">6 Letter Finder</a></li>
+                        <li><a href="7-letter-word-finder.html">7 Letter Finder</a></li>
+                        <li><a href="8-letter-word-finder.html">8 Letter Finder</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-menu-link nav-dropdown-toggle">Guides <span class="arrow">▾</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="best-wordle-starting-words.html">Best Wordle Starting Words</a></li>
+                        <li><a href="wordle-strategy-guide.html">Wordle Strategy Guide</a></li>
+                        <li><a href="5-letter-words-with-most-vowels.html">Words With Most Vowels</a></li>
+                        <li><a href="highest-scoring-scrabble-words.html">Highest Scoring Scrabble Words</a></li>
+                        <li><a href="wordle-beginner-tips.html">Wordle Beginner Tips</a></li>
+                        <li><a href="5-letter-words-by-position.html">Fill in the Blank Finder</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="/#tool-section" class="btn-cta-header">Try Tool</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+        <div class="bg-glow"></div>
+
+        <aside class="nav-panel" id="navPanel" aria-label="Main Menu">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Menu</h3>
+                    <button class="btn-close-nav" id="closeNavBtn" aria-label="Close menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-word-lists">
+                        <span>Word Lists</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-word-lists">
+                        <a href="5-letter-words.html">5 Letter Words</a>
+                        <a href="6-letter-words.html">6 Letter Words</a>
+                        <a href="7-letter-words.html">7 Letter Words</a>
+                        <a href="8-letter-words.html">8 Letter Words</a>
+                    </div>
+
+                    <a href="ai-word-solver.html" class="nav-link">AI Word Solver</a>
+
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-finders">
+                        <span>Finders</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-finders">
+                        <a href="3-letter-word-finder.html">3 Letter Finder</a>
+                        <a href="4-letter-word-finder.html">4 Letter Finder</a>
+                        <a href="6-letter-word-finder.html">6 Letter Finder</a>
+                        <a href="7-letter-word-finder.html">7 Letter Finder</a>
+                        <a href="8-letter-word-finder.html">8 Letter Finder</a>
+                    </div>
+
+                    <button class="nav-link drawer-accordion-btn" data-target="drawer-guides">
+                        <span>Guides</span> <span class="arrow">▾</span>
+                    </button>
+                    <div class="drawer-sub-menu" id="drawer-guides">
+                        <a href="best-wordle-starting-words.html">Best Wordle Starting Words</a>
+                        <a href="wordle-strategy-guide.html">Wordle Strategy Guide</a>
+                        <a href="5-letter-words-with-most-vowels.html">Words With Most Vowels</a>
+                        <a href="highest-scoring-scrabble-words.html">Highest Scoring Scrabble Words</a>
+                        <a href="wordle-beginner-tips.html">Wordle Beginner Tips</a>
+                        <a href="5-letter-words-by-position.html">Fill in the Blank Finder</a>
+                    </div>
+
+                    <a href="game.html" class="nav-link" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <text x="7" y="16" font-family="sans-serif" font-weight="bold" font-size="10">W</text>
+                        </svg>
+                        Play Wordle
+                    </a>
+
+                    <div class="nav-divider"></div>
+                    <p class="nav-section-label">Information</p>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <a href="privacy.html" class="nav-link">Privacy Policy</a>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="container main-content" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+            <header class="page-header" style="text-align: center; margin-bottom: 2.5rem;">
+                <div class="title-row">
+                    <h1 class="title">5-Letter Words with the Most Vowels: The Complete List</h1>
+                </div>
+                <p class="tagline">Data-Driven Wordle Strategy &amp; Analysis</p>
+                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                    <span>By <strong>Daniel Harison</strong></span> • <span>Published October 11, 2026</span>
+                </div>
+            </header>
+
+            <article class="prose">
+<div class="quotable-answer-box">
+    <p style="margin: 0;">Looking for 5-letter words packed with vowels? Whether you want a strong Wordle opener or just love word lists, this guide has you covered. Below you will find every common 4-vowel word, plus the best 3-vowel options, honest notes on which ones Wordle actually accepts, and the strategy behind vowel-first guessing. Test candidate solutions fast with our <a href="ai-word-solver.html" style="color: var(--accent-light); font-weight: 600;">free Wordle solver</a>.</p>
+</div>
+
+<div class="info-box blue" style="margin-bottom: 2rem;">
+    <h2>What 5-letter word has the most vowels?</h2>
+    <p>The 5-letter words with the most vowels contain four vowels and one consonant, since no English 5-letter word has all five vowels. Common examples include ADIEU, AUDIO, OUIJA, and URAEI. These words are popular Wordle openers because they test almost every vowel in a single guess.</p>
+    <p>Four is the maximum because English has only five vowels and no common 5-letter word uses all of them. Keep reading for the full list of 4-vowel words, plus notes on which ones NYT Wordle actually accepts as guesses.</p>
+</div>
+
+<div class="info-box green" style="margin-bottom: 2rem;">
+    <h2>Why are vowels important in Wordle?</h2>
+    <p>Vowels are important in Wordle because nearly every English word contains at least one, and the five vowels (A, E, I, O, U) appear in most answers. Testing vowels early tells you which ones are in the hidden word, which narrows the answers quickly. Vowel frequency data shows E and A rank among the most common letters in Wordle solutions.</p>
+    <p>This is the heart of letter elimination: every gray vowel rules out hundreds of possible answers at once. That is why every starting word strategy guide begins with vowel coverage before moving on to consonants.</p>
+</div>
+
+<div class="info-box purple" style="margin-bottom: 2rem;">
+    <h2>What 5-letter word has all vowels in it?</h2>
+    <p>No 5-letter English word contains all five vowels (A, E, I, O, U). The closest you can get is four vowels plus one consonant, as in ADIEU, AUDIO, or OUIJA. Some sources mention IOUEA, an obscure term for a fossil sponge, but it is not a standard dictionary word and Wordle does not accept it.</p>
+    <p>Six-letter words like EUNOIA do pack all five vowels, but the 5-letter limit makes it impossible. For Wordle purposes, a 4-vowel word is the practical maximum you can play.</p>
+</div>
+
+<div class="info-box blue" style="margin-bottom: 2rem;">
+    <h2>Which 5-letter words have 4 vowels?</h2>
+    <p>The main 5-letter words with 4 vowels are ADIEU, AUDIO, OUIJA, URAEI, MIAOU, LOUIE, OURIE, AULOI, and AUREI. Each contains four different vowels and a single consonant. Of these, ADIEU, AUDIO, and OUIJA are widely accepted as valid Wordle guesses, while the more obscure ones like URAEI and AULOI may be rejected by NYT Wordle.</p>
+    
+    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--accent); margin-top: 1.5rem;">Full 4-vowel list with Wordle notes</h3>
+    <div class="word-table-container">
+        <table class="custom-word-table">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Vowels</th>
+                    <th>Likely accepted by NYT Wordle?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="word-badge">ADIEU</span></td>
+                    <td>A, E, I, U</td>
+                    <td>Yes — very popular opener</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">AUDIO</span></td>
+                    <td>A, U, I, O</td>
+                    <td>Yes — common everyday word</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">OUIJA</span></td>
+                    <td>O, U, I, A</td>
+                    <td>Yes — listed as a common noun</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">URAEI</span></td>
+                    <td>U, A, E, I</td>
+                    <td>Maybe not — obscure plural of "uraeus"</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">MIAOU</span></td>
+                    <td>I, A, O, U</td>
+                    <td>Maybe — variant spelling of "meow"</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">LOUIE</span></td>
+                    <td>O, U, I, E</td>
+                    <td>Probably not — reads as a proper name</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">OURIE</span></td>
+                    <td>O, U, I, E</td>
+                    <td>Probably not — obscure Scots word</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">AULOI</span></td>
+                    <td>A, U, O, I</td>
+                    <td>Probably not — obscure plural of "aulos"</td>
+                </tr>
+                <tr>
+                    <td><span class="word-badge">AUREI</span></td>
+                    <td>A, U, E, I</td>
+                    <td>Probably not — obscure plural of "aureus"</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Wordle's guess list is fixed, so obscure words are often rejected even if they are real dictionary entries. When in doubt, stick with ADIEU, AUDIO, or OUIJA.</p>
+
+    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--accent); margin-top: 1.5rem;">Common 3-vowel 5-letter words</h3>
+    <p>If you want vowel coverage with words that feel more natural, these 3-vowel options are excellent: <strong>RAISE, ARISE, AUDIO, HOUSE, RADIO, MEDIA, OCEAN, PIANO, VIDEO, JUICE</strong>. Many of these double as realistic answers, unlike the most obscure 4-vowel words. Browse the <a href="5-letter-words.html" style="color: var(--accent-light); font-weight: 600;">complete list of 5-letter words</a> for more options.</p>
+</div>
+
+<div class="info-box green" style="margin-bottom: 2rem;">
+    <h2>What is IOUEA?</h2>
+    <p>IOUEA is an obscure scientific term for a genus of fossil sponges, sometimes cited as the only 5-letter word containing all five vowels. However, it is not found in standard English dictionaries, and neither NYT Wordle nor Scrabble accepts it. For practical word games, treat IOUEA as trivia rather than a playable word.</p>
+    <p>The claim comes from old word lists, but modern dictionaries do not list it as a headword. Stick to ADIEU or AUDIO when you actually sit down to play.</p>
+</div>
+
+<div class="info-box purple" style="margin-bottom: 2rem;">
+    <h2>Should I start Wordle with a vowel-heavy word?</h2>
+    <p>Starting Wordle with a vowel-heavy word like ADIEU or AUDIO is a reasonable strategy, but data-driven guides now favor balanced openers like CRANE or SLATE. Vowel-heavy words reveal the vowels fast, yet they waste a guess on weak consonants. WordleBot's own analysis shows balanced words with common consonants (S, T, R, L, N) solve in fewer guesses on average.</p>
+    <p>Use a vowel-heavy opener if you enjoy the vowel-first style, then follow it with a consonant-heavy second guess to cover the rest of the alphabet. For the full data-backed ranking, see our <a href="best-wordle-starting-words.html" style="color: var(--accent-light); font-weight: 600;">best Wordle starting words guide</a>.</p>
+</div>
+
+<div class="info-box blue" style="margin-top: 3rem; margin-bottom: 2.5rem;">
+    <h2>Frequently Asked Questions</h2>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">Can I use ADIEU as my first Wordle guess?</summary>
+        <p style="margin-top: 0.5rem;">Yes, NYT Wordle accepts ADIEU as a valid guess, and it tests four vowels (A, E, I, U) in a single move. Note that some vowel-heavy words are guess-only and never appear as answers. Many players still open with ADIEU for fast vowel information, then follow with consonant-heavy second guesses.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">What is the best vowel-heavy starting word for Wordle?</summary>
+        <p style="margin-top: 0.5rem;">AUDIO is often considered the best vowel-heavy starter because it is a common everyday word with four vowels (A, U, D, I, O — four vowels plus D). ADIEU covers the same four vowels but is a less common French borrowing. If you prefer the vowel-first style, AUDIO gives you the same information with a word you already know.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">Are there any 5-letter words with 5 vowels?</summary>
+        <p style="margin-top: 0.5rem;">No. No standard English 5-letter word contains all five vowels. The disputed term IOUEA is sometimes cited, but it is an obscure scientific name absent from normal dictionaries. The practical maximum is four vowels, as in ADIEU, AUDIO, OUIJA, URAEI, and MIAOU.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">Does Wordle accept OUIJA as a guess?</summary>
+        <p style="margin-top: 0.5rem;">Yes, NYT Wordle accepts OUIJA as a valid guess. Although it names a spirit board, dictionaries list "ouija" as a common noun, so it qualifies. With four vowels (O, U, I, A) plus J, it is one of the few 4-vowel words most players have actually heard of.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">Which vowels should I test first in Wordle?</summary>
+        <p style="margin-top: 0.5rem;">Test E and A first — vowel frequency studies rank them among the most common letters in English and in Wordle answers. O, I, and U follow. A balanced opener like CRANE or SLATE covers E and A plus top consonants, which is why data-driven starting word strategy guides recommend them over pure vowel dumps.</p>
+    </details>
+
+    <details class="faq-item" style="margin-bottom: 1rem;">
+        <summary style="font-weight: 700; cursor: pointer; color: var(--accent);">What are good 3-vowel 5-letter words for Wordle?</summary>
+        <p style="margin-top: 0.5rem;">Common 3-vowel options include RAISE, ARISE, HOUSE, RADIO, MEDIA, OCEAN, PIANO, VIDEO, and JUICE. These are more likely to be actual answers than obscure 4-vowel words, and they still test three vowels at once. RAISE and ARISE are especially popular because they also include the high-frequency consonants R and S.</p>
+    </details>
+</div>
+
+<div class="quotable-answer-box" style="text-align: center;">
+    <p style="margin: 0; font-size: 1.1rem;"><strong>Try it live:</strong> Got your vowels sorted? Paste your green, yellow, and gray letters into our <a href="ai-word-solver.html" style="color: var(--accent-light); font-weight: 700;">free Wordle solver</a> or search on the <a href="/" style="color: var(--accent-light); font-weight: 700;">5 Letter Word Finder homepage</a> and watch the answer list shrink with every guess. No signup needed.</p>
+</div>
+
+<div class="cta-btn-container">
+    <a href="ai-word-solver.html" class="btn-cyan-gradient">Open Wordle Solver →</a>
+</div>
+            </article>
+
+            <div style="font-size:0.85rem; color:var(--text-muted); text-align:center; margin:3rem 0 1rem; padding-top:1rem; border-top:1px solid var(--border);">
+              <strong>Last Updated:</strong> October 2026
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo-container">
+                        <span class="brand-name">Word Finder <span>Tool</span></span>
+                    </div>
+                    <p class="footer-desc">Free, privacy-first word game helper &amp; Wordle solver. Zero ads, instant letter filtering.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Word Finders</h4>
+                    <ul class="footer-links">
+                        <li><a href="3-letter-word-finder.html">3 Letter Word Finder</a></li>
+                        <li><a href="4-letter-word-finder.html">4 Letter Word Finder</a></li>
+                        <li><a href="/">5 Letter Word Finder</a></li>
+                        <li><a href="6-letter-word-finder.html">6 Letter Word Finder</a></li>
+                        <li><a href="7-letter-word-finder.html">7 Letter Word Finder</a></li>
+                        <li><a href="8-letter-word-finder.html">8 Letter Word Finder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Guides &amp; Lists</h4>
+                    <ul class="footer-links">
+                        <li><a href="best-wordle-starting-words.html">Best Wordle Starting Words</a></li>
+                        <li><a href="wordle-strategy-guide.html">Wordle Strategy Guide</a></li>
+                        <li><a href="5-letter-words-with-most-vowels.html">Words With Most Vowels</a></li>
+                        <li><a href="highest-scoring-scrabble-words.html">Highest Scoring Scrabble Words</a></li>
+                        <li><a href="wordle-beginner-tips.html">Wordle Beginner Tips</a></li>
+                        <li><a href="5-letter-words-by-position.html">Fill in the Blank Finder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Legal &amp; Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 5LetterWordFinderTool.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
