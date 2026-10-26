@@ -9,6 +9,9 @@
         content="Find 5-letter words instantly with our free Word Finder. Filter by position, misplaced letters, and excluded tiles to solve daily Wordle puzzles fast.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.5letterwordfindertool.com/">
+    <link rel="alternate" hreflang="en" href="https://www.5letterwordfindertool.com/">
+    <link rel="alternate" hreflang="es" href="https://www.5letterwordfindertool.com/es/">
+    <link rel="alternate" hreflang="x-default" href="https://www.5letterwordfindertool.com/">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Open Graph / Facebook -->
@@ -354,6 +357,25 @@
     .theme-dark .intro-hook-box + .subtitle {
         color: var(--text-secondary);
     }
+    .lang-switch-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.75rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: all var(--transition-fast);
+    }
+    .lang-switch-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--bg-elevated);
+    }
 </style>
 </head>
 
@@ -411,8 +433,12 @@
                 </li>
             </ul>
 
-            <!-- CTA BUTTON -->
-            <div class="nav-cta">
+            <!-- CTA BUTTON & LANGUAGE SWITCHER -->
+            <div class="nav-cta" style="display: flex; align-items: center; gap: 0.75rem;">
+                <a href="/es/" class="lang-switch-btn" title="Versión en español">
+                    <span>🇪🇸</span>
+                    <span>Español</span>
+                </a>
                 <a href="/#tool-section" class="btn-cta-header">Try Tool</a>
             </div>
         </nav>
@@ -587,6 +613,10 @@
                         </svg>
                         Play Wordle
                     </a>
+
+                    <div class="nav-divider"></div>
+                    <p class="nav-section-label">Language</p>
+                    <a href="/es/" class="nav-link" style="color: var(--accent); font-weight: 600;">🇪🇸 Español</a>
 
                     <div class="nav-divider"></div>
                     <p class="nav-section-label">Information</p>

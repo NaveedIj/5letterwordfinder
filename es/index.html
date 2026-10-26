@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Palabras de 5 Letras – Resolver Wordle en Español</title>
+    <meta name="description"
+        content="Encuentra palabras de 5 letras para Wordle y juegos de palabras. Filtra por letras verdes, amarillas y excluidas en tiempo real. 100% gratis y sin registro.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.5letterwordfindertool.com/es/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Reciprocal hreflang Annotations -->
+    <link rel="alternate" hreflang="es" href="https://www.5letterwordfindertool.com/es/">
+    <link rel="alternate" hreflang="en" href="https://www.5letterwordfindertool.com/">
+    <link rel="alternate" hreflang="x-default" href="https://www.5letterwordfindertool.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Buscador de Palabras de 5 Letras – Resolver Wordle en Español">
+    <meta property="og:description"
+        content="Encuentra palabras de 5 letras para Wordle y juegos de palabras. Filtra por letras verdes, amarillas y excluidas en tiempo real. 100% gratis y sin registro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.5letterwordfindertool.com/es/">
+    <meta property="og:image" content="https://www.5letterwordfindertool.com/preview-es.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Buscador de Palabras de 5 Letras – Resolver Wordle en Español">
+    <meta name="twitter:description"
+        content="Encuentra palabras de 5 letras para Wordle y juegos de palabras. Filtra por letras verdes, amarillas y excluidas en tiempo real.">
+    <meta name="twitter:image" content="https://www.5letterwordfindertool.com/preview-es.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts Loading -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap">
+
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Theme Persistence Script -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = savedTheme !== 'light';
+            document.documentElement.classList.add(isDark ? 'theme-dark' : 'theme-light');
+            document.documentElement.style.backgroundColor = isDark ? '#061014' : '#f8fafc';
+        })();
+    </script>
+
+    <!-- Schema.org JSON-LD Graph -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://www.5letterwordfindertool.com/#website",
+            "url": "https://www.5letterwordfindertool.com/",
+            "name": "5 Letter Word Finder Tool",
+            "inLanguage": "es-ES"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.5letterwordfindertool.com/es/#webpage",
+            "url": "https://www.5letterwordfindertool.com/es/",
+            "name": "Buscador de Palabras de 5 Letras – Resolver Wordle en Español",
+            "description": "Buscador de palabras de 5 letras para resolver Wordle en español. Filtra por letras exactas, mal colocadas y letras excluidas.",
+            "isPartOf": {
+                "@id": "https://www.5letterwordfindertool.com/#website"
+            },
+            "inLanguage": "es-ES"
+        },
+        {
+            "@type": "WebApplication",
+            "@id": "https://www.5letterwordfindertool.com/es/#webapp",
+            "name": "Buscador de Palabras de 5 Letras",
+            "url": "https://www.5letterwordfindertool.com/es/",
+            "description": "Herramienta gratuita para buscar palabras de 5 letras en español. Compatible con la letra Ñ y filtros estilo Wordle.",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Web browser",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "EUR"
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://www.5letterwordfindertool.com/es/#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "¿Cómo se busca palabras de 5 letras con la letra Ñ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "La letra Ñ es una letra completa e independiente en el buscador. Puedes escribirla directamente en cualquiera de las casillas verdes, amarillas o en letras obligatorias. El sistema nunca la convertirá en N ni devolverá falsos positivos."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Tengo que escribir las tildes para encontrar palabras?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No es necesario. Las casillas aceptan letras normales (sin acento) y encontrarán tanto las palabras llanas como las que llevan tilde ortográfica (por ejemplo, buscar con A encontrará tanto amigo como árbol). En la lista de resultados verás la ortografía correcta recomendada."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Cuáles son las mejores palabras para empezar en Wordle en español?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Las mejores palabras iniciales combinan las vocales y consonantes más frecuentes del español (A, E, O, S, R, N, L). Palabras como PLAYA, CANTO, NORTE o BARCO permiten descartar un gran porcentaje del diccionario en el primer intento."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Es gratis este buscador de palabras de 5 letras?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí, es 100% gratuito, sin límites diarios y sin anuncios invasivos. Además, respeta tu privacidad: el algoritmo de filtrado se ejecuta completamente en tu navegador y tus letras nunca se envían a ningún servidor."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.5letterwordfindertool.com/es/#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Inicio",
+                    "item": "https://www.5letterwordfindertool.com/es/"
+                }
+            ]
+        }
+    ]
+}
+    </script>
+
+    <style>
+        .lang-switch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+
+        .lang-switch-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--bg-elevated);
+        }
+
+        /* 1. Visual Hierarchy & Header Typography */
+        body[data-lang="es"] .title {
+            font-size: clamp(1.6rem, 3.6vw, 2.35rem);
+            line-height: 1.22;
+            letter-spacing: -0.03em;
+            max-width: 920px;
+            margin: 0 auto 0.5rem;
+        }
+
+        body[data-lang="es"] .title-gradient {
+            filter: drop-shadow(0 2px 8px rgba(34, 211, 238, 0.25));
+        }
+
+        body[data-lang="es"] .header .tagline {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.55;
+            max-width: 620px;
+            margin: 0.5rem auto 1.5rem;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        body[data-lang="es"] .intro-hook-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent) !important;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* 2. Word Card Grid Uniformity & Tile Typography */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+            gap: 0.5rem;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .word-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 0.45rem 0.35rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 58px;
+            box-sizing: border-box;
+        }
+
+        .word-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-card);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 211, 238, 0.2);
+        }
+
+        .word-card:active {
+            transform: translateY(0) scale(0.97);
+        }
+
+        .letter-tile {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            letter-spacing: 0.06em;
+        }
+
+        .letter-tile-correct {
+            color: #34d399;
+            font-weight: 800;
+            text-shadow: 0 0 8px rgba(52, 211, 153, 0.35);
+        }
+
+        .word-card-ortho {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            opacity: 0.85;
+            margin-top: 0.2rem;
+            text-transform: lowercase;
+            font-style: italic;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            letter-spacing: 0.02em;
+        }
+
+        /* 3. Button Contrast, Input Labels & High-Contrast Focus Rings */
+        .row-label {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-bottom: 0.35rem;
+        }
+
+        body[data-lang="es"] .char-input:focus,
+        body[data-lang="es"] .char-input:focus-visible,
+        body[data-lang="es"] .wrong-pos-input:focus,
+        body[data-lang="es"] .wrong-pos-input:focus-visible,
+        body[data-lang="es"] .text-input:focus,
+        body[data-lang="es"] .text-input:focus-visible,
+        body[data-lang="es"] .btn:focus,
+        body[data-lang="es"] .btn:focus-visible,
+        body[data-lang="es"] .sort-pill:focus,
+        body[data-lang="es"] .sort-pill:focus-visible,
+        body[data-lang="es"] .toggle-item:focus,
+        body[data-lang="es"] .toggle-item:focus-visible,
+        body[data-lang="es"] .starter-chip:focus,
+        body[data-lang="es"] .starter-chip:focus-visible {
+            outline: 2px solid var(--accent) !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.25) !important;
+        }
+
+        .hero-actions .btn-secondary {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-active);
+            color: var(--text-primary);
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+
+        .hero-actions .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 2px 10px rgba(34, 211, 238, 0.15);
+        }
+
+        body[data-lang="es"] #copyBtn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+            background: var(--bg-elevated);
+            border-color: var(--border);
+            color: var(--text-muted);
+            box-shadow: none;
+        }
+
+        body[data-lang="es"] .sort-pill {
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        body[data-lang="es"] .sort-pill.active {
+            background: var(--bg-elevated);
+            color: var(--accent);
+            border-color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* 4. Localized Spanish Loading State */
+        body[data-lang="es"] .results-list:empty::before {
+            content: "";
+            grid-column: 1 / -1;
+            min-height: 240px;
+        }
+
+        body[data-lang="es"] .results-list:empty::after {
+            content: "Cargando diccionario...";
+            grid-column: 1 / -1;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding-top: 2rem;
+        }
+
+        /* 5. Starter Chips & Zero-Results States */
+        body[data-lang="es"] .starter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 0.75rem;
+        }
+
+        body[data-lang="es"] .starter-chip {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.4rem 0.85rem;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        body[data-lang="es"] .starter-chip:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--bg-card);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(34, 211, 238, 0.2);
+        }
+
+        body[data-lang="es"] .starter-chip:active {
+            transform: translateY(0);
+        }
+
+        body[data-lang="es"] .zero-results-state {
+            padding: 2rem 1rem !important;
+        }
+
+        body[data-lang="es"] .zero-results-state #emptyResetBtn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-active);
+            color: var(--text-primary);
+            font-weight: 600;
+            padding: 0.45rem 1rem;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+        }
+
+        body[data-lang="es"] .zero-results-state #emptyResetBtn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* 6. FAQ & Footer Polish */
+        .info-section .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            transition: border-color var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .info-section .faq-item:hover {
+            border-color: rgba(34, 211, 238, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .info-section .faq-question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 0.5rem 0;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.35;
+        }
+
+        .info-section .faq-answer {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.65;
+        }
+
+        body[data-lang="es"] .saas-footer a {
+            transition: color var(--transition-fast);
+        }
+
+        body[data-lang="es"] .saas-footer a:hover {
+            color: var(--accent) !important;
+        }
+
+        /* 7. Toast Feedback Polish */
+        body[data-lang="es"] .toast {
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 12px rgba(16, 185, 129, 0.2);
+        }
+
+        /* 8. Mobile & Tablet Specificity & Height Cap */
+        @media (max-width: 899px) {
+            body[data-lang="es"] .hero-results-panel {
+                max-height: 380px !important;
+                min-height: 240px !important;
+            }
+
+            body[data-lang="es"] .hero-results-panel .results-list {
+                max-height: 295px !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        @media (max-width: 440px) {
+            body[data-lang="es"] .lang-switch-btn span:last-child {
+                display: none;
+            }
+
+            body[data-lang="es"] .lang-switch-btn {
+                padding: 0.35rem 0.55rem;
+            }
+
+            body[data-lang="es"] .brand-name {
+                font-size: 1.15rem !important;
+            }
+        }
+
+        @media (max-width: 380px) {
+            body[data-lang="es"] .pattern-grid,
+            body[data-lang="es"] .wrong-pos-grid {
+                gap: 0.25rem !important;
+            }
+
+            body[data-lang="es"] .char-input,
+            body[data-lang="es"] .wrong-pos-input {
+                width: 2.6rem !important;
+                height: 2.85rem !important;
+                font-size: 1.35rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body data-word-length="5" data-lang="es" style="--word-len: 5;">
+    <header class="saas-header">
+        <nav class="nav-container-header" aria-label="Navegación principal">
+            <!-- BRANDING -->
+            <a href="/es/" class="brand-container">
+                <span class="brand-name">Buscador <span>Palabras</span></span>
+                <span class="brand-tagline-header">Palabras de 5 Letras en Español</span>
+            </a>
+
+            <!-- HAMBURGER BUTTON -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- NAVIGATION -->
+            <ul class="nav-menu">
+                <li><a href="/es/" class="nav-menu-link active">Inicio</a></li>
+                <li><a href="/es/#instrucciones" class="nav-menu-link">Instrucciones</a></li>
+                <li><a href="/es/#faq" class="nav-menu-link">Preguntas frecuentes</a></li>
+            </ul>
+
+            <!-- LANGUAGE SWITCHER & CTA -->
+            <div class="nav-cta" style="display: flex; align-items: center; gap: 0.75rem;">
+                <a href="/" class="lang-switch-btn" title="Switch to English website">
+                    <span>🇺🇸</span>
+                    <span>English</span>
+                </a>
+                <a href="/es/#tool-section" class="btn-cta-header">Buscar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Navigation Overlay -->
+        <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+        <!-- Background Glow -->
+        <div class="bg-glow"></div>
+
+        <!-- Help Modal -->
+        <div class="modal" id="helpModal" aria-hidden="true">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content" id="helpModalContent" style="padding: 2rem;">
+                <button class="modal-close" id="closeModalBtn" aria-label="Cerrar guía">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <h2 style="font-family: 'Outfit', sans-serif; margin-top: 0;">Cómo usar el buscador de palabras</h2>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    <strong>1. Letras verdes (Posición correcta):</strong> Introduce letras en su casilla exacta del 1 al 5.<br>
+                    <strong>2. Letras amarillas (Posición incorrecta):</strong> Letras que están en la palabra pero en otra columna.<br>
+                    <strong>3. Letras grises (Excluidas):</strong> Letras que no forman parte de la palabra.<br>
+                    <strong>4. Letra Ñ:</strong> Totalmente compatible. Trátala como una letra independiente de la N.
+                </p>
+            </div>
+        </div>
+
+        <!-- Drawer Navigation Panel -->
+        <aside class="nav-panel" id="navPanel" aria-label="Menú móvil">
+            <div class="nav-container">
+                <div class="nav-header">
+                    <div class="nav-title"
+                        style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
+                        Menú</div>
+                    <button class="btn-close-nav" id="closeNavBtn" aria-label="Cerrar menú">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="nav-links">
+                    <a href="/es/" class="nav-link">Inicio (Español)</a>
+                    <a href="/es/#tool-section" class="nav-link">Buscador</a>
+                    <a href="/es/#instrucciones" class="nav-link">Instrucciones</a>
+                    <a href="/es/#faq" class="nav-link">Preguntas frecuentes</a>
+                    <div class="nav-divider"></div>
+                    <a href="/" class="nav-link" style="color: var(--accent);">🇺🇸 English Version</a>
+                </nav>
+            </div>
+        </aside>
+
+        <div class="container">
+            <!-- ======================== HERO SECTION ======================== -->
+            <section class="header">
+                <h1 class="title">Buscador de Palabras de 5 Letras – Resuelve <span class="title-gradient">Wordle</span> al Instante</h1>
+                <p class="tagline">Encuentra todas las palabras de 5 letras en español usando tus pistas verdes, amarillas y letras excluidas.</p>
+            </section>
+
+            <!-- Tool Container (Side-by-Side Hero) -->
+            <div class="pattern-box hero-container" id="tool-section" role="search" aria-label="Filtros de búsqueda de palabras">
+                <div class="hero-tool-layout">
+                    <!-- LEFT COLUMN: RESULTS PANEL -->
+                    <div class="hero-results-panel card">
+                        <div class="results-info">
+                            <!-- Row 1: Title, count pill, Copy button -->
+                            <div class="results-info-row-top">
+                                <div class="results-heading-group">
+                                    <span class="card-title">Palabras</span>
+                                    <span class="results-count" id="resultsCount">0 palabras</span>
+                                </div>
+                                <button class="btn btn-primary btn-sm" id="copyBtn" disabled aria-label="Copiar todas las palabras">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copiar
+                                </button>
+                            </div>
+                            <!-- Row 2: Sort pills -->
+                            <div class="results-info-row-bottom">
+                                <div class="sort-pills-container" id="sortPills">
+                                    <button type="button" class="sort-pill active" data-sort="alpha-asc">A–Z</button>
+                                    <button type="button" class="sort-pill" data-sort="alpha-desc">Z–A</button>
+                                </div>
+                                <select id="sortSelect" style="display: none;" aria-label="Ordenar resultados">
+                                    <option value="alpha-asc">A a Z</option>
+                                    <option value="alpha-desc">Z a A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="results-list" id="resultsList">
+                            <!-- Results generated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: INPUTS PANEL -->
+                    <div class="hero-inputs-panel">
+                        <!-- Segmented Mode Toggle Pill -->
+                        <div class="mode-toggle-wrapper">
+                            <div class="segmented-toggle" id="dictToggle">
+                                <button type="button" class="toggle-item active" data-dict="common">Modo Wordle</button>
+                                <button type="button" class="toggle-item" data-dict="broad">Diccionario completo</button>
+                            </div>
+                        </div>
+
+                        <!-- Warning banner -->
+                        <div class="filter-warning-banner" id="conflictWarning" aria-live="polite" style="display: none;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span id="conflictWarningText">Conflicto de filtros detectado.</span>
+                        </div>
+
+                        <!-- Green: Correct Position -->
+                        <div class="hero-row">
+                            <span class="row-label">
+                                <span class="row-label-dot green-dot"></span>
+                                Posición exacta (verde)
+                            </span>
+                            <div class="pattern-grid" id="patternGrid">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
+                                    autofocus id="pos0" aria-label="Letra en posición 1">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
+                                    id="pos1" aria-label="Letra en posición 2">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
+                                    id="pos2" aria-label="Letra en posición 3">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
+                                    id="pos3" aria-label="Letra en posición 4">
+                                <input type="text" class="char-input" maxlength="1" autocomplete="off" spellcheck="false"
+                                    id="pos4" aria-label="Letra en posición 5">
+                            </div>
+                        </div>
+
+                        <!-- Yellow: Wrong Position -->
+                        <div class="hero-row">
+                            <span class="row-label">
+                                <span class="row-label-dot yellow-dot"></span>
+                                Posición incorrecta (amarillo)
+                            </span>
+                            <div class="wrong-pos-grid" id="wrongPosGrid">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w0"
+                                    aria-label="Letras incorrectas en casilla 1">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w1"
+                                    aria-label="Letras incorrectas en casilla 2">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w2"
+                                    aria-label="Letras incorrectas en casilla 3">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w3"
+                                    aria-label="Letras incorrectas en casilla 4">
+                                <input type="text" class="wrong-pos-input" maxlength="2" placeholder="-" id="w4"
+                                    aria-label="Letras incorrectas en casilla 5">
+                            </div>
+                            <p class="row-hint">Letras que forman parte de la palabra pero no van en esta casilla.</p>
+                        </div>
+
+                        <!-- Gray: Excluded -->
+                        <div class="hero-row">
+                            <span class="row-label">
+                                <span class="row-label-dot gray-dot"></span>
+                                Letras descartadas (gris)
+                            </span>
+                            <label for="excludes" class="sr-only">Letras a excluir de los resultados</label>
+                            <input type="text" id="excludes" class="text-input excluded-input hero-excludes"
+                                placeholder="Letras que no están en la palabra" autocomplete="off" spellcheck="false"
+                                aria-label="Letras que no aparecen en la palabra">
+                            <p class="row-hint">Se ignoran automáticamente las letras que hayas marcado en verde o amarillo.</p>
+                        </div>
+
+                        <!-- Advanced Filters Section -->
+                        <details class="advanced-filters-details" id="advancedFiltersDetails">
+                            <summary class="advanced-filters-summary">
+                                <span>Filtros avanzados (Letras requeridas y repetidas)</span>
+                                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </summary>
+                            <div class="advanced-filters-content">
+                                <div class="hero-row">
+                                    <span class="row-label">
+                                        <span class="row-label-dot teal-dot"></span>
+                                        Debe incluir (cualquier posición)
+                                    </span>
+                                    <label for="mustInclude" class="sr-only">Letras obligatorias</label>
+                                    <input type="text" id="mustInclude" class="text-input must-include-input hero-excludes"
+                                        placeholder="Letras obligatorias (ej. EE = necesita dos E)" autocomplete="off"
+                                        spellcheck="false" aria-label="Letras obligatorias en cualquier casilla">
+                                    <p class="row-hint">Úsalo cuando conozcas las letras pero no su posición exacta.</p>
+                                </div>
+
+                                <div class="hero-row hero-row--toggle">
+                                    <label class="repeat-toggle"
+                                        title="Al activarlo, las casillas amarillas suman al conteo mínimo de letras repetidas.">
+                                        <input type="checkbox" id="repeatSensitive" checked>
+                                        <span class="repeat-toggle-ui" aria-hidden="true"></span>
+                                        <span class="repeat-toggle-text"><strong>Letras repetidas</strong> - gestiona dobles letras estilo Wordle</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </details>
+
+                        <div class="hero-actions">
+                            <button type="button" class="btn btn-primary" id="findBtn" aria-label="Aplicar filtros y ver resultados">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Buscar Palabras
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="resetBtn" aria-label="Limpiar todos los filtros">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 6h18"></path>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                                Limpiar todo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intro Hook Box -->
+            <div class="intro-hook-box" style="background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0.75rem; padding: 1rem 1.25rem; margin: 1.25rem auto 1.5rem; max-width: 800px; text-align: left;">
+                <p style="margin: 0; font-size: 0.98rem; line-height: 1.6; color: var(--text-primary);">
+                    Un <strong>buscador de palabras de 5 letras</strong> diseñado específicamente para resolver partidas de Wordle en español, Scrabble y crucigramas. Introduce tus pistas y descubre al instante todas las opciones posibles con soporte nativo para la letra Ñ.
+                </p>
+            </div>
+
+            <!-- Quick stats bar -->
+            <div class="hero-extras" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem; margin-bottom: 3rem;">
+                <div class="hero-stats" id="heroStats">
+                    <div class="hero-stat" aria-live="polite">
+                        <span class="hero-stat-num stat-num-violet" id="statWordCount">0</span>
+                        <span class="hero-stat-label" id="statModeLabel">MODO WORDLE</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num stat-num-green" id="statLiveResults">0</span>
+                        <span class="hero-stat-label">COINCIDENTES</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================== INSTRUCTIONS SECTION ======================== -->
+            <section class="info-section" id="instrucciones" style="margin-bottom: 3.5rem;">
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; text-align: center; margin-bottom: 2rem;">¿Cómo funciona el buscador de palabras?</h2>
+                <div class="showcase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                    <div class="showcase-card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 1.5rem;">
+                        <div class="card-status-bar green" style="height: 4px; background: var(--green); border-radius: 4px; margin-bottom: 1rem;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-primary);">1. Casillas verdes (Exactas)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">Introduce las letras que sabes con certeza que van en esa posición. El buscador solo mostrará palabras que tengan esa letra en ese casillero.</p>
+                    </div>
+
+                    <div class="showcase-card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 1.5rem;">
+                        <div class="card-status-bar yellow" style="height: 4px; background: var(--yellow); border-radius: 4px; margin-bottom: 1rem;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-primary);">2. Casillas amarillas (Descolocadas)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">Indica las letras que están en la palabra pero en otra casilla. El buscador descartará palabras con la letra en esa columna, pero exigirá que aparezca en otra.</p>
+                    </div>
+
+                    <div class="showcase-card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 1.5rem;">
+                        <div class="card-status-bar gray" style="height: 4px; background: var(--text-muted); border-radius: 4px; margin-bottom: 1rem;"></div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-primary);">3. Casilla gris (Excluidas)</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">Escribe todas las letras que Wordle haya marcado en gris. Quedarán eliminadas de inmediato de todos los resultados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================== FAQ SECTION ======================== -->
+            <section class="info-section" id="faq" style="max-width: 800px; margin: 0 auto 4rem;">
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; text-align: center; margin-bottom: 2rem;">Preguntas Frecuentes</h2>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo se busca palabras de 5 letras con la letra Ñ?</h3>
+                    <p class="faq-answer">La letra Ñ es una letra completa e independiente en el buscador. Puedes escribirla directamente en cualquiera de las casillas verdes, amarillas o en letras obligatorias. El sistema nunca la convertirá en N ni devolverá falsos positivos.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Tengo que escribir las tildes para encontrar palabras?</h3>
+                    <p class="faq-answer">No es necesario. Las casillas aceptan letras normales (sin acento) y encontrarán tanto las palabras llanas como las que llevan tilde ortográfica (por ejemplo, buscar con A encontrará tanto <em>amigo</em> como <em>árbol</em>). En la lista de resultados verás la ortografía correcta recomendada.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuáles son las mejores palabras para empezar en Wordle en español?</h3>
+                    <p class="faq-answer">Las mejores palabras iniciales combinan las vocales y consonantes más frecuentes del español (A, E, O, S, R, N, L). Palabras como <strong>PLAYA</strong>, <strong>CANTO</strong>, <strong>NORTE</strong> o <strong>BARCO</strong> permiten descartar un gran porcentaje del diccionario en el primer intento.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Es gratis este buscador de palabras de 5 letras?</h3>
+                    <p class="faq-answer">Sí, es 100% gratuito, sin límites diarios y sin anuncios invasivos. Además, respeta tu privacidad: el algoritmo de filtrado se ejecuta completamente en tu navegador y tus letras nunca se envían a ningún servidor.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="saas-footer" style="background: var(--bg-card); border-top: 1px solid var(--border); padding: 3rem 1.5rem; text-align: center;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <p style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.5rem;">Buscador de Palabras de 5 Letras</p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Herramienta gratuita para Wordle y juegos de palabras en español.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+                <a href="/es/" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Inicio</a>
+                <a href="/es/#instrucciones" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Instrucciones</a>
+                <a href="/es/#faq" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">Preguntas</a>
+                <a href="/" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600;">🇺🇸 English Version</a>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.8rem; margin: 0;">&copy; 2026 Word Finder Tool. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- Spanish Finder Script -->
+    <script src="/js/script-es.js" defer></script>
+</body>
+
+</html>
