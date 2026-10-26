@@ -10,6 +10,11 @@
       "source": "/5-letter-word-finder.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/ai-word-solver.html",
+      "destination": "/ai-word-solver",
+      "permanent": true
     }
   ],
   "headers": [
