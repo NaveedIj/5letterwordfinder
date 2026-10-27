@@ -186,6 +186,7 @@ function detectFilterConflicts(pattern, wrongPosArr, excludesAll, mustIncludeCou
 }
 
 function updateResults() {
+    if (!resultsList) return;
     console.log("updateResults triggered");
     if (typeof activeList !== 'undefined') {
         console.log("activeList length:", activeList.length);
@@ -196,7 +197,7 @@ function updateResults() {
 
     const mustIncludeCounts = mustIncludeInput ? parseMustInclude(mustIncludeInput.value) : {};
 
-    const excludesRaw = excludesInput.value.toUpperCase().trim();
+    const excludesRaw = excludesInput ? excludesInput.value.toUpperCase().trim() : '';
     const excludesAll = [...new Set(excludesRaw.split('').filter(c => /[A-Z]/.test(c)))];
     
     // Conflict Detection (Option B Implementation)
@@ -309,6 +310,7 @@ function updateTracker(correctSet, presentSet, excludedSet) {
 let lastRenderedHash = '';
 
 function renderResults(pattern = '') {
+    if (!resultsList) return;
     const showScores = showScrabbleInput ? showScrabbleInput.checked : false;
     const sortMode = getActiveSortMode();
     
@@ -408,17 +410,17 @@ function hasAnyFilter() {
     return charInputs.some(input => input.value.trim()) ||
            wrongPosInputs.some(input => input.value.trim()) ||
            (mustIncludeInput && mustIncludeInput.value.trim()) ||
-           excludesInput.value.trim();
+           (excludesInput && excludesInput.value.trim());
 }
 
 function resetFilters() {
     charInputs.forEach(input => { input.value = ''; });
     wrongPosInputs.forEach(input => { input.value = ''; });
-    excludesInput.value = '';
+    if (excludesInput) excludesInput.value = '';
     if (mustIncludeInput) mustIncludeInput.value = '';
     if (repeatSensitiveInput) repeatSensitiveInput.checked = true;
     updateResults();
-    charInputs[0].focus();
+    if (charInputs[0]) charInputs[0].focus();
 }
 
 function copyResults() {
@@ -569,7 +571,7 @@ if (modalOverlay) modalOverlay.addEventListener('click', () => toggleModal(false
 
 
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && helpModal.classList.contains('show')) {
+    if (e.key === 'Escape' && helpModal && helpModal.classList.contains('show')) {
         toggleModal(false);
     }
 });
@@ -674,7 +676,7 @@ if (resultsList) {
 }
 
 window.addEventListener('keydown', (e) => {
-    if (e.key === '/' && !charInputs.some(input => document.activeElement === input)) {
+    if (e.key === '/' && charInputs.length > 0 && !charInputs.some(input => document.activeElement === input)) {
         e.preventDefault();
         charInputs[0].focus();
     }
