@@ -60,6 +60,50 @@ function renderStaticWordGrid(words) {
     return words.map(w => `                        <div class="word-item">${w.toUpperCase()}</div>`).join('\n');
 }
 
+// Build top A-Z quick navigation for ending-letter pages
+function renderTopEndingNav(activeLetter) {
+    const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    const linksHtml = letters.map(l => {
+        const u = l.toUpperCase();
+        const isActive = u === activeLetter.toUpperCase();
+        const activeAttr = isActive ? ' class="letter-subnav-item active" aria-current="page"' : ' class="letter-subnav-item"';
+        const label = isActive ? `Words ending in ${u} (Current Page)` : `Words ending in ${u}`;
+        return `                    <a href="5-letter-words-ending-with-${l}.html"${activeAttr} aria-label="${label}">${u}</a>`;
+    }).join('\n');
+
+    return `                <!-- TOP A-Z QUICK NAVIGATION -->\n                <nav class="letter-subnav" aria-label="Browse 5-letter words by ending letter">\n                    <div class="letter-subnav-header">\n                        <span class="letter-subnav-title">Browse by Ending Letter:</span>\n                        <span class="letter-subnav-hint">Select a terminal letter</span>\n                    </div>\n                    <div class="letter-subnav-grid">\n${linksHtml}\n                    </div>\n                </nav>`;
+}
+
+// Ensure starting-letter pages contain reciprocal link to their matching ending-letter page
+function updateStartingMirrorLink(content, letter) {
+    const l = letter.toLowerCase();
+    const targetEnding = `5-letter-words-ending-with-${l}.html`;
+    if (content.includes(targetEnding)) {
+        return content;
+    }
+
+    if (l === 'm') {
+        const needle = '<li><a href="5-letter-words-ending-with-e.html">5-Letter Words Ending with E</a></li>';
+        const replacement = `<li><a href="5-letter-words-ending-with-m.html">5-Letter Words Ending with M</a></li>\n                        ${needle}`;
+        if (content.includes(needle)) {
+            return content.replace(needle, replacement);
+        }
+    }
+
+    const endingLinkHtml = `<a href="${targetEnding}" title="5 Letter Words Ending With ${l.toUpperCase()}">Ending With ${l.toUpperCase()}</a>`;
+
+    if (content.includes('5-letter-words-ending-with-e.html') && l !== 'e') {
+        return content.replace(/<a\s+href="5-letter-words-ending-with-e\.html"[^>]*>[\s\S]*?<\/a>/, endingLinkHtml);
+    }
+
+    const gridRegex = /(<div class="letter-grid-internal"[^>]*>\s*)(<a\s+href="5-letter-words-starting-with-a\.html"[^>]*>[\s\S]*?<\/a>)/;
+    if (gridRegex.test(content)) {
+        return content.replace(gridRegex, `$1${endingLinkHtml}`);
+    }
+
+    return content.replace(/(<div class="letter-grid-internal"[^>]*>)/, `$1\n                        ${endingLinkHtml}`);
+}
+
 // 3. Process 26 Starting Letter Pages (5-letter-words-starting-with-a.html to z.html)
 const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let updatedStartingCount = 0;
@@ -118,12 +162,33 @@ if (processStarting) {
         // Remove client-side DOMContentLoaded overwrite for wordGrid to prevent layout shift & preserve pre-rendered HTML
         content = content.replace(/<script>\s*document\.addEventListener\('DOMContentLoaded'[\s\S]*?<\/script>/gi, '');
 
+        // Ensure reciprocal starting-to-ending link exists
+        content = updateStartingMirrorLink(content, letter);
+
         fs.writeFileSync(filePath, content, 'utf8');
         updatedStartingCount++;
     }
     console.log(`Updated ${updatedStartingCount} starting letter pages with static HTML word grids.`);
 } else {
     console.log("Preserving starting letter pages (use --starting or --all-pages to re-generate them).");
+}
+
+// Dedicated support to update mirror links across starting pages without altering static word grids
+const processMirrorLinks = process.argv.includes('--mirror-links');
+if (processMirrorLinks && !processStarting) {
+    let mirrorUpdated = 0;
+    for (const letter of letters) {
+        const fileName = `5-letter-words-starting-with-${letter}.html`;
+        const filePath = path.join(__dirname, fileName);
+        if (!fs.existsSync(filePath)) continue;
+        let content = fs.readFileSync(filePath, 'utf8');
+        const updated = updateStartingMirrorLink(content, letter);
+        if (updated !== content) {
+            fs.writeFileSync(filePath, updated, 'utf8');
+            mirrorUpdated++;
+        }
+    }
+    console.log(`Updated ${mirrorUpdated} starting letter pages with reciprocal ending-letter links.`);
 }
 
 // 4. Process 26 Ending Letter Pages (e.g., e, s, t, y, z...)
@@ -154,8 +219,9 @@ for (const letter of letters) {
         content = content.replace('<link rel="stylesheet" href="style.css">', `<link rel="stylesheet" href="style.css">${styleTag}`);
     }
 
-    // Build dedicated static card section containing #wordGrid
-    const preRenderedSectionHtml = `<!-- PRE-RENDERED SEO CONTENT SECTION -->\n            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">\n                <div class="results-info" style="margin-bottom: 1rem;">\n                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in ${letter.toUpperCase()}</h2>\n                </div>\n                <div id="wordGrid" class="word-grid">\n${gridHtml}\n                </div>${disclaimerHtml}\n            </section>\n\n            `;
+    // Build dedicated static card section containing top A-Z navigation and #wordGrid
+    const topNavHtml = renderTopEndingNav(letter);
+    const preRenderedSectionHtml = `<!-- PRE-RENDERED SEO CONTENT SECTION -->\n            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">\n${topNavHtml}\n                <div class="results-info" style="margin-bottom: 1rem;">\n                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in ${letter.toUpperCase()}</h2>\n                </div>\n                <div id="wordGrid" class="word-grid">\n${gridHtml}\n                </div>${disclaimerHtml}\n            </section>\n\n            `;
 
     // Match the pre-rendered SEO content section block (idempotent replacement)
     const preRenderedBlockRegex = /<!-- PRE-RENDERED SEO CONTENT SECTION -->[\s\S]*?(?=<section class="seo-guide-section" style="margin-top: 4rem;">)/;
