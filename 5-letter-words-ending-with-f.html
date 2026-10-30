@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,115 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 101 matching words from our dictionary list.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in F</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">PROOF</div>
+                        <div class="word-item">ABAFF</div>
+                        <div class="word-item">ADOLF</div>
+                        <div class="word-item">ALOOF</div>
+                        <div class="word-item">BANFF</div>
+                        <div class="word-item">BARFF</div>
+                        <div class="word-item">BLAFF</div>
+                        <div class="word-item">BLUFF</div>
+                        <div class="word-item">BRIEF</div>
+                        <div class="word-item">CALEF</div>
+                        <div class="word-item">CALIF</div>
+                        <div class="word-item">CHAFF</div>
+                        <div class="word-item">CHIEF</div>
+                        <div class="word-item">CHUFF</div>
+                        <div class="word-item">CLIFF</div>
+                        <div class="word-item">CLOFF</div>
+                        <div class="word-item">CLOOF</div>
+                        <div class="word-item">CLUFF</div>
+                        <div class="word-item">COEFF</div>
+                        <div class="word-item">DARAF</div>
+                        <div class="word-item">DRAFF</div>
+                        <div class="word-item">DWARF</div>
+                        <div class="word-item">FEOFF</div>
+                        <div class="word-item">FLAFF</div>
+                        <div class="word-item">FLUFF</div>
+                        <div class="word-item">GANEF</div>
+                        <div class="word-item">GANOF</div>
+                        <div class="word-item">GEOFF</div>
+                        <div class="word-item">GLIFF</div>
+                        <div class="word-item">GNOFF</div>
+                        <div class="word-item">GONIF</div>
+                        <div class="word-item">GONOF</div>
+                        <div class="word-item">GRAFF</div>
+                        <div class="word-item">GRIEF</div>
+                        <div class="word-item">GRIFF</div>
+                        <div class="word-item">GROFF</div>
+                        <div class="word-item">GROOF</div>
+                        <div class="word-item">GROUF</div>
+                        <div class="word-item">GRUFF</div>
+                        <div class="word-item">GUELF</div>
+                        <div class="word-item">HANIF</div>
+                        <div class="word-item">HOWFF</div>
+                        <div class="word-item">INDEF</div>
+                        <div class="word-item">KALIF</div>
+                        <div class="word-item">KENAF</div>
+                        <div class="word-item">KLOOF</div>
+                        <div class="word-item">LAMPF</div>
+                        <div class="word-item">MANUF</div>
+                        <div class="word-item">METIF</div>
+                        <div class="word-item">MODIF</div>
+                        <div class="word-item">MOTIF</div>
+                        <div class="word-item">PILAF</div>
+                        <div class="word-item">PLUFF</div>
+                        <div class="word-item">PLUPF</div>
+                        <div class="word-item">POUFF</div>
+                        <div class="word-item">QUAFF</div>
+                        <div class="word-item">QUIFF</div>
+                        <div class="word-item">SARAF</div>
+                        <div class="word-item">SARIF</div>
+                        <div class="word-item">SCAFF</div>
+                        <div class="word-item">SCALF</div>
+                        <div class="word-item">SCARF</div>
+                        <div class="word-item">SCOFF</div>
+                        <div class="word-item">SCRUF</div>
+                        <div class="word-item">SCUFF</div>
+                        <div class="word-item">SCURF</div>
+                        <div class="word-item">SERIF</div>
+                        <div class="word-item">SHEAF</div>
+                        <div class="word-item">SHELF</div>
+                        <div class="word-item">SHILF</div>
+                        <div class="word-item">SHRAF</div>
+                        <div class="word-item">SHUFF</div>
+                        <div class="word-item">SHURF</div>
+                        <div class="word-item">SKAFF</div>
+                        <div class="word-item">SKEIF</div>
+                        <div class="word-item">SKELF</div>
+                        <div class="word-item">SKIFF</div>
+                        <div class="word-item">SLUFF</div>
+                        <div class="word-item">SNAFF</div>
+                        <div class="word-item">SNIFF</div>
+                        <div class="word-item">SNUFF</div>
+                        <div class="word-item">SPIFF</div>
+                        <div class="word-item">SPOOF</div>
+                        <div class="word-item">STAFF</div>
+                        <div class="word-item">STIFF</div>
+                        <div class="word-item">STOFF</div>
+                        <div class="word-item">STOOF</div>
+                        <div class="word-item">STUFF</div>
+                        <div class="word-item">SWARF</div>
+                        <div class="word-item">TARAF</div>
+                        <div class="word-item">THARF</div>
+                        <div class="word-item">THIEF</div>
+                        <div class="word-item">TRUFF</div>
+                        <div class="word-item">WAKIF</div>
+                        <div class="word-item">WHARF</div>
+                        <div class="word-item">WHIFF</div>
+                        <div class="word-item">WHOOF</div>
+                        <div class="word-item">WHUFF</div>
+                        <div class="word-item">WOLOF</div>
+                        <div class="word-item">WOOLF</div>
+                        <div class="word-item">YOUFF</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 101 matching words from our dictionary list.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in O</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">AMIGO</div>
+                        <div class="word-item">JUMBO</div>
+                        <div class="word-item">PIANO</div>
+                        <div class="word-item">RADIO</div>
+                        <div class="word-item">VIDEO</div>
+                        <div class="word-item">ABILO</div>
+                        <div class="word-item">ABMHO</div>
+                        <div class="word-item">ACHOO</div>
+                        <div class="word-item">ADDIO</div>
+                        <div class="word-item">ADOBO</div>
+                        <div class="word-item">ADPAO</div>
+                        <div class="word-item">AGGRO</div>
+                        <div class="word-item">AGOHO</div>
+                        <div class="word-item">ALAMO</div>
+                        <div class="word-item">ALISO</div>
+                        <div class="word-item">ALLOO</div>
+                        <div class="word-item">ALTHO</div>
+                        <div class="word-item">ALUCO</div>
+                        <div class="word-item">AMIDO</div>
+                        <div class="word-item">AMINO</div>
+                        <div class="word-item">AMYLO</div>
+                        <div class="word-item">ANABO</div>
+                        <div class="word-item">ANGLO</div>
+                        <div class="word-item">ANIMO</div>
+                        <div class="word-item">APPRO</div>
+                        <div class="word-item">ARADO</div>
+                        <div class="word-item">ARULO</div>
+                        <div class="word-item">ATELO</div>
+                        <div class="word-item">AUDIO</div>
+                        <div class="word-item">AUETO</div>
+                        <div class="word-item">AVISO</div>
+                        <div class="word-item">AWETO</div>
+                        <div class="word-item">AZIDO</div>
+                        <div class="word-item">BABOO</div>
+                        <div class="word-item">BACAO</div>
+                        <div class="word-item">BAGIO</div>
+                        <div class="word-item">BAHOO</div>
+                        <div class="word-item">BAILO</div>
+                        <div class="word-item">BALAO</div>
+                        <div class="word-item">BALLO</div>
+                        <div class="word-item">BALOO</div>
+                        <div class="word-item">BANCO</div>
+                        <div class="word-item">BANDO</div>
+                        <div class="word-item">BANJO</div>
+                        <div class="word-item">BARDO</div>
+                        <div class="word-item">BASSO</div>
+                        <div class="word-item">BASTO</div>
+                        <div class="word-item">BAUBO</div>
+                        <div class="word-item">BAUNO</div>
+                        <div class="word-item">BAZOO</div>
+                        <div class="word-item">BEANO</div>
+                        <div class="word-item">BECCO</div>
+                        <div class="word-item">BEKKO</div>
+                        <div class="word-item">BELLO</div>
+                        <div class="word-item">BENZO</div>
+                        <div class="word-item">BETSO</div>
+                        <div class="word-item">BEZZO</div>
+                        <div class="word-item">BIABO</div>
+                        <div class="word-item">BIBIO</div>
+                        <div class="word-item">BILBO</div>
+                        <div class="word-item">BILIO</div>
+                        <div class="word-item">BIMBO</div>
+                        <div class="word-item">BINGO</div>
+                        <div class="word-item">BISSO</div>
+                        <div class="word-item">BOFFO</div>
+                        <div class="word-item">BOIKO</div>
+                        <div class="word-item">BOLDO</div>
+                        <div class="word-item">BOMBO</div>
+                        <div class="word-item">BONBO</div>
+                        <div class="word-item">BONGO</div>
+                        <div class="word-item">BOUTO</div>
+                        <div class="word-item">BRAVO</div>
+                        <div class="word-item">BROMO</div>
+                        <div class="word-item">BRUJO</div>
+                        <div class="word-item">BRUNO</div>
+                        <div class="word-item">BUCCO</div>
+                        <div class="word-item">BUCKO</div>
+                        <div class="word-item">BUENO</div>
+                        <div class="word-item">BUFFO</div>
+                        <div class="word-item">BUMBO</div>
+                        <div class="word-item">BUNCO</div>
+                        <div class="word-item">BUNGO</div>
+                        <div class="word-item">BUNKO</div>
+                        <div class="word-item">BURAO</div>
+                        <div class="word-item">BUROO</div>
+                        <div class="word-item">BURRO</div>
+                        <div class="word-item">BUSTO</div>
+                        <div class="word-item">BUTEO</div>
+                        <div class="word-item">CABIO</div>
+                        <div class="word-item">CACAO</div>
+                        <div class="word-item">CADDO</div>
+                        <div class="word-item">CAIRO</div>
+                        <div class="word-item">CALLO</div>
+                        <div class="word-item">CAMEO</div>
+                        <div class="word-item">CAMPO</div>
+                        <div class="word-item">CANSO</div>
+                        <div class="word-item">CANTO</div>
+                        <div class="word-item">CANZO</div>
+                        <div class="word-item">CARBO</div>
+                        <div class="word-item">CARDO</div>
+                        <div class="word-item">CARGO</div>
+                        <div class="word-item">CARLO</div>
+                        <div class="word-item">CASCO</div>
+                        <div class="word-item">CATSO</div>
+                        <div class="word-item">CAUPO</div>
+                        <div class="word-item">CEIBO</div>
+                        <div class="word-item">CELLO</div>
+                        <div class="word-item">CENTO</div>
+                        <div class="word-item">CHACO</div>
+                        <div class="word-item">CHEGO</div>
+                        <div class="word-item">CHIAO</div>
+                        <div class="word-item">CHICO</div>
+                        <div class="word-item">CHINO</div>
+                        <div class="word-item">CHIRO</div>
+                        <div class="word-item">CHOCO</div>
+                        <div class="word-item">CHOKO</div>
+                        <div class="word-item">CHOLO</div>
+                        <div class="word-item">CISCO</div>
+                        <div class="word-item">CLARO</div>
+                        <div class="word-item">COCAO</div>
+                        <div class="word-item">COCCO</div>
+                        <div class="word-item">COENO</div>
+                        <div class="word-item">COMBO</div>
+                        <div class="word-item">COMMO</div>
+                        <div class="word-item">COMPO</div>
+                        <div class="word-item">CONDO</div>
+                        <div class="word-item">CONGO</div>
+                        <div class="word-item">CONTO</div>
+                        <div class="word-item">CORNO</div>
+                        <div class="word-item">CORSO</div>
+                        <div class="word-item">CORVO</div>
+                        <div class="word-item">COSMO</div>
+                        <div class="word-item">CRAVO</div>
+                        <div class="word-item">CRCAO</div>
+                        <div class="word-item">CREDO</div>
+                        <div class="word-item">CRIBO</div>
+                        <div class="word-item">CTIMO</div>
+                        <div class="word-item">CURIO</div>
+                        <div class="word-item">CUSSO</div>
+                        <div class="word-item">CYANO</div>
+                        <div class="word-item">CYCLO</div>
+                        <div class="word-item">DAIJO</div>
+                        <div class="word-item">DANIO</div>
+                        <div class="word-item">DARGO</div>
+                        <div class="word-item">DAROO</div>
+                        <div class="word-item">DATTO</div>
+                        <div class="word-item">DEINO</div>
+                        <div class="word-item">DEKKO</div>
+                        <div class="word-item">DELOO</div>
+                        <div class="word-item">DESTO</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in N</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">BRAIN</div>
+                        <div class="word-item">BROWN</div>
+                        <div class="word-item">CLEAN</div>
+                        <div class="word-item">DRAIN</div>
+                        <div class="word-item">DROWN</div>
+                        <div class="word-item">GREEN</div>
+                        <div class="word-item">HUMAN</div>
+                        <div class="word-item">JAPAN</div>
+                        <div class="word-item">KNOWN</div>
+                        <div class="word-item">LEARN</div>
+                        <div class="word-item">LEMON</div>
+                        <div class="word-item">OCEAN</div>
+                        <div class="word-item">OFTEN</div>
+                        <div class="word-item">ONION</div>
+                        <div class="word-item">ORGAN</div>
+                        <div class="word-item">QUEEN</div>
+                        <div class="word-item">TRAIN</div>
+                        <div class="word-item">UNION</div>
+                        <div class="word-item">URBAN</div>
+                        <div class="word-item">XENON</div>
+                        <div class="word-item">YEARN</div>
+                        <div class="word-item">AARON</div>
+                        <div class="word-item">ABOON</div>
+                        <div class="word-item">ABRIN</div>
+                        <div class="word-item">ACHEN</div>
+                        <div class="word-item">ACOIN</div>
+                        <div class="word-item">ACORN</div>
+                        <div class="word-item">ACRON</div>
+                        <div class="word-item">ACTIN</div>
+                        <div class="word-item">ACTON</div>
+                        <div class="word-item">ACUAN</div>
+                        <div class="word-item">ADAWN</div>
+                        <div class="word-item">ADCON</div>
+                        <div class="word-item">ADION</div>
+                        <div class="word-item">ADMAN</div>
+                        <div class="word-item">ADMEN</div>
+                        <div class="word-item">ADMIN</div>
+                        <div class="word-item">ADORN</div>
+                        <div class="word-item">ADOWN</div>
+                        <div class="word-item">AERON</div>
+                        <div class="word-item">AGAIN</div>
+                        <div class="word-item">AGHAN</div>
+                        <div class="word-item">AGRIN</div>
+                        <div class="word-item">AGRON</div>
+                        <div class="word-item">AHSAN</div>
+                        <div class="word-item">AIRAN</div>
+                        <div class="word-item">AIWAN</div>
+                        <div class="word-item">AKRON</div>
+                        <div class="word-item">ALAIN</div>
+                        <div class="word-item">ALBAN</div>
+                        <div class="word-item">ALBIN</div>
+                        <div class="word-item">ALBYN</div>
+                        <div class="word-item">ALDEN</div>
+                        <div class="word-item">ALFIN</div>
+                        <div class="word-item">ALGIN</div>
+                        <div class="word-item">ALIEN</div>
+                        <div class="word-item">ALIGN</div>
+                        <div class="word-item">ALKIN</div>
+                        <div class="word-item">ALLAN</div>
+                        <div class="word-item">ALLEN</div>
+                        <div class="word-item">ALMAN</div>
+                        <div class="word-item">ALMON</div>
+                        <div class="word-item">ALOIN</div>
+                        <div class="word-item">ALPEN</div>
+                        <div class="word-item">ALTIN</div>
+                        <div class="word-item">ALTUN</div>
+                        <div class="word-item">ALVAN</div>
+                        <div class="word-item">ALVIN</div>
+                        <div class="word-item">AMAIN</div>
+                        <div class="word-item">AMBAN</div>
+                        <div class="word-item">AMBON</div>
+                        <div class="word-item">AMEEN</div>
+                        <div class="word-item">AMMAN</div>
+                        <div class="word-item">ANCON</div>
+                        <div class="word-item">ANION</div>
+                        <div class="word-item">ANJAN</div>
+                        <div class="word-item">ANORN</div>
+                        <div class="word-item">ANTON</div>
+                        <div class="word-item">APIAN</div>
+                        <div class="word-item">APIIN</div>
+                        <div class="word-item">APRON</div>
+                        <div class="word-item">ARAIN</div>
+                        <div class="word-item">AREAN</div>
+                        <div class="word-item">ARGAN</div>
+                        <div class="word-item">ARGIN</div>
+                        <div class="word-item">ARGON</div>
+                        <div class="word-item">ARIAN</div>
+                        <div class="word-item">ARION</div>
+                        <div class="word-item">ARJUN</div>
+                        <div class="word-item">AROON</div>
+                        <div class="word-item">ARPEN</div>
+                        <div class="word-item">ARSON</div>
+                        <div class="word-item">ARYAN</div>
+                        <div class="word-item">ARZAN</div>
+                        <div class="word-item">ARZUN</div>
+                        <div class="word-item">ASCAN</div>
+                        <div class="word-item">ASCON</div>
+                        <div class="word-item">ASHEN</div>
+                        <div class="word-item">ASIAN</div>
+                        <div class="word-item">ASPEN</div>
+                        <div class="word-item">ATMAN</div>
+                        <div class="word-item">ATREN</div>
+                        <div class="word-item">ATWIN</div>
+                        <div class="word-item">AUBIN</div>
+                        <div class="word-item">AUCAN</div>
+                        <div class="word-item">AUGEN</div>
+                        <div class="word-item">AURIN</div>
+                        <div class="word-item">AUXIN</div>
+                        <div class="word-item">AVERN</div>
+                        <div class="word-item">AVIAN</div>
+                        <div class="word-item">AVION</div>
+                        <div class="word-item">AWARN</div>
+                        <div class="word-item">AXION</div>
+                        <div class="word-item">AXMAN</div>
+                        <div class="word-item">AXMEN</div>
+                        <div class="word-item">AZLON</div>
+                        <div class="word-item">BACIN</div>
+                        <div class="word-item">BACON</div>
+                        <div class="word-item">BADAN</div>
+                        <div class="word-item">BADON</div>
+                        <div class="word-item">BAHAN</div>
+                        <div class="word-item">BAIGN</div>
+                        <div class="word-item">BAIRN</div>
+                        <div class="word-item">BAJAN</div>
+                        <div class="word-item">BAKEN</div>
+                        <div class="word-item">BALAN</div>
+                        <div class="word-item">BALON</div>
+                        <div class="word-item">BALUN</div>
+                        <div class="word-item">BARON</div>
+                        <div class="word-item">BASAN</div>
+                        <div class="word-item">BASIN</div>
+                        <div class="word-item">BASON</div>
+                        <div class="word-item">BATAN</div>
+                        <div class="word-item">BATON</div>
+                        <div class="word-item">BAVIN</div>
+                        <div class="word-item">BEDEN</div>
+                        <div class="word-item">BEDIN</div>
+                        <div class="word-item">BEFAN</div>
+                        <div class="word-item">BEGAN</div>
+                        <div class="word-item">BEGIN</div>
+                        <div class="word-item">BEGUN</div>
+                        <div class="word-item">BEHEN</div>
+                        <div class="word-item">BEJAN</div>
+                        <div class="word-item">BEMAN</div>
+                        <div class="word-item">BENIN</div>
+                        <div class="word-item">BEPEN</div>
+                        <div class="word-item">BEPUN</div>
+                        <div class="word-item">BERUN</div>
+                        <div class="word-item">BESAN</div>
+                        <div class="word-item">BESIN</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

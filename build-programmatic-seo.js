@@ -64,56 +64,67 @@ function renderStaticWordGrid(words) {
 const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let updatedStartingCount = 0;
 
-for (const letter of letters) {
-    const fileName = `5-letter-words-starting-with-${letter}.html`;
-    const filePath = path.join(__dirname, fileName);
-    if (!fs.existsSync(filePath)) continue;
+// Preserve frozen/customized starting letter pages (e.g., M, H, L) unless explicitly requested
+const processStarting = process.argv.includes('--all-pages') || process.argv.includes('--starting');
 
-    let content = fs.readFileSync(filePath, 'utf8');
+if (processStarting) {
+    for (const letter of letters) {
+        if (['m', 'h', 'l'].includes(letter) && !process.argv.includes('--force-frozen')) {
+            console.log(`Skipping frozen page 5-letter-words-starting-with-${letter}.html`);
+            continue;
+        }
 
-    // Get top curated words starting with letter
-    const matchingWords = getCrated5LetterWords(w => w.startsWith(letter), 150);
-    const gridHtml = renderStaticWordGrid(matchingWords);
+        const fileName = `5-letter-words-starting-with-${letter}.html`;
+        const filePath = path.join(__dirname, fileName);
+        if (!fs.existsSync(filePath)) continue;
 
-    // Conditional transparency disclaimer
-    let disclaimerHtml = '';
-    if (matchingWords.length === 150) {
-        disclaimerHtml = '\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>';
-    } else if (matchingWords.length > 0) {
-        disclaimerHtml = `\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all ${matchingWords.length} matching words from our dictionary list.</p>`;
+        let content = fs.readFileSync(filePath, 'utf8');
+
+        // Get top curated words starting with letter
+        const matchingWords = getCrated5LetterWords(w => w.startsWith(letter), 150);
+        const gridHtml = renderStaticWordGrid(matchingWords);
+
+        // Conditional transparency disclaimer
+        let disclaimerHtml = '';
+        if (matchingWords.length === 150) {
+            disclaimerHtml = '\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>';
+        } else if (matchingWords.length > 0) {
+            disclaimerHtml = `\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all ${matchingWords.length} matching words from our dictionary list.</p>`;
+        }
+
+        // Remove any previously injected disclaimer notice
+        content = content.replace(/\s*<p class="text-muted" style="margin-top: 1rem; font-size: 0\.9rem; text-align: center;">[\s\S]*?<\/p>/g, '');
+
+        // Match exact wordGrid container cleanly
+        const wordGridRegex = /<div id="wordGrid" class="word-grid">[\s\S]*?<\/div>(?=\s*(?:<h3>|<h2|<section|<\/div>|\$))/;
+        if (wordGridRegex.test(content)) {
+            content = content.replace(wordGridRegex, `<div id="wordGrid" class="word-grid">\n${gridHtml}\n                    </div>${disclaimerHtml}`);
+        }
+
+        // Ensure self-referential canonical URL
+        const canonicalUrl = `https://www.5letterwordfindertool.com/5-letter-words-starting-with-${letter}.html`;
+        const canonicalRegex = /<link rel="canonical" href="[^"]*">/;
+        if (canonicalRegex.test(content)) {
+            content = content.replace(canonicalRegex, `<link rel="canonical" href="${canonicalUrl}">`);
+        } else {
+            content = content.replace('</head>', `    <link rel="canonical" href="${canonicalUrl}">\n</head>`);
+        }
+
+        // Ensure robots index, follow
+        if (!content.includes('name="robots"')) {
+            content = content.replace('</head>', `    <meta name="robots" content="index, follow">\n</head>`);
+        }
+
+        // Remove client-side DOMContentLoaded overwrite for wordGrid to prevent layout shift & preserve pre-rendered HTML
+        content = content.replace(/<script>\s*document\.addEventListener\('DOMContentLoaded'[\s\S]*?<\/script>/gi, '');
+
+        fs.writeFileSync(filePath, content, 'utf8');
+        updatedStartingCount++;
     }
-
-    // Remove any previously injected disclaimer notice
-    content = content.replace(/\s*<p class="text-muted" style="margin-top: 1rem; font-size: 0\.9rem; text-align: center;">[\s\S]*?<\/p>/g, '');
-
-    // Match exact wordGrid container cleanly
-    const wordGridRegex = /<div id="wordGrid" class="word-grid">[\s\S]*?<\/div>(?=\s*(?:<h3>|<h2|<section|<\/div>|\$))/;
-    if (wordGridRegex.test(content)) {
-        content = content.replace(wordGridRegex, `<div id="wordGrid" class="word-grid">\n${gridHtml}\n                    </div>${disclaimerHtml}`);
-    }
-
-    // Ensure self-referential canonical URL
-    const canonicalUrl = `https://www.5letterwordfindertool.com/5-letter-words-starting-with-${letter}.html`;
-    const canonicalRegex = /<link rel="canonical" href="[^"]*">/;
-    if (canonicalRegex.test(content)) {
-        content = content.replace(canonicalRegex, `<link rel="canonical" href="${canonicalUrl}">`);
-    } else {
-        content = content.replace('</head>', `    <link rel="canonical" href="${canonicalUrl}">\n</head>`);
-    }
-
-    // Ensure robots index, follow
-    if (!content.includes('name="robots"')) {
-        content = content.replace('</head>', `    <meta name="robots" content="index, follow">\n</head>`);
-    }
-
-    // Remove client-side DOMContentLoaded overwrite for wordGrid to prevent layout shift & preserve pre-rendered HTML
-    content = content.replace(/<script>\s*document\.addEventListener\('DOMContentLoaded'[\s\S]*?<\/script>/gi, '');
-
-    fs.writeFileSync(filePath, content, 'utf8');
-    updatedStartingCount++;
+    console.log(`Updated ${updatedStartingCount} starting letter pages with static HTML word grids.`);
+} else {
+    console.log("Preserving starting letter pages (use --starting or --all-pages to re-generate them).");
 }
-
-console.log(`Updated ${updatedStartingCount} starting letter pages with static HTML word grids.`);
 
 // 4. Process 26 Ending Letter Pages (e.g., e, s, t, y, z...)
 let updatedEndingCount = 0;
@@ -127,21 +138,29 @@ for (const letter of letters) {
 
     // Get top curated words ending with letter
     const matchingWords = getCrated5LetterWords(w => w.endsWith(letter), 150);
+    const gridHtml = renderStaticWordGrid(matchingWords);
 
     // Conditional transparency disclaimer
     let disclaimerHtml = '';
     if (matchingWords.length === 150) {
-        disclaimerHtml = '\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>';
+        disclaimerHtml = '\n                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>';
     } else if (matchingWords.length > 0) {
-        disclaimerHtml = `\n                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all ${matchingWords.length} matching words from our dictionary list.</p>`;
+        disclaimerHtml = `\n                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all ${matchingWords.length} matching words from our dictionary list.</p>`;
     }
 
-    // Remove any previously injected disclaimer notice
-    content = content.replace(/\s*<p class="text-muted" style="margin-top: 1rem; font-size: 0\.9rem; text-align: center;">[\s\S]*?<\/p>/g, '');
+    // Ensure CSS styles for .word-grid and .word-item are present
+    if (!content.includes('.word-grid {')) {
+        const styleTag = `\n    <style>\n        .word-grid {\n            display: grid;\n            grid-template-columns: repeat(3, 1fr);\n            gap: 1rem;\n            margin: 1.5rem 0;\n            background: rgba(255, 255, 255, 0.05);\n            padding: 1.5rem;\n            border-radius: 12px;\n            border: 1px solid rgba(255, 255, 255, 0.1);\n        }\n        .word-item {\n            font-family: 'Outfit', sans-serif;\n            font-size: 1.1rem;\n            font-weight: 600;\n            letter-spacing: 0.05em;\n            color: var(--text-light);\n            text-align: center;\n            padding: 0.5rem;\n            background: rgba(0, 0, 0, 0.2);\n            border-radius: 6px;\n        }\n        @media (max-width: 600px) {\n            .word-grid {\n                grid-template-columns: repeat(2, 1fr);\n            }\n        }\n    </style>`;
+        content = content.replace('<link rel="stylesheet" href="style.css">', `<link rel="stylesheet" href="style.css">${styleTag}`);
+    }
 
-    // For ending letter pages, insert disclaimer right after closing .info-content container or before .seo-guide-section
-    if (content.includes('</section>') && !content.includes(disclaimerHtml)) {
-        content = content.replace(/(<section class="seo-guide-section" style="margin-top: 4rem;">)/, `${disclaimerHtml}\n\n            $1`);
+    // Build dedicated static card section containing #wordGrid
+    const preRenderedSectionHtml = `<!-- PRE-RENDERED SEO CONTENT SECTION -->\n            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">\n                <div class="results-info" style="margin-bottom: 1rem;">\n                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in ${letter.toUpperCase()}</h2>\n                </div>\n                <div id="wordGrid" class="word-grid">\n${gridHtml}\n                </div>${disclaimerHtml}\n            </section>\n\n            `;
+
+    // Match the pre-rendered SEO content section block (idempotent replacement)
+    const preRenderedBlockRegex = /<!-- PRE-RENDERED SEO CONTENT SECTION -->[\s\S]*?(?=<section class="seo-guide-section" style="margin-top: 4rem;">)/;
+    if (preRenderedBlockRegex.test(content)) {
+        content = content.replace(preRenderedBlockRegex, preRenderedSectionHtml);
     }
 
     const canonicalUrl = `https://www.5letterwordfindertool.com/5-letter-words-ending-with-${letter}.html`;

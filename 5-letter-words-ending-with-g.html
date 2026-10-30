@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in G</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">BRING</div>
+                        <div class="word-item">DYING</div>
+                        <div class="word-item">THING</div>
+                        <div class="word-item">WRONG</div>
+                        <div class="word-item">YOUNG</div>
+                        <div class="word-item">ACING</div>
+                        <div class="word-item">ADJAG</div>
+                        <div class="word-item">AGING</div>
+                        <div class="word-item">AHONG</div>
+                        <div class="word-item">AKING</div>
+                        <div class="word-item">ALANG</div>
+                        <div class="word-item">ALMUG</div>
+                        <div class="word-item">ALONG</div>
+                        <div class="word-item">AMALG</div>
+                        <div class="word-item">AMANG</div>
+                        <div class="word-item">AMONG</div>
+                        <div class="word-item">APING</div>
+                        <div class="word-item">ARENG</div>
+                        <div class="word-item">ATING</div>
+                        <div class="word-item">AWING</div>
+                        <div class="word-item">AXING</div>
+                        <div class="word-item">BANIG</div>
+                        <div class="word-item">BEBOG</div>
+                        <div class="word-item">BEDOG</div>
+                        <div class="word-item">BEFOG</div>
+                        <div class="word-item">BEING</div>
+                        <div class="word-item">BEJIG</div>
+                        <div class="word-item">BETAG</div>
+                        <div class="word-item">BEWIG</div>
+                        <div class="word-item">BHANG</div>
+                        <div class="word-item">BOING</div>
+                        <div class="word-item">BOLAG</div>
+                        <div class="word-item">BOONG</div>
+                        <div class="word-item">BOURG</div>
+                        <div class="word-item">CHANG</div>
+                        <div class="word-item">CHENG</div>
+                        <div class="word-item">CHING</div>
+                        <div class="word-item">CHUNG</div>
+                        <div class="word-item">CLANG</div>
+                        <div class="word-item">CLING</div>
+                        <div class="word-item">CLONG</div>
+                        <div class="word-item">CLUNG</div>
+                        <div class="word-item">COHOG</div>
+                        <div class="word-item">COING</div>
+                        <div class="word-item">COLOG</div>
+                        <div class="word-item">COMDG</div>
+                        <div class="word-item">CONTG</div>
+                        <div class="word-item">COORG</div>
+                        <div class="word-item">CRAIG</div>
+                        <div class="word-item">CRANG</div>
+                        <div class="word-item">CUING</div>
+                        <div class="word-item">DEBAG</div>
+                        <div class="word-item">DEBUG</div>
+                        <div class="word-item">DEFOG</div>
+                        <div class="word-item">DEROG</div>
+                        <div class="word-item">DOING</div>
+                        <div class="word-item">DRANG</div>
+                        <div class="word-item">DRENG</div>
+                        <div class="word-item">DRUNG</div>
+                        <div class="word-item">DWANG</div>
+                        <div class="word-item">EKING</div>
+                        <div class="word-item">ELONG</div>
+                        <div class="word-item">EMBOG</div>
+                        <div class="word-item">EMONG</div>
+                        <div class="word-item">ESROG</div>
+                        <div class="word-item">ETANG</div>
+                        <div class="word-item">ETROG</div>
+                        <div class="word-item">EVANG</div>
+                        <div class="word-item">EWING</div>
+                        <div class="word-item">EXING</div>
+                        <div class="word-item">EYING</div>
+                        <div class="word-item">FLANG</div>
+                        <div class="word-item">FLING</div>
+                        <div class="word-item">FLONG</div>
+                        <div class="word-item">FLUNG</div>
+                        <div class="word-item">GLOGG</div>
+                        <div class="word-item">GOING</div>
+                        <div class="word-item">GREGG</div>
+                        <div class="word-item">HYING</div>
+                        <div class="word-item">HYLEG</div>
+                        <div class="word-item">ICING</div>
+                        <div class="word-item">INCOG</div>
+                        <div class="word-item">INORG</div>
+                        <div class="word-item">IRING</div>
+                        <div class="word-item">IRREG</div>
+                        <div class="word-item">ISING</div>
+                        <div class="word-item">IZING</div>
+                        <div class="word-item">JUANG</div>
+                        <div class="word-item">KIANG</div>
+                        <div class="word-item">KLEIG</div>
+                        <div class="word-item">KLIEG</div>
+                        <div class="word-item">KLING</div>
+                        <div class="word-item">KLONG</div>
+                        <div class="word-item">KOORG</div>
+                        <div class="word-item">KRANG</div>
+                        <div class="word-item">KRENG</div>
+                        <div class="word-item">KYANG</div>
+                        <div class="word-item">KYUNG</div>
+                        <div class="word-item">LAANG</div>
+                        <div class="word-item">LEUNG</div>
+                        <div class="word-item">LIANG</div>
+                        <div class="word-item">LYING</div>
+                        <div class="word-item">MAGOG</div>
+                        <div class="word-item">MOONG</div>
+                        <div class="word-item">MUANG</div>
+                        <div class="word-item">MUONG</div>
+                        <div class="word-item">NAVIG</div>
+                        <div class="word-item">NOSIG</div>
+                        <div class="word-item">OHING</div>
+                        <div class="word-item">OKRUG</div>
+                        <div class="word-item">OPING</div>
+                        <div class="word-item">ORANG</div>
+                        <div class="word-item">OWING</div>
+                        <div class="word-item">PFLAG</div>
+                        <div class="word-item">PIING</div>
+                        <div class="word-item">PIROG</div>
+                        <div class="word-item">PLANG</div>
+                        <div class="word-item">PRANG</div>
+                        <div class="word-item">PREPG</div>
+                        <div class="word-item">PRONG</div>
+                        <div class="word-item">REBAG</div>
+                        <div class="word-item">REBEG</div>
+                        <div class="word-item">REDIG</div>
+                        <div class="word-item">REDUG</div>
+                        <div class="word-item">REJIG</div>
+                        <div class="word-item">RELIG</div>
+                        <div class="word-item">RENEG</div>
+                        <div class="word-item">RENIG</div>
+                        <div class="word-item">REPEG</div>
+                        <div class="word-item">RERIG</div>
+                        <div class="word-item">RETAG</div>
+                        <div class="word-item">RUING</div>
+                        <div class="word-item">SCRAG</div>
+                        <div class="word-item">SCROG</div>
+                        <div class="word-item">SHANG</div>
+                        <div class="word-item">SHENG</div>
+                        <div class="word-item">SHRAG</div>
+                        <div class="word-item">SHROG</div>
+                        <div class="word-item">SHRUG</div>
+                        <div class="word-item">SKEEG</div>
+                        <div class="word-item">SLANG</div>
+                        <div class="word-item">SLING</div>
+                        <div class="word-item">SLUIG</div>
+                        <div class="word-item">SLUNG</div>
+                        <div class="word-item">SPANG</div>
+                        <div class="word-item">SPONG</div>
+                        <div class="word-item">SPRAG</div>
+                        <div class="word-item">SPRIG</div>
+                        <div class="word-item">SPRUG</div>
+                        <div class="word-item">SPUNG</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

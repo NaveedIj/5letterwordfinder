@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in R</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">BAKER</div>
+                        <div class="word-item">BUYER</div>
+                        <div class="word-item">CHAIR</div>
+                        <div class="word-item">CLEAR</div>
+                        <div class="word-item">EAGER</div>
+                        <div class="word-item">ENTER</div>
+                        <div class="word-item">FIBER</div>
+                        <div class="word-item">HUMOR</div>
+                        <div class="word-item">INNER</div>
+                        <div class="word-item">LABOR</div>
+                        <div class="word-item">LATER</div>
+                        <div class="word-item">MAJOR</div>
+                        <div class="word-item">MAKER</div>
+                        <div class="word-item">NEVER</div>
+                        <div class="word-item">OFFER</div>
+                        <div class="word-item">ORDER</div>
+                        <div class="word-item">OTHER</div>
+                        <div class="word-item">OUTER</div>
+                        <div class="word-item">PAPER</div>
+                        <div class="word-item">POWER</div>
+                        <div class="word-item">REFER</div>
+                        <div class="word-item">RIVER</div>
+                        <div class="word-item">RULER</div>
+                        <div class="word-item">SUGAR</div>
+                        <div class="word-item">TOWER</div>
+                        <div class="word-item">UNDER</div>
+                        <div class="word-item">UPPER</div>
+                        <div class="word-item">WATER</div>
+                        <div class="word-item">ABEAR</div>
+                        <div class="word-item">ABERR</div>
+                        <div class="word-item">ABHOR</div>
+                        <div class="word-item">ABKAR</div>
+                        <div class="word-item">ABLER</div>
+                        <div class="word-item">ABNER</div>
+                        <div class="word-item">ABSTR</div>
+                        <div class="word-item">ACCUR</div>
+                        <div class="word-item">ACHAR</div>
+                        <div class="word-item">ACHER</div>
+                        <div class="word-item">ACHOR</div>
+                        <div class="word-item">ACIER</div>
+                        <div class="word-item">ACKER</div>
+                        <div class="word-item">ACTOR</div>
+                        <div class="word-item">ADDER</div>
+                        <div class="word-item">ADZER</div>
+                        <div class="word-item">AEGER</div>
+                        <div class="word-item">AEGIR</div>
+                        <div class="word-item">AESIR</div>
+                        <div class="word-item">AFEAR</div>
+                        <div class="word-item">AFTER</div>
+                        <div class="word-item">AGGER</div>
+                        <div class="word-item">AGGUR</div>
+                        <div class="word-item">AIDER</div>
+                        <div class="word-item">AIGER</div>
+                        <div class="word-item">AIMER</div>
+                        <div class="word-item">AIRER</div>
+                        <div class="word-item">AIVER</div>
+                        <div class="word-item">AJHAR</div>
+                        <div class="word-item">ALCOR</div>
+                        <div class="word-item">ALDER</div>
+                        <div class="word-item">ALFUR</div>
+                        <div class="word-item">ALGOR</div>
+                        <div class="word-item">ALLER</div>
+                        <div class="word-item">ALTAR</div>
+                        <div class="word-item">ALTER</div>
+                        <div class="word-item">ALVAR</div>
+                        <div class="word-item">AMBAR</div>
+                        <div class="word-item">AMBER</div>
+                        <div class="word-item">AMEER</div>
+                        <div class="word-item">AMHAR</div>
+                        <div class="word-item">AMMER</div>
+                        <div class="word-item">AMOUR</div>
+                        <div class="word-item">AMPER</div>
+                        <div class="word-item">ANCOR</div>
+                        <div class="word-item">ANDOR</div>
+                        <div class="word-item">ANEAR</div>
+                        <div class="word-item">ANGER</div>
+                        <div class="word-item">ANGOR</div>
+                        <div class="word-item">ANKER</div>
+                        <div class="word-item">ANOUR</div>
+                        <div class="word-item">ANSAR</div>
+                        <div class="word-item">ANSER</div>
+                        <div class="word-item">ANTAR</div>
+                        <div class="word-item">APAIR</div>
+                        <div class="word-item">APPAR</div>
+                        <div class="word-item">APTER</div>
+                        <div class="word-item">ARBER</div>
+                        <div class="word-item">ARBOR</div>
+                        <div class="word-item">ARDER</div>
+                        <div class="word-item">ARDOR</div>
+                        <div class="word-item">AREAR</div>
+                        <div class="word-item">ARHAR</div>
+                        <div class="word-item">ARMER</div>
+                        <div class="word-item">ARMOR</div>
+                        <div class="word-item">AROAR</div>
+                        <div class="word-item">ARTAR</div>
+                        <div class="word-item">ARTER</div>
+                        <div class="word-item">ASHER</div>
+                        <div class="word-item">ASHIR</div>
+                        <div class="word-item">ASHUR</div>
+                        <div class="word-item">ASKAR</div>
+                        <div class="word-item">ASKER</div>
+                        <div class="word-item">ASPER</div>
+                        <div class="word-item">ASTER</div>
+                        <div class="word-item">ASTIR</div>
+                        <div class="word-item">ASTOR</div>
+                        <div class="word-item">ASTUR</div>
+                        <div class="word-item">ATHAR</div>
+                        <div class="word-item">ATOUR</div>
+                        <div class="word-item">ATTAR</div>
+                        <div class="word-item">ATTER</div>
+                        <div class="word-item">AUGER</div>
+                        <div class="word-item">AUGUR</div>
+                        <div class="word-item">AURAR</div>
+                        <div class="word-item">AURIR</div>
+                        <div class="word-item">AUTOR</div>
+                        <div class="word-item">AVOIR</div>
+                        <div class="word-item">AVOUR</div>
+                        <div class="word-item">AWBER</div>
+                        <div class="word-item">AWHIR</div>
+                        <div class="word-item">AWNER</div>
+                        <div class="word-item">BAHAR</div>
+                        <div class="word-item">BAHUR</div>
+                        <div class="word-item">BALER</div>
+                        <div class="word-item">BALOR</div>
+                        <div class="word-item">BARER</div>
+                        <div class="word-item">BASER</div>
+                        <div class="word-item">BATER</div>
+                        <div class="word-item">BAZAR</div>
+                        <div class="word-item">BEBAR</div>
+                        <div class="word-item">BEDUR</div>
+                        <div class="word-item">BEFUR</div>
+                        <div class="word-item">BEGAR</div>
+                        <div class="word-item">BELAR</div>
+                        <div class="word-item">BEMAR</div>
+                        <div class="word-item">BEVER</div>
+                        <div class="word-item">BEVOR</div>
+                        <div class="word-item">BIDAR</div>
+                        <div class="word-item">BIDER</div>
+                        <div class="word-item">BIFER</div>
+                        <div class="word-item">BIKER</div>
+                        <div class="word-item">BITER</div>
+                        <div class="word-item">BLAIR</div>
+                        <div class="word-item">BLEAR</div>
+                        <div class="word-item">BLIER</div>
+                        <div class="word-item">BLUER</div>
+                        <div class="word-item">BODER</div>
+                        <div class="word-item">BOHOR</div>
+                        <div class="word-item">BOLAR</div>
+                        <div class="word-item">BONER</div>
+                        <div class="word-item">BORER</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in T</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">ABOUT</div>
+                        <div class="word-item">AGENT</div>
+                        <div class="word-item">ALERT</div>
+                        <div class="word-item">BURST</div>
+                        <div class="word-item">CHART</div>
+                        <div class="word-item">COUNT</div>
+                        <div class="word-item">DRAFT</div>
+                        <div class="word-item">EIGHT</div>
+                        <div class="word-item">EVENT</div>
+                        <div class="word-item">FAULT</div>
+                        <div class="word-item">FIGHT</div>
+                        <div class="word-item">FIRST</div>
+                        <div class="word-item">GIANT</div>
+                        <div class="word-item">GRANT</div>
+                        <div class="word-item">GREAT</div>
+                        <div class="word-item">HABIT</div>
+                        <div class="word-item">HEART</div>
+                        <div class="word-item">INPUT</div>
+                        <div class="word-item">JOINT</div>
+                        <div class="word-item">LIGHT</div>
+                        <div class="word-item">LIMIT</div>
+                        <div class="word-item">NIGHT</div>
+                        <div class="word-item">ORBIT</div>
+                        <div class="word-item">PAINT</div>
+                        <div class="word-item">PLANT</div>
+                        <div class="word-item">POINT</div>
+                        <div class="word-item">QUEST</div>
+                        <div class="word-item">QUIET</div>
+                        <div class="word-item">QUILT</div>
+                        <div class="word-item">REACT</div>
+                        <div class="word-item">RIGHT</div>
+                        <div class="word-item">ROBOT</div>
+                        <div class="word-item">SHORT</div>
+                        <div class="word-item">SIGHT</div>
+                        <div class="word-item">SMART</div>
+                        <div class="word-item">START</div>
+                        <div class="word-item">SWEET</div>
+                        <div class="word-item">UPSET</div>
+                        <div class="word-item">VISIT</div>
+                        <div class="word-item">YACHT</div>
+                        <div class="word-item">YEAST</div>
+                        <div class="word-item">ABAFT</div>
+                        <div class="word-item">ABBOT</div>
+                        <div class="word-item">ABDAT</div>
+                        <div class="word-item">ABLET</div>
+                        <div class="word-item">ABNET</div>
+                        <div class="word-item">ABORT</div>
+                        <div class="word-item">ABRET</div>
+                        <div class="word-item">ABSIT</div>
+                        <div class="word-item">ACAST</div>
+                        <div class="word-item">ACOST</div>
+                        <div class="word-item">ADAPT</div>
+                        <div class="word-item">ADEPT</div>
+                        <div class="word-item">ADLET</div>
+                        <div class="word-item">ADMIT</div>
+                        <div class="word-item">ADOPT</div>
+                        <div class="word-item">ADRET</div>
+                        <div class="word-item">ADULT</div>
+                        <div class="word-item">ADUST</div>
+                        <div class="word-item">AETAT</div>
+                        <div class="word-item">AFLAT</div>
+                        <div class="word-item">AFOOT</div>
+                        <div class="word-item">AFRET</div>
+                        <div class="word-item">AFRIT</div>
+                        <div class="word-item">AGAST</div>
+                        <div class="word-item">AGIST</div>
+                        <div class="word-item">AGLET</div>
+                        <div class="word-item">AGNAT</div>
+                        <div class="word-item">AGUST</div>
+                        <div class="word-item">AHINT</div>
+                        <div class="word-item">AHMET</div>
+                        <div class="word-item">AHOLT</div>
+                        <div class="word-item">AHUNT</div>
+                        <div class="word-item">AILLT</div>
+                        <div class="word-item">ALANT</div>
+                        <div class="word-item">ALEFT</div>
+                        <div class="word-item">ALEUT</div>
+                        <div class="word-item">ALFET</div>
+                        <div class="word-item">ALHET</div>
+                        <div class="word-item">ALIET</div>
+                        <div class="word-item">ALIST</div>
+                        <div class="word-item">ALLOT</div>
+                        <div class="word-item">ALOFT</div>
+                        <div class="word-item">ALOUT</div>
+                        <div class="word-item">AMANT</div>
+                        <div class="word-item">AMAUT</div>
+                        <div class="word-item">AMBIT</div>
+                        <div class="word-item">AMENT</div>
+                        <div class="word-item">AMLET</div>
+                        <div class="word-item">AMORT</div>
+                        <div class="word-item">AMOWT</div>
+                        <div class="word-item">AMRIT</div>
+                        <div class="word-item">ANENT</div>
+                        <div class="word-item">ANGST</div>
+                        <div class="word-item">ANLET</div>
+                        <div class="word-item">ANNAT</div>
+                        <div class="word-item">ANNET</div>
+                        <div class="word-item">ANNOT</div>
+                        <div class="word-item">APART</div>
+                        <div class="word-item">APAST</div>
+                        <div class="word-item">APERT</div>
+                        <div class="word-item">APORT</div>
+                        <div class="word-item">APOUT</div>
+                        <div class="word-item">APPET</div>
+                        <div class="word-item">APPMT</div>
+                        <div class="word-item">ARCHT</div>
+                        <div class="word-item">ARENT</div>
+                        <div class="word-item">AREST</div>
+                        <div class="word-item">ARGOT</div>
+                        <div class="word-item">ARHAT</div>
+                        <div class="word-item">ARIOT</div>
+                        <div class="word-item">ARIST</div>
+                        <div class="word-item">ARMET</div>
+                        <div class="word-item">ARMIT</div>
+                        <div class="word-item">ARNUT</div>
+                        <div class="word-item">ARRET</div>
+                        <div class="word-item">ARRGT</div>
+                        <div class="word-item">ASCOT</div>
+                        <div class="word-item">ASGMT</div>
+                        <div class="word-item">ASHET</div>
+                        <div class="word-item">ASHOT</div>
+                        <div class="word-item">ASSET</div>
+                        <div class="word-item">ASSOT</div>
+                        <div class="word-item">ATILT</div>
+                        <div class="word-item">AUCHT</div>
+                        <div class="word-item">AUDIT</div>
+                        <div class="word-item">AUGET</div>
+                        <div class="word-item">AUGHT</div>
+                        <div class="word-item">AVANT</div>
+                        <div class="word-item">AVAST</div>
+                        <div class="word-item">AVERT</div>
+                        <div class="word-item">AWAFT</div>
+                        <div class="word-item">AWAIT</div>
+                        <div class="word-item">AWALT</div>
+                        <div class="word-item">AWEST</div>
+                        <div class="word-item">AWHET</div>
+                        <div class="word-item">AYLET</div>
+                        <div class="word-item">AYONT</div>
+                        <div class="word-item">BAHUT</div>
+                        <div class="word-item">BALAT</div>
+                        <div class="word-item">BALUT</div>
+                        <div class="word-item">BANAT</div>
+                        <div class="word-item">BARAT</div>
+                        <div class="word-item">BARET</div>
+                        <div class="word-item">BARIT</div>
+                        <div class="word-item">BASAT</div>
+                        <div class="word-item">BEANT</div>
+                        <div class="word-item">BEAST</div>
+                        <div class="word-item">BEAUT</div>
+                        <div class="word-item">BEBAT</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

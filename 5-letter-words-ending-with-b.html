@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,111 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 97 matching words from our dictionary list.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in B</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">KEBAB</div>
+                        <div class="word-item">ABWAB</div>
+                        <div class="word-item">ACERB</div>
+                        <div class="word-item">ACRAB</div>
+                        <div class="word-item">ARDEB</div>
+                        <div class="word-item">ARKAB</div>
+                        <div class="word-item">ARNEB</div>
+                        <div class="word-item">BEDUB</div>
+                        <div class="word-item">BEGOB</div>
+                        <div class="word-item">BENAB</div>
+                        <div class="word-item">BEROB</div>
+                        <div class="word-item">BLURB</div>
+                        <div class="word-item">CABOB</div>
+                        <div class="word-item">CALEB</div>
+                        <div class="word-item">CARIB</div>
+                        <div class="word-item">CAROB</div>
+                        <div class="word-item">CELEB</div>
+                        <div class="word-item">CHIMB</div>
+                        <div class="word-item">CHUBB</div>
+                        <div class="word-item">CLAMB</div>
+                        <div class="word-item">CLIMB</div>
+                        <div class="word-item">CLOMB</div>
+                        <div class="word-item">COARB</div>
+                        <div class="word-item">COHOB</div>
+                        <div class="word-item">COLOB</div>
+                        <div class="word-item">COOMB</div>
+                        <div class="word-item">COURB</div>
+                        <div class="word-item">CRUMB</div>
+                        <div class="word-item">CUBEB</div>
+                        <div class="word-item">DEMOB</div>
+                        <div class="word-item">DENEB</div>
+                        <div class="word-item">DHABB</div>
+                        <div class="word-item">DIAMB</div>
+                        <div class="word-item">DORAB</div>
+                        <div class="word-item">DROOB</div>
+                        <div class="word-item">ENRIB</div>
+                        <div class="word-item">ENWEB</div>
+                        <div class="word-item">ESTAB</div>
+                        <div class="word-item">EXURB</div>
+                        <div class="word-item">FLAMB</div>
+                        <div class="word-item">FOURB</div>
+                        <div class="word-item">HABAB</div>
+                        <div class="word-item">HABUB</div>
+                        <div class="word-item">HAJIB</div>
+                        <div class="word-item">INORB</div>
+                        <div class="word-item">INRUB</div>
+                        <div class="word-item">JACOB</div>
+                        <div class="word-item">JAKOB</div>
+                        <div class="word-item">JAWAB</div>
+                        <div class="word-item">JELAB</div>
+                        <div class="word-item">JELIB</div>
+                        <div class="word-item">JERIB</div>
+                        <div class="word-item">KABAB</div>
+                        <div class="word-item">KABOB</div>
+                        <div class="word-item">KEBOB</div>
+                        <div class="word-item">KITAB</div>
+                        <div class="word-item">LULAB</div>
+                        <div class="word-item">NABOB</div>
+                        <div class="word-item">NASAB</div>
+                        <div class="word-item">NAWAB</div>
+                        <div class="word-item">NAWOB</div>
+                        <div class="word-item">PLOMB</div>
+                        <div class="word-item">PLUMB</div>
+                        <div class="word-item">POLAB</div>
+                        <div class="word-item">RAJAB</div>
+                        <div class="word-item">REBAB</div>
+                        <div class="word-item">REBOB</div>
+                        <div class="word-item">REDUB</div>
+                        <div class="word-item">REROB</div>
+                        <div class="word-item">RERUB</div>
+                        <div class="word-item">RHOMB</div>
+                        <div class="word-item">RHUMB</div>
+                        <div class="word-item">ROHOB</div>
+                        <div class="word-item">SAHIB</div>
+                        <div class="word-item">SAQIB</div>
+                        <div class="word-item">SCOLB</div>
+                        <div class="word-item">SCRAB</div>
+                        <div class="word-item">SCROB</div>
+                        <div class="word-item">SCRUB</div>
+                        <div class="word-item">SERAB</div>
+                        <div class="word-item">SHRAB</div>
+                        <div class="word-item">SHRUB</div>
+                        <div class="word-item">SLURB</div>
+                        <div class="word-item">SQUAB</div>
+                        <div class="word-item">SQUIB</div>
+                        <div class="word-item">STAAB</div>
+                        <div class="word-item">STILB</div>
+                        <div class="word-item">STRUB</div>
+                        <div class="word-item">STUBB</div>
+                        <div class="word-item">THROB</div>
+                        <div class="word-item">THUMB</div>
+                        <div class="word-item">UAYEB</div>
+                        <div class="word-item">UNDUB</div>
+                        <div class="word-item">UNWEB</div>
+                        <div class="word-item">VOCAB</div>
+                        <div class="word-item">ZEBUB</div>
+                        <div class="word-item">ZINEB</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 97 matching words from our dictionary list.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

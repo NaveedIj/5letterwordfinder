@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in Y</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">ANGRY</div>
+                        <div class="word-item">CANDY</div>
+                        <div class="word-item">DIRTY</div>
+                        <div class="word-item">EARLY</div>
+                        <div class="word-item">EMPTY</div>
+                        <div class="word-item">ENEMY</div>
+                        <div class="word-item">EVERY</div>
+                        <div class="word-item">HAPPY</div>
+                        <div class="word-item">HEAVY</div>
+                        <div class="word-item">HURRY</div>
+                        <div class="word-item">IMPLY</div>
+                        <div class="word-item">IRONY</div>
+                        <div class="word-item">IVORY</div>
+                        <div class="word-item">JUICY</div>
+                        <div class="word-item">JUMPY</div>
+                        <div class="word-item">LUCKY</div>
+                        <div class="word-item">MONEY</div>
+                        <div class="word-item">NASTY</div>
+                        <div class="word-item">PARTY</div>
+                        <div class="word-item">QUERY</div>
+                        <div class="word-item">READY</div>
+                        <div class="word-item">STORY</div>
+                        <div class="word-item">TODAY</div>
+                        <div class="word-item">UNITY</div>
+                        <div class="word-item">WORRY</div>
+                        <div class="word-item">ZESTY</div>
+                        <div class="word-item">ABBEY</div>
+                        <div class="word-item">ABODY</div>
+                        <div class="word-item">ABRAY</div>
+                        <div class="word-item">ABSEY</div>
+                        <div class="word-item">ACCOY</div>
+                        <div class="word-item">ACEDY</div>
+                        <div class="word-item">ACIDY</div>
+                        <div class="word-item">ACKEY</div>
+                        <div class="word-item">ADAGY</div>
+                        <div class="word-item">ADATY</div>
+                        <div class="word-item">ADLAY</div>
+                        <div class="word-item">ADOXY</div>
+                        <div class="word-item">AFLEY</div>
+                        <div class="word-item">AFRAY</div>
+                        <div class="word-item">AGAMY</div>
+                        <div class="word-item">AGATY</div>
+                        <div class="word-item">AGGRY</div>
+                        <div class="word-item">AGLEY</div>
+                        <div class="word-item">AGONY</div>
+                        <div class="word-item">AGUEY</div>
+                        <div class="word-item">AIERY</div>
+                        <div class="word-item">ALARY</div>
+                        <div class="word-item">ALDAY</div>
+                        <div class="word-item">ALITY</div>
+                        <div class="word-item">ALLAY</div>
+                        <div class="word-item">ALLEY</div>
+                        <div class="word-item">ALLOY</div>
+                        <div class="word-item">ALODY</div>
+                        <div class="word-item">ALOGY</div>
+                        <div class="word-item">ALWAY</div>
+                        <div class="word-item">AMBAY</div>
+                        <div class="word-item">AMBRY</div>
+                        <div class="word-item">AMITY</div>
+                        <div class="word-item">AMPLY</div>
+                        <div class="word-item">ANNOY</div>
+                        <div class="word-item">ANOMY</div>
+                        <div class="word-item">ANTSY</div>
+                        <div class="word-item">ANURY</div>
+                        <div class="word-item">APERY</div>
+                        <div class="word-item">APPAY</div>
+                        <div class="word-item">APPLY</div>
+                        <div class="word-item">APTLY</div>
+                        <div class="word-item">ARABY</div>
+                        <div class="word-item">ARCHY</div>
+                        <div class="word-item">AREFY</div>
+                        <div class="word-item">ARRAY</div>
+                        <div class="word-item">ARTLY</div>
+                        <div class="word-item">ARTSY</div>
+                        <div class="word-item">ASCRY</div>
+                        <div class="word-item">ASSAY</div>
+                        <div class="word-item">ASTAY</div>
+                        <div class="word-item">ASWAY</div>
+                        <div class="word-item">ATAXY</div>
+                        <div class="word-item">ATELY</div>
+                        <div class="word-item">ATIMY</div>
+                        <div class="word-item">ATOMY</div>
+                        <div class="word-item">ATONY</div>
+                        <div class="word-item">ATOPY</div>
+                        <div class="word-item">ATTRY</div>
+                        <div class="word-item">ATYPY</div>
+                        <div class="word-item">AUNTY</div>
+                        <div class="word-item">AVENY</div>
+                        <div class="word-item">AVERY</div>
+                        <div class="word-item">AWKLY</div>
+                        <div class="word-item">AZOFY</div>
+                        <div class="word-item">AZOXY</div>
+                        <div class="word-item">AZURY</div>
+                        <div class="word-item">BABBY</div>
+                        <div class="word-item">BACCY</div>
+                        <div class="word-item">BACKY</div>
+                        <div class="word-item">BADDY</div>
+                        <div class="word-item">BADLY</div>
+                        <div class="word-item">BAFFY</div>
+                        <div class="word-item">BAGGY</div>
+                        <div class="word-item">BAHAY</div>
+                        <div class="word-item">BALDY</div>
+                        <div class="word-item">BALKY</div>
+                        <div class="word-item">BALLY</div>
+                        <div class="word-item">BALMY</div>
+                        <div class="word-item">BANDY</div>
+                        <div class="word-item">BANGY</div>
+                        <div class="word-item">BANKY</div>
+                        <div class="word-item">BANTY</div>
+                        <div class="word-item">BARDY</div>
+                        <div class="word-item">BARFY</div>
+                        <div class="word-item">BARKY</div>
+                        <div class="word-item">BARLY</div>
+                        <div class="word-item">BARMY</div>
+                        <div class="word-item">BARNY</div>
+                        <div class="word-item">BARRY</div>
+                        <div class="word-item">BASSY</div>
+                        <div class="word-item">BATTY</div>
+                        <div class="word-item">BAWDY</div>
+                        <div class="word-item">BAWLY</div>
+                        <div class="word-item">BAWTY</div>
+                        <div class="word-item">BEADY</div>
+                        <div class="word-item">BEAKY</div>
+                        <div class="word-item">BEAMY</div>
+                        <div class="word-item">BEANY</div>
+                        <div class="word-item">BEBAY</div>
+                        <div class="word-item">BECKY</div>
+                        <div class="word-item">BECRY</div>
+                        <div class="word-item">BEDAY</div>
+                        <div class="word-item">BEEFY</div>
+                        <div class="word-item">BEERY</div>
+                        <div class="word-item">BEETY</div>
+                        <div class="word-item">BEGAY</div>
+                        <div class="word-item">BEIGY</div>
+                        <div class="word-item">BELAY</div>
+                        <div class="word-item">BELLY</div>
+                        <div class="word-item">BENDY</div>
+                        <div class="word-item">BENJY</div>
+                        <div class="word-item">BENNY</div>
+                        <div class="word-item">BENTY</div>
+                        <div class="word-item">BERAY</div>
+                        <div class="word-item">BERGY</div>
+                        <div class="word-item">BERRY</div>
+                        <div class="word-item">BESPY</div>
+                        <div class="word-item">BESSY</div>
+                        <div class="word-item">BETSY</div>
+                        <div class="word-item">BETTY</div>
+                        <div class="word-item">BEVVY</div>
+                        <div class="word-item">BEWRY</div>
+                        <div class="word-item">BIALY</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

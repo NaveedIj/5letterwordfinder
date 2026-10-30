@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in U</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">ADIEU</div>
+                        <div class="word-item">ACAPU</div>
+                        <div class="word-item">ALENU</div>
+                        <div class="word-item">AMELU</div>
+                        <div class="word-item">ANJOU</div>
+                        <div class="word-item">ANKOU</div>
+                        <div class="word-item">APERU</div>
+                        <div class="word-item">ARAMU</div>
+                        <div class="word-item">ARARU</div>
+                        <div class="word-item">ARRAU</div>
+                        <div class="word-item">ARTOU</div>
+                        <div class="word-item">AYLLU</div>
+                        <div class="word-item">AYUYU</div>
+                        <div class="word-item">BADJU</div>
+                        <div class="word-item">BAJAU</div>
+                        <div class="word-item">BALAU</div>
+                        <div class="word-item">BANTU</div>
+                        <div class="word-item">BARBU</div>
+                        <div class="word-item">BATTU</div>
+                        <div class="word-item">BAYOU</div>
+                        <div class="word-item">BHALU</div>
+                        <div class="word-item">BIJOU</div>
+                        <div class="word-item">BOLDU</div>
+                        <div class="word-item">BOTTU</div>
+                        <div class="word-item">BOYAU</div>
+                        <div class="word-item">BRUBU</div>
+                        <div class="word-item">BUCHU</div>
+                        <div class="word-item">BUCKU</div>
+                        <div class="word-item">BUNDU</div>
+                        <div class="word-item">BUSSU</div>
+                        <div class="word-item">BUTSU</div>
+                        <div class="word-item">CAJOU</div>
+                        <div class="word-item">CHIMU</div>
+                        <div class="word-item">CHIRU</div>
+                        <div class="word-item">CONNU</div>
+                        <div class="word-item">CORNU</div>
+                        <div class="word-item">COYPU</div>
+                        <div class="word-item">CUMBU</div>
+                        <div class="word-item">DVIGU</div>
+                        <div class="word-item">ELIHU</div>
+                        <div class="word-item">FICHU</div>
+                        <div class="word-item">FINGU</div>
+                        <div class="word-item">FOGOU</div>
+                        <div class="word-item">FONDU</div>
+                        <div class="word-item">GARAU</div>
+                        <div class="word-item">GTEAU</div>
+                        <div class="word-item">HAIKU</div>
+                        <div class="word-item">HALDU</div>
+                        <div class="word-item">HEIAU</div>
+                        <div class="word-item">HEUAU</div>
+                        <div class="word-item">HICHU</div>
+                        <div class="word-item">HINAU</div>
+                        <div class="word-item">HINDU</div>
+                        <div class="word-item">HOKKU</div>
+                        <div class="word-item">ILIAU</div>
+                        <div class="word-item">INGLU</div>
+                        <div class="word-item">JANTU</div>
+                        <div class="word-item">JINGU</div>
+                        <div class="word-item">KAHAU</div>
+                        <div class="word-item">KANNU</div>
+                        <div class="word-item">KANZU</div>
+                        <div class="word-item">KAROU</div>
+                        <div class="word-item">KASSU</div>
+                        <div class="word-item">KINGU</div>
+                        <div class="word-item">KOMBU</div>
+                        <div class="word-item">KONGU</div>
+                        <div class="word-item">KRIVU</div>
+                        <div class="word-item">KUDZU</div>
+                        <div class="word-item">KURKU</div>
+                        <div class="word-item">LASSU</div>
+                        <div class="word-item">LAUTU</div>
+                        <div class="word-item">LENDU</div>
+                        <div class="word-item">LIMBU</div>
+                        <div class="word-item">LIMMU</div>
+                        <div class="word-item">LOULU</div>
+                        <div class="word-item">MAIDU</div>
+                        <div class="word-item">MAMBU</div>
+                        <div class="word-item">MANIU</div>
+                        <div class="word-item">MANQU</div>
+                        <div class="word-item">MAPAU</div>
+                        <div class="word-item">MARTU</div>
+                        <div class="word-item">MATSU</div>
+                        <div class="word-item">MIAOU</div>
+                        <div class="word-item">MINBU</div>
+                        <div class="word-item">MONTU</div>
+                        <div class="word-item">MORDU</div>
+                        <div class="word-item">MOSGU</div>
+                        <div class="word-item">MUSGU</div>
+                        <div class="word-item">NANDU</div>
+                        <div class="word-item">NANMU</div>
+                        <div class="word-item">NARDU</div>
+                        <div class="word-item">NEHRU</div>
+                        <div class="word-item">NIKAU</div>
+                        <div class="word-item">NINTU</div>
+                        <div class="word-item">NOYAU</div>
+                        <div class="word-item">NUADU</div>
+                        <div class="word-item">OPELU</div>
+                        <div class="word-item">PADOU</div>
+                        <div class="word-item">PALAU</div>
+                        <div class="word-item">PALLU</div>
+                        <div class="word-item">PAREU</div>
+                        <div class="word-item">PASSU</div>
+                        <div class="word-item">PATTU</div>
+                        <div class="word-item">PERAU</div>
+                        <div class="word-item">PERDU</div>
+                        <div class="word-item">PILAU</div>
+                        <div class="word-item">PISHU</div>
+                        <div class="word-item">PITAU</div>
+                        <div class="word-item">POILU</div>
+                        <div class="word-item">POYOU</div>
+                        <div class="word-item">PRAHU</div>
+                        <div class="word-item">PURAU</div>
+                        <div class="word-item">QUIPU</div>
+                        <div class="word-item">QUITU</div>
+                        <div class="word-item">RAGHU</div>
+                        <div class="word-item">RENDU</div>
+                        <div class="word-item">RISQU</div>
+                        <div class="word-item">RITSU</div>
+                        <div class="word-item">ROMPU</div>
+                        <div class="word-item">ROYOU</div>
+                        <div class="word-item">SADHU</div>
+                        <div class="word-item">SAJOU</div>
+                        <div class="word-item">SANGU</div>
+                        <div class="word-item">SEENU</div>
+                        <div class="word-item">SEGOU</div>
+                        <div class="word-item">SENSU</div>
+                        <div class="word-item">SERAU</div>
+                        <div class="word-item">SHAKU</div>
+                        <div class="word-item">SHEDU</div>
+                        <div class="word-item">SHEMU</div>
+                        <div class="word-item">SHOYU</div>
+                        <div class="word-item">SIAFU</div>
+                        <div class="word-item">SINTU</div>
+                        <div class="word-item">SISSU</div>
+                        <div class="word-item">SNAFU</div>
+                        <div class="word-item">TARAU</div>
+                        <div class="word-item">TATOU</div>
+                        <div class="word-item">TEMBU</div>
+                        <div class="word-item">TENGU</div>
+                        <div class="word-item">TENNU</div>
+                        <div class="word-item">TEREU</div>
+                        <div class="word-item">THROU</div>
+                        <div class="word-item">TIBBU</div>
+                        <div class="word-item">TISSU</div>
+                        <div class="word-item">TOPAU</div>
+                        <div class="word-item">TRABU</div>
+                        <div class="word-item">TRUBU</div>
+                        <div class="word-item">UHURU</div>
+                        <div class="word-item">ULULU</div>
+                        <div class="word-item">URUBU</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

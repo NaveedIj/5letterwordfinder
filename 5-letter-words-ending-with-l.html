@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in L</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">ANGEL</div>
+                        <div class="word-item">CAMEL</div>
+                        <div class="word-item">EQUAL</div>
+                        <div class="word-item">FINAL</div>
+                        <div class="word-item">HOTEL</div>
+                        <div class="word-item">IDEAL</div>
+                        <div class="word-item">KNEEL</div>
+                        <div class="word-item">LABEL</div>
+                        <div class="word-item">METAL</div>
+                        <div class="word-item">MODEL</div>
+                        <div class="word-item">NAVAL</div>
+                        <div class="word-item">NOVEL</div>
+                        <div class="word-item">PANEL</div>
+                        <div class="word-item">ROYAL</div>
+                        <div class="word-item">SKILL</div>
+                        <div class="word-item">STEEL</div>
+                        <div class="word-item">TOTAL</div>
+                        <div class="word-item">TRIAL</div>
+                        <div class="word-item">UNTIL</div>
+                        <div class="word-item">USUAL</div>
+                        <div class="word-item">VIRAL</div>
+                        <div class="word-item">VITAL</div>
+                        <div class="word-item">VOCAL</div>
+                        <div class="word-item">WHEEL</div>
+                        <div class="word-item">ZONAL</div>
+                        <div class="word-item">ABDAL</div>
+                        <div class="word-item">ABOIL</div>
+                        <div class="word-item">ACCEL</div>
+                        <div class="word-item">ACOOL</div>
+                        <div class="word-item">ACRYL</div>
+                        <div class="word-item">ADDNL</div>
+                        <div class="word-item">ADIEL</div>
+                        <div class="word-item">AFOUL</div>
+                        <div class="word-item">AGIEL</div>
+                        <div class="word-item">AGNEL</div>
+                        <div class="word-item">AGRAL</div>
+                        <div class="word-item">AHULL</div>
+                        <div class="word-item">AHWAL</div>
+                        <div class="word-item">ALDOL</div>
+                        <div class="word-item">ALGAL</div>
+                        <div class="word-item">ALGOL</div>
+                        <div class="word-item">ALKYL</div>
+                        <div class="word-item">ALLYL</div>
+                        <div class="word-item">AMPUL</div>
+                        <div class="word-item">AMSEL</div>
+                        <div class="word-item">AMZEL</div>
+                        <div class="word-item">ANNAL</div>
+                        <div class="word-item">ANNUL</div>
+                        <div class="word-item">ANOIL</div>
+                        <div class="word-item">ANSEL</div>
+                        <div class="word-item">ANTAL</div>
+                        <div class="word-item">ANVIL</div>
+                        <div class="word-item">APIOL</div>
+                        <div class="word-item">APPAL</div>
+                        <div class="word-item">APPEL</div>
+                        <div class="word-item">APRIL</div>
+                        <div class="word-item">APTAL</div>
+                        <div class="word-item">AREAL</div>
+                        <div class="word-item">AREEL</div>
+                        <div class="word-item">ARGAL</div>
+                        <div class="word-item">ARGEL</div>
+                        <div class="word-item">ARGIL</div>
+                        <div class="word-item">ARGOL</div>
+                        <div class="word-item">ARIEL</div>
+                        <div class="word-item">ARMIL</div>
+                        <div class="word-item">ARSYL</div>
+                        <div class="word-item">ARTAL</div>
+                        <div class="word-item">ARTEL</div>
+                        <div class="word-item">ARVAL</div>
+                        <div class="word-item">ARVEL</div>
+                        <div class="word-item">ASTEL</div>
+                        <div class="word-item">ATHEL</div>
+                        <div class="word-item">ATOLL</div>
+                        <div class="word-item">ATTAL</div>
+                        <div class="word-item">AUMIL</div>
+                        <div class="word-item">AURAL</div>
+                        <div class="word-item">AURYL</div>
+                        <div class="word-item">AUXIL</div>
+                        <div class="word-item">AVAIL</div>
+                        <div class="word-item">AVELL</div>
+                        <div class="word-item">AWEEL</div>
+                        <div class="word-item">AWFUL</div>
+                        <div class="word-item">AXIAL</div>
+                        <div class="word-item">BABEL</div>
+                        <div class="word-item">BABUL</div>
+                        <div class="word-item">BAGEL</div>
+                        <div class="word-item">BAKAL</div>
+                        <div class="word-item">BANAL</div>
+                        <div class="word-item">BASAL</div>
+                        <div class="word-item">BASIL</div>
+                        <div class="word-item">BASYL</div>
+                        <div class="word-item">BATEL</div>
+                        <div class="word-item">BAYAL</div>
+                        <div class="word-item">BEDEL</div>
+                        <div class="word-item">BEJEL</div>
+                        <div class="word-item">BEMOL</div>
+                        <div class="word-item">BERYL</div>
+                        <div class="word-item">BETEL</div>
+                        <div class="word-item">BEVEL</div>
+                        <div class="word-item">BEVIL</div>
+                        <div class="word-item">BEZEL</div>
+                        <div class="word-item">BEZIL</div>
+                        <div class="word-item">BIKOL</div>
+                        <div class="word-item">BINAL</div>
+                        <div class="word-item">BIZEL</div>
+                        <div class="word-item">BOBOL</div>
+                        <div class="word-item">BOCAL</div>
+                        <div class="word-item">BORAL</div>
+                        <div class="word-item">BOREL</div>
+                        <div class="word-item">BORYL</div>
+                        <div class="word-item">BOTEL</div>
+                        <div class="word-item">BOUCL</div>
+                        <div class="word-item">BOWEL</div>
+                        <div class="word-item">BOZAL</div>
+                        <div class="word-item">BRAIL</div>
+                        <div class="word-item">BRAWL</div>
+                        <div class="word-item">BRILL</div>
+                        <div class="word-item">BROIL</div>
+                        <div class="word-item">BROLL</div>
+                        <div class="word-item">BROOL</div>
+                        <div class="word-item">BUBAL</div>
+                        <div class="word-item">BUREL</div>
+                        <div class="word-item">BUTYL</div>
+                        <div class="word-item">CABAL</div>
+                        <div class="word-item">CANAL</div>
+                        <div class="word-item">CANEL</div>
+                        <div class="word-item">CAPEL</div>
+                        <div class="word-item">CAROL</div>
+                        <div class="word-item">CARYL</div>
+                        <div class="word-item">CASAL</div>
+                        <div class="word-item">CASEL</div>
+                        <div class="word-item">CATEL</div>
+                        <div class="word-item">CAVAL</div>
+                        <div class="word-item">CAVEL</div>
+                        <div class="word-item">CAVIL</div>
+                        <div class="word-item">CEBIL</div>
+                        <div class="word-item">CECAL</div>
+                        <div class="word-item">CECIL</div>
+                        <div class="word-item">CEORL</div>
+                        <div class="word-item">CERAL</div>
+                        <div class="word-item">CERYL</div>
+                        <div class="word-item">CETYL</div>
+                        <div class="word-item">CHAWL</div>
+                        <div class="word-item">CHIEL</div>
+                        <div class="word-item">CHILL</div>
+                        <div class="word-item">CHIRL</div>
+                        <div class="word-item">CHOEL</div>
+                        <div class="word-item">CHOIL</div>
+                        <div class="word-item">CHURL</div>
+                        <div class="word-item">CIBOL</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in A</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">DELTA</div>
+                        <div class="word-item">JUNTA</div>
+                        <div class="word-item">KARMA</div>
+                        <div class="word-item">MEDIA</div>
+                        <div class="word-item">OPERA</div>
+                        <div class="word-item">QUOTA</div>
+                        <div class="word-item">ZEBRA</div>
+                        <div class="word-item">ABACA</div>
+                        <div class="word-item">ABADA</div>
+                        <div class="word-item">ABAKA</div>
+                        <div class="word-item">ABAMA</div>
+                        <div class="word-item">ABOMA</div>
+                        <div class="word-item">ABUNA</div>
+                        <div class="word-item">ABURA</div>
+                        <div class="word-item">ABUTA</div>
+                        <div class="word-item">ACANA</div>
+                        <div class="word-item">ACARA</div>
+                        <div class="word-item">ACCRA</div>
+                        <div class="word-item">ACETA</div>
+                        <div class="word-item">ACOMA</div>
+                        <div class="word-item">ACROA</div>
+                        <div class="word-item">ADAPA</div>
+                        <div class="word-item">ADDDA</div>
+                        <div class="word-item">ADELA</div>
+                        <div class="word-item">ADOXA</div>
+                        <div class="word-item">ADYTA</div>
+                        <div class="word-item">AECIA</div>
+                        <div class="word-item">AEVIA</div>
+                        <div class="word-item">AFARA</div>
+                        <div class="word-item">AGADA</div>
+                        <div class="word-item">AGAMA</div>
+                        <div class="word-item">AGATA</div>
+                        <div class="word-item">AGENA</div>
+                        <div class="word-item">AGORA</div>
+                        <div class="word-item">AGRIA</div>
+                        <div class="word-item">AGURA</div>
+                        <div class="word-item">AHURA</div>
+                        <div class="word-item">AJAJA</div>
+                        <div class="word-item">AJAVA</div>
+                        <div class="word-item">AJIVA</div>
+                        <div class="word-item">AJUGA</div>
+                        <div class="word-item">AKALA</div>
+                        <div class="word-item">AKASA</div>
+                        <div class="word-item">AKELA</div>
+                        <div class="word-item">ALADA</div>
+                        <div class="word-item">ALALA</div>
+                        <div class="word-item">ALAPA</div>
+                        <div class="word-item">ALDEA</div>
+                        <div class="word-item">ALIDA</div>
+                        <div class="word-item">ALIMA</div>
+                        <div class="word-item">ALIYA</div>
+                        <div class="word-item">ALOHA</div>
+                        <div class="word-item">ALOMA</div>
+                        <div class="word-item">ALOSA</div>
+                        <div class="word-item">ALPHA</div>
+                        <div class="word-item">ALULA</div>
+                        <div class="word-item">ALUTA</div>
+                        <div class="word-item">ALVIA</div>
+                        <div class="word-item">AMAGA</div>
+                        <div class="word-item">AMALA</div>
+                        <div class="word-item">AMAPA</div>
+                        <div class="word-item">AMARA</div>
+                        <div class="word-item">AMEBA</div>
+                        <div class="word-item">AMIGA</div>
+                        <div class="word-item">AMITA</div>
+                        <div class="word-item">AMNIA</div>
+                        <div class="word-item">AMORA</div>
+                        <div class="word-item">AMULA</div>
+                        <div class="word-item">ANAMA</div>
+                        <div class="word-item">ANANA</div>
+                        <div class="word-item">ANASA</div>
+                        <div class="word-item">ANCHA</div>
+                        <div class="word-item">ANDIA</div>
+                        <div class="word-item">ANGIA</div>
+                        <div class="word-item">ANGKA</div>
+                        <div class="word-item">ANIBA</div>
+                        <div class="word-item">ANIMA</div>
+                        <div class="word-item">ANITA</div>
+                        <div class="word-item">ANLIA</div>
+                        <div class="word-item">ANMIA</div>
+                        <div class="word-item">ANOIA</div>
+                        <div class="word-item">ANOVA</div>
+                        <div class="word-item">ANTRA</div>
+                        <div class="word-item">ANURA</div>
+                        <div class="word-item">AORTA</div>
+                        <div class="word-item">AOTEA</div>
+                        <div class="word-item">APAMA</div>
+                        <div class="word-item">APHRA</div>
+                        <div class="word-item">APINA</div>
+                        <div class="word-item">APNEA</div>
+                        <div class="word-item">APODA</div>
+                        <div class="word-item">ARABA</div>
+                        <div class="word-item">ARACA</div>
+                        <div class="word-item">ARARA</div>
+                        <div class="word-item">ARAUA</div>
+                        <div class="word-item">ARAWA</div>
+                        <div class="word-item">ARDEA</div>
+                        <div class="word-item">ARECA</div>
+                        <div class="word-item">ARENA</div>
+                        <div class="word-item">AROMA</div>
+                        <div class="word-item">ARRHA</div>
+                        <div class="word-item">ARTHA</div>
+                        <div class="word-item">ARUPA</div>
+                        <div class="word-item">ARUSA</div>
+                        <div class="word-item">ASANA</div>
+                        <div class="word-item">ASOKA</div>
+                        <div class="word-item">ASPCA</div>
+                        <div class="word-item">ASYLA</div>
+                        <div class="word-item">ATEBA</div>
+                        <div class="word-item">ATRIA</div>
+                        <div class="word-item">AVENA</div>
+                        <div class="word-item">AVERA</div>
+                        <div class="word-item">BABKA</div>
+                        <div class="word-item">BABUA</div>
+                        <div class="word-item">BACCA</div>
+                        <div class="word-item">BAFTA</div>
+                        <div class="word-item">BAIZA</div>
+                        <div class="word-item">BAJRA</div>
+                        <div class="word-item">BAKRA</div>
+                        <div class="word-item">BALSA</div>
+                        <div class="word-item">BALZA</div>
+                        <div class="word-item">BANBA</div>
+                        <div class="word-item">BANCA</div>
+                        <div class="word-item">BANDA</div>
+                        <div class="word-item">BANGA</div>
+                        <div class="word-item">BANIA</div>
+                        <div class="word-item">BANYA</div>
+                        <div class="word-item">BARBA</div>
+                        <div class="word-item">BARIA</div>
+                        <div class="word-item">BARRA</div>
+                        <div class="word-item">BASSA</div>
+                        <div class="word-item">BASTA</div>
+                        <div class="word-item">BATEA</div>
+                        <div class="word-item">BATTA</div>
+                        <div class="word-item">BATWA</div>
+                        <div class="word-item">BAUTA</div>
+                        <div class="word-item">BAWRA</div>
+                        <div class="word-item">BEALA</div>
+                        <div class="word-item">BEATA</div>
+                        <div class="word-item">BEIRA</div>
+                        <div class="word-item">BEISA</div>
+                        <div class="word-item">BELGA</div>
+                        <div class="word-item">BELLA</div>
+                        <div class="word-item">BEMBA</div>
+                        <div class="word-item">BENDA</div>
+                        <div class="word-item">BESRA</div>
+                        <div class="word-item">BETTA</div>
+                        <div class="word-item">BHAGA</div>
+                        <div class="word-item">BHARA</div>
+                        <div class="word-item">BHAVA</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

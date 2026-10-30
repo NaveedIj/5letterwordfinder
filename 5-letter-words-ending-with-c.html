@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in C</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">MAGIC</div>
+                        <div class="word-item">MUSIC</div>
+                        <div class="word-item">TOPIC</div>
+                        <div class="word-item">ACMIC</div>
+                        <div class="word-item">ADUNC</div>
+                        <div class="word-item">AERIC</div>
+                        <div class="word-item">AFRIC</div>
+                        <div class="word-item">AGRIC</div>
+                        <div class="word-item">ALGIC</div>
+                        <div class="word-item">AMNIC</div>
+                        <div class="word-item">ANTIC</div>
+                        <div class="word-item">ANZAC</div>
+                        <div class="word-item">AREIC</div>
+                        <div class="word-item">ARTIC</div>
+                        <div class="word-item">ARUAC</div>
+                        <div class="word-item">ASDIC</div>
+                        <div class="word-item">ASPIC</div>
+                        <div class="word-item">ASSOC</div>
+                        <div class="word-item">ASYNC</div>
+                        <div class="word-item">ATTIC</div>
+                        <div class="word-item">AULIC</div>
+                        <div class="word-item">AURIC</div>
+                        <div class="word-item">AZOIC</div>
+                        <div class="word-item">AZTEC</div>
+                        <div class="word-item">BAIOC</div>
+                        <div class="word-item">BARIC</div>
+                        <div class="word-item">BASIC</div>
+                        <div class="word-item">BENIC</div>
+                        <div class="word-item">BILIC</div>
+                        <div class="word-item">BLANC</div>
+                        <div class="word-item">BOBAC</div>
+                        <div class="word-item">BORIC</div>
+                        <div class="word-item">BRONC</div>
+                        <div class="word-item">BUTIC</div>
+                        <div class="word-item">CALIC</div>
+                        <div class="word-item">CAPOC</div>
+                        <div class="word-item">CERIC</div>
+                        <div class="word-item">CETIC</div>
+                        <div class="word-item">CIVIC</div>
+                        <div class="word-item">CODEC</div>
+                        <div class="word-item">COLIC</div>
+                        <div class="word-item">COMIC</div>
+                        <div class="word-item">CONIC</div>
+                        <div class="word-item">COSEC</div>
+                        <div class="word-item">COUAC</div>
+                        <div class="word-item">CRESC</div>
+                        <div class="word-item">CUBIC</div>
+                        <div class="word-item">CUFIC</div>
+                        <div class="word-item">CUMIC</div>
+                        <div class="word-item">CUSEC</div>
+                        <div class="word-item">CYNIC</div>
+                        <div class="word-item">DANIC</div>
+                        <div class="word-item">DARAC</div>
+                        <div class="word-item">DARIC</div>
+                        <div class="word-item">DERIC</div>
+                        <div class="word-item">DINIC</div>
+                        <div class="word-item">DOMIC</div>
+                        <div class="word-item">DONEC</div>
+                        <div class="word-item">DORIC</div>
+                        <div class="word-item">DUROC</div>
+                        <div class="word-item">EDDIC</div>
+                        <div class="word-item">ELAIC</div>
+                        <div class="word-item">ELFIC</div>
+                        <div class="word-item">ELRIC</div>
+                        <div class="word-item">ENCYC</div>
+                        <div class="word-item">ENIAC</div>
+                        <div class="word-item">ESPEC</div>
+                        <div class="word-item">ESTOC</div>
+                        <div class="word-item">ETHIC</div>
+                        <div class="word-item">EXSEC</div>
+                        <div class="word-item">FEMIC</div>
+                        <div class="word-item">FIDAC</div>
+                        <div class="word-item">FOLIC</div>
+                        <div class="word-item">FRANC</div>
+                        <div class="word-item">FUNIC</div>
+                        <div class="word-item">GAMIC</div>
+                        <div class="word-item">GENIC</div>
+                        <div class="word-item">GETIC</div>
+                        <div class="word-item">GORIC</div>
+                        <div class="word-item">GUIAC</div>
+                        <div class="word-item">GURIC</div>
+                        <div class="word-item">GYNIC</div>
+                        <div class="word-item">GYRIC</div>
+                        <div class="word-item">HAVOC</div>
+                        <div class="word-item">HEMIC</div>
+                        <div class="word-item">HUMIC</div>
+                        <div class="word-item">HYLIC</div>
+                        <div class="word-item">ICTIC</div>
+                        <div class="word-item">IDAIC</div>
+                        <div class="word-item">ILEAC</div>
+                        <div class="word-item">ILIAC</div>
+                        <div class="word-item">INDIC</div>
+                        <div class="word-item">INDUC</div>
+                        <div class="word-item">IODIC</div>
+                        <div class="word-item">IONIC</div>
+                        <div class="word-item">ISAAC</div>
+                        <div class="word-item">ISIAC</div>
+                        <div class="word-item">JUTIC</div>
+                        <div class="word-item">KINIC</div>
+                        <div class="word-item">KOPEC</div>
+                        <div class="word-item">KOREC</div>
+                        <div class="word-item">KUFIC</div>
+                        <div class="word-item">LAVIC</div>
+                        <div class="word-item">LEXIC</div>
+                        <div class="word-item">LILAC</div>
+                        <div class="word-item">LINAC</div>
+                        <div class="word-item">LIPIC</div>
+                        <div class="word-item">LOGIC</div>
+                        <div class="word-item">LORIC</div>
+                        <div class="word-item">LOTIC</div>
+                        <div class="word-item">LOXIC</div>
+                        <div class="word-item">LYRIC</div>
+                        <div class="word-item">LYTIC</div>
+                        <div class="word-item">MADOC</div>
+                        <div class="word-item">MAFIC</div>
+                        <div class="word-item">MALIC</div>
+                        <div class="word-item">MANIC</div>
+                        <div class="word-item">MANOC</div>
+                        <div class="word-item">MAZIC</div>
+                        <div class="word-item">MEDIC</div>
+                        <div class="word-item">MEDOC</div>
+                        <div class="word-item">MELIC</div>
+                        <div class="word-item">MENIC</div>
+                        <div class="word-item">MESIC</div>
+                        <div class="word-item">METIC</div>
+                        <div class="word-item">MIMIC</div>
+                        <div class="word-item">MIRAC</div>
+                        <div class="word-item">MODOC</div>
+                        <div class="word-item">MONIC</div>
+                        <div class="word-item">MORIC</div>
+                        <div class="word-item">MOROC</div>
+                        <div class="word-item">MUCIC</div>
+                        <div class="word-item">MUNIC</div>
+                        <div class="word-item">MUTIC</div>
+                        <div class="word-item">NARIC</div>
+                        <div class="word-item">NIFIC</div>
+                        <div class="word-item">NOMIC</div>
+                        <div class="word-item">NONIC</div>
+                        <div class="word-item">NORIC</div>
+                        <div class="word-item">NUMAC</div>
+                        <div class="word-item">OARIC</div>
+                        <div class="word-item">OCTIC</div>
+                        <div class="word-item">OFFIC</div>
+                        <div class="word-item">OGMIC</div>
+                        <div class="word-item">OHMIC</div>
+                        <div class="word-item">OLEIC</div>
+                        <div class="word-item">ONTIC</div>
+                        <div class="word-item">OPHIC</div>
+                        <div class="word-item">OPTIC</div>
+                        <div class="word-item">ORBIC</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

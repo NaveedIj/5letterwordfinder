@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in S</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">GLASS</div>
+                        <div class="word-item">JEANS</div>
+                        <div class="word-item">NEEDS</div>
+                        <div class="word-item">VIRUS</div>
+                        <div class="word-item">ABBAS</div>
+                        <div class="word-item">ABBES</div>
+                        <div class="word-item">ABETS</div>
+                        <div class="word-item">ABIES</div>
+                        <div class="word-item">ABLES</div>
+                        <div class="word-item">ABRIS</div>
+                        <div class="word-item">ABRUS</div>
+                        <div class="word-item">ABSIS</div>
+                        <div class="word-item">ABUTS</div>
+                        <div class="word-item">ABYES</div>
+                        <div class="word-item">ABYSS</div>
+                        <div class="word-item">ACCTS</div>
+                        <div class="word-item">ACCUS</div>
+                        <div class="word-item">ACHES</div>
+                        <div class="word-item">ACIDS</div>
+                        <div class="word-item">ACIES</div>
+                        <div class="word-item">ACLYS</div>
+                        <div class="word-item">ACMES</div>
+                        <div class="word-item">ACNES</div>
+                        <div class="word-item">ACRES</div>
+                        <div class="word-item">ACTOS</div>
+                        <div class="word-item">ACTUS</div>
+                        <div class="word-item">ACYLS</div>
+                        <div class="word-item">ADAMS</div>
+                        <div class="word-item">ADAYS</div>
+                        <div class="word-item">ADDIS</div>
+                        <div class="word-item">ADEPS</div>
+                        <div class="word-item">ADIOS</div>
+                        <div class="word-item">ADITS</div>
+                        <div class="word-item">ADZES</div>
+                        <div class="word-item">AEDES</div>
+                        <div class="word-item">AEGIS</div>
+                        <div class="word-item">AEONS</div>
+                        <div class="word-item">AFARS</div>
+                        <div class="word-item">AFROS</div>
+                        <div class="word-item">AGARS</div>
+                        <div class="word-item">AGERS</div>
+                        <div class="word-item">AGHAS</div>
+                        <div class="word-item">AGIOS</div>
+                        <div class="word-item">AGMAS</div>
+                        <div class="word-item">AGNES</div>
+                        <div class="word-item">AGNUS</div>
+                        <div class="word-item">AGONS</div>
+                        <div class="word-item">AGUES</div>
+                        <div class="word-item">AHEMS</div>
+                        <div class="word-item">AIDES</div>
+                        <div class="word-item">AINUS</div>
+                        <div class="word-item">AIRNS</div>
+                        <div class="word-item">AIRTS</div>
+                        <div class="word-item">AITIS</div>
+                        <div class="word-item">AKEES</div>
+                        <div class="word-item">ALANS</div>
+                        <div class="word-item">ALBAS</div>
+                        <div class="word-item">ALBUS</div>
+                        <div class="word-item">ALCES</div>
+                        <div class="word-item">ALDUS</div>
+                        <div class="word-item">ALECS</div>
+                        <div class="word-item">ALEFS</div>
+                        <div class="word-item">ALFAS</div>
+                        <div class="word-item">ALGAS</div>
+                        <div class="word-item">ALIAS</div>
+                        <div class="word-item">ALIDS</div>
+                        <div class="word-item">ALIFS</div>
+                        <div class="word-item">ALKES</div>
+                        <div class="word-item">ALLIS</div>
+                        <div class="word-item">ALMAS</div>
+                        <div class="word-item">ALMES</div>
+                        <div class="word-item">ALNUS</div>
+                        <div class="word-item">ALOES</div>
+                        <div class="word-item">ALOIS</div>
+                        <div class="word-item">ALTOS</div>
+                        <div class="word-item">ALTUS</div>
+                        <div class="word-item">ALUMS</div>
+                        <div class="word-item">ALVUS</div>
+                        <div class="word-item">AMAAS</div>
+                        <div class="word-item">AMAHS</div>
+                        <div class="word-item">AMASS</div>
+                        <div class="word-item">AMBAS</div>
+                        <div class="word-item">AMBOS</div>
+                        <div class="word-item">AMENS</div>
+                        <div class="word-item">AMESS</div>
+                        <div class="word-item">AMIAS</div>
+                        <div class="word-item">AMIDS</div>
+                        <div class="word-item">AMIES</div>
+                        <div class="word-item">AMINS</div>
+                        <div class="word-item">AMIRS</div>
+                        <div class="word-item">AMISS</div>
+                        <div class="word-item">AMMOS</div>
+                        <div class="word-item">AMOKS</div>
+                        <div class="word-item">AMVIS</div>
+                        <div class="word-item">AMYLS</div>
+                        <div class="word-item">ANDES</div>
+                        <div class="word-item">ANGAS</div>
+                        <div class="word-item">ANGUS</div>
+                        <div class="word-item">ANILS</div>
+                        <div class="word-item">ANKHS</div>
+                        <div class="word-item">ANKUS</div>
+                        <div class="word-item">ANLAS</div>
+                        <div class="word-item">ANNAS</div>
+                        <div class="word-item">ANNUS</div>
+                        <div class="word-item">ANOAS</div>
+                        <div class="word-item">ANOUS</div>
+                        <div class="word-item">ANTAS</div>
+                        <div class="word-item">ANTES</div>
+                        <div class="word-item">ANTIS</div>
+                        <div class="word-item">AOTES</div>
+                        <div class="word-item">AOTUS</div>
+                        <div class="word-item">APASS</div>
+                        <div class="word-item">APERS</div>
+                        <div class="word-item">APHIS</div>
+                        <div class="word-item">APIOS</div>
+                        <div class="word-item">APODS</div>
+                        <div class="word-item">APRES</div>
+                        <div class="word-item">APSES</div>
+                        <div class="word-item">APSIS</div>
+                        <div class="word-item">AQUAS</div>
+                        <div class="word-item">ARABS</div>
+                        <div class="word-item">ARAKS</div>
+                        <div class="word-item">ARCES</div>
+                        <div class="word-item">ARCOS</div>
+                        <div class="word-item">ARCUS</div>
+                        <div class="word-item">AREAS</div>
+                        <div class="word-item">ARGAS</div>
+                        <div class="word-item">ARGOS</div>
+                        <div class="word-item">ARGUS</div>
+                        <div class="word-item">ARIAS</div>
+                        <div class="word-item">ARIES</div>
+                        <div class="word-item">ARILS</div>
+                        <div class="word-item">ARIUS</div>
+                        <div class="word-item">ARLES</div>
+                        <div class="word-item">ARRAS</div>
+                        <div class="word-item">ARRIS</div>
+                        <div class="word-item">ARSES</div>
+                        <div class="word-item">ARSIS</div>
+                        <div class="word-item">ARTUS</div>
+                        <div class="word-item">ARUMS</div>
+                        <div class="word-item">ARVOS</div>
+                        <div class="word-item">ARYLS</div>
+                        <div class="word-item">ASCUS</div>
+                        <div class="word-item">ASHES</div>
+                        <div class="word-item">ASKOS</div>
+                        <div class="word-item">ASPIS</div>
+                        <div class="word-item">ASSES</div>
+                        <div class="word-item">ASSIS</div>
+                        <div class="word-item">ATEES</div>
+                        <div class="word-item">ATLAS</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

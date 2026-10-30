@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in E</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">APPLE</div>
+                        <div class="word-item">ARISE</div>
+                        <div class="word-item">CABLE</div>
+                        <div class="word-item">CAUSE</div>
+                        <div class="word-item">CRANE</div>
+                        <div class="word-item">DANCE</div>
+                        <div class="word-item">DRIVE</div>
+                        <div class="word-item">ELITE</div>
+                        <div class="word-item">FABLE</div>
+                        <div class="word-item">FALSE</div>
+                        <div class="word-item">FLAME</div>
+                        <div class="word-item">GLOBE</div>
+                        <div class="word-item">GRACE</div>
+                        <div class="word-item">GRAPE</div>
+                        <div class="word-item">HORSE</div>
+                        <div class="word-item">HOUSE</div>
+                        <div class="word-item">IMAGE</div>
+                        <div class="word-item">ISSUE</div>
+                        <div class="word-item">JUDGE</div>
+                        <div class="word-item">JUICE</div>
+                        <div class="word-item">KNIFE</div>
+                        <div class="word-item">LANCE</div>
+                        <div class="word-item">LARGE</div>
+                        <div class="word-item">NAIVE</div>
+                        <div class="word-item">NERVE</div>
+                        <div class="word-item">NICHE</div>
+                        <div class="word-item">NOBLE</div>
+                        <div class="word-item">NOISE</div>
+                        <div class="word-item">NURSE</div>
+                        <div class="word-item">OUNCE</div>
+                        <div class="word-item">OZONE</div>
+                        <div class="word-item">PEACE</div>
+                        <div class="word-item">PHASE</div>
+                        <div class="word-item">PHONE</div>
+                        <div class="word-item">PIECE</div>
+                        <div class="word-item">PRICE</div>
+                        <div class="word-item">PRIME</div>
+                        <div class="word-item">QUEUE</div>
+                        <div class="word-item">QUITE</div>
+                        <div class="word-item">QUOTE</div>
+                        <div class="word-item">RAISE</div>
+                        <div class="word-item">RANGE</div>
+                        <div class="word-item">ROUTE</div>
+                        <div class="word-item">SCALE</div>
+                        <div class="word-item">SCENE</div>
+                        <div class="word-item">SCOPE</div>
+                        <div class="word-item">SCORE</div>
+                        <div class="word-item">SENSE</div>
+                        <div class="word-item">SHAPE</div>
+                        <div class="word-item">SHARE</div>
+                        <div class="word-item">SHINE</div>
+                        <div class="word-item">SLATE</div>
+                        <div class="word-item">SMILE</div>
+                        <div class="word-item">SPACE</div>
+                        <div class="word-item">STAGE</div>
+                        <div class="word-item">STARE</div>
+                        <div class="word-item">STATE</div>
+                        <div class="word-item">STONE</div>
+                        <div class="word-item">STORE</div>
+                        <div class="word-item">STYLE</div>
+                        <div class="word-item">TABLE</div>
+                        <div class="word-item">TASTE</div>
+                        <div class="word-item">THEME</div>
+                        <div class="word-item">THERE</div>
+                        <div class="word-item">THREE</div>
+                        <div class="word-item">TRADE</div>
+                        <div class="word-item">TWICE</div>
+                        <div class="word-item">UNCLE</div>
+                        <div class="word-item">UNITE</div>
+                        <div class="word-item">USAGE</div>
+                        <div class="word-item">VALUE</div>
+                        <div class="word-item">VOICE</div>
+                        <div class="word-item">WASTE</div>
+                        <div class="word-item">WHERE</div>
+                        <div class="word-item">WHILE</div>
+                        <div class="word-item">WHITE</div>
+                        <div class="word-item">WHOLE</div>
+                        <div class="word-item">WRITE</div>
+                        <div class="word-item">ABASE</div>
+                        <div class="word-item">ABATE</div>
+                        <div class="word-item">ABAUE</div>
+                        <div class="word-item">ABAVE</div>
+                        <div class="word-item">ABAZE</div>
+                        <div class="word-item">ABBIE</div>
+                        <div class="word-item">ABEDE</div>
+                        <div class="word-item">ABELE</div>
+                        <div class="word-item">ABIDE</div>
+                        <div class="word-item">ABIME</div>
+                        <div class="word-item">ABODE</div>
+                        <div class="word-item">ABOTE</div>
+                        <div class="word-item">ABOVE</div>
+                        <div class="word-item">ABSEE</div>
+                        <div class="word-item">ABUNE</div>
+                        <div class="word-item">ABUSE</div>
+                        <div class="word-item">ACALE</div>
+                        <div class="word-item">ACATE</div>
+                        <div class="word-item">ACKEE</div>
+                        <div class="word-item">ACONE</div>
+                        <div class="word-item">ACUTE</div>
+                        <div class="word-item">ADAGE</div>
+                        <div class="word-item">ADAWE</div>
+                        <div class="word-item">ADDIE</div>
+                        <div class="word-item">ADDLE</div>
+                        <div class="word-item">ADOBE</div>
+                        <div class="word-item">ADORE</div>
+                        <div class="word-item">ADOZE</div>
+                        <div class="word-item">ADRUE</div>
+                        <div class="word-item">ADURE</div>
+                        <div class="word-item">AEGLE</div>
+                        <div class="word-item">AERIE</div>
+                        <div class="word-item">AFACE</div>
+                        <div class="word-item">AFIRE</div>
+                        <div class="word-item">AFORE</div>
+                        <div class="word-item">AGADE</div>
+                        <div class="word-item">AGAPE</div>
+                        <div class="word-item">AGATE</div>
+                        <div class="word-item">AGAVE</div>
+                        <div class="word-item">AGAZE</div>
+                        <div class="word-item">AGENE</div>
+                        <div class="word-item">AGETE</div>
+                        <div class="word-item">AGGIE</div>
+                        <div class="word-item">AGILE</div>
+                        <div class="word-item">AGLEE</div>
+                        <div class="word-item">AGOGE</div>
+                        <div class="word-item">AGONE</div>
+                        <div class="word-item">AGREE</div>
+                        <div class="word-item">AIGRE</div>
+                        <div class="word-item">AILIE</div>
+                        <div class="word-item">AIMEE</div>
+                        <div class="word-item">AINEE</div>
+                        <div class="word-item">AISLE</div>
+                        <div class="word-item">AIZLE</div>
+                        <div class="word-item">AKENE</div>
+                        <div class="word-item">AKNEE</div>
+                        <div class="word-item">AKULE</div>
+                        <div class="word-item">ALANE</div>
+                        <div class="word-item">ALATE</div>
+                        <div class="word-item">ALBEE</div>
+                        <div class="word-item">ALCAE</div>
+                        <div class="word-item">ALGAE</div>
+                        <div class="word-item">ALICE</div>
+                        <div class="word-item">ALIFE</div>
+                        <div class="word-item">ALIKE</div>
+                        <div class="word-item">ALINE</div>
+                        <div class="word-item">ALITE</div>
+                        <div class="word-item">ALIVE</div>
+                        <div class="word-item">ALLIE</div>
+                        <div class="word-item">ALONE</div>
+                        <div class="word-item">ALOSE</div>
+                        <div class="word-item">ALOWE</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,108 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 94 matching words from our dictionary list.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in W</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">ABLOW</div>
+                        <div class="word-item">AFLOW</div>
+                        <div class="word-item">AGLOW</div>
+                        <div class="word-item">AKNOW</div>
+                        <div class="word-item">ALLOW</div>
+                        <div class="word-item">ARROW</div>
+                        <div class="word-item">ASKEW</div>
+                        <div class="word-item">AVIEW</div>
+                        <div class="word-item">BALOW</div>
+                        <div class="word-item">BEDEW</div>
+                        <div class="word-item">BEHEW</div>
+                        <div class="word-item">BELOW</div>
+                        <div class="word-item">BEPAW</div>
+                        <div class="word-item">BESEW</div>
+                        <div class="word-item">BYLAW</div>
+                        <div class="word-item">CADEW</div>
+                        <div class="word-item">CAHOW</div>
+                        <div class="word-item">CHIVW</div>
+                        <div class="word-item">COHOW</div>
+                        <div class="word-item">DATSW</div>
+                        <div class="word-item">DELAW</div>
+                        <div class="word-item">DEVOW</div>
+                        <div class="word-item">ELBOW</div>
+                        <div class="word-item">EMBOW</div>
+                        <div class="word-item">EMMEW</div>
+                        <div class="word-item">ENDEW</div>
+                        <div class="word-item">ENDOW</div>
+                        <div class="word-item">ENMEW</div>
+                        <div class="word-item">ENNEW</div>
+                        <div class="word-item">EWHOW</div>
+                        <div class="word-item">FINEW</div>
+                        <div class="word-item">GROOW</div>
+                        <div class="word-item">IGNAW</div>
+                        <div class="word-item">IMMEW</div>
+                        <div class="word-item">INBOW</div>
+                        <div class="word-item">INDEW</div>
+                        <div class="word-item">INDOW</div>
+                        <div class="word-item">INLAW</div>
+                        <div class="word-item">INMEW</div>
+                        <div class="word-item">KOTOW</div>
+                        <div class="word-item">MACAW</div>
+                        <div class="word-item">MENOW</div>
+                        <div class="word-item">MIAOW</div>
+                        <div class="word-item">MIAUW</div>
+                        <div class="word-item">MINOW</div>
+                        <div class="word-item">NAVEW</div>
+                        <div class="word-item">NOHOW</div>
+                        <div class="word-item">ORROW</div>
+                        <div class="word-item">OXBOW</div>
+                        <div class="word-item">PAAUW</div>
+                        <div class="word-item">PALEW</div>
+                        <div class="word-item">PAPAW</div>
+                        <div class="word-item">PAWAW</div>
+                        <div class="word-item">PELEW</div>
+                        <div class="word-item">PILAW</div>
+                        <div class="word-item">PSHAW</div>
+                        <div class="word-item">RENEW</div>
+                        <div class="word-item">REPEW</div>
+                        <div class="word-item">REROW</div>
+                        <div class="word-item">RESAW</div>
+                        <div class="word-item">RESEW</div>
+                        <div class="word-item">RESOW</div>
+                        <div class="word-item">SCLAW</div>
+                        <div class="word-item">SCRAW</div>
+                        <div class="word-item">SCREW</div>
+                        <div class="word-item">SCROW</div>
+                        <div class="word-item">SERAW</div>
+                        <div class="word-item">SEROW</div>
+                        <div class="word-item">SHREW</div>
+                        <div class="word-item">SINEW</div>
+                        <div class="word-item">SPREW</div>
+                        <div class="word-item">SQUAW</div>
+                        <div class="word-item">STARW</div>
+                        <div class="word-item">STRAW</div>
+                        <div class="word-item">STREW</div>
+                        <div class="word-item">STROW</div>
+                        <div class="word-item">SYBOW</div>
+                        <div class="word-item">THEOW</div>
+                        <div class="word-item">THRAW</div>
+                        <div class="word-item">THREW</div>
+                        <div class="word-item">THROW</div>
+                        <div class="word-item">UNBOW</div>
+                        <div class="word-item">UNCOW</div>
+                        <div class="word-item">UNFEW</div>
+                        <div class="word-item">UNLAW</div>
+                        <div class="word-item">UNMEW</div>
+                        <div class="word-item">UNNEW</div>
+                        <div class="word-item">UNROW</div>
+                        <div class="word-item">UNSEW</div>
+                        <div class="word-item">VALEW</div>
+                        <div class="word-item">VINEW</div>
+                        <div class="word-item">VOLOW</div>
+                        <div class="word-item">VROUW</div>
+                        <div class="word-item">WIDOW</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 94 matching words from our dictionary list.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in H</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">BEACH</div>
+                        <div class="word-item">DEPTH</div>
+                        <div class="word-item">EARTH</div>
+                        <div class="word-item">FAITH</div>
+                        <div class="word-item">FRESH</div>
+                        <div class="word-item">GRAPH</div>
+                        <div class="word-item">LAUGH</div>
+                        <div class="word-item">MARCH</div>
+                        <div class="word-item">MATCH</div>
+                        <div class="word-item">MONTH</div>
+                        <div class="word-item">NORTH</div>
+                        <div class="word-item">REACH</div>
+                        <div class="word-item">TEACH</div>
+                        <div class="word-item">TOUCH</div>
+                        <div class="word-item">TRUTH</div>
+                        <div class="word-item">WATCH</div>
+                        <div class="word-item">WHICH</div>
+                        <div class="word-item">YOUTH</div>
+                        <div class="word-item">ZILCH</div>
+                        <div class="word-item">AARGH</div>
+                        <div class="word-item">ABASH</div>
+                        <div class="word-item">ABUSH</div>
+                        <div class="word-item">AGRAH</div>
+                        <div class="word-item">AGUSH</div>
+                        <div class="word-item">AHUSH</div>
+                        <div class="word-item">AIRTH</div>
+                        <div class="word-item">AITCH</div>
+                        <div class="word-item">ALEPH</div>
+                        <div class="word-item">ALISH</div>
+                        <div class="word-item">ALLAH</div>
+                        <div class="word-item">ALMAH</div>
+                        <div class="word-item">ALMEH</div>
+                        <div class="word-item">ALVAH</div>
+                        <div class="word-item">AMISH</div>
+                        <div class="word-item">ANIGH</div>
+                        <div class="word-item">APISH</div>
+                        <div class="word-item">ARACH</div>
+                        <div class="word-item">ARISH</div>
+                        <div class="word-item">ARITH</div>
+                        <div class="word-item">AROPH</div>
+                        <div class="word-item">ARRAH</div>
+                        <div class="word-item">ASAPH</div>
+                        <div class="word-item">ASARH</div>
+                        <div class="word-item">ATNAH</div>
+                        <div class="word-item">AWASH</div>
+                        <div class="word-item">AZOCH</div>
+                        <div class="word-item">AZOTH</div>
+                        <div class="word-item">BAITH</div>
+                        <div class="word-item">BAMAH</div>
+                        <div class="word-item">BANDH</div>
+                        <div class="word-item">BARGH</div>
+                        <div class="word-item">BARIH</div>
+                        <div class="word-item">BARTH</div>
+                        <div class="word-item">BATCH</div>
+                        <div class="word-item">BAUCH</div>
+                        <div class="word-item">BEATH</div>
+                        <div class="word-item">BEECH</div>
+                        <div class="word-item">BEETH</div>
+                        <div class="word-item">BEKAH</div>
+                        <div class="word-item">BELAH</div>
+                        <div class="word-item">BELCH</div>
+                        <div class="word-item">BENCH</div>
+                        <div class="word-item">BENSH</div>
+                        <div class="word-item">BERGH</div>
+                        <div class="word-item">BERTH</div>
+                        <div class="word-item">BILCH</div>
+                        <div class="word-item">BILSH</div>
+                        <div class="word-item">BIMAH</div>
+                        <div class="word-item">BIRCH</div>
+                        <div class="word-item">BIRTH</div>
+                        <div class="word-item">BITCH</div>
+                        <div class="word-item">BLASH</div>
+                        <div class="word-item">BLUSH</div>
+                        <div class="word-item">BOODH</div>
+                        <div class="word-item">BOOTH</div>
+                        <div class="word-item">BORGH</div>
+                        <div class="word-item">BOSCH</div>
+                        <div class="word-item">BOTCH</div>
+                        <div class="word-item">BOUCH</div>
+                        <div class="word-item">BOUGH</div>
+                        <div class="word-item">BRACH</div>
+                        <div class="word-item">BRASH</div>
+                        <div class="word-item">BRETH</div>
+                        <div class="word-item">BRITH</div>
+                        <div class="word-item">BROCH</div>
+                        <div class="word-item">BROGH</div>
+                        <div class="word-item">BROTH</div>
+                        <div class="word-item">BRUGH</div>
+                        <div class="word-item">BRUSH</div>
+                        <div class="word-item">BUDDH</div>
+                        <div class="word-item">BUMPH</div>
+                        <div class="word-item">BUNCH</div>
+                        <div class="word-item">BUNDH</div>
+                        <div class="word-item">BURGH</div>
+                        <div class="word-item">BUTCH</div>
+                        <div class="word-item">CANCH</div>
+                        <div class="word-item">CATCH</div>
+                        <div class="word-item">CAUCH</div>
+                        <div class="word-item">CHETH</div>
+                        <div class="word-item">CHICH</div>
+                        <div class="word-item">CINCH</div>
+                        <div class="word-item">CLACH</div>
+                        <div class="word-item">CLASH</div>
+                        <div class="word-item">CLICH</div>
+                        <div class="word-item">CLOSH</div>
+                        <div class="word-item">CLOTH</div>
+                        <div class="word-item">COACH</div>
+                        <div class="word-item">CONCH</div>
+                        <div class="word-item">COOCH</div>
+                        <div class="word-item">COOTH</div>
+                        <div class="word-item">CORAH</div>
+                        <div class="word-item">COTCH</div>
+                        <div class="word-item">COUCH</div>
+                        <div class="word-item">COUGH</div>
+                        <div class="word-item">COUTH</div>
+                        <div class="word-item">CRASH</div>
+                        <div class="word-item">CRITH</div>
+                        <div class="word-item">CRUSH</div>
+                        <div class="word-item">CRUTH</div>
+                        <div class="word-item">CRWTH</div>
+                        <div class="word-item">CUISH</div>
+                        <div class="word-item">CULCH</div>
+                        <div class="word-item">CURCH</div>
+                        <div class="word-item">CUTCH</div>
+                        <div class="word-item">CYATH</div>
+                        <div class="word-item">CZECH</div>
+                        <div class="word-item">DABIH</div>
+                        <div class="word-item">DABUH</div>
+                        <div class="word-item">DATCH</div>
+                        <div class="word-item">DEASH</div>
+                        <div class="word-item">DEATH</div>
+                        <div class="word-item">DELPH</div>
+                        <div class="word-item">DEPOH</div>
+                        <div class="word-item">DERAH</div>
+                        <div class="word-item">DERTH</div>
+                        <div class="word-item">DINAH</div>
+                        <div class="word-item">DITCH</div>
+                        <div class="word-item">DOETH</div>
+                        <div class="word-item">DOLPH</div>
+                        <div class="word-item">DOUGH</div>
+                        <div class="word-item">DROGH</div>
+                        <div class="word-item">DRYTH</div>
+                        <div class="word-item">DUNCH</div>
+                        <div class="word-item">DUTCH</div>
+                        <div class="word-item">EARSH</div>
+                        <div class="word-item">EDITH</div>
+                        <div class="word-item">ELOAH</div>
+                        <div class="word-item">ENOCH</div>
+                        <div class="word-item">EOITH</div>
+                        <div class="word-item">EPHAH</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

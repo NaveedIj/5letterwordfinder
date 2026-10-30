@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in M</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">CHARM</div>
+                        <div class="word-item">DREAM</div>
+                        <div class="word-item">STEAM</div>
+                        <div class="word-item">XYLEM</div>
+                        <div class="word-item">ABDOM</div>
+                        <div class="word-item">ABEAM</div>
+                        <div class="word-item">ABOHM</div>
+                        <div class="word-item">ABRAM</div>
+                        <div class="word-item">ABRIM</div>
+                        <div class="word-item">ABYSM</div>
+                        <div class="word-item">ACCUM</div>
+                        <div class="word-item">ADEEM</div>
+                        <div class="word-item">ADSUM</div>
+                        <div class="word-item">AEVUM</div>
+                        <div class="word-item">AFOAM</div>
+                        <div class="word-item">AGISM</div>
+                        <div class="word-item">AGROM</div>
+                        <div class="word-item">AGSAM</div>
+                        <div class="word-item">ALARM</div>
+                        <div class="word-item">ALBUM</div>
+                        <div class="word-item">ALDIM</div>
+                        <div class="word-item">ALGUM</div>
+                        <div class="word-item">ANNAM</div>
+                        <div class="word-item">ANNUM</div>
+                        <div class="word-item">ANTUM</div>
+                        <div class="word-item">APISM</div>
+                        <div class="word-item">APIUM</div>
+                        <div class="word-item">ASSAM</div>
+                        <div class="word-item">ASWIM</div>
+                        <div class="word-item">AURUM</div>
+                        <div class="word-item">AUTEM</div>
+                        <div class="word-item">AXIOM</div>
+                        <div class="word-item">BAHAM</div>
+                        <div class="word-item">BEARM</div>
+                        <div class="word-item">BEDIM</div>
+                        <div class="word-item">BEGEM</div>
+                        <div class="word-item">BEGUM</div>
+                        <div class="word-item">BELAM</div>
+                        <div class="word-item">BENIM</div>
+                        <div class="word-item">BESOM</div>
+                        <div class="word-item">BIGAM</div>
+                        <div class="word-item">BIHAM</div>
+                        <div class="word-item">BLOOM</div>
+                        <div class="word-item">BOGUM</div>
+                        <div class="word-item">BOKOM</div>
+                        <div class="word-item">BONUM</div>
+                        <div class="word-item">BOSOM</div>
+                        <div class="word-item">BRAHM</div>
+                        <div class="word-item">BREAM</div>
+                        <div class="word-item">BROOM</div>
+                        <div class="word-item">BRYUM</div>
+                        <div class="word-item">BUXOM</div>
+                        <div class="word-item">CACAM</div>
+                        <div class="word-item">CAROM</div>
+                        <div class="word-item">CARUM</div>
+                        <div class="word-item">CAVUM</div>
+                        <div class="word-item">CECUM</div>
+                        <div class="word-item">CELOM</div>
+                        <div class="word-item">CHAMM</div>
+                        <div class="word-item">CHASM</div>
+                        <div class="word-item">CHAUM</div>
+                        <div class="word-item">CHIAM</div>
+                        <div class="word-item">CHIRM</div>
+                        <div class="word-item">CHOOM</div>
+                        <div class="word-item">CHURM</div>
+                        <div class="word-item">CLAIM</div>
+                        <div class="word-item">CLEAM</div>
+                        <div class="word-item">CLOAM</div>
+                        <div class="word-item">CORAM</div>
+                        <div class="word-item">CRAWM</div>
+                        <div class="word-item">CREAM</div>
+                        <div class="word-item">CREEM</div>
+                        <div class="word-item">CUJAM</div>
+                        <div class="word-item">DATUM</div>
+                        <div class="word-item">DECEM</div>
+                        <div class="word-item">DEGUM</div>
+                        <div class="word-item">DEISM</div>
+                        <div class="word-item">DELIM</div>
+                        <div class="word-item">DENIM</div>
+                        <div class="word-item">DENOM</div>
+                        <div class="word-item">DIDYM</div>
+                        <div class="word-item">DONUM</div>
+                        <div class="word-item">DRAMM</div>
+                        <div class="word-item">DURUM</div>
+                        <div class="word-item">DWALM</div>
+                        <div class="word-item">DYNAM</div>
+                        <div class="word-item">ENARM</div>
+                        <div class="word-item">ENGEM</div>
+                        <div class="word-item">ENORM</div>
+                        <div class="word-item">ENTOM</div>
+                        <div class="word-item">ENZYM</div>
+                        <div class="word-item">EPSOM</div>
+                        <div class="word-item">ERVUM</div>
+                        <div class="word-item">ETIAM</div>
+                        <div class="word-item">FAHAM</div>
+                        <div class="word-item">FAIRM</div>
+                        <div class="word-item">FANAM</div>
+                        <div class="word-item">FANUM</div>
+                        <div class="word-item">FILUM</div>
+                        <div class="word-item">FLEAM</div>
+                        <div class="word-item">FLEGM</div>
+                        <div class="word-item">FOISM</div>
+                        <div class="word-item">FORAM</div>
+                        <div class="word-item">FORUM</div>
+                        <div class="word-item">FREAM</div>
+                        <div class="word-item">FROOM</div>
+                        <div class="word-item">GANAM</div>
+                        <div class="word-item">GARUM</div>
+                        <div class="word-item">GENOM</div>
+                        <div class="word-item">GERIM</div>
+                        <div class="word-item">GHOOM</div>
+                        <div class="word-item">GILIM</div>
+                        <div class="word-item">GITIM</div>
+                        <div class="word-item">GLAUM</div>
+                        <div class="word-item">GLEAM</div>
+                        <div class="word-item">GLOAM</div>
+                        <div class="word-item">GLOOM</div>
+                        <div class="word-item">GOLEM</div>
+                        <div class="word-item">GOYIM</div>
+                        <div class="word-item">GRIMM</div>
+                        <div class="word-item">GROOM</div>
+                        <div class="word-item">HAKAM</div>
+                        <div class="word-item">HAKIM</div>
+                        <div class="word-item">HARAM</div>
+                        <div class="word-item">HAREM</div>
+                        <div class="word-item">HARIM</div>
+                        <div class="word-item">HAULM</div>
+                        <div class="word-item">HEREM</div>
+                        <div class="word-item">HILUM</div>
+                        <div class="word-item">HIRAM</div>
+                        <div class="word-item">HOKUM</div>
+                        <div class="word-item">HOMAM</div>
+                        <div class="word-item">HORIM</div>
+                        <div class="word-item">ICASM</div>
+                        <div class="word-item">IDIOM</div>
+                        <div class="word-item">IDISM</div>
+                        <div class="word-item">IHRAM</div>
+                        <div class="word-item">ILEUM</div>
+                        <div class="word-item">ILIUM</div>
+                        <div class="word-item">IMAUM</div>
+                        <div class="word-item">INARM</div>
+                        <div class="word-item">INERM</div>
+                        <div class="word-item">INGEM</div>
+                        <div class="word-item">ISEUM</div>
+                        <div class="word-item">ISLAM</div>
+                        <div class="word-item">ISTHM</div>
+                        <div class="word-item">JOCUM</div>
+                        <div class="word-item">JORAM</div>
+                        <div class="word-item">JORUM</div>
+                        <div class="word-item">JUGUM</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in I</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">KHAKI</div>
+                        <div class="word-item">AALII</div>
+                        <div class="word-item">ABACI</div>
+                        <div class="word-item">ABIDI</div>
+                        <div class="word-item">ACARI</div>
+                        <div class="word-item">ACINI</div>
+                        <div class="word-item">ADATI</div>
+                        <div class="word-item">ADLAI</div>
+                        <div class="word-item">AEQUI</div>
+                        <div class="word-item">AFIFI</div>
+                        <div class="word-item">AGAMI</div>
+                        <div class="word-item">AINOI</div>
+                        <div class="word-item">AIOLI</div>
+                        <div class="word-item">AJARI</div>
+                        <div class="word-item">AKALI</div>
+                        <div class="word-item">AKEBI</div>
+                        <div class="word-item">AKEKI</div>
+                        <div class="word-item">ALAKI</div>
+                        <div class="word-item">ALANI</div>
+                        <div class="word-item">ALAWI</div>
+                        <div class="word-item">ALIBI</div>
+                        <div class="word-item">AMADI</div>
+                        <div class="word-item">AMANI</div>
+                        <div class="word-item">AMATI</div>
+                        <div class="word-item">AMICI</div>
+                        <div class="word-item">AMINI</div>
+                        <div class="word-item">AMPHI</div>
+                        <div class="word-item">ANIMI</div>
+                        <div class="word-item">ANOLI</div>
+                        <div class="word-item">APILI</div>
+                        <div class="word-item">APPUI</div>
+                        <div class="word-item">ARATI</div>
+                        <div class="word-item">ARDRI</div>
+                        <div class="word-item">ARIKI</div>
+                        <div class="word-item">ARIOI</div>
+                        <div class="word-item">ASCII</div>
+                        <div class="word-item">ASKOI</div>
+                        <div class="word-item">ASSAI</div>
+                        <div class="word-item">ASURI</div>
+                        <div class="word-item">ATAVI</div>
+                        <div class="word-item">AULOI</div>
+                        <div class="word-item">AUREI</div>
+                        <div class="word-item">AVAHI</div>
+                        <div class="word-item">AWABI</div>
+                        <div class="word-item">AWIWI</div>
+                        <div class="word-item">BABAI</div>
+                        <div class="word-item">BAGDI</div>
+                        <div class="word-item">BAHAI</div>
+                        <div class="word-item">BAJRI</div>
+                        <div class="word-item">BAKLI</div>
+                        <div class="word-item">BALAI</div>
+                        <div class="word-item">BALEI</div>
+                        <div class="word-item">BALLI</div>
+                        <div class="word-item">BALTI</div>
+                        <div class="word-item">BANDI</div>
+                        <div class="word-item">BAROI</div>
+                        <div class="word-item">BASSI</div>
+                        <div class="word-item">BASTI</div>
+                        <div class="word-item">BEATI</div>
+                        <div class="word-item">BEEDI</div>
+                        <div class="word-item">BELLI</div>
+                        <div class="word-item">BENNI</div>
+                        <div class="word-item">BERRI</div>
+                        <div class="word-item">BESSI</div>
+                        <div class="word-item">BEZZI</div>
+                        <div class="word-item">BHILI</div>
+                        <div class="word-item">BIALI</div>
+                        <div class="word-item">BIDRI</div>
+                        <div class="word-item">BIHAI</div>
+                        <div class="word-item">BILBI</div>
+                        <div class="word-item">BINDI</div>
+                        <div class="word-item">BIRRI</div>
+                        <div class="word-item">BISTI</div>
+                        <div class="word-item">BLINI</div>
+                        <div class="word-item">BOCCI</div>
+                        <div class="word-item">BODHI</div>
+                        <div class="word-item">BOLTI</div>
+                        <div class="word-item">BRAGI</div>
+                        <div class="word-item">BRAVI</div>
+                        <div class="word-item">BREDI</div>
+                        <div class="word-item">BREVI</div>
+                        <div class="word-item">BUFFI</div>
+                        <div class="word-item">BUSHI</div>
+                        <div class="word-item">BUSTI</div>
+                        <div class="word-item">BYRRI</div>
+                        <div class="word-item">BYSSI</div>
+                        <div class="word-item">CACEI</div>
+                        <div class="word-item">CACTI</div>
+                        <div class="word-item">CAGUI</div>
+                        <div class="word-item">CALCI</div>
+                        <div class="word-item">CALLI</div>
+                        <div class="word-item">CAMPI</div>
+                        <div class="word-item">CANLI</div>
+                        <div class="word-item">CAPRI</div>
+                        <div class="word-item">CARLI</div>
+                        <div class="word-item">CARPI</div>
+                        <div class="word-item">CARRI</div>
+                        <div class="word-item">CATTI</div>
+                        <div class="word-item">CAULI</div>
+                        <div class="word-item">CELLI</div>
+                        <div class="word-item">CENTI</div>
+                        <div class="word-item">CEQUI</div>
+                        <div class="word-item">CERCI</div>
+                        <div class="word-item">CESTI</div>
+                        <div class="word-item">CHATI</div>
+                        <div class="word-item">CHAUI</div>
+                        <div class="word-item">CHEKI</div>
+                        <div class="word-item">CHILI</div>
+                        <div class="word-item">CHOLI</div>
+                        <div class="word-item">CIPPI</div>
+                        <div class="word-item">CIRRI</div>
+                        <div class="word-item">CLAVI</div>
+                        <div class="word-item">COATI</div>
+                        <div class="word-item">COCCI</div>
+                        <div class="word-item">CONLI</div>
+                        <div class="word-item">COPEI</div>
+                        <div class="word-item">CORGI</div>
+                        <div class="word-item">CROCI</div>
+                        <div class="word-item">CUBTI</div>
+                        <div class="word-item">CULTI</div>
+                        <div class="word-item">CUNEI</div>
+                        <div class="word-item">CUNNI</div>
+                        <div class="word-item">DAIRI</div>
+                        <div class="word-item">DALAI</div>
+                        <div class="word-item">DANAI</div>
+                        <div class="word-item">DANLI</div>
+                        <div class="word-item">DARCI</div>
+                        <div class="word-item">DARII</div>
+                        <div class="word-item">DAURI</div>
+                        <div class="word-item">DELHI</div>
+                        <div class="word-item">DERRI</div>
+                        <div class="word-item">DHERI</div>
+                        <div class="word-item">DHOBI</div>
+                        <div class="word-item">DHONI</div>
+                        <div class="word-item">DHOTI</div>
+                        <div class="word-item">DHUTI</div>
+                        <div class="word-item">DIERI</div>
+                        <div class="word-item">DILLI</div>
+                        <div class="word-item">DIOTI</div>
+                        <div class="word-item">DISCI</div>
+                        <div class="word-item">DISLI</div>
+                        <div class="word-item">DOLCI</div>
+                        <div class="word-item">DOOLI</div>
+                        <div class="word-item">DORSI</div>
+                        <div class="word-item">DUALI</div>
+                        <div class="word-item">DUOMI</div>
+                        <div class="word-item">DURZI</div>
+                        <div class="word-item">EDONI</div>
+                        <div class="word-item">ELEMI</div>
+                        <div class="word-item">ELYMI</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

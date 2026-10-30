@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,37 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 23 matching words from our dictionary list.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in V</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">ADMOV</div>
+                        <div class="word-item">ANNIV</div>
+                        <div class="word-item">BEHAV</div>
+                        <div class="word-item">BONAV</div>
+                        <div class="word-item">DERIV</div>
+                        <div class="word-item">EQUIV</div>
+                        <div class="word-item">FCONV</div>
+                        <div class="word-item">GANEV</div>
+                        <div class="word-item">GCONV</div>
+                        <div class="word-item">ICONV</div>
+                        <div class="word-item">IMMOV</div>
+                        <div class="word-item">INDIV</div>
+                        <div class="word-item">INTSV</div>
+                        <div class="word-item">LULAV</div>
+                        <div class="word-item">MORDV</div>
+                        <div class="word-item">OLLAV</div>
+                        <div class="word-item">PSHAV</div>
+                        <div class="word-item">RAJIV</div>
+                        <div class="word-item">SCHAV</div>
+                        <div class="word-item">SCLAV</div>
+                        <div class="word-item">STRUV</div>
+                        <div class="word-item">THRUV</div>
+                        <div class="word-item">TROUV</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing all 23 matching words from our dictionary list.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

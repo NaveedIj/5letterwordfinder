@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in K</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">KAYAK</div>
+                        <div class="word-item">KIOSK</div>
+                        <div class="word-item">KNACK</div>
+                        <div class="word-item">KNOCK</div>
+                        <div class="word-item">QUICK</div>
+                        <div class="word-item">SHOCK</div>
+                        <div class="word-item">STOCK</div>
+                        <div class="word-item">THINK</div>
+                        <div class="word-item">TRACK</div>
+                        <div class="word-item">ABACK</div>
+                        <div class="word-item">ABASK</div>
+                        <div class="word-item">ACOCK</div>
+                        <div class="word-item">ADUSK</div>
+                        <div class="word-item">AIMAK</div>
+                        <div class="word-item">AKPEK</div>
+                        <div class="word-item">ALACK</div>
+                        <div class="word-item">ALEAK</div>
+                        <div class="word-item">ALECK</div>
+                        <div class="word-item">ALICK</div>
+                        <div class="word-item">AMUCK</div>
+                        <div class="word-item">ANACK</div>
+                        <div class="word-item">APEAK</div>
+                        <div class="word-item">APEEK</div>
+                        <div class="word-item">ARANK</div>
+                        <div class="word-item">AREEK</div>
+                        <div class="word-item">AROCK</div>
+                        <div class="word-item">ASOAK</div>
+                        <div class="word-item">AVICK</div>
+                        <div class="word-item">AWEEK</div>
+                        <div class="word-item">AWINK</div>
+                        <div class="word-item">AWORK</div>
+                        <div class="word-item">BALAK</div>
+                        <div class="word-item">BANAK</div>
+                        <div class="word-item">BATAK</div>
+                        <div class="word-item">BATIK</div>
+                        <div class="word-item">BAULK</div>
+                        <div class="word-item">BAYOK</div>
+                        <div class="word-item">BLACK</div>
+                        <div class="word-item">BLANK</div>
+                        <div class="word-item">BLAYK</div>
+                        <div class="word-item">BLEAK</div>
+                        <div class="word-item">BLECK</div>
+                        <div class="word-item">BLENK</div>
+                        <div class="word-item">BLICK</div>
+                        <div class="word-item">BLINK</div>
+                        <div class="word-item">BLOCK</div>
+                        <div class="word-item">BLUNK</div>
+                        <div class="word-item">BOONK</div>
+                        <div class="word-item">BORAK</div>
+                        <div class="word-item">BRACK</div>
+                        <div class="word-item">BRANK</div>
+                        <div class="word-item">BREAK</div>
+                        <div class="word-item">BRECK</div>
+                        <div class="word-item">BREEK</div>
+                        <div class="word-item">BRICK</div>
+                        <div class="word-item">BRINK</div>
+                        <div class="word-item">BRISK</div>
+                        <div class="word-item">BROCK</div>
+                        <div class="word-item">BRONK</div>
+                        <div class="word-item">BROOK</div>
+                        <div class="word-item">BRUSK</div>
+                        <div class="word-item">BUICK</div>
+                        <div class="word-item">BULAK</div>
+                        <div class="word-item">CAULK</div>
+                        <div class="word-item">CHACK</div>
+                        <div class="word-item">CHALK</div>
+                        <div class="word-item">CHANK</div>
+                        <div class="word-item">CHARK</div>
+                        <div class="word-item">CHAUK</div>
+                        <div class="word-item">CHAWK</div>
+                        <div class="word-item">CHECK</div>
+                        <div class="word-item">CHEEK</div>
+                        <div class="word-item">CHICK</div>
+                        <div class="word-item">CHINK</div>
+                        <div class="word-item">CHIRK</div>
+                        <div class="word-item">CHOAK</div>
+                        <div class="word-item">CHOCK</div>
+                        <div class="word-item">CHONK</div>
+                        <div class="word-item">CHOOK</div>
+                        <div class="word-item">CHOWK</div>
+                        <div class="word-item">CHUCK</div>
+                        <div class="word-item">CHUNK</div>
+                        <div class="word-item">CHYAK</div>
+                        <div class="word-item">CLACK</div>
+                        <div class="word-item">CLAIK</div>
+                        <div class="word-item">CLANK</div>
+                        <div class="word-item">CLARK</div>
+                        <div class="word-item">CLAWK</div>
+                        <div class="word-item">CLECK</div>
+                        <div class="word-item">CLEEK</div>
+                        <div class="word-item">CLERK</div>
+                        <div class="word-item">CLEUK</div>
+                        <div class="word-item">CLICK</div>
+                        <div class="word-item">CLINK</div>
+                        <div class="word-item">CLOAK</div>
+                        <div class="word-item">CLOCK</div>
+                        <div class="word-item">CLONK</div>
+                        <div class="word-item">CLUCK</div>
+                        <div class="word-item">CLUNK</div>
+                        <div class="word-item">CRACK</div>
+                        <div class="word-item">CRAIK</div>
+                        <div class="word-item">CRANK</div>
+                        <div class="word-item">CREAK</div>
+                        <div class="word-item">CREEK</div>
+                        <div class="word-item">CRICK</div>
+                        <div class="word-item">CRINK</div>
+                        <div class="word-item">CROAK</div>
+                        <div class="word-item">CROCK</div>
+                        <div class="word-item">CRONK</div>
+                        <div class="word-item">CROOK</div>
+                        <div class="word-item">CRUCK</div>
+                        <div class="word-item">CRUNK</div>
+                        <div class="word-item">DANSK</div>
+                        <div class="word-item">DAYAK</div>
+                        <div class="word-item">DEINK</div>
+                        <div class="word-item">DEREK</div>
+                        <div class="word-item">DRANK</div>
+                        <div class="word-item">DRAWK</div>
+                        <div class="word-item">DRECK</div>
+                        <div class="word-item">DRINK</div>
+                        <div class="word-item">DRISK</div>
+                        <div class="word-item">DROUK</div>
+                        <div class="word-item">DRUNK</div>
+                        <div class="word-item">EIMAK</div>
+                        <div class="word-item">ERICK</div>
+                        <div class="word-item">EVECK</div>
+                        <div class="word-item">FLACK</div>
+                        <div class="word-item">FLANK</div>
+                        <div class="word-item">FLASK</div>
+                        <div class="word-item">FLEAK</div>
+                        <div class="word-item">FLECK</div>
+                        <div class="word-item">FLICK</div>
+                        <div class="word-item">FLISK</div>
+                        <div class="word-item">FLOCK</div>
+                        <div class="word-item">FLOOK</div>
+                        <div class="word-item">FLOWK</div>
+                        <div class="word-item">FLUNK</div>
+                        <div class="word-item">FLUSK</div>
+                        <div class="word-item">FRACK</div>
+                        <div class="word-item">FRAIK</div>
+                        <div class="word-item">FRANK</div>
+                        <div class="word-item">FREAK</div>
+                        <div class="word-item">FRECK</div>
+                        <div class="word-item">FRISK</div>
+                        <div class="word-item">FROCK</div>
+                        <div class="word-item">FROSK</div>
+                        <div class="word-item">GALIK</div>
+                        <div class="word-item">GLACK</div>
+                        <div class="word-item">GLAIK</div>
+                        <div class="word-item">GLEEK</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">

@@ -26,6 +26,34 @@
     
     <!-- Optimized CSS Loading -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .word-item {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        @media (max-width: 600px) {
+            .word-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -525,8 +553,164 @@
             </div>
 
             <!-- PRE-RENDERED SEO CONTENT SECTION -->
-            
-                    <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            <section class="card" style="margin-top: 2.5rem; padding: 2rem;">
+                <div class="results-info" style="margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin: 0;">5-Letter Words Ending in P</h2>
+                </div>
+                <div id="wordGrid" class="word-grid">
+                        <div class="word-item">GROUP</div>
+                        <div class="word-item">ABAMP</div>
+                        <div class="word-item">ACOUP</div>
+                        <div class="word-item">ADEEP</div>
+                        <div class="word-item">ADRIP</div>
+                        <div class="word-item">ADROP</div>
+                        <div class="word-item">AESOP</div>
+                        <div class="word-item">AGASP</div>
+                        <div class="word-item">AHEAP</div>
+                        <div class="word-item">ALISP</div>
+                        <div class="word-item">APOOP</div>
+                        <div class="word-item">ASKIP</div>
+                        <div class="word-item">ASLOP</div>
+                        <div class="word-item">ATRIP</div>
+                        <div class="word-item">AYELP</div>
+                        <div class="word-item">BEBOP</div>
+                        <div class="word-item">BECAP</div>
+                        <div class="word-item">BEDIP</div>
+                        <div class="word-item">BEFOP</div>
+                        <div class="word-item">BEHAP</div>
+                        <div class="word-item">BELAP</div>
+                        <div class="word-item">BICEP</div>
+                        <div class="word-item">BLEEP</div>
+                        <div class="word-item">BLIMP</div>
+                        <div class="word-item">BLOOP</div>
+                        <div class="word-item">CANAP</div>
+                        <div class="word-item">CARAP</div>
+                        <div class="word-item">CHAMP</div>
+                        <div class="word-item">CHEAP</div>
+                        <div class="word-item">CHEEP</div>
+                        <div class="word-item">CHELP</div>
+                        <div class="word-item">CHIMP</div>
+                        <div class="word-item">CHIRP</div>
+                        <div class="word-item">CHOMP</div>
+                        <div class="word-item">CHOOP</div>
+                        <div class="word-item">CHOUP</div>
+                        <div class="word-item">CHUMP</div>
+                        <div class="word-item">CLAMP</div>
+                        <div class="word-item">CLASP</div>
+                        <div class="word-item">CLOMP</div>
+                        <div class="word-item">CLOOP</div>
+                        <div class="word-item">CLUMP</div>
+                        <div class="word-item">CRAMP</div>
+                        <div class="word-item">CREEP</div>
+                        <div class="word-item">CRIMP</div>
+                        <div class="word-item">CRISP</div>
+                        <div class="word-item">CROUP</div>
+                        <div class="word-item">CRUMP</div>
+                        <div class="word-item">CUTUP</div>
+                        <div class="word-item">DADAP</div>
+                        <div class="word-item">DECAP</div>
+                        <div class="word-item">DREEP</div>
+                        <div class="word-item">DROOP</div>
+                        <div class="word-item">ELAMP</div>
+                        <div class="word-item">ENCUP</div>
+                        <div class="word-item">EQUIP</div>
+                        <div class="word-item">ERUMP</div>
+                        <div class="word-item">ESTOP</div>
+                        <div class="word-item">FCOMP</div>
+                        <div class="word-item">FELUP</div>
+                        <div class="word-item">FIXUP</div>
+                        <div class="word-item">FLIMP</div>
+                        <div class="word-item">FLUMP</div>
+                        <div class="word-item">FRAPP</div>
+                        <div class="word-item">FRUMP</div>
+                        <div class="word-item">FULUP</div>
+                        <div class="word-item">GALOP</div>
+                        <div class="word-item">GENEP</div>
+                        <div class="word-item">GENIP</div>
+                        <div class="word-item">GERIP</div>
+                        <div class="word-item">GETUP</div>
+                        <div class="word-item">GINEP</div>
+                        <div class="word-item">GLUMP</div>
+                        <div class="word-item">GRAIP</div>
+                        <div class="word-item">GRAMP</div>
+                        <div class="word-item">GRASP</div>
+                        <div class="word-item">GRIMP</div>
+                        <div class="word-item">GROOP</div>
+                        <div class="word-item">GRUMP</div>
+                        <div class="word-item">HANAP</div>
+                        <div class="word-item">INSEP</div>
+                        <div class="word-item">JALAP</div>
+                        <div class="word-item">JALOP</div>
+                        <div class="word-item">JEHUP</div>
+                        <div class="word-item">JOSIP</div>
+                        <div class="word-item">JULEP</div>
+                        <div class="word-item">KANAP</div>
+                        <div class="word-item">KELEP</div>
+                        <div class="word-item">KNOSP</div>
+                        <div class="word-item">LAYUP</div>
+                        <div class="word-item">LETUP</div>
+                        <div class="word-item">MEROP</div>
+                        <div class="word-item">MIXUP</div>
+                        <div class="word-item">NETOP</div>
+                        <div class="word-item">NOMAP</div>
+                        <div class="word-item">ONLAP</div>
+                        <div class="word-item">ORLOP</div>
+                        <div class="word-item">OULAP</div>
+                        <div class="word-item">OXLIP</div>
+                        <div class="word-item">PENUP</div>
+                        <div class="word-item">PINUP</div>
+                        <div class="word-item">PLUMP</div>
+                        <div class="word-item">POLYP</div>
+                        <div class="word-item">POULP</div>
+                        <div class="word-item">PRIMP</div>
+                        <div class="word-item">REBOP</div>
+                        <div class="word-item">RECAP</div>
+                        <div class="word-item">RECIP</div>
+                        <div class="word-item">REDIP</div>
+                        <div class="word-item">RELAP</div>
+                        <div class="word-item">REMAP</div>
+                        <div class="word-item">REMOP</div>
+                        <div class="word-item">RESUP</div>
+                        <div class="word-item">RETIP</div>
+                        <div class="word-item">RIPUP</div>
+                        <div class="word-item">SALEP</div>
+                        <div class="word-item">SARIP</div>
+                        <div class="word-item">SCALP</div>
+                        <div class="word-item">SCAMP</div>
+                        <div class="word-item">SCARP</div>
+                        <div class="word-item">SCAUP</div>
+                        <div class="word-item">SCELP</div>
+                        <div class="word-item">SCOOP</div>
+                        <div class="word-item">SCOUP</div>
+                        <div class="word-item">SCRAP</div>
+                        <div class="word-item">SCRIP</div>
+                        <div class="word-item">SCULP</div>
+                        <div class="word-item">SDUMP</div>
+                        <div class="word-item">SETUP</div>
+                        <div class="word-item">SHARP</div>
+                        <div class="word-item">SHAUP</div>
+                        <div class="word-item">SHEEP</div>
+                        <div class="word-item">SHLEP</div>
+                        <div class="word-item">SHOOP</div>
+                        <div class="word-item">SHRAP</div>
+                        <div class="word-item">SHRIP</div>
+                        <div class="word-item">SIROP</div>
+                        <div class="word-item">SIRUP</div>
+                        <div class="word-item">SITUP</div>
+                        <div class="word-item">SKELP</div>
+                        <div class="word-item">SKEMP</div>
+                        <div class="word-item">SKIMP</div>
+                        <div class="word-item">SKIRP</div>
+                        <div class="word-item">SKULP</div>
+                        <div class="word-item">SLAMP</div>
+                        <div class="word-item">SLEEP</div>
+                        <div class="word-item">SLOOP</div>
+                        <div class="word-item">SLORP</div>
+                        <div class="word-item">SLUMP</div>
+                        <div class="word-item">SLURP</div>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">Showing 150 words from our dictionary list. Use the Word Finder tool above to explore more matching words.</p>
+            </section>
 
             <section class="seo-guide-section" style="margin-top: 4rem;">
                 <div class="info-section-header">
