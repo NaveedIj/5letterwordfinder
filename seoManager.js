@@ -111,6 +111,12 @@
 
         if (isHomepage) return;
 
+        const isEndingPage =
+            document.body.getAttribute('data-pattern') === 'ending' ||
+            window.location.pathname.includes('-words-ending-with-');
+
+        if (isEndingPage) return;
+
         if (data.title) {
             document.title = hydrate(data.title, tokens);
         }
