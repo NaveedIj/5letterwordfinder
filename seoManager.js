@@ -105,6 +105,12 @@
      * Updates page title and meta description.
      */
     function updateMetadata(data, tokens) {
+        const isHomepage =
+            window.location.pathname === '/' ||
+            window.location.pathname.endsWith('/index.html');
+
+        if (isHomepage) return;
+
         if (data.title) {
             document.title = hydrate(data.title, tokens);
         }
