@@ -117,6 +117,12 @@
 
         if (isEndingPage) return;
 
+        const isStartingPage =
+            document.body.getAttribute('data-pattern') === 'starting' ||
+            window.location.pathname.includes('-words-starting-with-');
+
+        if (isStartingPage) return;
+
         if (data.title) {
             document.title = hydrate(data.title, tokens);
         }
