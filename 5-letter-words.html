@@ -115,6 +115,10 @@
             line-height: 1.6;
             color: var(--text-primary);
         }
+        #browse-starting,
+        #browse-ending {
+            scroll-margin-top: 84px;
+        }
     </style>
 
     <!-- Phase 1.5: Theme Persistence & White Flash Prevention -->
@@ -382,7 +386,7 @@
                         </div>
 
                         <!-- H2: Browse by Starting Letter -->
-                        <h2>Browse 5-Letter Words by Starting Letter</h2>
+                        <h2 id="browse-starting">Browse 5-Letter Words by Starting Letter</h2>
                         <p>Explore five-letter words categorized by their initial letter (A through Z). Select any letter to view complete list pages, Wordle opening candidates, and letter frequency distributions:</p>
 
                         <div class="letter-nav">
@@ -415,7 +419,7 @@
                         </div>
 
                         <!-- H2: Browse by Ending Letter -->
-                        <h2>Browse 5-Letter Words by Ending Letter</h2>
+                        <h2 id="browse-ending">Browse 5-Letter Words by Ending Letter</h2>
                         <p>Filter five-letter words by their final letter. Ending letters like <strong>-E</strong>, <strong>-Y</strong>, <strong>-T</strong>, and <strong>-S</strong> contain high-density solution clusters for Wordle and Scrabble hooks:</p>
 
                         <div class="letter-nav">
